@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ {% if page.entry.title != null %}
+   <title>{{ page.entry.title }}</title>
+ {% else %}
+   <title>{{ page.title }}</title>
+ {% endif %}
+ <meta name="author" content="Leonardo de Moura" />
+ <meta name="description" content="Leonardo de Moura' Homepage" />
+ <meta name="keywords" content="Z3, SMT, SAT, Leonardo, Leo, de Moura, decision procedure, Yices, theorem prover" />
+
+ <!-- syntax highlighting CSS -->
+ <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css" type="text/css" />
+
+ <!-- <link href="/css/highlight.css" rel="stylesheet" type="text/css"> -->
+ <link href="{{site.baseurl}}/css/gists.css" rel="stylesheet" type="text/css"/>
+
+ <!-- Homepage CSS -->
+ <link rel="stylesheet" href="{{site.baseurl}}/css/screen.css" type="text/css" media="screen, projection" />
+
+ <!-- Typekit 
+ <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+ -->
+
+ <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css' />
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35893481-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <div id="outer">
+    <div id="top"></div>
+
+    <div id="left">
+      <img src="{{site.baseurl}}/images/leo.jpg"/>
+      <div id="recentposts">
+      <h3>Recent posts</h3>
+      <ul class="posts">
+         {% for post in site.categories.blog limit:4 %}
+         <li>&raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+         {% endfor %}
+         <li>&raquo; <a href="{{site.baseurl}}/blog.html">More...</a></li>
+      </ul>
+      </div>
+    </div>  
+
+    <div class="site">
+      <div class="title">
+	<a href="{{site.baseurl}}/">Leonardo de Moura</a>
+	<a class="extra" href="{{site.baseurl}}/">home</a>
+	<a class="extra" href="{{site.baseurl}}/about.html">about me</a>
+	<a class="extra" href="{{site.baseurl}}/publications/index.html">publications</a>
+	<a class="extra" href="{{site.baseurl}}/slides.html">slides</a>
+        <a class="extra" href="{{site.baseurl}}/research.html">research</a>
+        <a class="extra" href="{{site.baseurl}}/blog.html">blog</a>
+      </div>
+      
+      {{ content }}
+
+      <div class="footer">
+	<div class="contact">
+	  <p>
+            Leonardo de Moura<br />
+            Principal Researcher in the <a href="http://research.microsoft.com/en-us/groups/rise">RiSE</a> group at 
+            <a href="http://research.microsoft.com/">Microsoft Research</a><br />
+            <a href="mailto:leonardo@microsoft.com">leonardo@microsoft.com</a>
+	  </p>
+	</div>
+	<div class="contact">
+	  <p>
+        <a href="http://stackoverflow.com/users/841416/leonardo-de-moura">Stackoverflow</a><br />
+        <a href="http://www.facebook.com/leonardo.de.moura">Facebook</a>
+	  </p>
+	</div>
+        <div class="contact">
+        <p>
+          <div class="fb_like">
+            <div class="fb-like" data-send="false" data-layout="button_count" data-width="90px" data-show-faces="false" data-font="arial"></div>
+          </div>
+          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </p>
+        </div>
+	<div class="rss">
+	  <a href="{{site.baseurl}}/feed.xml">
+            <img src="{{site.baseurl}}/images/rss.png" alt="Subscribe to RSS Feed" />
+	  </a>
+	</div>
+      </div>
+    </div>
+
+    <div id="right">
+    </div>
+  </div>
+</body>
+</html>
