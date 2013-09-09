@@ -1,0 +1,8 @@
+pygments: true
+markdown: rdiscount
+baseurl: http://leodemoura.github.io
+
+name: Leonardo de Moura
+description: Leonardo de Moura's blog
+url: http://research.microsoft.com/en-us/um/people/leonardo
+
