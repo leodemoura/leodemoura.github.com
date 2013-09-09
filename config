@@ -1,3 +1,7 @@
 pygments: true
 markdown: rdiscount
+baseurl: http://leodemoura.github.io
+
+name: Leonardo de Moura
+description: Leonardo de Moura's blog
 
