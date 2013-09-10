@@ -21,4 +21,5 @@ You can find more about me at:
 - [LinkedIn](http://www.linkedin.com/profile/view?id=15592114&amp;trk=tab_pro)
 - [Facebook](http://facebook.com/leonardo.de.moura)
 - [Stackoverflow](http://stackoverflow.com/users/841416/leonardo-de-moura)
+- [Github](https://github.com/leodemoura)
 - [Codeplex](http://www.codeplex.com/site/users/view/leodemoura)
