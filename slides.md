@@ -4,6 +4,8 @@ title: Slides
 ---
 
 # Slides
+- [Arithmetic and Optimization @ MCSAT]({{site.baseurl}}/files/dagstuhl2013.pdf), Dagstuhl seminar on Deduction and Arithmetic, Germany 2013 ([Power-point version]({{site.baseurl}}/files/dagstuhl2013.pptx))
+- [Model-Driven Decision Procedures for Arithmetic]({{site.baseurl}}/files/synasc2013.pdf), SYNASC 2013, Romania (invited) ([Power-point version]({{site.baseurl}}/files/synasc2013.pptx))
 - [Internals of SMT Solvers]({{site.baseurl}}/files/SATSMT2013.pdf), [SAT/SMT Summer School 2013](http://satsmt2013.ics.aalto.fi/), Espoo, Finland, 2013 (invited) ([Power-point version]({{site.baseurl}}/files/SATSMT2013.pptx)).
 - [Computation in Real Closed Infinitesimal and Transcendental Extensions of the Rationals]({{site.baseurl}}/files/CADE2013.pdf), CADE'13, Lake Placid, New York, 2013 ([Power-point version]({{site.baseurl}}/files/CADE2013.pptx)).
 - Decision Methods for Arithmetic, [Third Summer School on Formal Techniques](http://fm.csl.sri.com/SSFT13/), Menlo Park, 2013. Slides: [part 1]({{site.baseurl}}/files/srisc13-1.pdf), [part 2]({{site.baseurl}}/files/srisc13-2.pdf), [part 3]({{site.baseurl}}/files/srisc13-3.pdf), [exercises]({{site.baseurl}}/files/srisc13-ex.pdf). Power-point slides: [part 1]({{site.baseurl}}/files/srisc13-1.pptx), [part 2]({{site.baseurl}}/files/srisc13-2.pptx), [part 3]({{site.baseurl}}/files/srisc13-3.pptx), [exercises]({{site.baseurl}}/files/srisc13-ex.pptx)
@@ -55,4 +57,3 @@ Sydney, Australia, [powerpoint slides]({{site.baseurl}}/files/z3all.pptx).</li>
 - [Model-based Theory Combination](http://research.microsoft.com/projects/z3/smt07-slides.pdf), [SMT 2007](http://www.lsi.upc.edu/~oliveras/smt07), Berlin, Germany.
 - [Developing Efficient SMT Solvers](http://research.microsoft.com/projects/z3/cmu07.pdf), [Carnegie Mellon University](http://www.cs.cmu.edu/~svc/talks/20070507-deMoura.html), Pittsburgh, (invited).
 - [Tutorial on SMT solvers](http://research.microsoft.com/projects/z3/fmcad06-slides.pdf), [FMCAD 2006](http://www.cc.gatech.edu/~manolios/fmcad06/program.html), San Jose, (invited).
-
