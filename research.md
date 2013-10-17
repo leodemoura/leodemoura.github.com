@@ -26,14 +26,15 @@ send me an email.
 I have written many on-line tutorials about Z3. The tutorials contain many examples that can be tried from your browser.
 You do not have to install Z3 to try it. If you like Python, you should try Z3Py.
 
+** The Z3Py tutorials are temporarily offline because of [security issues](http://tomforb.es/breaking-out-of-secured-python-environments).
+They will remain offline until these issues are fixed. **
+
 - [Getting Started with Z3](http://rise4fun.com/Z3/tutorial/guide)
 - [Defining your own search strategies in Z3](http://rise4fun.com/Z3/tutorial/strategies)
 - [Z3Py: Z3 API in Python](http://rise4fun.com/Z3Py/tutorial/guide)
 - [Z3Py: Advanced Topics](http://rise4fun.com/Z3Py/tutorial/advanced)
 - [Z3Py: Strategies](http://rise4fun.com/Z3Py/tutorial/strategies)
 
-# Trying Z3Py On-line
+# Trying Z3 On-line
 
-<iframe allowtransparency="true" frameborder="0" valign="top" style="width:700px;height:1000px" src="http://rise4fun.com/z3py?frame=1&menu=0"> </iframe>
-
-
+<iframe allowtransparency="true" frameborder="0" valign="top" style="width:700px;height:1000px" src="http://rise4fun.com/z3?frame=1&menu=0"> </iframe>
