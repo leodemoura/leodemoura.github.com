@@ -10,7 +10,8 @@ I'm a Principal Researcher in the [RiSE](http://research.microsoft.com/en-us/gro
 I'm the main architect of [Lean](https://github.com/leodemoura/lean),  [Z3](http://z3.codeplex.com), [Yices 1.0](http://yices.csl.sri.com/) and
 [SAL](http://sal.csl.sri.com). Lean is a new open source theorem prover that [Soonho Kong](http://www.cs.cmu.edu/~soonhok) and I are currently developing from scratch. 
 Z3 and Yices are [SMT solvers](http://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories), and SAL (the Symbolic Analysis Laboratory) is an open source tool suite that includes symbolic and bounded model checkers, and automatic test generators.
-I received the [Haifa Verification Conference Award](https://www.research.ibm.com/haifa/conferences/hvc2010/award.shtml) in 2010.
+I received the [Haifa Verification Conference Award](https://www.research.ibm.com/haifa/conferences/hvc2010/award.shtml) in 2010. In 2014, the TACAS conference (Tools and Algorithms for the Construction and Analysis of Systems) has given an award for "_The most influential tool paper in the first 20 years of TACAS_" to the Z3 paper: _Z3: An Efficient SMT Solver. 14th International Conference, TACAS 2008, vol. 4963 of Lecture Notes in Computer Science_.
+
 
 You can find more about me at:
 
