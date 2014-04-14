@@ -4,7 +4,7 @@ title: Slides
 ---
 
 # Slides
-- [Z3: Logic Engines as a Service]({{site.baseurl}}/files/z3-tacas-20.pdf), award for _"The most influential tool paper in the first 20 years of TACAS"_, TACAS 20, Grenoble, France,2014 ([Power-point version]({{site.baseurl}}/files/z3-tacas-20.pptx))
+- [Z3: Logic Engines as a Service]({{site.baseurl}}/files/z3-tacas-20.pdf), award for _"The most influential tool paper in the first 20 years of TACAS"_, TACAS 20, Grenoble, France, 2014 ([Power-point version]({{site.baseurl}}/files/z3-tacas-20.pptx))
 - [Arithmetic and Optimization @ MCSAT]({{site.baseurl}}/files/dagstuhl2013.pdf), Dagstuhl seminar on Deduction and Arithmetic, Germany 2013 ([Power-point version]({{site.baseurl}}/files/dagstuhl2013.pptx))
 - [Model-Driven Decision Procedures for Arithmetic]({{site.baseurl}}/files/synasc2013.pdf), SYNASC 2013, Romania (invited) ([Power-point version]({{site.baseurl}}/files/synasc2013.pptx))
 - [Internals of SMT Solvers]({{site.baseurl}}/files/SATSMT2013.pdf), [SAT/SMT Summer School 2013](http://satsmt2013.ics.aalto.fi/), Espoo, Finland, 2013 (invited) ([Power-point version]({{site.baseurl}}/files/SATSMT2013.pptx)).
