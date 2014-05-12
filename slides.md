@@ -30,10 +30,10 @@ title: Slides
      [part3]({{site.baseurl}}/files/milan2010_part3.pdf),
      [part4]({{site.baseurl}}/files/milan2010_part4.pdf),
      [assignment]({{site.baseurl}}/files/milan2010_assignment.pdf));
-    powerpoint version: ([part1]({{site.baseurl}}/files/milan2010_part1.pptx),
-     [part2]({{site.baseurl}}/files/milan2010_part2.pptx),
-     [part3]({{site.baseurl}}/files/milan2010_part3.pptx),
-     [part4]({{site.baseurl}}/files/milan2010_part4.pptx))
+    powerpoint version: ([part1]({{site.baseurl}}/files/milan2010_lecture1.pptx),
+     [part2]({{site.baseurl}}/files/milan2010_lecture2.pptx),
+     [part3]({{site.baseurl}}/files/milan2010_lecture3.pptx),
+     [part4]({{site.baseurl}}/files/milan2010_lecture4.pptx))
 - [Generalized and Efficient Array Decision Procedures]({{site.baseurl}}/files/fmcad09-slides.pdf), [FMCAD 2009](http://fmv.jku.at/fmcad09), Austin TX, 2009.
 - [SMT@Microsoft]({{site.baseurl}}/files/NYU2009.pdf), [New York University](http://www.cs.nyu.edu/acsys), New York, 2009.
 - [SMT@Microsoft]({{site.baseurl}}/files/mpi2009.pdf), [Max Planck Institut Informatik](http://www.mpi-inf.mpg.de), Germany, 2009.
