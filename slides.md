@@ -4,6 +4,7 @@ title: Slides
 ---
 
 # Slides
+- [MCSat: A Model-Constructing Satisfiability Calculus]({{site.baseurl}}/files/SAT2014.pdf), [International Conference on Theory and Applications of Satisfiability Testing](http://baldur.iti.kit.edu/sat2014/), Vienna, 2014 ([Power-point version]({{site.baseurl}}/files/SAT2014.pptx))
 - [Non-linear Arithmetic]({{site.baseurl}}/files/SATSMT2014.pdf), [SAT/SMT summer school 2014](http://satsmt2014.forsyte.at/), Vienna, 2014 ([Power-point version]({{site.baseurl}}/files/SATSMT2014.pptx))
 - [Z3: Logic Engines as a Service]({{site.baseurl}}/files/z3-tacas-20.pdf), award for _"The most influential tool paper in the first 20 years of TACAS"_, TACAS 20, Grenoble, France, 2014 ([Power-point version]({{site.baseurl}}/files/z3-tacas-20.pptx))
 - [Arithmetic and Optimization @ MCSAT]({{site.baseurl}}/files/dagstuhl2013.pdf), Dagstuhl seminar on Deduction and Arithmetic, Germany 2013 ([Power-point version]({{site.baseurl}}/files/dagstuhl2013.pptx))
