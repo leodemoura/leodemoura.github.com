@@ -7,8 +7,15 @@ title: Research
 ================
 
 My areas of interesting include automated reasoning, theorem proving, decision procedures,
-satisfiability (SAT) and satisfiability modulo theories (SMT). My main project is the
-[Z3 theorem prover](http://z3.codeplex.com).
+satisfiability (SAT) and satisfiability modulo theories (SMT).
+My main project is the [Lean theorem prover](http://leanprover.github.io).
+The Lean project aims to bring the automated and interactive theorem
+proving worlds together. One of the main goals is to provide a
+powerful system for reasoning about complex systems and mathematics,
+and verifying claims about both.
+You can [try Lean on your web browser](http://leanprover.github.io/live).
+
+I also work on [Z3](http://z3.codeplex.com).
 Z3 is a very efficient SMT solver, it has builtin support for many useful theories such as:
 linear real and integer arithmetic, nonlinear real arithmetic, fixed-size bit-vectors,
 extensional arrays, uninterpreted functions, and quantifiers.
@@ -19,22 +26,4 @@ both within Microsoft and elsewhere
 
 I am always looking for bright interns. If you are interested in an
 internship at Microsoft Research in one of the topics above, please
-send me an email.
-
-# On-line Tutorials
-
-I have written many on-line tutorials about Z3. The tutorials contain many examples that can be tried from your browser.
-You do not have to install Z3 to try it. If you like Python, you should try Z3Py.
-
-** The Z3Py tutorials are temporarily offline because of [security issues](http://tomforb.es/breaking-out-of-secured-python-environments).
-They will remain offline until these issues are fixed. **
-
-- [Getting Started with Z3](http://rise4fun.com/Z3/tutorial/guide)
-- [Defining your own search strategies in Z3](http://rise4fun.com/Z3/tutorial/strategies)
-- [Z3Py: Z3 API in Python](http://rise4fun.com/Z3Py/tutorial/guide)
-- [Z3Py: Advanced Topics](http://rise4fun.com/Z3Py/tutorial/advanced)
-- [Z3Py: Strategies](http://rise4fun.com/Z3Py/tutorial/strategies)
-
-# Trying Z3 On-line
-
-<iframe allowtransparency="true" frameborder="0" valign="top" style="width:700px;height:1000px" src="http://rise4fun.com/z3?frame=1&menu=0"> </iframe>
+send me an email. My current focus is the Lean theorem prover.
