@@ -15,7 +15,7 @@ powerful system for reasoning about complex systems and mathematics,
 and verifying claims about both.
 You can [try Lean on your web browser](http://leanprover.github.io/live).
 
-I also work on [Z3](http://z3.codeplex.com).
+I also work on [Z3](https://github.com/Z3Prover/z3).
 Z3 is a very efficient SMT solver, it has builtin support for many useful theories such as:
 linear real and integer arithmetic, nonlinear real arithmetic, fixed-size bit-vectors,
 extensional arrays, uninterpreted functions, and quantifiers.
