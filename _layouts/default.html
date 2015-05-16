@@ -21,7 +21,7 @@
  <!-- Homepage CSS -->
  <link rel="stylesheet" href="{{site.baseurl}}/css/screen.css" type="text/css" media="screen, projection" />
 
- <!-- Typekit 
+ <!-- Typekit
  <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
  -->
@@ -63,45 +63,47 @@
 
     <div id="left">
       <img src="{{site.baseurl}}/images/leo.jpg"/>
-      <div id="recentposts">
-      <h3>Recent posts</h3>
-      <ul class="posts">
-         {% for post in site.categories.blog limit:4 %}
-         <li>&raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-         {% endfor %}
-         <li>&raquo; <a href="{{site.baseurl}}/blog.html">More...</a></li>
-      </ul>
-      </div>
-    </div>  
+
+      <!-- <div id="recentposts"> -->
+      <!-- <h3>Recent posts</h3> -->
+      <!-- <ul class="posts"> -->
+      <!--    {% for post in site.categories.blog limit:4 %} -->
+      <!--    <li>&raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li> -->
+      <!--    {% endfor %} -->
+      <!--    <li>&raquo; <a href="{{site.baseurl}}/blog.html">More...</a></li> -->
+      <!-- </ul> -->
+      <!-- </div> -->
+
+    </div>
 
     <div class="site">
       <div class="title">
-	<a href="{{site.baseurl}}/">Leonardo de Moura</a>
-	<a class="extra" href="{{site.baseurl}}/">home</a>
-	<a class="extra" href="{{site.baseurl}}/about.html">about me</a>
-	<a class="extra" href="{{site.baseurl}}/publications/index.html">publications</a>
-	<a class="extra" href="{{site.baseurl}}/slides.html">slides</a>
+        <a href="{{site.baseurl}}/">Leonardo de Moura</a>
+        <a class="extra" href="{{site.baseurl}}/">home</a>
+        <a class="extra" href="{{site.baseurl}}/about.html">about me</a>
+        <a class="extra" href="{{site.baseurl}}/publications/index.html">publications</a>
+        <a class="extra" href="{{site.baseurl}}/slides.html">slides</a>
         <a class="extra" href="{{site.baseurl}}/research.html">research</a>
         <a class="extra" href="{{site.baseurl}}/blog.html">blog</a>
       </div>
-      
+
       {{ content }}
 
       <div class="footer">
-	<div class="contact">
-	  <p>
+        <div class="contact">
+          <p>
             Leonardo de Moura<br />
-            Principal Researcher in the <a href="http://research.microsoft.com/en-us/groups/rise">RiSE</a> group at 
+            Principal Researcher in the <a href="http://research.microsoft.com/en-us/groups/rise">RiSE</a> group at
             <a href="http://research.microsoft.com/">Microsoft Research</a><br />
             <a href="mailto:leonardo@microsoft.com">leonardo@microsoft.com</a>
-	  </p>
-	</div>
-	<div class="contact">
-	  <p>
+          </p>
+        </div>
+        <div class="contact">
+          <p>
         <a href="http://stackoverflow.com/users/841416/leonardo-de-moura">Stackoverflow</a><br />
         <a href="http://www.facebook.com/leonardo.de.moura">Facebook</a>
-	  </p>
-	</div>
+          </p>
+        </div>
         <div class="contact">
         <p>
           <div class="fb_like">
@@ -111,11 +113,11 @@
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </p>
         </div>
-	<div class="rss">
-	  <a href="{{site.baseurl}}/feed.xml">
+        <div class="rss">
+          <a href="{{site.baseurl}}/feed.xml">
             <img src="{{site.baseurl}}/images/rss.png" alt="Subscribe to RSS Feed" />
-	  </a>
-	</div>
+          </a>
+        </div>
       </div>
     </div>
 
