@@ -15,7 +15,7 @@ Z3 has been open sourced (under the MIT license) in the beginning of 2015.
 I received the [Haifa Verification Conference Award](https://www.research.ibm.com/haifa/conferences/hvc2010/award.shtml) in 2010.
 In 2014, the TACAS conference (Tools and Algorithms for the Construction and Analysis of Systems) has given an award for
 "_The most influential tool paper in the first 20 years of TACAS_" to the Z3 paper: _Z3: An Efficient SMT Solver. 14th International Conference, TACAS 2008, vol. 4963 of Lecture Notes in Computer Science_.
-
+In 2015, Z3 received the Programming Languages Software Award from ACM SIGPLAN.
 
 You can find more about me at:
 
