@@ -4,6 +4,10 @@ title: Slides
 ---
 
 # Slides
+- [Lost in translation: how easy problems become hard due to bad encodings]({{site.baseurl}}/files/Vampire2015.pdf), [Vampire workshop](http://easychair.org/smart-program/Vampire2015/), Berlin, 2015
+- [The Lean Theorem Prover Tutorial](http://leanprover.github.io/presentations/20150803_CADE), [CADE-25 Tutorial](http://conference.mi.fu-berlin.de/cade-25/events), Berlin, 2015
+- [The Lean Theorem Prover](http://leanprover.github.io/presentations/20150717_CICM), [CICM](http://cicm-conference.org/2015/cicm.php), Washington D.C., 2015
+- [The Lean Theorem Prover](http://leanprover.github.io/presentations/20150709_NASA), [NASA Langley](https://www.nasa.gov/centers/langley/home/index.html), Virginia, 2015
 - [MCSat: A Model-Constructing Satisfiability Calculus]({{site.baseurl}}/files/SAT2014.pdf), [International Conference on Theory and Applications of Satisfiability Testing](http://baldur.iti.kit.edu/sat2014/), Vienna, 2014 ([Power-point version]({{site.baseurl}}/files/SAT2014.pptx))
 - [Non-linear Arithmetic]({{site.baseurl}}/files/SATSMT2014.pdf), [SAT/SMT summer school 2014](http://satsmt2014.forsyte.at/), Vienna, 2014 ([Power-point version]({{site.baseurl}}/files/SATSMT2014.pptx))
 - [Z3: Logic Engines as a Service]({{site.baseurl}}/files/z3-tacas-20.pdf), award for _"The most influential tool paper in the first 20 years of TACAS"_, TACAS 20, Grenoble, France, 2014 ([Power-point version]({{site.baseurl}}/files/z3-tacas-20.pptx))
