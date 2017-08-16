@@ -16,6 +16,8 @@ I received the [Haifa Verification Conference Award](https://www.research.ibm.co
 In 2014, the TACAS conference (Tools and Algorithms for the Construction and Analysis of Systems) has given an award for
 "_The most influential tool paper in the first 20 years of TACAS_" to the Z3 paper: _Z3: An Efficient SMT Solver. 14th International Conference, TACAS 2008, vol. 4963 of Lecture Notes in Computer Science_.
 In 2015, Z3 received the Programming Languages Software Award from ACM SIGPLAN.
+In 2017, the [International Conference on Automated Deduction](http://www.cadeinc.org/) (CADE) presented the Skolem Award for my paper “Efficient E-Matching for SMT Solvers” that
+has passed the test of time, by being a most influential paper in the field.
 
 You can find more about me at:
 
