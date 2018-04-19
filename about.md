@@ -18,6 +18,7 @@ In 2014, the TACAS conference (Tools and Algorithms for the Construction and Ana
 In 2015, Z3 received the Programming Languages Software Award from ACM SIGPLAN.
 In 2017, the [International Conference on Automated Deduction](http://www.cadeinc.org/) (CADE) presented the Skolem Award for my paper “Efficient E-Matching for SMT Solvers” that
 has passed the test of time, by being a most influential paper in the field.
+In 2018, the [ETAPS conference](https://www.etaps.org/index.php/about/etaps-test-of-time-award) has given the test of time award to the Z3 paper: _Z3: An Efficient SMT Solver_.
 
 You can find more about me at:
 
