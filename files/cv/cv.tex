@@ -1,0 +1,540 @@
+\documentclass{article}
+
+%% \usepackage{html,htmllist}
+
+%
+% dvips -o cv.ps curric.dvi
+% gv cv.ps
+
+\newcommand{\REF}[2]{\begin{flushleft} {\bf #1} \\
+                                                                           #2
+                                         \end{flushleft}
+                    }
+
+
+\newcommand{\job}[4]{\begin{flushleft}
+                                        \begin{tabular}{ll}
+                                         #1-- & #3 \\
+                     #2 & #4 \\
+                    \end{tabular}
+                                        \end{flushleft}
+                    }
+\newcommand{\award}[4]{\job{#1}{#2}{#3}{#4}}
+
+\newcommand{\myhp}{http://leodemoura.github.io}
+
+\begin{document}
+
+
+{
+\begin{flushleft}
+{\Huge{Curriculum Vitae}} \\
+\hspace{.1in}
+\hrule
+\end{flushleft}
+}
+
+%% \begin{htmlonly}
+%% \htmladdnormallink{Download Postscript File.}
+%%                                {cv.ps}
+%% \end{htmlonly}
+
+
+%% \section*{Personal Data}
+
+\begin{description}
+\item [Name:] Leonardo M. de Moura
+\item [Address:] One Microsoft Way, Redmond, WA 98052, USA
+\item [Phone:] (425) 421-6987
+\item [Email:] leonardo@microsoft.com
+\item [Homepage:] \myhp
+%% \item [Birth Date:] August 29, 1971
+%% \item [Marital Status:] Married, three children
+%% \item [Nationality:] Brazilian (Green Card)
+\end{description}
+
+\section*{Experience and Job History}
+
+\job{01/2013}{present}{Principal Researcher at Microsoft, Redmond, WA, USA}{}
+
+\job{01/2010}{01/2013}{Senior Researcher at Microsoft, Redmond, WA, USA}{}
+
+\job{08/2006}{01/2010}{Researcher at Microsoft, Redmond, WA, USA}{}
+
+\job{02/2001}{08/2006}{Computer Scientist at SRI International, Menlo Park, CA, USA}{}
+
+\job{04/2000}{12/2000}{Computer Engineer at Advus, S\~{a}o Paulo, Brazil}{}
+
+\job{08/1994}{04/2000}{Research Assistant at the Software Engineering Laboratory}{of PUC-Rio}
+
+\job{06/1998}{12/1998}{Visiting Researcher at Semantic Designs, Austin, TX, USA}{}
+
+%% \job{12/1995}{10/1997}{IBM-Brazil Consultant on Object Technology and Instructor of}{IBM-Brazil OTU (Object Technology University)}
+
+\section*{Education}
+
+\begin{tabular}{ll}
+04/2000 & Ph.D. in Computer Science, \\
+            & Thesis topic: ``Automating the Generation of Program Analysis \\
+                & and Verification Tools'' \\
+                & Advisor: Carlos Jos\'e Pereira de Lucena \\
+        & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
+03/1996 & M.Sc. in Computer Science, \\
+                & Thesis topic: ``Visual Development Environments'' \\
+                & Advisor: Carlos Jos\'e Pereira de Lucena \\
+        & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
+01/1994 & Computer Engineer, \\
+        & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
+\end{tabular}
+
+\section*{Research Interests}
+
+Decision Procedures, Theorem Proving, Model Checkers, Static Analysis, System Verification.
+
+\section*{Awards}
+\award{04/2018}{ }{ETAPS 2018 Test of Time Award for the paper {\em Z3: An Efficient SMT Solver}}{}
+\award{08/2017}{ }{Skolem Award for the paper {\em Efficient E-Matching for SMT Solvers}.}
+                  {The Skolem award is given to the papers that have passed the test of time \\
+                   & by being a most influential in the field of automated deduction.}
+\award{06/2015}{ }{Programming Languages Software Award for Z3 from ACM SIGPLAN.}{}
+\award{04/2014}{ }{TACAS Conference Award. }  { Most influential tool paper in the first 20 years of TACAS.}
+\award{08/2010}{ }{Haifa Verification Conference Award. } { The HVC award is given to the most influential work in the last five \\
+                   & years in the scope of software and hardware verification and testing. }
+\award{12/2007}{ }{Microsoft Gold Star (for the Z3 theorem prover)}{Microsoft}
+\award{07/2005}{ }{SRI Focus Award (Outstanding Employee)}{SRI International}
+%% \award{06/2005}{ }
+\award{03/2000}{ }{Second Prize in the ACM'2000 Student Research Contest}{Association of Computing Machinery (ACM)}
+\award{03/1996}{03/2000}{Doctorate Fellowship}{Brazilian Council for Science and Technology (CNPq)}
+\award{02/1994}{03/1996}{M.Sc. Fellowship}{Brazilian Council for Science and Technology (CNPq)}
+\award{08/1989}{10/1992}{Undergraduate Fellowship,}{Brazilian Council for Science and Technology (CNPq)}
+
+\section*{Publications}
+
+\begin{enumerate}
+\item D. Selsam, M. Lamm, B. Bünz, P. Liang, L. de Moura and D. Dill,
+      {\em Learning a SAT Solver from Single-Bit Supervision},
+      International Conference on Learning Representations (ICLR), 2019.
+
+
+\item G. Ebner, S. Ullrich, J. Roesch, J. Avigad and L. de Moura,
+      {\em A Metaprogramming Framework for Formal Verification},
+      Proc. ACM Program. Lang., ICFP, August 2017.
+
+\item D. Selsam and L. de Moura,
+      {\em Congruence Closure in Intensional Type Theory},
+8th International Joint Conference in Automated Reasoning (IJCAR), 2016.
+
+\item R. Lewis and L. de Moura,
+      {\em Automation and Computation in the Lean Theorem Prover},
+      International Conference on Artificial Intelligence and Theorem Proving (AITP), 2016
+
+\item J. Avigad, L. de Moura and S. Kong.
+      {\em Theorem Proving in Lean}, 2015.
+
+\item L. de Moura, S. Kong, J. Avigad, F. van Doorn and J. von Raumer,
+      {\em  The Lean Theorem Prover},
+      25th International Conference on Automated Deduction, 2015.
+
+\item C. Barrett, L. de Moura and P. Fontaine,
+  {\em Proofs in Satisfiability Modulo Theories},
+  Mathematical Logic and Foundations. College Publications, London, UK, 2015.
+
+\item A. Reynolds, C. Tinelli and L. de Moura,
+  {\em Finding Conflicting Instances of Quantified Formulas in SMT},
+  14th International Conference on Formal Methods in Computer-Aided Design, 2014.
+
+\item D. Jovanovi\'{c}, C. Barrett, and L. de Moura,
+  {\em The design and implementation of the model constructing satisfiability calculus},
+13th International Conference on Formal Methods in Computer-Aided Design, 2013.
+
+\item L. de Moura and G. O. Passmore,
+  {\em Computation in real closed infinitesimal and transcendental extensions of the rationals},
+24th International Conference on Automated Deduction, 2013.
+
+\item L. de Moura and G. O. Passmore,
+{\em The Strategy Challenge in SMT Solving},
+Automated Reasoning and Mathematics: Essays in Memory of William W. McCune,
+LNAI 7788, 2013.
+
+\item L. de Moura, D. Jovanovi\'{c},
+      {\em A Model-Constructing Satisfiability Calculus},
+14th International Conference on Verification, Model Checking, and Abstract Interpretation (VMCAI) 2013.
+
+\item D. Jovanovi\'{c} and L. de Moura,
+      {\em Cutting to the chase solving linear integer arithmetic},
+Journal of Automated Reasoning, 2013 ({\em submitted}).
+
+\item G. Passmore, L. C. Paulson, L. de Moura,
+{\em Real algebraic strategies for MetiTarski proofs},
+11th International Conference, AISC 2012, 19th Symposium, Calculemus 2012.
+
+\item D. Jovanovi\'{c}, L. de Moura,
+      {\em Solving nonlinear arithmetic},
+6th International Joint Conference in Automated Reasoning (IJCAR) 2012.
+
+\item D. Jovanovi\'{c}, L. de Moura,
+      {\em Solving nonlinear arithmetic},
+Technical Report MSR-TR-2012-20, Microsoft Research, 2012.
+
+\item C. Barrett, M. Deters, L. de Moura, A. Oliveras, and A. Stump,
+      {\em 6 Years of SMT-COMP},
+Journal of Automated Reasoning, 2012.
+
+\item N. Bjorner, and L. de Moura,
+{\em Tractability and Modern Satisfiability Modulo Theories Solvers},
+Handbook of Tractability, Cambridge University Press, 2012.
+
+\item K. Hoder, N. Bjorner, and L. de Moura,
+      {\em muZ - an efficient engine for fixed points with constraints},
+Computer Aided Verification (CAV) 2011.
+
+\item L. de Moura and N. Bjorner,
+      {\em Satisfiability modulo theories: introduction and applications},
+Communications of the ACM, (CACM) 2011.
+
+\item D. Jovanovi\'{c} and L. de Moura,
+      {\em Cutting to the chase solving linear integer arithmetic},
+23rd International Conference on Automated Deduction (CADE), 2011.
+
+\item M. P. Bonacina, C. Lynch, and L. de Moura,
+      {\em On deciding satisfiability by theorem proving with speculative inferences},
+Journal of Automated Reasoning, 2011.
+
+\item M. Veanes, N. Bjorner and L. de Moura,
+{\em Symbolic Automata Constraint Solving},
+International Conference on Logic programming and automated reasoning (LPAR), 2010.
+
+\item C. Wintersteiger, Y. Hamadi and L. de Moura,
+{\em Efficiently Solving Quantified Bit-Vector Formula},
+International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2010.
+
+\item L. de Moura and N. Bjorner,
+{\em Bugs, Moles and Skeletons: Symbolic Reasoning for Software Development},
+International Joint Conference on Automated Reasoning (IJCAR), 2010.
+
+\item N. Bjorner and L. de Moura,
+{\em TAPAS Theory Combinations and Practical Applications},
+invited paper at FORMATS 2009.
+
+\item L. de Moura and N. Bjorner,
+{\em Generalized and Efficient Array Decision Procedures},
+International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2009.
+
+\item L. de Moura and N. Bjorner,
+{\em Satisfiability Modulo Theories: An Appetizer},
+invited paper to SBMF 2009.
+
+\item G. O. Passmore and L. de Moura,
+{\em Superfluous S-polynomials in Strategy-Independent Grobner Bases},
+11th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC), 2009.
+
+\item L. de Moura and G. O. Passmore,
+{\em On Locally Minimal Nullstellensatz Proofs},
+International Workshop on Satisfiability Modulo Theories (SMT), 2009.
+
+\item G. O. Passmore and L. de Moura,
+{\em Universality of Polynomial Positivity and a Variant of Hilbert's 17th Problem},
+ADDCT'09.
+
+\item L. de Moura and N. Bjorner,
+{\em $Z3^{10}$: Applications, Enablers, Challenges and Directions},
+invited paper to CFV 2009.
+
+\item M. P. Bonacina, C. Lynch and L. de Moura,
+{\em On deciding satisfiability by DPLL(Gamma+T) and unsound theorem proving},
+22nd International Conference on Automated Deduction (CADE-22), 2009.
+
+\item Y. Ge and L. de Moura,
+{\em Complete instantiation for quantified SMT formulas},
+International Conference on Computer Aided Verification (CAV 2009).
+
+\item C. Wintersteiger, Y. Hamadi and L. de Moura,
+{\em A Concurrent Portfolio Approach to SMT Solving},
+International Conference on Computer Aided Verification (CAV 2009).
+
+\item R. Piskac, L. de Moura and N. Bjorner,
+{\em Deciding Effectively Propositional Logic with Equality}
+Technical Report: MSR-TR-2008-181.
+
+\item N. Bjorner, B. Dutertre and L. de Moura
+{\em Accelerating Lemma Learning using Joins - DPPL(Join)},
+International Conference on Logic programming and automated reasoning (LPAR), 2008.
+
+\item L. de Moura and  N. Bjorner,
+{\em Proofs and Refutations, and Z3},
+IWIL 2008.
+
+\item N. Bjorner, L. de Moura and N. Tillmann,
+{\em Satisfiability Modulo Bit-precise Theories for Program Exploration},
+Invited workshop paper, CFV 2008.
+
+\item L. de Moura and N. Bjorner,
+{\em Deciding Effectively Propositional Logic using DPLL and substitution sets},
+International Joint Conference on Automated Reasoning (IJCAR), 2008.
+
+\item L. de Moura, N. Bjorner,
+{\em Engineering DPLL(T) + Saturation},
+International Joint Conference on Automated Reasoning (IJCAR), Sydney, Australia, 2008.
+
+\item L. de Moura and N. Bjorner,
+{\em Z3: An Efficient SMT Solver},
+International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2008.
+
+\item L. de Moura and N. Bjorner, {\em Relevancy Propagation}, MSR Technical Note, 2007.
+
+\item L. de Moura and N. Bjorner, {\em Efficient E-matching for SMT solvers}, International Conference on Automated Deduction (CADE), 2007.
+
+\item L. de Moura and N. Bjorner, {\em Model-based Theory Combination}, Workshop on Satisfiability Modulo Theories (SMT), 2007.
+
+\item C. Barrett, L. de Moura and A. Stump,
+{\em Design and Results of the Second Satisfiability Modulo Theories Competition (SMT-COMP 2006)}, Journal of Formal Methods in System Design, 2007.
+
+\item L. de Moura, B. Dutertre and N. Shankar,
+{\em A Tutorial on Satisfiability Modulo Theories}, Conference on Computer Aided Verification (CAV), 2007.
+
+\item B. Dutertre and L. de Moura,
+{\em A Fast Linear-Arithmetic Solver for DPLL(T)}
+18th International Conference on Computer Aided Verification (CAV'06).
+
+\item C. Barrett, L. de Moura and A. Stump,
+{\em Design and Results of the 1st Satisfiability Modulo Theories Competition (SMT-COMP 2005)}
+Journal of Automated Reasoning (JAR), 2006.
+
+\item C. Barrett, L. de Moura and A. Stump,
+{\em SMT-COMP: Satisfiability Modulo Theories Competition}
+17th International Conference on Computer Aided Verification (CAV'05).
+
+\item G. Hamon, L. de Moura and J. Rushby,
+{\em Generating Efficient Test Sets with a Model Checker},
+The Second IEEE International Conference on Software Engineering and Formal Methods (SEFM'04).
+
+\item L. de Moura, H. Rue\ss\ and N. Shankar,
+{\em Justifying Equality},
+Second Workshop on Pragmatics of Decision Procedures in Automated Reasoning (PDPAR'04).
+
+\item L. de Moura, S. Owre, H. Rue\ss, J. Rushby, N. Shankar, M. Sorea and A. Tiwari,
+{\em SAL 2},
+16th International Conference on Computer Aided Verification (CAV'04).
+
+\item L. de Moura and H. Rue\ss,
+{\em An Experimental Evaluation of Ground Decision Procedures},
+16th International Conference on Computer Aided Verification (CAV'04).
+
+\item L. de Moura, H. Rue\ss, N. Shankar and J. Rushby,
+{\em The ICS decision procedures for embedded deduction},
+Second International Joint Conference on Automated Reasoning (IJCAR'04).
+
+\item H. Rue\ss\ and L. de Moura,
+{\em From Simulation to Verification (and Back)}
+Proceedings of the 2003 Winter Simulation Conference.
+
+\item L. de Moura, H. Rue\ss, J. Rushby and N. Shankar,
+{\em Embedded Deduction with ICS},
+Presented at the third High Confidence Software and Systems Conference, 2003.
+
+\item L. de Moura, H. Rue\ss\ and M. Sorea,
+{\em Bounded Model Checking and Induction: From Refutation to Verification},
+15th International Conference on Computer Aided Verification (CAV'03).
+
+\item L. de Moura, H. Rue\ss\ and M. Sorea,
+{\em Lazy Theorem Proving for Bounded Model Checking over Infinite Domains},
+International Conference on Automated Deduction (CADE'02).
+
+\item L. de Moura, C.J. P. de Lucena and E.H. Haeusler,
+{\em Analysis of Parallel Programs},
+Eletronic Notes in Theoretical Computer Science, 2002.
+
+\item L. de Moura and H. Rue\ss,
+{\em Lemmas on Demand for Satisfiability Solvers},
+Fifth  International Symposium on the Theory and Applications of Satisfiability Testing (SAT), 2002.
+
+\item L. de Moura,
+{\em Semantic-Directed Generation of Program Analysis and Verification Tools},
+Second Prize in the ACM'2000 Student Research Contest, Austin, Texas, 2000.
+
+\item L. de Moura, C. J. P. de Lucena and E. H. Hausler,
+{\em Analysis of Parallel Programs},
+Brazilian Symposium of Programming Languages (SBLP), 2000.
+
+\item L. de Moura, C. J. P. de Lucena and E. H. Hausler,
+{\em A Modular Implementation of Action Notation},
+International Workshop on Action Semantics and Related Frameworks, 2000.
+
+\item M. F. Fontoura, C. Braga, L. de Moura and C. J. P. de Lucena,
+{\em Using Domain Specific Languages to Instantiate Object-Oriented Frameworks},
+IEE Proceedings - Software, 147(4), 2000.
+
+\item M. F. Fontoura, L. de Moura, S. Crespo and C. J. P. de Lucena,
+{\em ALADIN: An Architecture for Learningware Application Design and Instantiation},
+World Wide Web WWW Baltzer Science, Bussum, Holand, 2000.
+
+\item I. D. Baxter, A. Yahin, S. Nedunuri, and L. de Moura,
+{\em Lowering Maintenance Costs by Code Clone Removal},
+12th International Software Quality Week, 1999.
+
+\item L. de Moura, C. J. P. de Lucena and A. von Staa,
+{\em The Spider Environment},
+Software Practice \& Experience, 29(2), 99-124, 1999.
+
+\item I. D. Baxter, A. Yahin, L. de Moura, M. Sant'Anna and L. Bier,
+{\em Clone Detection Using Abstract Syntax Trees},
+Proc. of the International Conference on Software Maintenance'98, 1998, IEEE Press.
+
+\item L. de Moura and C. J. P. de Lucena,
+{\em An Introduction To The Spider Visual Programming Environment},
+Brazilian Symposium of Software Engineering (SBES), 1997.
+
+\item H. Fuks and L. de Moura,
+{\em Supporting Team Collaboration},
+SIGOIS Bulletin 16, New York, pp.64-68, 1995.
+
+\item H. Fuks and L. de Moura,
+{\em A Document Based Approach for Cooperation},
+Journal of the Brazilian Computer Society, V1, N1, pp 36-45, July 1994.
+
+\item L. de Moura and R. R. dos Santos,
+{\em Critical Exponents for Site-Bond Correlated Percolation},
+Phys. Review B 45, 1023, 1992.
+\end{enumerate}
+
+
+\section*{Patents}
+\begin{itemize}
+\item L. de Moura and N. Bjorner, \emph{Matching based pattern inference for SMT solvers}, US Patent 9,489,221.
+\item L. de Moura and N. Bjorner, \emph{Relevancy propagation for efficient theory combination}, US Patent 8,140,459.
+\item L. de Moura and N. Bjorner, \emph{E-matching for SMT solvers}, US Patent 8,103,674.
+\item L. de Moura and N. Bjorner, \emph{Model-based theory combination}, US Patent 7,925,476.
+\item J. Rushby, L. de Moura, G. Hamon, \emph{Formal methods for test case generation}, US Patent 7,865,339.
+\item L. de Moura and H. Rue\ss, \emph{Method for combining decision procedures with satisfiability solvers}, US Patent 7,653,520.
+\end{itemize}
+
+\section*{Professional Activities}
+\begin{itemize}
+\item Member of the Program Committee of the International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2019.
+\item Member of the Program Committee of the 10th International Conference on Interactive Theorem Proving (ITP), 2019.
+\item Member of the Program Committee of the 25th International Conference on Types for Proofs and Programs (TYPES), 2018.
+\item Member of the Program Committee of the 9th International Joint Conference on Automated Reasoning (IJCAR), 2018.
+\item Member of the Program Committee of the 9th International Conference on Interactive Theorem Proving (ITP), 2018.
+\item Chair of 26th International Conference on Automated Deduction, 2017.
+\item Member of the Program Committee of the 24th International Conference on Types for Proofs and Programs (TYPES), 2017.
+\item Member of the Program Committee of the 26th International Conference on Automated Reasoning with Analytic Tableaux and Related Methods, 2017.
+\item Chair of the Calculemus track at Conference on Intelligent Mathematics, 2016.
+\item Member of the Program Committee of the International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2016.
+\item Member of the PhD Committee for Soonho Kong, Carnegie Mellon University, 2015.
+\item Member of the Program Committee of the NASA Formal Methods Symposium (NFM), 2015.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2015.
+\item Member of the Masters thesis committee for Robert Lewis, Carnegie Mellon University, 2014.
+\item Member of the Program Committee of the International Conference on Automated Deduction (CADE, 2014).
+\item Member of the Program Committee of the International Conference on Automated Deduction (CADE, 2013).
+\item Member of the Program Committee of the International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2013.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2013.
+\item Member of the PhD committee for Chantal Keller, \'{E}cole Polytechnique, 2013.
+\item Member of the Program Committee of the 5th NASA Formal Methods Symposium (NFM), 2013.
+\item Chair of the 16th Brazilian Symposium on Formal Methods (SBMF), 2013.
+\item Member of the PhD committee for Dejan Jovanovi\'{c}, New York University, 2012.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2012.
+\item Member of the Program Committee of the International Symposium on Formal Methods (FM), 2012.
+\item Member of the Program Committee of the International Conference on Verified Software: Theories, Tools, and Experiments (VSTTE), 2012
+\item Member of the Program Committee of the International Conference on Automated Deduction (CADE, 2011).
+\item Member of the Program Committee of the Workshop on Satisfiability Modulo Theories (SMT), 2011.
+\item Member of the PhD committee for Christoph Wintersteiger, ETH Zurich, Switzerland, 2011.
+\item Member of the Program Committee of the Symposium on Logic in Computer Science (LICS), 2011.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2011.
+\item Member of the Steering Committee of the Workshop on Satisfiability Modulo Theories (SMT), 2009-2011.
+\item Member of the PhD committee for Alberto Griggio, University of Trento, Italy, 2010.
+\item Member of the Program Committee of the International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2010.
+\item Member of the PhD committee for Yeting Ge, New York University, 2009.
+\item Member of the Program Committee of the International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2009.
+\item Member of the Program Committee of the Workshop on Satisfiability Modulo Theories (SMT), 2009.
+\item Member of the Program Committee of the Workshop on Automated Formal Methods (AFM), 2009.
+\item Member of the Program Committee of the Workshop on Automated Formal Methods (AFM), 2008.
+\item Member of the Program Committee of the International Conference on Frontiers of Combining Systems (FroCoS), 2008.
+\item Chair of the Workshop on Satisfiability Modulo Theories (SMT), 2008.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2008.
+\item Member of the Program Committee of the Workshop on Bit-Precise Reasoning (BPR), 2008.
+\item Member of the Program Committee of the Workshop on Automated Formal Methods (AFM), 2007.
+\item Member of the Program Committee of the Workshop on Satisfiability Modulo Theories (SMT), 2007.
+\item Member of the Program Committee of the International Conference on Satisfiability (SAT), 2007.
+\item Organizer of the 2nd Satisfiability Modulo Theories Competition (SMT-COMP), 2006.
+\item Member of the Program Committee of the International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2006
+\item Member of the Program Committee of Pragmatics of Decision Procedures in Automated Reasoning (PDPAR), 2006.
+\item Tutorial Chair of the International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2006.
+\item Organizer of the 1st Satisfiability Modulo Theories Competition (SMT-COMP), 2005.
+\end{itemize}
+
+\section*{Teaching}
+
+\begin{itemize}
+\item Winter 2016, Course on ``Dependent Type Theory'', RIO 2016 Summer School, 2016.
+\item Sprint 2015, Lecture on ``Higher-order unification'' in the interactive theorem proving course at CMU (Jeremy Avigad and Ed Clarke's course).
+\item Summer 2014, Lectures on ``Nonlinear arithmetic'', SAT/SMT Summer School, Vienna, Austria.
+\item Summer 2013, Lectures on ``Decision Methods for Arithmetic'', Third Summer School on Formal Techniques, Menlo Park.
+\item Spring 2013, Course on ``Tools and Algorithms in Real Algebraic Geometry'', Universita Degli Studi di Milano, Italy, March.
+\item Summer 2012, Lectures on ``Quantifiers in Satisfiability Modulo Theories'', SAT/SMT Summer School, Trento, Italy.
+\item Summer 2012, Lectures on ``Satisfiability Modulo Theories'', Second Summer School on Formal Techniques, Menlo Park.
+\item Summer 2011, Lectures on ``Satisfiability Modulo Theories'', First Summer School on Formal Techniques, Menlo Park.
+\item Spring 2010, Course on ``Satisfiability Modulo Theories (SMT): Ideas \& Applications'', Universita Degli Studi di Milano, Italy, March.
+\item Autumn 2009, Lectures on ``Designing and Implementing Satisfiability Modulo Theory Solvers'', Summer School organized by Max Planck Institut and INRIA, Nancy.
+\item Summer 2008, Lectures on ``SMT Solvers: Theory and Implementation'', Summer School on Logic and Theorem Proving in Programming Languages, Oregon.
+\item Spring 2007, Lecture on ``SMT solvers'' at CMU (Ed Clarke's course).
+\item Summer 2004, Lecture in the Stanford/SRI Summer School on Combination of Decision Procedures.
+\item Fall 2003, Little Engines of Proof (CS359), Stanford.
+\end{itemize}
+
+%% \section*{Patents}
+
+%% \begin{itemize}
+
+%% \item U.S. Patent Application No. 60/397,201: {\em Methods and Apparatus for Integrating Formal Decision Procedures
+%% and Performing Bounded Model Checking for Infinite State Systems}, 2002.
+
+%% \end{itemize}
+
+\section*{References}
+
+\REF{Dr. Thomas Ball}
+    {Microsoft Research, WA, USA \\
+     email: tball@microsoft.com \\
+     homepage:   http://research.microsoft.com/\~{ }tball
+}
+
+\REF{Prof. Jeremy Avigad}
+    {Carnegie Mellon University, PA, USA \\
+     email: avigad@cmu.edu \\
+     homepage:  http://www.andrew.cmu.edu/user/avigad/}
+
+\REF{Dr. John Rushby}
+    {SRI International, CA, USA \\
+    email: rusbhy@csl.sri.com \\
+    homepage: http://www.csl.sri.com/\~{ }rushby \\
+    vox: 650-859-5456
+    }
+
+\REF{Dr. Natarajan Shankar}
+    {SRI International, CA, USA \\
+    email: shankar@csl.sri.com \\
+    homepage: http://www.csl.sri.com/\~{ }shankar \\
+    vox: 650-859-5272
+    }
+
+%% \REF{Dr. Patrick Lincoln}
+%%     {SRI International, CA, USA \\
+%%     email: lincoln@csl.sri.com \\
+%%     homepage: \htmladdnormallink{http://www.csl.sri.com/\~{ }lincoln}{http://www.csl.sri.com/~lincoln} \\
+%%     vox: 650-859-5454
+%%     }
+
+%% \REF{Prof. Edward Hermann Haeusler}
+%%      {Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
+%%       Computer Science Department \\
+%%      email: hermann@inf.puc-rio.br \\
+%%       homepage: \htmladdnormallink{http://www.inf.puc-rio.br/\~{ }hermann}{http://www.inf.puc-rio.br/~hermann}
+%%      }
+
+%% \REF{Dr. Ira D. Baxter}
+%%     {Semantic Designs, Austin, Texas, USA \\
+%%       email: idbaxter@semdesigns.com \\
+%%       homepage: \htmladdnormallink{http://www.semdesigns.com }{http://www.semdesigns.com} \\
+%%       vox: 512-250-1018x140
+%%      }
+\end{document}
