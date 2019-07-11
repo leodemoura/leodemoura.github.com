@@ -17,7 +17,7 @@ Awards
 ======
 
 - (2010) [Haifa Verification Conference Award](https://www.research.ibm.com/haifa/conferences/hvc2010/award.shtml).
-- (2014) "_The most influential tool paper in the first 20 years of TACAS_" for the paper: _Z3: An Efficient SMT Solver. (TACAS conference)
+- (2014) "_The most influential tool paper in the first 20 years of TACAS_" for the paper: _Z3: An Efficient SMT Solver_. (TACAS conference)
 - (2015) [Programming Languages Software Award](https://www.sigplan.org/Awards/Software/) for Z3.
 - (2017) [Skolem Award](http://www.cadeinc.org/Skolem-Award) for the paper “Efficient E-Matching for SMT Solvers” that has passed the test of time, by being a most influential paper in the field.
 - (2018) [Test of time award](https://conf.researchr.org/attending/etaps-2019/etaps-test-of-time-award) for the paper: _Z3: An Efficient SMT Solver_. (ETAPS conference)
