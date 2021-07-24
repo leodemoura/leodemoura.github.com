@@ -22,6 +22,9 @@ Awards
 - (2017) [Skolem Award](http://www.cadeinc.org/Skolem-Award) for the paper “Efficient E-Matching for SMT Solvers” that has passed the test of time, by being a most influential paper in the field.
 - (2018) [Test of time award](https://conf.researchr.org/attending/etaps-2019/etaps-test-of-time-award) for the paper: _Z3: An Efficient SMT Solver_. (ETAPS conference)
 - (2019) [Herbrand award](http://www.cadeinc.org/Herbrand-Award) for numerous and important contributions to SMT solving, including its theory, implementation, and application to a wide range of academic and industrial needs.
+- (2021) CAV Award for pioneering contributions to the foundations of the theory and practice of satisfiability modulo theories (SMT).
+- (2021) Distinguished paper award at [PLDI](https://pldi21.sigplan.org/track/pldi-2021-papers) for the paper "Perceus: Garbage Free Reference Counting with Reuse".
+
 
 You can find more about me at:
 
