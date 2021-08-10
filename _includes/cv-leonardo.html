@@ -18,9 +18,6 @@ Leonardo&nbsp;de Moura and Sebastian Ullrich.
   Publishing.
 [&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-79876-5_37">bib</a>&nbsp;| 
 <a href="https://leanprover.github.io/papers/lean4.pdf">.pdf</a>&nbsp;]
-<blockquote><font size="-1">
-Lean 4 is a reimplementation of the Lean interactive theorem prover (ITP) in Lean itself. It addresses many shortcomings of the previous versions and contains many new features. Lean 4 is fully extensible: users can modify and extend the parser, elaborator, tactics, decision procedures, pretty printer, and code generator. The new system has a hygienic macro system custom-built for ITPs. It contains a new typeclass resolution procedure based on tabled resolution, addressing significant performance problems reported by the growing user base. Lean 4 is also an efficient functional programming language based on a novel programming paradigm called functional but in-place. Efficient code generation is crucial for Lean users because many write custom proof automation procedures in Lean itself.
-</font></blockquote>
 
 </dd>
 
@@ -38,20 +35,6 @@ Alex Reinking, Ningning Xie, Leonardo de&nbsp;Moura, and Daan Leijen.
 <a href="http://dx.doi.org/10.1145/3453483.3454032">DOI</a>&nbsp;| 
 <a href="https://doi.org/10.1145/3453483.3454032">http</a>&nbsp;| 
 <a href="https://alexreinking.com/downloads/papers/perceus-garbage-free-reference-counting-with-reuse.pdf">.pdf</a>&nbsp;]
-<blockquote><font size="-1">
-We introduce Perceus, an algorithm for precise reference counting with reuse and specialization.
-Starting from a functional core language with explicit control-flow, Perceus emits
-precise reference counting instructions such that (cycle-free) programs are _garbage
-free_, where only live references are retained. This enables further optimizations,
-like reuse analysis that allows for guaranteed in-place updates at runtime. This in
-turn enables a novel programming paradigm that we call _functional but in-place_ (FBIP).
-Much like tail-call optimization enables writing loops with regular function calls,
-reuse analysis enables writing in-place mutating algorithms in a purely functional
-way. We give a novel formalization of reference counting in a linear resource calculus,
-and prove that Perceus is sound and garbage free. We show evidence that Perceus, as
-implemented in Koka, has good performance and is competitive with other state-of-the-art
-memory collectors.
-</font></blockquote>
 <blockquote><font size="-1">
 Keywords: Reference Counting, Handlers, Algebraic Effects
 </font></blockquote>
@@ -84,9 +67,6 @@ Sebastian Ullrich and Leonardo de&nbsp;Moura.
   Publishing.
 [&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-51054-1_10">bib</a>&nbsp;| 
 <a href="https://arxiv.org/pdf/2001.10490.pdf">.pdf</a>&nbsp;]
-<blockquote><font size="-1">
-In interactive theorem provers (ITPs), extensible syntax is not only crucial to lower the cognitive burden of manipulating complex mathematical objects, but plays a critical role in developing reusable abstractions in libraries. Most ITPs support such extensions in the form of restrictive &ldquo;syntax sugar&rdquo; substitutions and other ad hoc mechanisms, which are too rudimentary to support many desirable abstractions. As a result, libraries are littered with unnecessary redundancy. Tactic languages in these systems are plagued by a seemingly unrelated issue: accidental name capture, which often produces unexpected and counterintuitive behavior. We take ideas from the Scheme family of programming languages and solve these two problems simultaneously by proposing a novel hygienic macro system custom-built for ITPs. We further describe how our approach can be extended to cover type-directed macro expansion resulting in a single, uniform system offering multiple abstraction levels that range from supporting simplest syntax sugars to elaboration of formerly baked-in syntax. We have implemented our new macro system and integrated it into the upcoming version (v4) of the Lean theorem prover. Despite its expressivity, the macro system is simple enough that it can easily be integrated into other systems.
-</font></blockquote>
 
 </dd>
 
@@ -130,9 +110,6 @@ Daan Leijen, Benjamin Zorn, and Leonardo de&nbsp;Moura.
   Systems</em>, pages 244--265, Cham, 2019. Springer International Publishing.
 [&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-34175-6_13">bib</a>&nbsp;| 
 <a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf">.pdf</a>&nbsp;]
-<blockquote><font size="-1">
-Modern memory allocators have to balance many simultaneous demands, including performance, security, the presence of concurrency, and application-specific demands depending on the context of their use. One increasing use-case for allocators is as back-end implementations of languages, such as Swift and Python, that use reference counting to automatically deallocate objects. We present mimalloc, a memory allocator that effectively balances these demands, shows significant performance advantages over existing allocators, and is tailored to support languages that rely on the memory allocator as a backend for reference counting. Mimalloc combines several innovations to achieve this result. First, it uses three page-local sharded free lists to increase locality, avoid contention, and support a highly-tuned allocate and free fast path. These free lists also support temporal cadence, which allows the allocator to predictably leave the fast path for regular maintenance tasks such as supporting deferred freeing, handling frees from non-local threads, etc. While influenced by the allocation workload of the reference-counted Lean and Koka programming language, we show that mimalloc has superior performance to modern commercial memory allocators, including tcmalloc and jemalloc, with speed improvements of 7% and 14%, respectively, on redis, and consistently out performs over a wide range of sequential and concurrent benchmarks. Allocators tailored to provide an efficient runtime for reference-counting languages reduce the implementation burden on developers and encourage the creation of innovative new language designs.
-</font></blockquote>
 
 </dd>
 
