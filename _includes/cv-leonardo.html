@@ -1,20 +1,182 @@
 
-<!-- This document was automatically generated with bibtex2html 1.96
+<!-- This document was automatically generated with bibtex2html 1.99
      (see http://www.lri.fr/~filliatr/bibtex2html/),
      with the following command:
-     /usr/bin/bibtex2html -dl -r -d -nodoc cv-leonardo.bib  -->
+     bibtex2html -dl -r -d -nodoc cv-leonardo.bib  -->
 
 
 <dl>
 
 <dt>
-[<a name="MetaProgLean">1</a>]
+[<a name="10.1007/978-3-030-79876-5_37">1</a>]
+</dt>
+<dd>
+Leonardo&nbsp;de Moura and Sebastian Ullrich.
+ The lean 4 theorem prover and programming language.
+ In Andr&eacute; Platzer and Geoff Sutcliffe, editors, <em>Automated
+  Deduction -- CADE 28</em>, pages 625--635, Cham, 2021. Springer International
+  Publishing.
+[&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-79876-5_37">bib</a>&nbsp;| 
+<a href="https://leanprover.github.io/papers/lean4.pdf">.pdf</a>&nbsp;]
+<blockquote><font size="-1">
+Lean 4 is a reimplementation of the Lean interactive theorem prover (ITP) in Lean itself. It addresses many shortcomings of the previous versions and contains many new features. Lean 4 is fully extensible: users can modify and extend the parser, elaborator, tactics, decision procedures, pretty printer, and code generator. The new system has a hygienic macro system custom-built for ITPs. It contains a new typeclass resolution procedure based on tabled resolution, addressing significant performance problems reported by the growing user base. Lean 4 is also an efficient functional programming language based on a novel programming paradigm called functional but in-place. Efficient code generation is crucial for Lean users because many write custom proof automation procedures in Lean itself.
+</font></blockquote>
+
+</dd>
+
+
+<dt>
+[<a name="10.1145/3453483.3454032">2</a>]
+</dt>
+<dd>
+Alex Reinking, Ningning Xie, Leonardo de&nbsp;Moura, and Daan Leijen.
+ Perceus: Garbage free reference counting with reuse.
+ In <em>Proceedings of the 42nd ACM SIGPLAN International Conference
+  on Programming Language Design and Implementation</em>, PLDI 2021, page 96–111,
+  New York, NY, USA, 2021. Association for Computing Machinery.
+[&nbsp;<a href="cv-leonardo_bib.html#10.1145/3453483.3454032">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/3453483.3454032">DOI</a>&nbsp;| 
+<a href="https://doi.org/10.1145/3453483.3454032">http</a>&nbsp;| 
+<a href="https://alexreinking.com/downloads/papers/perceus-garbage-free-reference-counting-with-reuse.pdf">.pdf</a>&nbsp;]
+<blockquote><font size="-1">
+We introduce Perceus, an algorithm for precise reference counting with reuse and specialization.
+Starting from a functional core language with explicit control-flow, Perceus emits
+precise reference counting instructions such that (cycle-free) programs are _garbage
+free_, where only live references are retained. This enables further optimizations,
+like reuse analysis that allows for guaranteed in-place updates at runtime. This in
+turn enables a novel programming paradigm that we call _functional but in-place_ (FBIP).
+Much like tail-call optimization enables writing loops with regular function calls,
+reuse analysis enables writing in-place mutating algorithms in a purely functional
+way. We give a novel formalization of reference counting in a linear resource calculus,
+and prove that Perceus is sound and garbage free. We show evidence that Perceus, as
+implemented in Koka, has good performance and is competitive with other state-of-the-art
+memory collectors.
+</font></blockquote>
+<blockquote><font size="-1">
+Keywords: Reference Counting, Handlers, Algebraic Effects
+</font></blockquote>
+
+</dd>
+
+
+<dt>
+[<a name="selsam2020tabled">3</a>]
+</dt>
+<dd>
+Daniel Selsam, Sebastian Ullrich, and Leonardo de&nbsp;Moura.
+ Tabled typeclass resolution, 2020.
+[&nbsp;<a href="cv-leonardo_bib.html#selsam2020tabled">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/2001.04301">arXiv</a>&nbsp;| 
+<a href="https://arxiv.org/pdf/2001.04301.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="10.1007/978-3-030-51054-1_10">4</a>]
+</dt>
+<dd>
+Sebastian Ullrich and Leonardo de&nbsp;Moura.
+ Beyond notations: Hygienic macro expansion for theorem proving
+  languages.
+ In Nicolas Peltier and Viorica Sofronie-Stokkermans, editors, <em>
+  Automated Reasoning</em>, pages 167--182, Cham, 2020. Springer International
+  Publishing.
+[&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-51054-1_10">bib</a>&nbsp;| 
+<a href="https://arxiv.org/pdf/2001.10490.pdf">.pdf</a>&nbsp;]
+<blockquote><font size="-1">
+In interactive theorem provers (ITPs), extensible syntax is not only crucial to lower the cognitive burden of manipulating complex mathematical objects, but plays a critical role in developing reusable abstractions in libraries. Most ITPs support such extensions in the form of restrictive &ldquo;syntax sugar&rdquo; substitutions and other ad hoc mechanisms, which are too rudimentary to support many desirable abstractions. As a result, libraries are littered with unnecessary redundancy. Tactic languages in these systems are plagued by a seemingly unrelated issue: accidental name capture, which often produces unexpected and counterintuitive behavior. We take ideas from the Scheme family of programming languages and solve these two problems simultaneously by proposing a novel hygienic macro system custom-built for ITPs. We further describe how our approach can be extended to cover type-directed macro expansion resulting in a single, uniform system offering multiple abstraction levels that range from supporting simplest syntax sugars to elaboration of formerly baked-in syntax. We have implemented our new macro system and integrated it into the upcoming version (v4) of the Lean theorem prover. Despite its expressivity, the macro system is simple enough that it can easily be integrated into other systems.
+</font></blockquote>
+
+</dd>
+
+
+<dt>
+[<a name="UllrichdeMoura2019_1000120596">5</a>]
+</dt>
+<dd>
+Sebastian Ullrich and Leonardo de&nbsp;Moura.
+ Counting immutable beans: Reference counting optimized for purely
+  functional programming [in press].
+ In <em>31st Symposium on Implementation and Application of
+  Functional Languages</em>, 2019.
+[&nbsp;<a href="cv-leonardo_bib.html#UllrichdeMoura2019_1000120596">bib</a>&nbsp;| 
+<a href="https://arxiv.org/pdf/1908.05647.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="selsam2019learning">6</a>]
+</dt>
+<dd>
+Daniel Selsam, Matthew Lamm, Benedikt Bünz, Percy Liang, Leonardo de&nbsp;Moura,
+  and David&nbsp;L. Dill.
+ Learning a sat solver from single-bit supervision, 2019.
+[&nbsp;<a href="cv-leonardo_bib.html#selsam2019learning">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/1802.03685">arXiv</a>&nbsp;| 
+<a href="https://arxiv.org/pdf/1802.03685.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="10.1007/978-3-030-34175-6_13">7</a>]
+</dt>
+<dd>
+Daan Leijen, Benjamin Zorn, and Leonardo de&nbsp;Moura.
+ Mimalloc: Free list sharding in action.
+ In Anthony&nbsp;Widjaja Lin, editor, <em>Programming Languages and
+  Systems</em>, pages 244--265, Cham, 2019. Springer International Publishing.
+[&nbsp;<a href="cv-leonardo_bib.html#10.1007/978-3-030-34175-6_13">bib</a>&nbsp;| 
+<a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf">.pdf</a>&nbsp;]
+<blockquote><font size="-1">
+Modern memory allocators have to balance many simultaneous demands, including performance, security, the presence of concurrency, and application-specific demands depending on the context of their use. One increasing use-case for allocators is as back-end implementations of languages, such as Swift and Python, that use reference counting to automatically deallocate objects. We present mimalloc, a memory allocator that effectively balances these demands, shows significant performance advantages over existing allocators, and is tailored to support languages that rely on the memory allocator as a backend for reference counting. Mimalloc combines several innovations to achieve this result. First, it uses three page-local sharded free lists to increase locality, avoid contention, and support a highly-tuned allocate and free fast path. These free lists also support temporal cadence, which allows the allocator to predictably leave the fast path for regular maintenance tasks such as supporting deferred freeing, handling frees from non-local threads, etc. While influenced by the allocation workload of the reference-counted Lean and Koka programming language, we show that mimalloc has superior performance to modern commercial memory allocators, including tcmalloc and jemalloc, with speed improvements of 7% and 14%, respectively, on redis, and consistently out performs over a wide range of sequential and concurrent benchmarks. Allocators tailored to provide an efficient runtime for reference-counting languages reduce the implementation burden on developers and encourage the creation of innovative new language designs.
+</font></blockquote>
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/setss/BjornerMNW18">8</a>]
+</dt>
+<dd>
+Nikolaj Bj&oslash;rner, Leonardo de&nbsp;Moura, Lev Nachmanson, and Christoph&nbsp;M.
+  Wintersteiger.
+ Programming Z3.
+ In <em>Engineering Trustworthy Software Systems - 4th International
+  School, SETSS 2018, Chongqing, China, April 7-12, 2018, Tutorial Lectures</em>,
+  pages 148--201, 2018.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/setss/BjornerMNW18">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1007/978-3-030-17601-3\_4">DOI</a>&nbsp;| 
+<a href="https://doi.org/10.1007/978-3-030-17601-3\_4">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:journals/corr/abs-1802-03685">9</a>]
+</dt>
+<dd>
+Daniel Selsam, Matthew Lamm, Benedikt B&uuml;nz, Percy Liang, Leonardo
+  de&nbsp;Moura, and David&nbsp;L. Dill.
+ Learning a SAT solver from single-bit supervision.
+ <em>CoRR</em>, abs/1802.03685, 2018.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/corr/abs-1802-03685">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/1802.03685">arXiv</a>&nbsp;| 
+<a href="http://arxiv.org/abs/1802.03685">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="MetaProgLean">10</a>]
 </dt>
 <dd>
 Gabriel Ebner, Sebastian Ullrich, Jared Roesch, Jeremy Avigad, and Leonardo
   de&nbsp;Moura.
  A Metaprogramming Framework for Formal Verification.
- <em>Proc. ACM Program. Lang.</em>, 1(ICFP):34:1-34:29, August 2017.
+ <em>Proc. ACM Program. Lang.</em>, 1(ICFP):34:1--34:29, August 2017.
 [&nbsp;<a href="cv-leonardo_bib.html#MetaProgLean">bib</a>&nbsp;| 
 <a href="http://dx.doi.org/10.1145/3110278">DOI</a>&nbsp;| 
 <a href="https://leanprover.github.io/papers/tactic.pdf">.pdf</a>&nbsp;]
@@ -26,13 +188,13 @@ Keywords: dependent type theory, metaprogramming, tactic language, theorem provi
 
 
 <dt>
-[<a name="CCinITT">2</a>]
+[<a name="CCinITT">11</a>]
 </dt>
 <dd>
 Daniel Selsam and Leonardo de&nbsp;Moura.
  Congruence Closure in Intensional Type Theory.
  In <em>Automated Reasoning, 8th International Joint Conference,
-  University of Coimbra, Portugal</em>, pages 99-115. Springer, 2016.
+  University of Coimbra, Portugal</em>, pages 99--115. Springer, 2016.
 [&nbsp;<a href="cv-leonardo_bib.html#CCinITT">bib</a>&nbsp;| 
 <a href="https://leanprover.github.io/papers/congr.pdf">.pdf</a>&nbsp;]
 
@@ -40,20 +202,34 @@ Daniel Selsam and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="thprovinginlean">3</a>]
+[<a name="BdMF15">12</a>]
 </dt>
 <dd>
-Jeremy Avigad, Leonardo de&nbsp;Moura, and Soonho Kong.
- <em>Theorem Proving in Lean</em>.
- 2015.
-[&nbsp;<a href="cv-leonardo_bib.html#thprovinginlean">bib</a>&nbsp;| 
-<a href="http://leanprover.github.io/tutorial/tutorial.pdf">.pdf</a>&nbsp;]
+Clark Barrett, Leonardo de&nbsp;Moura, and Pascal Fontaine.
+ <em>Proofs in Satisfiability Modulo Theories</em>.
+ Mathematical Logic and Foundations. College Publications, London, UK,
+  2015.
+[&nbsp;<a href="cv-leonardo_bib.html#BdMF15">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/SMTProofs.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="Lean">4</a>]
+[<a name="LeanCnstr">13</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura, Jeremy Avigad, Soonho Kong, and Cody Roux.
+ Elaboration in dependent type theory, 2015.
+ Preprint, <a href="http://arxiv.org/abs/1505.04324">http://arxiv.org/abs/1505.04324</a>.
+[&nbsp;<a href="cv-leonardo_bib.html#LeanCnstr">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/elaboration.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="Lean">14</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob von
@@ -69,34 +245,20 @@ Leonardo de&nbsp;Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, and Jakob 
 
 
 <dt>
-[<a name="LeanCnstr">5</a>]
+[<a name="thprovinginlean">15</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura, Jeremy Avigad, Soonho Kong, and Cody Roux.
- Elaboration in dependent type theory, 2015.
- Preprint, <a href="http://arxiv.org/abs/1505.04324">http://arxiv.org/abs/1505.04324</a>.
-[&nbsp;<a href="cv-leonardo_bib.html#LeanCnstr">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/elaboration.pdf">.pdf</a>&nbsp;]
+Jeremy Avigad, Leonardo de&nbsp;Moura, and Soonho Kong.
+ <em>Theorem Proving in Lean</em>.
+ 2015.
+[&nbsp;<a href="cv-leonardo_bib.html#thprovinginlean">bib</a>&nbsp;| 
+<a href="http://leanprover.github.io/tutorial/tutorial.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="BdMF15">6</a>]
-</dt>
-<dd>
-Clark Barrett, Leonardo de&nbsp;Moura, and Pascal Fontaine.
- <em>Proofs in Satisfiability Modulo Theories</em>.
- Mathematical Logic and Foundations. College Publications, London, UK,
-  2015.
-[&nbsp;<a href="cv-leonardo_bib.html#BdMF15">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/SMTProofs.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="fmcad14/RTdM">7</a>]
+[<a name="fmcad14/RTdM">16</a>]
 </dt>
 <dd>
 Andrew Reynolds, Cesare Tinelli, and Leonardo de&nbsp;Moura.
@@ -111,23 +273,48 @@ Andrew Reynolds, Cesare Tinelli, and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="fmcad13/dbdm13">8</a>]
+[<a name="vmcai/demoura13">17</a>]
 </dt>
 <dd>
-Dejan Jovanovi&#x107;, Clark Barrett, and Leonardo de&nbsp;Moura.
- The design and implementation of the model constructing
-  satisfiability calculus.
- In <em>Proceedings of 13th International Conference on Formal
-  Methods in Computer-Aided Design, FMCAD 2013, 20-23 October 2013, Porland,
-  Oregon, USA</em>, 2013.
-[&nbsp;<a href="cv-leonardo_bib.html#fmcad13/dbdm13">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/fmcad2013.pdf">.pdf</a>&nbsp;]
+Leonardo de&nbsp;Moura and Dejan Jovanovi&#x107;.
+ A model-constructing satisfiability calculus.
+ In <em>14th International Conference on Verification, Model
+  Checking, and Abstract Interpretation, VMCAI, Rome, Italy, 2013</em>, 2013.
+[&nbsp;<a href="cv-leonardo_bib.html#vmcai/demoura13">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/mcsat.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="cade24/dmp13">9</a>]
+[<a name="mcsat">18</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Grant Passmore.
+ <em>The Strategy Challenge in SMT Solving</em>, volume 7788 of <em>
+  Lecture Notes in Artificial Intelligence</em>.
+ Springer, 2013.
+[&nbsp;<a href="cv-leonardo_bib.html#mcsat">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/smt-strategy.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="cutsat/jar2013">19</a>]
+</dt>
+<dd>
+Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
+ Cutting to the chase: Solving linear integer arithmetic (to appear).
+ <em>Journal Automated Reasoning</em>, 2013.
+[&nbsp;<a href="cv-leonardo_bib.html#cutsat/jar2013">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/cutsat-jar2013.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="cade24/dmp13">20</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Grant Passmore.
@@ -143,108 +330,36 @@ Leonardo de&nbsp;Moura and Grant Passmore.
 
 
 <dt>
-[<a name="cutsat/jar2013">10</a>]
+[<a name="fmcad13/dbdm13">21</a>]
 </dt>
 <dd>
-Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
- Cutting to the chase: Solving linear integer arithmetic (to appear).
- <em>Journal Automated Reasoning</em>, 2013.
-[&nbsp;<a href="cv-leonardo_bib.html#cutsat/jar2013">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/cutsat-jar2013.pdf">.pdf</a>&nbsp;]
+Dejan Jovanovi&#x107;, Clark Barrett, and Leonardo de&nbsp;Moura.
+ The design and implementation of the model constructing
+  satisfiability calculus.
+ In <em>Proceedings of 13th International Conference on Formal
+  Methods in Computer-Aided Design, FMCAD 2013, 20-23 October 2013, Porland,
+  Oregon, USA</em>, 2013.
+[&nbsp;<a href="cv-leonardo_bib.html#fmcad13/dbdm13">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/fmcad2013.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="mcsat">11</a>]
+[<a name="tractability">22</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura and Grant Passmore.
- <em>The Strategy Challenge in SMT Solving</em>, volume 7788 of <em>
-  Lecture Notes in Artificial Intelligence</em>.
- Springer, 2013.
-[&nbsp;<a href="cv-leonardo_bib.html#mcsat">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/smt-strategy.pdf">.pdf</a>&nbsp;]
+Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
+ Tractability and Modern Satisfiability Modulo Theories Solvers.
+ In <em>Handbook of Tractability</em>. Cambridge University Press, 2012.
+[&nbsp;<a href="cv-leonardo_bib.html#tractability">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/tractability.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="vmcai/demoura13">12</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura and Dejan Jovanovi&#x107;.
- A model-constructing satisfiability calculus.
- In <em>14th International Conference on Verification, Model
-  Checking, and Abstract Interpretation, VMCAI, Rome, Italy, 2013</em>, 2013.
-[&nbsp;<a href="cv-leonardo_bib.html#vmcai/demoura13">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/mcsat.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/aisc/PassmorePM12">13</a>]
-</dt>
-<dd>
-Grant&nbsp;Olney Passmore, Lawrence&nbsp;C. Paulson, and Leonardo de&nbsp;Moura.
- Real algebraic strategies for MetiTarski proofs.
- In <em>Intelligent Computer Mathematics - 11th International
-  Conference, AISC 2012, 19th Symposium, Calculemus 2012, 5th International
-  Workshop, DML 2012, 11th International Conference, MKM 2012, Systems and
-  Projects, Held as Part of CICM 2012, Bremen, Germany, July 8-13, 2012.
-  Proceedings</em>, volume 7362 of <em>Lecture Notes in Computer Science</em>, pages
-  358-370. Springer, 2012.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/aisc/PassmorePM12">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/CICM2012.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cade/JovanovicM12">14</a>]
-</dt>
-<dd>
-Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
- Solving non-linear arithmetic.
- In <em>Automated Reasoning - 6th International Joint Conference,
-  IJCAR 2012, Manchester, UK, June 26-29, 2012. Proceedings</em>, volume 7364 of
-  <em>Lecture Notes in Computer Science</em>, pages 339-354. Springer, 2012.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/JovanovicM12">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/IJCAR2012.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="MSR:techreport:nonlinear12">15</a>]
-</dt>
-<dd>
-Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
- Solving non-linear arithmetic.
- Technical Report MSR-TR-2012-20, Microsoft Research, 2012.
-[&nbsp;<a href="cv-leonardo_bib.html#MSR:techreport:nonlinear12">bib</a>&nbsp;| 
-<a href="http://research.microsoft.com/apps/pubs/default.aspx?id=159549">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="Barrettetal2012JAR">16</a>]
-</dt>
-<dd>
-Clark Barrett, Morgan Deters, Leonardo de&nbsp;Moura, Albert Oliveras, and Aaron
-  Stump.
- 6 Years of SMT-COMP.
- <em>Journal of Automated Reasoning</em>, 2012.
-[&nbsp;<a href="cv-leonardo_bib.html#Barrettetal2012JAR">bib</a>&nbsp;| 
-<a href="http://www.springerlink.com/content/t5302157331451k7/">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="whd12">17</a>]
+[<a name="whd12">23</a>]
 </dt>
 <dd>
 Christoph Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
@@ -258,70 +373,73 @@ Christoph Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="tractability">18</a>]
+[<a name="Barrettetal2012JAR">24</a>]
 </dt>
 <dd>
-Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
- Tractability and Modern Satisfiability Modulo Theories Solvers.
- In <em>Handbook of Tractability</em>. Cambridge University Press, 2012.
-[&nbsp;<a href="cv-leonardo_bib.html#tractability">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/tractability.pdf">.pdf</a>&nbsp;]
+Clark Barrett, Morgan Deters, Leonardo de&nbsp;Moura, Albert Oliveras, and Aaron
+  Stump.
+ 6 Years of SMT-COMP.
+ <em>Journal of Automated Reasoning</em>, 2012.
+[&nbsp;<a href="cv-leonardo_bib.html#Barrettetal2012JAR">bib</a>&nbsp;| 
+<a href="http://www.springerlink.com/content/t5302157331451k7/">http</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/cav/HoderBM11">19</a>]
-</dt>
-<dd>
-Krystof Hoder, Nikolaj Bj&oslash;rner, and Leonardo de&nbsp;Moura.
- muZ - an efficient engine for fixed points with constraints.
- In <em>Computer Aided Verification - 23rd International Conference,
-  CAV 2011, Snowbird, UT, USA, July 14-20, 2011. Proceedings</em>, volume 6806 of
-  <em>Lecture Notes in Computer Science</em>, pages 457-462, 2011.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/HoderBM11">bib</a>&nbsp;| 
-<a href="http://leodemoura.github.io/files/muze.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:journals/cacm/MouraB11">20</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Satisfiability modulo theories: introduction and applications.
- <em>Commun. ACM</em>, 54(9):69-77, 2011.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/cacm/MouraB11">bib</a>&nbsp;| 
-<a href="http://dl.acm.org/citation.cfm?id=1995394">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cade/JovanovicM11">21</a>]
+[<a name="MSR:techreport:nonlinear12">25</a>]
 </dt>
 <dd>
 Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
- Cutting to the chase solving linear integer arithmetic.
- In <em>Automated Deduction - CADE-23 - 23rd International Conference
-  on Automated Deduction, Wroclaw, Poland, July 31 - August 5, 2011.
-  Proceedings</em>, volume 6803 of <em>Lecture Notes in Computer Science</em>, pages
-  338-353. Springer, 2011.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/JovanovicM11">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cutsat.pdf">.pdf</a>&nbsp;]
+ Solving non-linear arithmetic.
+ Technical Report MSR-TR-2012-20, Microsoft Research, 2012.
+[&nbsp;<a href="cv-leonardo_bib.html#MSR:techreport:nonlinear12">bib</a>&nbsp;| 
+<a href="http://research.microsoft.com/apps/pubs/default.aspx?id=159549">http</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:journals/jar/BonacinaLM11">22</a>]
+[<a name="DBLP:conf/cade/JovanovicM12">26</a>]
+</dt>
+<dd>
+Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
+ Solving non-linear arithmetic.
+ In <em>Automated Reasoning - 6th International Joint Conference,
+  IJCAR 2012, Manchester, UK, June 26-29, 2012. Proceedings</em>, volume 7364 of
+  <em>Lecture Notes in Computer Science</em>, pages 339--354. Springer, 2012.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/JovanovicM12">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/IJCAR2012.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/aisc/PassmorePM12">27</a>]
+</dt>
+<dd>
+Grant&nbsp;Olney Passmore, Lawrence&nbsp;C. Paulson, and Leonardo de&nbsp;Moura.
+ Real algebraic strategies for MetiTarski proofs.
+ In <em>Intelligent Computer Mathematics - 11th International
+  Conference, AISC 2012, 19th Symposium, Calculemus 2012, 5th International
+  Workshop, DML 2012, 11th International Conference, MKM 2012, Systems and
+  Projects, Held as Part of CICM 2012, Bremen, Germany, July 8-13, 2012.
+  Proceedings</em>, volume 7362 of <em>Lecture Notes in Computer Science</em>, pages
+  358--370. Springer, 2012.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/aisc/PassmorePM12">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/CICM2012.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:journals/jar/BonacinaLM11">28</a>]
 </dt>
 <dd>
 Maria&nbsp;Paola Bonacina, Christopher Lynch, and Leonardo de&nbsp;Moura.
  On deciding satisfiability by theorem proving with speculative
   inferences.
- <em>J. Autom. Reasoning</em>, 47(2):161-189, 2011.
+ <em>J. Autom. Reasoning</em>, 47(2):161--189, 2011.
 [&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/jar/BonacinaLM11">bib</a>&nbsp;| 
 <a href=" http://leodemoura.github.io/files/JAR2010dpllSPsi.pdf">.pdf</a>&nbsp;]
 
@@ -329,60 +447,58 @@ Maria&nbsp;Paola Bonacina, Christopher Lynch, and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="DBLP:conf/cade/MouraB10">23</a>]
+[<a name="DBLP:conf/cade/JovanovicM11">29</a>]
+</dt>
+<dd>
+Dejan Jovanovi&#x107; and Leonardo de&nbsp;Moura.
+ Cutting to the chase solving linear integer arithmetic.
+ In <em>Automated Deduction - CADE-23 - 23rd International Conference
+  on Automated Deduction, Wroclaw, Poland, July 31 - August 5, 2011.
+  Proceedings</em>, volume 6803 of <em>Lecture Notes in Computer Science</em>, pages
+  338--353. Springer, 2011.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/JovanovicM11">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cutsat.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:journals/cacm/MouraB11">30</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Bugs, moles and skeletons: Symbolic reasoning for software
-  development.
- In <em>Automated Reasoning, 5th International Joint Conference,
-  IJCAR 2010, Edinburgh, UK, July 16-19, 2010. Proceedings</em>, volume 6173 of
-  <em>Lecture Notes in Computer Science</em>, pages 400-411. Springer, 2010.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB10">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/ijcar10.pdf">.pdf</a>&nbsp;]
+ Satisfiability modulo theories: introduction and applications.
+ <em>Commun. ACM</em>, 54(9):69--77, 2011.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/cacm/MouraB11">bib</a>&nbsp;| 
+<a href="http://dl.acm.org/citation.cfm?id=1995394">http</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/lpar/VeanesBM10">24</a>]
+[<a name="DBLP:conf/cav/HoderBM11">31</a>]
 </dt>
 <dd>
-Margus Veanes, Nikolaj Bj&oslash;rner, and Leonardo de&nbsp;Moura.
- Symbolic automata constraint solving.
- In <em>Logic for Programming, Artificial Intelligence, and Reasoning
-  - 17th International Conference, LPAR-17, Yogyakarta, Indonesia, October
-  10-15, 2010. Proceedings</em>, volume 6397 of <em>Lecture Notes in Computer
-  Science</em>, pages 640-654, 2010.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/lpar/VeanesBM10">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/lpar2010.pdf">.pdf</a>&nbsp;]
+Krystof Hoder, Nikolaj Bj&oslash;rner, and Leonardo de&nbsp;Moura.
+ muZ - an efficient engine for fixed points with constraints.
+ In <em>Computer Aided Verification - 23rd International Conference,
+  CAV 2011, Snowbird, UT, USA, July 14-20, 2011. Proceedings</em>, volume 6806 of
+  <em>Lecture Notes in Computer Science</em>, pages 457--462, 2011.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/HoderBM11">bib</a>&nbsp;| 
+<a href="http://leodemoura.github.io/files/muze.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:journals/jar/PiskacMB10">25</a>]
-</dt>
-<dd>
-Ruzica Piskac, Leonardo de&nbsp;Moura, and Nikolaj Bj&oslash;rner.
- Deciding effectively propositional logic using DPLL and
-  substitution sets.
- <em>J. Autom. Reasoning</em>, 44(4):401-424, 2010.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/jar/PiskacMB10">bib</a>&nbsp;| 
-<a href="http://www.springerlink.com/content/p54255p52430242t/">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/fmcad/WintersteigerHM10">26</a>]
+[<a name="DBLP:conf/fmcad/WintersteigerHM10">32</a>]
 </dt>
 <dd>
 Christoph&nbsp;M. Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
  Efficiently solving quantified bit-vector formulas.
  In <em>Proceedings of 10th International Conference on Formal
   Methods in Computer-Aided Design, FMCAD 2010, Lugano, Switzerland, October
-  20-23</em>, pages 239-246. IEEE, 2010.
+  20-23</em>, pages 239--246. IEEE, 2010.
 [&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/fmcad/WintersteigerHM10">bib</a>&nbsp;| 
 <a href=" http://leodemoura.github.io/files/fmcad10.pdf">.pdf</a>&nbsp;]
 
@@ -390,153 +506,62 @@ Christoph&nbsp;M. Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="DBLP:conf/fmcad/MouraB09">27</a>]
+[<a name="DBLP:journals/jar/PiskacMB10">33</a>]
+</dt>
+<dd>
+Ruzica Piskac, Leonardo de&nbsp;Moura, and Nikolaj Bj&oslash;rner.
+ Deciding effectively propositional logic using DPLL and
+  substitution sets.
+ <em>J. Autom. Reasoning</em>, 44(4):401--424, 2010.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/jar/PiskacMB10">bib</a>&nbsp;| 
+<a href="http://www.springerlink.com/content/p54255p52430242t/">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/lpar/VeanesBM10">34</a>]
+</dt>
+<dd>
+Margus Veanes, Nikolaj Bj&oslash;rner, and Leonardo de&nbsp;Moura.
+ Symbolic automata constraint solving.
+ In <em>Logic for Programming, Artificial Intelligence, and Reasoning
+  - 17th International Conference, LPAR-17, Yogyakarta, Indonesia, October
+  10-15, 2010. Proceedings</em>, volume 6397 of <em>Lecture Notes in Computer
+  Science</em>, pages 640--654, 2010.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/lpar/VeanesBM10">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/lpar2010.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/cade/MouraB10">35</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Generalized, efficient array decision procedures.
- In <em>Proceedings of 9th International Conference on Formal Methods
-  in Computer-Aided Design, FMCAD 2009, 15-18 November 2009, Austin, Texas,
-  USA</em>, pages 45-52. IEEE, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/fmcad/MouraB09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/fmcad09.pdf">.pdf</a>&nbsp;]
+ Bugs, moles and skeletons: Symbolic reasoning for software
+  development.
+ In <em>Automated Reasoning, 5th International Joint Conference,
+  IJCAR 2010, Edinburgh, UK, July 16-19, 2010. Proceedings</em>, volume 6173 of
+  <em>Lecture Notes in Computer Science</em>, pages 400--411. Springer, 2010.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB10">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/ijcar10.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/formats/BjornerM09">28</a>]
-</dt>
-<dd>
-Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
- Tapas: Theory combinations and practical applications.
- In <em>Formal Modeling and Analysis of Timed Systems, 7th
-  International Conference, FORMATS 2009, Budapest, Hungary, September 14-16,
-  2009. Proceedings</em>, volume 5813 of <em>Lecture Notes in Computer Science</em>,
-  pages 1-6. Springer, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/formats/BjornerM09">bib</a>&nbsp;| 
-<a href="http://www.springerlink.com/content/u510v392760624q5/">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/sbmf/MouraB09">29</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Satisfiability modulo theories: An appetizer.
- In <em>Formal Methods: Foundations and Applications, 12th Brazilian
-  Symposium on Formal Methods, SBMF 2009, Gramado, Brazil, August 19-21, 2009,
-  Revised Selected Papers</em>, volume 5902 of <em>Lecture Notes in Computer
-  Science</em>, pages 23-36. Springer, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/sbmf/MouraB09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/sbmf09.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cade/BonacinaLM09">30</a>]
-</dt>
-<dd>
-Maria&nbsp;Paola Bonacina, Christopher Lynch, and Leonardo de&nbsp;Moura.
- On deciding satisfiability by DPLL(&Gamma;+T) and unsound theorem
-  proving.
- In <em>Automated Deduction - CADE-22, 22nd International Conference
-  on Automated Deduction, Montreal, Canada, August 2-7, 2009. Proceedings</em>,
-  volume 5663 of <em>Lecture Notes in Computer Science</em>, pages 35-50.
-  Springer, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/BonacinaLM09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cade09.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cav/GeM09">31</a>]
-</dt>
-<dd>
-Yeting Ge and Leonardo de&nbsp;Moura.
- Complete instantiation for quantified formulas in satisfiability
-  modulo theories.
- In <em>Computer Aided Verification, 21st International Conference,
-  CAV 2009, Grenoble, France, June 26 - July 2, 2009. Proceedings</em>, volume 5643
-  of <em>Lecture Notes in Computer Science</em>, pages 306-320. Springer, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/GeM09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/ci.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="GeM09ext">32</a>]
-</dt>
-<dd>
-Yeting Ge and Leonardo de&nbsp;Moura.
- Complete instantiation for quantified formulas in satisfiability
-  modulo theories (extended version).
- 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#GeM09ext">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/citr09.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cav/WintersteigerHM09">33</a>]
-</dt>
-<dd>
-Christoph&nbsp;M. Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
- A concurrent portfolio approach to SMT solving.
- In <em>Computer Aided Verification, 21st International Conference,
-  CAV 2009, Grenoble, France, June 26 - July 2, 2009. Proceedings</em>, volume 5643
-  of <em>Lecture Notes in Computer Science</em>, pages 715-720. Springer, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/WintersteigerHM09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/parallel_z3.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/synasc/PassmoreM09">34</a>]
+[<a name="PassmoreDeMoura09">36</a>]
 </dt>
 <dd>
 Grant&nbsp;Olney Passmore and Leonardo de&nbsp;Moura.
- Superfluous S-polynomials in strategy-independent groebner bases.
- In <em>11th International Symposium on Symbolic and Numeric
-  Algorithms for Scientific Computing, SYNASC 2009, Timisoara, Romania,
-  September 26-29, 2009</em>, pages 45-53. IEEE Computer Society, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/synasc/PassmoreM09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/synasc.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="BjornerDeMoura2009">35</a>]
-</dt>
-<dd>
-Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
- <em>z</em>3<sup>10</sup>: Applications, enablers, challenges and directions.
- In <em>Sixth International Workshop on Constraints in Formal
-  Verification Grenoble, France</em>, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#BjornerDeMoura2009">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cfv09.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="deMouraPassmore09">36</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura and Grant&nbsp;Olney Passmore.
- On locally minimal nullstellensatz proofs.
- In <em>7th International Workshop on Satisfiability Modulo Theories,
-  SMT, Montreal, Canada</em>, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#deMouraPassmore09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/SMT-09.pdf">.pdf</a>&nbsp;]
+ Universality of polynomial positivity and a variant of Hilbert's
+  17th problem.
+ In <em>Automated Deduction: Decidability, Complexity, Tractability,
+  ADDCT'09, Montreal, Canada</em>, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#PassmoreDeMoura09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/addct-09.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
@@ -555,66 +580,217 @@ Leonardo de&nbsp;Moura and Grant&nbsp;Olney Passmore.
 
 
 <dt>
-[<a name="PassmoreDeMoura09">38</a>]
+[<a name="deMouraPassmore09">38</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Grant&nbsp;Olney Passmore.
+ On locally minimal nullstellensatz proofs.
+ In <em>7th International Workshop on Satisfiability Modulo Theories,
+  SMT, Montreal, Canada</em>, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#deMouraPassmore09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/SMT-09.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="BjornerDeMoura2009">39</a>]
+</dt>
+<dd>
+Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
+ <em>z</em>3<sup>10</sup>: Applications, enablers, challenges and directions.
+ In <em>Sixth International Workshop on Constraints in Formal
+  Verification Grenoble, France</em>, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#BjornerDeMoura2009">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cfv09.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/synasc/PassmoreM09">40</a>]
 </dt>
 <dd>
 Grant&nbsp;Olney Passmore and Leonardo de&nbsp;Moura.
- Universality of polynomial positivity and a variant of Hilbert's
-  17th problem.
- In <em>Automated Deduction: Decidability, Complexity, Tractability,
-  ADDCT'09, Montreal, Canada</em>, 2009.
-[&nbsp;<a href="cv-leonardo_bib.html#PassmoreDeMoura09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/addct-09.pdf">.pdf</a>&nbsp;]
+ Superfluous S-polynomials in strategy-independent groebner bases.
+ In <em>11th International Symposium on Symbolic and Numeric
+  Algorithms for Scientific Computing, SYNASC 2009, Timisoara, Romania,
+  September 26-29, 2009</em>, pages 45--53. IEEE Computer Society, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/synasc/PassmoreM09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/synasc.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="MSR:techreport:EPR08">39</a>]
+[<a name="DBLP:conf/cav/WintersteigerHM09">41</a>]
 </dt>
 <dd>
-Ruzica Piskac, Leonardo de&nbsp;Moura, and Nikolaj Bj&oslash;rner.
- Deciding effectively propositional logic with equality.
- Technical Report MSR-TR-2008-181, Microsoft Research, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#MSR:techreport:EPR08">bib</a>&nbsp;| 
-<a href="http://research.microsoft.com/apps/pubs/default.aspx?id=76532">http</a>&nbsp;]
+Christoph&nbsp;M. Wintersteiger, Youssef Hamadi, and Leonardo de&nbsp;Moura.
+ A concurrent portfolio approach to SMT solving.
+ In <em>Computer Aided Verification, 21st International Conference,
+  CAV 2009, Grenoble, France, June 26 - July 2, 2009. Proceedings</em>, volume 5643
+  of <em>Lecture Notes in Computer Science</em>, pages 715--720. Springer, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/WintersteigerHM09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/parallel_z3.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/cade/MouraB08">40</a>]
+[<a name="GeM09ext">42</a>]
+</dt>
+<dd>
+Yeting Ge and Leonardo de&nbsp;Moura.
+ Complete instantiation for quantified formulas in satisfiability
+  modulo theories (extended version).
+ 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#GeM09ext">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/citr09.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/cav/GeM09">43</a>]
+</dt>
+<dd>
+Yeting Ge and Leonardo de&nbsp;Moura.
+ Complete instantiation for quantified formulas in satisfiability
+  modulo theories.
+ In <em>Computer Aided Verification, 21st International Conference,
+  CAV 2009, Grenoble, France, June 26 - July 2, 2009. Proceedings</em>, volume 5643
+  of <em>Lecture Notes in Computer Science</em>, pages 306--320. Springer, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/GeM09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/ci.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/cade/BonacinaLM09">44</a>]
+</dt>
+<dd>
+Maria&nbsp;Paola Bonacina, Christopher Lynch, and Leonardo de&nbsp;Moura.
+ On deciding satisfiability by DPLL(&Gamma;+T) and unsound theorem
+  proving.
+ In <em>Automated Deduction - CADE-22, 22nd International Conference
+  on Automated Deduction, Montreal, Canada, August 2-7, 2009. Proceedings</em>,
+  volume 5663 of <em>Lecture Notes in Computer Science</em>, pages 35--50.
+  Springer, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/BonacinaLM09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cade09.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/sbmf/MouraB09">45</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Deciding effectively propositional logic using DPLL and
-  substitution sets.
- In <em>Automated Reasoning, 4th International Joint Conference,
-  IJCAR 2008, Sydney, Australia, August 12-15, 2008, Proceedings</em>, volume 5195
-  of <em>Lecture Notes in Computer Science</em>, pages 410-425. Springer, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB08">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/epr.pdf">.pdf</a>&nbsp;]
+ Satisfiability modulo theories: An appetizer.
+ In <em>Formal Methods: Foundations and Applications, 12th Brazilian
+  Symposium on Formal Methods, SBMF 2009, Gramado, Brazil, August 19-21, 2009,
+  Revised Selected Papers</em>, volume 5902 of <em>Lecture Notes in Computer
+  Science</em>, pages 23--36. Springer, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/sbmf/MouraB09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/sbmf09.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/cade/MouraB08a">41</a>]
+[<a name="DBLP:conf/formats/BjornerM09">46</a>]
+</dt>
+<dd>
+Nikolaj Bj&oslash;rner and Leonardo de&nbsp;Moura.
+ Tapas: Theory combinations and practical applications.
+ In <em>Formal Modeling and Analysis of Timed Systems, 7th
+  International Conference, FORMATS 2009, Budapest, Hungary, September 14-16,
+  2009. Proceedings</em>, volume 5813 of <em>Lecture Notes in Computer Science</em>,
+  pages 1--6. Springer, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/formats/BjornerM09">bib</a>&nbsp;| 
+<a href="http://www.springerlink.com/content/u510v392760624q5/">http</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/fmcad/MouraB09">47</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Engineering DPLL(T) + Saturation.
- In <em>Automated Reasoning, 4th International Joint Conference,
-  IJCAR 2008, Sydney, Australia, August 12-15, 2008, Proceedings</em>, volume 5195
-  of <em>Lecture Notes in Computer Science</em>, pages 475-490. Springer, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB08a">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/z3spc.pdf">.pdf</a>&nbsp;]
+ Generalized, efficient array decision procedures.
+ In <em>Proceedings of 9th International Conference on Formal Methods
+  in Computer-Aided Design, FMCAD 2009, 15-18 November 2009, Austin, Texas,
+  USA</em>, pages 45--52. IEEE, 2009.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/fmcad/MouraB09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/fmcad09.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/lpar/MouraB08">42</a>]
+[<a name="BjornerDeMouraTillmann09">48</a>]
+</dt>
+<dd>
+Nikolaj Bj&oslash;rner, Leonardo de&nbsp;Moura, and Nikolai Tillmann.
+ Satisfiability modulo bit-precise theories for program exploration.
+ In <em>Fifth International Workshop on Constraints in Formal
+  Verification, (CFV'08), Sydney, Australia</em>, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#BjornerDeMouraTillmann09">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/smbpex.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="LPAR:Join:08">49</a>]
+</dt>
+<dd>
+Nikolaj Bj&oslash;rner, Bruno Dutertre, and Leonardo de&nbsp;Moura.
+ Accelerating lemma learning using joins - DPPL(Join).
+ In <em>15th International Conference on Logic for Programming
+  Artificial Intelligence and Reasoning, LPAR'08</em>, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#LPAR:Join:08">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/joins.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:journals/entcs/MouraB08">50</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
+ Model-based theory combination.
+ <em>Electr. Notes Theor. Comput. Sci.</em>, 198(2):37--49, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/entcs/MouraB08">bib</a>&nbsp;| 
+<a href="http://research.microsoft.com/projects/z3/smt07.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/tacas/MouraB08">51</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
+ Z3: An efficient SMT solver.
+ In <em>Tools and Algorithms for the Construction and Analysis of
+  Systems, 14th International Conference, TACAS 2008, Held as Part of the Joint
+  European Conferences on Theory and Practice of Software, ETAPS 2008,
+  Budapest, Hungary, March 29-April 6, 2008. Proceedings</em>, volume 4963 of <em>
+  Lecture Notes in Computer Science</em>, pages 337--340. Springer, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/tacas/MouraB08">bib</a>&nbsp;| 
+<a href="http://research.microsoft.com/projects/z3/z3.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/lpar/MouraB08">52</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
@@ -630,110 +806,51 @@ Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
 
 
 <dt>
-[<a name="DBLP:conf/tacas/MouraB08">43</a>]
+[<a name="DBLP:conf/cade/MouraB08a">53</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Z3: An efficient SMT solver.
- In <em>Tools and Algorithms for the Construction and Analysis of
-  Systems, 14th International Conference, TACAS 2008, Held as Part of the Joint
-  European Conferences on Theory and Practice of Software, ETAPS 2008,
-  Budapest, Hungary, March 29-April 6, 2008. Proceedings</em>, volume 4963 of <em>
-  Lecture Notes in Computer Science</em>, pages 337-340. Springer, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/tacas/MouraB08">bib</a>&nbsp;| 
-<a href="http://research.microsoft.com/projects/z3/z3.pdf">.pdf</a>&nbsp;]
+ Engineering DPLL(T) + Saturation.
+ In <em>Automated Reasoning, 4th International Joint Conference,
+  IJCAR 2008, Sydney, Australia, August 12-15, 2008, Proceedings</em>, volume 5195
+  of <em>Lecture Notes in Computer Science</em>, pages 475--490. Springer, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB08a">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/z3spc.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:journals/entcs/MouraB08">44</a>]
+[<a name="DBLP:conf/cade/MouraB08">54</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Model-based theory combination.
- <em>Electr. Notes Theor. Comput. Sci.</em>, 198(2):37-49, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/entcs/MouraB08">bib</a>&nbsp;| 
-<a href="http://research.microsoft.com/projects/z3/smt07.pdf">.pdf</a>&nbsp;]
+ Deciding effectively propositional logic using DPLL and
+  substitution sets.
+ In <em>Automated Reasoning, 4th International Joint Conference,
+  IJCAR 2008, Sydney, Australia, August 12-15, 2008, Proceedings</em>, volume 5195
+  of <em>Lecture Notes in Computer Science</em>, pages 410--425. Springer, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB08">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/epr.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="LPAR:Join:08">45</a>]
+[<a name="MSR:techreport:EPR08">55</a>]
 </dt>
 <dd>
-Nikolaj Bj&oslash;rner, Bruno Dutertre, and Leonardo de&nbsp;Moura.
- Accelerating lemma learning using joins - DPPL(Join).
- In <em>15th International Conference on Logic for Programming
-  Artificial Intelligence and Reasoning, LPAR'08</em>, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#LPAR:Join:08">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/joins.pdf">.pdf</a>&nbsp;]
+Ruzica Piskac, Leonardo de&nbsp;Moura, and Nikolaj Bj&oslash;rner.
+ Deciding effectively propositional logic with equality.
+ Technical Report MSR-TR-2008-181, Microsoft Research, 2008.
+[&nbsp;<a href="cv-leonardo_bib.html#MSR:techreport:EPR08">bib</a>&nbsp;| 
+<a href="http://research.microsoft.com/apps/pubs/default.aspx?id=76532">http</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="BjornerDeMouraTillmann09">46</a>]
-</dt>
-<dd>
-Nikolaj Bj&oslash;rner, Leonardo de&nbsp;Moura, and Nikolai Tillmann.
- Satisfiability modulo bit-precise theories for program exploration.
- In <em>Fifth International Workshop on Constraints in Formal
-  Verification, (CFV'08), Sydney, Australia</em>, 2008.
-[&nbsp;<a href="cv-leonardo_bib.html#BjornerDeMouraTillmann09">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/smbpex.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cade/MouraB07">47</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
- Efficient E-Matching for SMT solvers.
- In <em>Automated Deduction - CADE-21, 21st International Conference
-  on Automated Deduction, Bremen, Germany, July 17-20, 2007, Proceedings</em>,
-  volume 4603 of <em>Lecture Notes in Computer Science</em>, pages 183-198.
-  Springer, 2007.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB07">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/ematching.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:conf/cav/MouraDS07">48</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura, Bruno Dutertre, and Natarajan Shankar.
- A tutorial on satisfiability modulo theories.
- In <em>Computer Aided Verification, 19th International Conference,
-  CAV 2007, Berlin, Germany, July 3-7, 2007, Proceedings</em>, volume 4590 of <em>
-  Lecture Notes in Computer Science</em>, pages 20-36. Springer, 2007.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraDS07">bib</a>&nbsp;| 
-<a href="http://www.springerlink.com/content/11r20jq883677834">http</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:journals/fmsd/BarrettMS07">49</a>]
-</dt>
-<dd>
-Clark&nbsp;W. Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
- Design and results of the 2nd annual satisfiability modulo theories
-  competition (SMT-COMP 2006).
- <em>Formal Methods in System Design</em>, 31(3):221-239, 2007.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/fmsd/BarrettMS07">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/smtcomp06.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="demoura2007relevancy">50</a>]
+[<a name="demoura2007relevancy">56</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
@@ -746,35 +863,52 @@ Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
 
 
 <dt>
-[<a name="DBLP:conf/cav/DutertreM06">51</a>]
+[<a name="DBLP:journals/fmsd/BarrettMS07">57</a>]
 </dt>
 <dd>
-Bruno Dutertre and Leonardo de&nbsp;Moura.
- A fast linear-arithmetic solver for DPLL(T).
- In <em>Computer Aided Verification, 18th International Conference,
-  CAV 2006, Seattle, WA, USA, August 17-20, 2006, Proceedings</em>, volume 4144 of
-  <em>Lecture Notes in Computer Science</em>, pages 81-94. Springer, 2006.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/DutertreM06">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cav06.pdf">.pdf</a>&nbsp;]
+Clark&nbsp;W. Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
+ Design and results of the 2nd annual satisfiability modulo theories
+  competition (SMT-COMP 2006).
+ <em>Formal Methods in System Design</em>, 31(3):221--239, 2007.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/fmsd/BarrettMS07">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/smtcomp06.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="SRI:yices:tool">52</a>]
+[<a name="DBLP:conf/cav/MouraDS07">58</a>]
 </dt>
 <dd>
-Bruno Dutertre and Leonardo de&nbsp;Moura.
- The Yices SMT solver.
- Technical report, SRI International, 2006.
-[&nbsp;<a href="cv-leonardo_bib.html#SRI:yices:tool">bib</a>&nbsp;| 
-<a href="http://yices.csl.sri.com/tool-paper.pdf">.pdf</a>&nbsp;]
+Leonardo de&nbsp;Moura, Bruno Dutertre, and Natarajan Shankar.
+ A tutorial on satisfiability modulo theories.
+ In <em>Computer Aided Verification, 19th International Conference,
+  CAV 2007, Berlin, Germany, July 3-7, 2007, Proceedings</em>, volume 4590 of <em>
+  Lecture Notes in Computer Science</em>, pages 20--36. Springer, 2007.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraDS07">bib</a>&nbsp;| 
+<a href="http://www.springerlink.com/content/11r20jq883677834">http</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="SRI:simplex:dpllt">53</a>]
+[<a name="DBLP:conf/cade/MouraB07">59</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Nikolaj Bj&oslash;rner.
+ Efficient E-Matching for SMT solvers.
+ In <em>Automated Deduction - CADE-21, 21st International Conference
+  on Automated Deduction, Bremen, Germany, July 17-20, 2007, Proceedings</em>,
+  volume 4603 of <em>Lecture Notes in Computer Science</em>, pages 183--198.
+  Springer, 2007.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraB07">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/ematching.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="SRI:simplex:dpllt">60</a>]
 </dt>
 <dd>
 Bruno Dutertre and Leonardo de&nbsp;Moura.
@@ -787,13 +921,41 @@ Bruno Dutertre and Leonardo de&nbsp;Moura.
 
 
 <dt>
-[<a name="BdMS05-JAR">54</a>]
+[<a name="SRI:yices:tool">61</a>]
+</dt>
+<dd>
+Bruno Dutertre and Leonardo de&nbsp;Moura.
+ The Yices SMT solver.
+ Technical report, SRI International, 2006.
+[&nbsp;<a href="cv-leonardo_bib.html#SRI:yices:tool">bib</a>&nbsp;| 
+<a href="http://yices.csl.sri.com/tool-paper.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/cav/DutertreM06">62</a>]
+</dt>
+<dd>
+Bruno Dutertre and Leonardo de&nbsp;Moura.
+ A fast linear-arithmetic solver for DPLL(T).
+ In <em>Computer Aided Verification, 18th International Conference,
+  CAV 2006, Seattle, WA, USA, August 17-20, 2006, Proceedings</em>, volume 4144 of
+  <em>Lecture Notes in Computer Science</em>, pages 81--94. Springer, 2006.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/DutertreM06">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cav06.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="BdMS05-JAR">63</a>]
 </dt>
 <dd>
 Clark Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
  Design and results of the first satisfiability modulo theories
   competition (SMT-COMP 2005).
- <em>Journal of Automated Reasoning</em>, 35(4):373-390, November 2005.
+ <em>Journal of Automated Reasoning</em>, 35(4):373--390, November 2005.
 [&nbsp;<a href="cv-leonardo_bib.html#BdMS05-JAR">bib</a>&nbsp;| 
 <a href="http://dx.doi.org/10.1007/s10817-006-9026-1">DOI</a>&nbsp;| 
 <a href=" http://leodemoura.github.io/files/smtcomp_jar.pdf">.pdf</a>&nbsp;]
@@ -802,49 +964,7 @@ Clark Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
 
 
 <dt>
-[<a name="DBLP:conf/cav/BarrettMS05">55</a>]
-</dt>
-<dd>
-Clark&nbsp;W. Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
- SMT-COMP: Satisfiability modulo theories competition.
- In <em>Computer Aided Verification, 17th International Conference,
-  CAV 2005, Edinburgh, Scotland, UK, July 6-10, 2005, Proceedings</em>, volume 3576
-  of <em>Lecture Notes in Computer Science</em>, pages 20-23. Springer, 2005.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/BarrettMS05">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/smtcomp05_short_paper.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="DBLP:journals/entcs/MouraRS05">56</a>]
-</dt>
-<dd>
-Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Natarajan Shankar.
- Justifying equality.
- <em>Electr. Notes Theor. Comput. Sci.</em>, 125(3):69-85, 2005.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/entcs/MouraRS05">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/equality.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="SRI:test:generation">57</a>]
-</dt>
-<dd>
-Gr&eacute;goire Hamon, Leonardo de&nbsp;Moura, and John Rushby.
- Automated test generation with SAL.
- Technical report, SRI International, 2005.
- CSL Technical Note.
-[&nbsp;<a href="cv-leonardo_bib.html#SRI:test:generation">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/salatg.pdf">.pdf</a>&nbsp;]
-
-</dd>
-
-
-<dt>
-[<a name="Moura05integratingverification">58</a>]
+[<a name="Moura05integratingverification">64</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John Rushby, and Natarajan
@@ -858,61 +978,56 @@ Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John Rushby, and Natarajan
 
 
 <dt>
-[<a name="DBLP:conf/cav/MouraR04">59</a>]
+[<a name="SRI:test:generation">65</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura and Harald Rue&szlig;.
- An experimental evaluation of ground decision procedures.
- In <em>Computer Aided Verification, 16th International Conference,
-  CAV 2004, Boston, MA, USA, July 13-17, 2004, Proceedings</em>, volume 3114 of
-  <em>Lecture Notes in Computer Science</em>, pages 162-174. Springer, 2004.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraR04">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/gdp.pdf">.pdf</a>&nbsp;]
+Gr&eacute;goire Hamon, Leonardo de&nbsp;Moura, and John Rushby.
+ Automated test generation with SAL.
+ Technical report, SRI International, 2005.
+ CSL Technical Note.
+[&nbsp;<a href="cv-leonardo_bib.html#SRI:test:generation">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/salatg.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/cav/MouraORRSST04">60</a>]
+[<a name="DBLP:journals/entcs/MouraRS05">66</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John&nbsp;M. Rushby, Natarajan
-  Shankar, Maria Sorea, and Ashish Tiwari.
- SAL 2.
- In <em>Computer Aided Verification, 16th International Conference,
-  CAV 2004, Boston, MA, USA, July 13-17, 2004, Proceedings</em>, volume 3114 of
-  <em>Lecture Notes in Computer Science</em>, pages 496-500. Springer, 2004.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraORRSST04">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/sal2.pdf">.pdf</a>&nbsp;]
+Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Natarajan Shankar.
+ Justifying equality.
+ <em>Electr. Notes Theor. Comput. Sci.</em>, 125(3):69--85, 2005.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:journals/entcs/MouraRS05">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/equality.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/cade/MouraORRS04">61</a>]
+[<a name="DBLP:conf/cav/BarrettMS05">67</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John&nbsp;M. Rushby, and Natarajan
-  Shankar.
- The ICS decision procedures for embedded deduction.
- In <em>Automated Reasoning - Second International Joint Conference,
-  IJCAR 2004, Cork, Ireland, July 4-8, 2004, Proceedings</em>, volume 3097 of <em>
-  Lecture Notes in Computer Science</em>, pages 218-222. Springer, 2004.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraORRS04">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/ics.pdf">.pdf</a>&nbsp;]
+Clark&nbsp;W. Barrett, Leonardo de&nbsp;Moura, and Aaron Stump.
+ SMT-COMP: Satisfiability modulo theories competition.
+ In <em>Computer Aided Verification, 17th International Conference,
+  CAV 2005, Edinburgh, Scotland, UK, July 6-10, 2005, Proceedings</em>, volume 3576
+  of <em>Lecture Notes in Computer Science</em>, pages 20--23. Springer, 2005.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/BarrettMS05">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/smtcomp05_short_paper.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/sefm/HamonMR04">62</a>]
+[<a name="DBLP:conf/sefm/HamonMR04">68</a>]
 </dt>
 <dd>
 Gr&eacute;goire Hamon, Leonardo de&nbsp;Moura, and John&nbsp;M. Rushby.
  Generating efficient test sets with a model checker.
  In <em>2nd International Conference on Software Engineering and
   Formal Methods (SEFM 2004), 28-30 September 2004, Beijing, China</em>, pages
-  261-270. IEEE Computer Society, 2004.
+  261--270. IEEE Computer Society, 2004.
 [&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/sefm/HamonMR04">bib</a>&nbsp;| 
 <a href=" http://leodemoura.github.io/files/testgen.pdf">.pdf</a>&nbsp;]
 
@@ -920,38 +1035,54 @@ Gr&eacute;goire Hamon, Leonardo de&nbsp;Moura, and John&nbsp;M. Rushby.
 
 
 <dt>
-[<a name="DBLP:conf/cav/MouraRS03">63</a>]
+[<a name="DBLP:conf/cade/MouraORRS04">69</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Maria Sorea.
- Bounded model checking and induction: From refutation to
-  verification.
- In <em>Computer Aided Verification, 15th International Conference,
-  CAV 2003, Boulder, CO, USA, July 8-12, 2003, Proceedings</em>, volume 2725 of
-  <em>Lecture Notes in Computer Science</em>, pages 14-26. Springer, 2003.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraRS03">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cav03.pdf">.pdf</a>&nbsp;]
+Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John&nbsp;M. Rushby, and Natarajan
+  Shankar.
+ The ICS decision procedures for embedded deduction.
+ In <em>Automated Reasoning - Second International Joint Conference,
+  IJCAR 2004, Cork, Ireland, July 4-8, 2004, Proceedings</em>, volume 3097 of <em>
+  Lecture Notes in Computer Science</em>, pages 218--222. Springer, 2004.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraORRS04">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/ics.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="DBLP:conf/wsc/RuessM03">64</a>]
+[<a name="DBLP:conf/cav/MouraORRSST04">70</a>]
 </dt>
 <dd>
-Harald Rue&szlig; and Leonardo de&nbsp;Moura.
- From simulation to verification (and back).
- In <em>Proceedings of the 35th Winter Simulation Conference: Driving
-  Innovation, New Orleans, Louisiana, USA, December 7-10, 2003</em>, pages
-  888-896. ACM, 2003.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/wsc/RuessM03">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/wsc03.pdf">.pdf</a>&nbsp;]
+Leonardo de&nbsp;Moura, Sam Owre, Harald Rue&szlig;, John&nbsp;M. Rushby, Natarajan
+  Shankar, Maria Sorea, and Ashish Tiwari.
+ SAL 2.
+ In <em>Computer Aided Verification, 16th International Conference,
+  CAV 2004, Boston, MA, USA, July 13-17, 2004, Proceedings</em>, volume 3114 of
+  <em>Lecture Notes in Computer Science</em>, pages 496--500. Springer, 2004.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraORRSST04">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/sal2.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="deMoura-etal:HCSS03">65</a>]
+[<a name="DBLP:conf/cav/MouraR04">71</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura and Harald Rue&szlig;.
+ An experimental evaluation of ground decision procedures.
+ In <em>Computer Aided Verification, 16th International Conference,
+  CAV 2004, Boston, MA, USA, July 13-17, 2004, Proceedings</em>, volume 3114 of
+  <em>Lecture Notes in Computer Science</em>, pages 162--174. Springer, 2004.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraR04">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/gdp.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="deMoura-etal:HCSS03">72</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura, Harald Rue&szlig;, John Rushby, and Natarajan Shankar.
@@ -963,24 +1094,38 @@ Leonardo de&nbsp;Moura, Harald Rue&szlig;, John Rushby, and Natarajan Shankar.
 
 
 <dt>
-[<a name="DBLP:conf/cade/MouraRS02">66</a>]
+[<a name="DBLP:conf/wsc/RuessM03">73</a>]
 </dt>
 <dd>
-Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Maria Sorea.
- Lazy theorem proving for bounded model checking over infinite
-  domains.
- In <em>Automated Deduction - CADE-18, 18th International Conference
-  on Automated Deduction, Copenhagen, Denmark, July 27-30, 2002, Proceedings</em>,
-  volume 2392 of <em>Lecture Notes in Computer Science</em>, pages 438-455.
-  Springer, 2002.
-[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraRS02">bib</a>&nbsp;| 
-<a href=" http://leodemoura.github.io/files/cade02.pdf">.pdf</a>&nbsp;]
+Harald Rue&szlig; and Leonardo de&nbsp;Moura.
+ From simulation to verification (and back).
+ In <em>Proceedings of the 35th Winter Simulation Conference: Driving
+  Innovation, New Orleans, Louisiana, USA, December 7-10, 2003</em>, pages
+  888--896. ACM, 2003.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/wsc/RuessM03">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/wsc03.pdf">.pdf</a>&nbsp;]
 
 </dd>
 
 
 <dt>
-[<a name="dMR:SAT'2002">67</a>]
+[<a name="DBLP:conf/cav/MouraRS03">74</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Maria Sorea.
+ Bounded model checking and induction: From refutation to
+  verification.
+ In <em>Computer Aided Verification, 15th International Conference,
+  CAV 2003, Boulder, CO, USA, July 8-12, 2003, Proceedings</em>, volume 2725 of
+  <em>Lecture Notes in Computer Science</em>, pages 14--26. Springer, 2003.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cav/MouraRS03">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cav03.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="dMR:SAT'2002">75</a>]
 </dt>
 <dd>
 Leonardo de&nbsp;Moura and Harald Rue&szlig;.
@@ -994,17 +1139,34 @@ Leonardo de&nbsp;Moura and Harald Rue&szlig;.
 
 
 <dt>
-[<a name="DBLP:conf/icsm/BaxterYMSB98">68</a>]
+[<a name="DBLP:conf/cade/MouraRS02">76</a>]
+</dt>
+<dd>
+Leonardo de&nbsp;Moura, Harald Rue&szlig;, and Maria Sorea.
+ Lazy theorem proving for bounded model checking over infinite
+  domains.
+ In <em>Automated Deduction - CADE-18, 18th International Conference
+  on Automated Deduction, Copenhagen, Denmark, July 27-30, 2002, Proceedings</em>,
+  volume 2392 of <em>Lecture Notes in Computer Science</em>, pages 438--455.
+  Springer, 2002.
+[&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/cade/MouraRS02">bib</a>&nbsp;| 
+<a href=" http://leodemoura.github.io/files/cade02.pdf">.pdf</a>&nbsp;]
+
+</dd>
+
+
+<dt>
+[<a name="DBLP:conf/icsm/BaxterYMSB98">77</a>]
 </dt>
 <dd>
 Ira&nbsp;D. Baxter, Andrew Yahin, Leonardo de&nbsp;Moura, Marcelo Sant'Anna, and Lorraine
   Bier.
  Clone detection using abstract syntax trees.
  In <em>International Conference on Software Maintenance (ICSM'98),
-  Bethesda, Maryland, USA</em>, pages 368-377, 1998.
+  Bethesda, Maryland, USA</em>, pages 368--377, 1998.
 [&nbsp;<a href="cv-leonardo_bib.html#DBLP:conf/icsm/BaxterYMSB98">bib</a>&nbsp;| 
 <a href=" http://leodemoura.github.io/files/ICSM98.pdf">.pdf</a>&nbsp;]
 
 </dd>
 </dl><hr><p><em>This file was generated by
-<a href="http://www.lri.fr/~filliatr/bibtex2html/">bibtex2html</a> 1.96.</em></p>
+<a href="http://www.lri.fr/~filliatr/bibtex2html/">bibtex2html</a> 1.99.</em></p>
