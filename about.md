@@ -29,9 +29,7 @@ Awards
 You can find more about me at:
 
 - [Google Profile](http://scholar.google.com/citations?user=CwazDKgAAAAJ&amp;hl=en)
-- [Research Gate](http://www.researchgate.net/profile/Leonardo_De_Moura/)
 - [Publications at DBLP](http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/m/Moura:Leonardo_Mendon=ccedil=a_de.html)
 - [LinkedIn](https://www.linkedin.com/in/leonardo-de-moura-26a27b5/)
-- [Facebook](http://facebook.com/leonardo.de.moura)
 - [Stackoverflow](http://stackoverflow.com/users/841416/leonardo-de-moura)
 - [Github](https://github.com/leodemoura)
