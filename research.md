@@ -13,7 +13,7 @@ The Lean project aims to bring the automated and interactive theorem
 proving worlds together. One of the main goals is to provide a
 powerful system for reasoning about complex systems and mathematics,
 and verifying claims about both.
-You can [try Lean on your web browser](http://leanprover.github.io/live).
+
 
 I also work on [Z3](https://github.com/Z3Prover/z3).
 Z3 is a very efficient SMT solver, it has builtin support for many useful theories such as:
