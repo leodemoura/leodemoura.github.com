@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{hyperref}
 
 %% \usepackage{html,htmllist}
 
@@ -21,8 +22,6 @@
                     }
 \newcommand{\award}[4]{\job{#1}{#2}{#3}{#4}}
 
-\newcommand{\myhp}{http://leodemoura.github.io}
-
 \begin{document}
 
 
@@ -43,23 +42,22 @@
 %% \section*{Personal Data}
 
 \begin{description}
-\item [Name:] Leonardo M. de Moura
-\item [Address:] One Microsoft Way, Redmond, WA 98052, USA
-\item [Phone:] (425) 421-6987
-\item [Email:] leonardo@microsoft.com
-\item [Homepage:] \myhp
-%% \item [Birth Date:] August 29, 1971
-%% \item [Marital Status:] Married, three children
-%% \item [Nationality:] Brazilian (Green Card)
+\item [Name:] Leonardo de Moura
+\item [Address:] 18530 NE 53rd CT, Redmond, WA 98052, USA
+\item [Phone:] (425) 647-1990
+\item [Email:] leodemoura0@gmail.com
+\item [Homepage:] \url{http://leodemoura.github.io}
+\item [Github:] \url{https://github.com/leodemoura}
+\item [Nationality:] American and Brazilian
 \end{description}
 
 \section*{Experience and Job History}
 
-\job{01/2013}{present}{Principal Researcher at Microsoft, Redmond, WA, USA}{}
+\job{01/2013}{present}{Senior Principal Researcher at Microsoft, Redmond, WA, USA}{}
 
-\job{01/2010}{01/2013}{Senior Researcher at Microsoft, Redmond, WA, USA}{}
+\job{01/2010}{01/2013}{Principal Researcher at Microsoft, Redmond, WA, USA}{}
 
-\job{08/2006}{01/2010}{Researcher at Microsoft, Redmond, WA, USA}{}
+\job{08/2006}{01/2010}{Senior Researcher at Microsoft, Redmond, WA, USA}{}
 
 \job{02/2001}{08/2006}{Computer Scientist at SRI International, Menlo Park, CA, USA}{}
 
@@ -69,19 +67,28 @@
 
 \job{06/1998}{12/1998}{Visiting Researcher at Semantic Designs, Austin, TX, USA}{}
 
-%% \job{12/1995}{10/1997}{IBM-Brazil Consultant on Object Technology and Instructor of}{IBM-Brazil OTU (Object Technology University)}
+\section*{Recent Projects}
+
+\begin{itemize}
+\item {\em The Lean Programming Language and Proof Assistant}, \url{http://leanprover.github.io}.
+Lean is implemented in Lean itself and is fully extensible: users can modify and extend the parser, elaborator,
+tactics, decision procedures, pretty printer, and code generator \url{https://github.com/leanprover/lean4}.
+Lean is also an efficient functional programming language based on a novel programming paradigm called functional but in-place.
+The project has been featured in many popular science magazines, including Nature, Wired, Quanta, BigThink, to cite a few (\url{https://leanprover.github.io/links/}).
+
+\item {\em Z3} is an efficient satisfiability modulo theories (SMT) solver, \url{http://github.com/z3prover/z3}.
+  Z3 is used in automated testing, software and hardware verification, optimization, and constraint solving applications.
+  The project has received numerous awards including the {\em Programming Languages Software Award} from ACM SIGPLAN.
+\end{itemize}
 
 \section*{Education}
-
 \begin{tabular}{ll}
 04/2000 & Ph.D. in Computer Science, \\
-            & Thesis topic: ``Automating the Generation of Program Analysis \\
-                & and Verification Tools'' \\
-                & Advisor: Carlos Jos\'e Pereira de Lucena \\
-        & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
+  & Thesis topic: ``Automating the Generation of Program Analysis \\
+  & and Verification Tools'' \\
+  & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
 03/1996 & M.Sc. in Computer Science, \\
-                & Thesis topic: ``Visual Development Environments'' \\
-                & Advisor: Carlos Jos\'e Pereira de Lucena \\
+        & Thesis topic: ``Visual Development Environments'' \\
         & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
 01/1994 & Computer Engineer, \\
         & Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
@@ -89,32 +96,55 @@
 
 \section*{Research Interests}
 
-Decision Procedures, Theorem Proving, Model Checkers, Static Analysis, System Verification.
+Decision Procedures, Theorem Proving, Programming Languages, Model Checkers, Static Analysis, System Verification.
 
 \section*{Awards}
-\award{04/2018}{ }{ETAPS 2018 Test of Time Award for the paper {\em Z3: An Efficient SMT Solver}}{}
-\award{08/2017}{ }{Skolem Award for the paper {\em Efficient E-Matching for SMT Solvers}.}
-                  {The Skolem award is given to the papers that have passed the test of time \\
-                   & by being a most influential in the field of automated deduction.}
-\award{06/2015}{ }{Programming Languages Software Award for Z3 from ACM SIGPLAN.}{}
-\award{04/2014}{ }{TACAS Conference Award. }  { Most influential tool paper in the first 20 years of TACAS.}
-\award{08/2010}{ }{Haifa Verification Conference Award. } { The HVC award is given to the most influential work in the last five \\
+
+\award{2021}{ }{Distinguished paper award at PLDI}{“Perceus: Garbage Free Reference Counting with Reuse”.}
+\award{2021}{ }{CAV Award}{for pioneering contributions to the foundations of the theory and practice\\ & of satisfiability modulo theories (SMT).}
+\award{2019}{ }{Herbrand Award}{for numerous and important contributions to SMT solving, including\\ & its theory, implementation, and application to a wide range of \\ & academic and industrial needs.}
+\award{2018}{ }{ETAPS 2018 Test of Time Award}{for the paper {\em Z3: An Efficient SMT Solver}}
+\award{2017}{ }{Skolem Award}
+      {for the paper ``Efficient E-Matching for SMT Solvers''. \\
+       & The Skolem award is given to the papers that have passed the test of time \\
+       & by being a most influential in the field of automated deduction.}
+\award{2015}{ }{Programming Languages Software Award for Z3 from ACM SIGPLAN.}{}
+\award{2014}{ }{TACAS Conference Award. }  { Most influential tool paper in the first 20 years of TACAS.}
+\award{2010}{ }{Haifa Verification Conference Award. } { The HVC award is given to the most influential work in the last five \\
                    & years in the scope of software and hardware verification and testing. }
-\award{12/2007}{ }{Microsoft Gold Star (for the Z3 theorem prover)}{Microsoft}
-\award{07/2005}{ }{SRI Focus Award (Outstanding Employee)}{SRI International}
-%% \award{06/2005}{ }
-\award{03/2000}{ }{Second Prize in the ACM'2000 Student Research Contest}{Association of Computing Machinery (ACM)}
-\award{03/1996}{03/2000}{Doctorate Fellowship}{Brazilian Council for Science and Technology (CNPq)}
-\award{02/1994}{03/1996}{M.Sc. Fellowship}{Brazilian Council for Science and Technology (CNPq)}
-\award{08/1989}{10/1992}{Undergraduate Fellowship,}{Brazilian Council for Science and Technology (CNPq)}
+\award{2007}{ }{Microsoft Gold Star (for the Z3 theorem prover)}{Microsoft}
+\award{2005}{ }{SRI Focus Award (Outstanding Employee)}{SRI International}
+\award{2000}{ }{Second Prize in the ACM'2000 Student Research Contest}{Association of Computing Machinery (ACM)}
 
 \section*{Publications}
 
+Google Scholar: \url{https://scholar.google.com/citations?user=CwazDKgAAAAJ&hl=en}.
+
 \begin{enumerate}
+
+\item S. Ullrich and L. de Moura,
+      {\em ‘do’ unchained: Embracing local imperativity in a purely functional language},
+      Proc. ACM Program. Lang., ICFP, 2022.
+
+\item L. de Moura and S. Ullrich,
+      {\em The Lean 4 theorem prover and programming language},
+      28th International Conference on Automated Deduction, 2021.
+
+\item A. Reinking, N. Xie, L. de Moura, and D. Leijen,
+      {\em Perceus: Garbage free reference counting with reuse},
+      In Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation, PLDI, 2021. ({\em distinguished paper award}).
+
+\item S. Ullrich and L. de Moura,
+      {\em Beyond notations: Hygienic macro expansion for theorem proving languages},
+      10th International Joint Conference in Automated Reasoning (IJCAR), 2020.
+
+\item S. Ullrich and L. de Moura,
+      {\em Counting immutable beans: Reference counting optimized for purely functional programming},
+      31st Symposium on Implementation and Application of Functional Languages (IFP), 2019.
+
 \item D. Selsam, M. Lamm, B. Bünz, P. Liang, L. de Moura and D. Dill,
       {\em Learning a SAT Solver from Single-Bit Supervision},
       International Conference on Learning Representations (ICLR), 2019.
-
 
 \item G. Ebner, S. Ullrich, J. Roesch, J. Avigad and L. de Moura,
       {\em A Metaprogramming Framework for Formal Verification},
@@ -397,7 +427,6 @@ Journal of the Brazilian Computer Society, V1, N1, pp 36-45, July 1994.
 Phys. Review B 45, 1023, 1992.
 \end{enumerate}
 
-
 \section*{Patents}
 \begin{itemize}
 \item L. de Moura and N. Bjorner, \emph{Matching based pattern inference for SMT solvers}, US Patent 9,489,221.
@@ -410,6 +439,13 @@ Phys. Review B 45, 1023, 1992.
 
 \section*{Professional Activities}
 \begin{itemize}
+\item Chair of the 13th International Conference on Interactive Theorem Proving (ITP), 2022.
+\item Member of the Program Committee of the 23rd International Conference on Verification, Model Checking, and Abstract Interpretation (VMCAI), 2021.
+\item Member of the Program Committee of the International Conference on Formal Methods in Computer-Aided Design (FMCAD), 2021.
+\item Member of the Program Committee of the 12th International Conference on Interactive Theorem Proving (ITP), 2021.
+\item Member of the Program Committee of the 10th International Joint Conference on Automated Reasoning (IJCAR), 2020.
+\item Member of the Program Committee of the 23rd Brazilian Symposium on Formal Methods (SBMF), 2020.
+\item Member of the Program Committee of the 28th International Conference on Automated Reasoning with Analytic Tableaux and Related Methods (Tableaux), 2019.
 \item Member of the Program Committee of the International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2019.
 \item Member of the Program Committee of the 10th International Conference on Interactive Theorem Proving (ITP), 2019.
 \item Member of the Program Committee of the 25th International Conference on Types for Proofs and Programs (TYPES), 2018.
@@ -462,79 +498,24 @@ Phys. Review B 45, 1023, 1992.
 \item Organizer of the 1st Satisfiability Modulo Theories Competition (SMT-COMP), 2005.
 \end{itemize}
 
-\section*{Teaching}
-
-\begin{itemize}
-\item Winter 2016, Course on ``Dependent Type Theory'', RIO 2016 Summer School, 2016.
-\item Sprint 2015, Lecture on ``Higher-order unification'' in the interactive theorem proving course at CMU (Jeremy Avigad and Ed Clarke's course).
-\item Summer 2014, Lectures on ``Nonlinear arithmetic'', SAT/SMT Summer School, Vienna, Austria.
-\item Summer 2013, Lectures on ``Decision Methods for Arithmetic'', Third Summer School on Formal Techniques, Menlo Park.
-\item Spring 2013, Course on ``Tools and Algorithms in Real Algebraic Geometry'', Universita Degli Studi di Milano, Italy, March.
-\item Summer 2012, Lectures on ``Quantifiers in Satisfiability Modulo Theories'', SAT/SMT Summer School, Trento, Italy.
-\item Summer 2012, Lectures on ``Satisfiability Modulo Theories'', Second Summer School on Formal Techniques, Menlo Park.
-\item Summer 2011, Lectures on ``Satisfiability Modulo Theories'', First Summer School on Formal Techniques, Menlo Park.
-\item Spring 2010, Course on ``Satisfiability Modulo Theories (SMT): Ideas \& Applications'', Universita Degli Studi di Milano, Italy, March.
-\item Autumn 2009, Lectures on ``Designing and Implementing Satisfiability Modulo Theory Solvers'', Summer School organized by Max Planck Institut and INRIA, Nancy.
-\item Summer 2008, Lectures on ``SMT Solvers: Theory and Implementation'', Summer School on Logic and Theorem Proving in Programming Languages, Oregon.
-\item Spring 2007, Lecture on ``SMT solvers'' at CMU (Ed Clarke's course).
-\item Summer 2004, Lecture in the Stanford/SRI Summer School on Combination of Decision Procedures.
-\item Fall 2003, Little Engines of Proof (CS359), Stanford.
-\end{itemize}
-
-%% \section*{Patents}
-
-%% \begin{itemize}
-
-%% \item U.S. Patent Application No. 60/397,201: {\em Methods and Apparatus for Integrating Formal Decision Procedures
-%% and Performing Bounded Model Checking for Infinite State Systems}, 2002.
-
-%% \end{itemize}
-
 \section*{References}
 
 \REF{Dr. Thomas Ball}
     {Microsoft Research, WA, USA \\
      email: tball@microsoft.com \\
-     homepage:   http://research.microsoft.com/\~{ }tball
+     homepage:   \url{https://www.microsoft.com/en-us/research/people/tball/}
 }
 
 \REF{Prof. Jeremy Avigad}
     {Carnegie Mellon University, PA, USA \\
      email: avigad@cmu.edu \\
-     homepage:  http://www.andrew.cmu.edu/user/avigad/}
-
-\REF{Dr. John Rushby}
-    {SRI International, CA, USA \\
-    email: rusbhy@csl.sri.com \\
-    homepage: http://www.csl.sri.com/\~{ }rushby \\
-    vox: 650-859-5456
+     homepage: \url{http://www.andrew.cmu.edu/user/avigad/}
     }
 
 \REF{Dr. Natarajan Shankar}
     {SRI International, CA, USA \\
     email: shankar@csl.sri.com \\
-    homepage: http://www.csl.sri.com/\~{ }shankar \\
-    vox: 650-859-5272
+    homepage: \url{http://www.csl.sri.com/\~shankar} \\
     }
 
-%% \REF{Dr. Patrick Lincoln}
-%%     {SRI International, CA, USA \\
-%%     email: lincoln@csl.sri.com \\
-%%     homepage: \htmladdnormallink{http://www.csl.sri.com/\~{ }lincoln}{http://www.csl.sri.com/~lincoln} \\
-%%     vox: 650-859-5454
-%%     }
-
-%% \REF{Prof. Edward Hermann Haeusler}
-%%      {Pontifical Catholic University of Rio de Janeiro (PUC-Rio), Brazil \\
-%%       Computer Science Department \\
-%%      email: hermann@inf.puc-rio.br \\
-%%       homepage: \htmladdnormallink{http://www.inf.puc-rio.br/\~{ }hermann}{http://www.inf.puc-rio.br/~hermann}
-%%      }
-
-%% \REF{Dr. Ira D. Baxter}
-%%     {Semantic Designs, Austin, Texas, USA \\
-%%       email: idbaxter@semdesigns.com \\
-%%       homepage: \htmladdnormallink{http://www.semdesigns.com }{http://www.semdesigns.com} \\
-%%       vox: 512-250-1018x140
-%%      }
 \end{document}
