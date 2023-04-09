@@ -6,12 +6,9 @@ title: About Me
 {{ page.title }}
 ================
 
-I'm a Senior Principal Researcher in the [RiSE](http://research.microsoft.com/en-us/groups/rise) group at [Microsoft Research](http://research.microsoft.com). I joined Microsoft in 2006, before that I was a Computer Scientist at [SRI International](http://www.csl.sri.com/). I obtained my PhD at [PUC-Rio](http://www.puc-rio.br) in 2000. My research areas are [automated reasoning](http://en.wikipedia.org/wiki/Automated_reasoning), [theorem proving](http://en.wikipedia.org/wiki/Theorem_proving), [decision procedures](http://en.wikipedia.org/wiki/Decision_procedure), [SAT](http://en.wikipedia.org/wiki/Boolean_satisfiability_problem) and [SMT](http://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories).
+I am a Senior Principal Applied Scientist in the Automated Reasoning Group at [AWS](https://aws.amazon.com/). Before joining AWS in 2023, I was a Senior Principal Researcher in the RiSE group at [Microsoft Research](http://research.microsoft.com), where I worked for 17 years starting in 2006. Prior to that, I worked as a Computer Scientist at [SRI International](http://www.csl.sri.com/). My research areas are [automated reasoning](http://en.wikipedia.org/wiki/Automated_reasoning), [theorem proving](http://en.wikipedia.org/wiki/Theorem_proving), [decision procedures](http://en.wikipedia.org/wiki/Decision_procedure), [SAT](http://en.wikipedia.org/wiki/Boolean_satisfiability_problem) and [SMT](http://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories).
 I'm the main architect of [Lean](https://github.com/leanprover/lean),  [Z3](https://github.com/Z3Prover/z3), [Yices 1.0](http://yices.csl.sri.com/) and
-[SAL](http://sal.csl.sri.com). Lean is an open source theorem prover and programming language. [Sebastian Ullrich](https://kha.github.io/)  and I are currently developing the next version (Lean 4).
-Z3 and Yices are [SMT solvers](http://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories),
-and SAL (the Symbolic Analysis Laboratory) is an open source tool suite that includes symbolic and bounded model checkers, and automatic test generators.
-Z3 has been open sourced (under the MIT license) in the beginning of 2015.
+[SAL](http://sal.csl.sri.com). Lean is an open source theorem prover and programming language. Z3 and Yices are [SMT solvers](http://en.wikipedia.org/wiki/Satisfiability_Modulo_Theories), and SAL (the Symbolic Analysis Laboratory) is an open source tool suite that includes symbolic and bounded model checkers, and automatic test generators. Z3 has been open sourced (under the MIT license) in the beginning of 2015.
 
 Awards
 ======
