@@ -22,8 +22,7 @@ Awards
 - (2021) [CAV Award](http://i-cav.org/2021/cav-award/) for pioneering contributions to the foundations of the theory and practice of satisfiability modulo theories (SMT).
 - (2021) Distinguished paper award at [PLDI](https://pldi21.sigplan.org/track/pldi-2021-papers) for the paper "Perceus: Garbage Free Reference Counting with Reuse".
 - (2025) [Skolem Award](https://cadeinc.org/Skolem-Award) for the paper "The Lean Theorem Prover" that has passed the test of time, by being a most influential paper in the field.
-- (2025) ACM SIGPLAN Programming Languages Software Award for Lean.
-
+- (2025) [ACM SIGPLAN Programming Languages Software Award](https://www.sigplan.org/Awards/Software/) for Lean.
 
 You can find more about me at:
 
