@@ -1,7 +1,6 @@
-pygments: true
-markdown: rdiscount
+markdown: kramdown
 baseurl: https://leodemoura.github.io
 
 name: Leonardo de Moura
-description: Leonardo de Moura's blog
+description: Leonardo de Moura's homepage
 url: https://leodemoura.github.io

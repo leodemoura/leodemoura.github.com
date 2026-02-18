@@ -15,9 +15,7 @@ html, body {
 
 body {
   background-color: white;
-  /* font-family: 'Inconsolata', sans-serif; */
-  font: 13.34px Inconsolata helvetica, arial, clean, sans-serif; 
-  *font-size: small; 
+  font: 13.34px Inconsolata, helvetica, arial, clean, sans-serif;
   text-align: center;
 }
 
@@ -260,10 +258,45 @@ div#recentposts h3 {
 }
 
 /*****************************************************************************/
-/* Facebook like hack
+/* Responsive
 /*****************************************************************************/
-.fb_like {  
-  overflow: hidden;
-  height 20px;
-  width: 90px;
+
+@media (max-width: 768px) {
+  div#outer {
+    float: none;
+  }
+
+  div#left {
+    width: 100%;
+    float: none;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  div#left img {
+    max-width: 150px;
+  }
+
+  .site {
+    width: 90%;
+    float: none;
+    margin: 1em auto;
+  }
+
+  div#right {
+    display: none;
+  }
+
+  div#top {
+    height: 10px;
+  }
+
+  .site .footer .contact {
+    float: none;
+    margin-bottom: 1em;
+  }
+
+  .site .footer .rss {
+    float: none;
+  }
 }

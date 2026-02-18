@@ -1,62 +1,32 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
 
 <head>
- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
  {% if page.entry.title != null %}
    <title>{{ page.entry.title }}</title>
  {% else %}
    <title>{{ page.title }}</title>
  {% endif %}
  <meta name="author" content="Leonardo de Moura" />
- <meta name="description" content="Leonardo de Moura' Homepage" />
- <meta name="keywords" content="Z3, SMT, SAT, Leonardo, Leo, de Moura, decision procedure, Yices, theorem prover" />
+ <meta name="description" content="Leonardo de Moura — Creator Lean and Z3" />
+ <meta name="keywords" content="Lean, theorem prover, Z3, SMT, SAT, Leonardo, Leo, de Moura, automated reasoning, formal verification" />
 
  <!-- syntax highlighting CSS -->
  <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css" type="text/css" />
-
- <!-- <link href="/css/highlight.css" rel="stylesheet" type="text/css"> -->
- <link href="{{site.baseurl}}/css/gists.css" rel="stylesheet" type="text/css"/>
+ <link rel="stylesheet" href="{{site.baseurl}}/css/gists.css" type="text/css" />
 
  <!-- Homepage CSS -->
  <link rel="stylesheet" href="{{site.baseurl}}/css/screen.css" type="text/css" media="screen, projection" />
 
- <!-- Typekit
- <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
- <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
- -->
+ <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" />
 
- <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css' />
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-35893481-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
   <div id="outer">
     <div id="top"></div>
@@ -81,23 +51,17 @@
         <div class="contact">
           <p>
             Leonardo de Moura<br />
-            Senior Principal Applied Scientist in the Automated Reasoning Group at <a href="https://aws.amazon.com/">AWS</a><br />
+            Senior Principal Applied Scientist at <a href="https://aws.amazon.com/">AWS</a><br />
+            Chief Architect and co-founder of the <a href="https://lean-fro.org">Lean FRO</a><br />
             <a href="mailto:leodemoura0@gmail.com">leodemoura0@gmail.com</a>
           </p>
         </div>
         <div class="contact">
           <p>
-        <a href="http://stackoverflow.com/users/841416/leonardo-de-moura">Stackoverflow</a>
+            <a href="https://github.com/leodemoura">GitHub</a><br />
+            <a href="https://scholar.google.com/citations?user=CwazDKgAAAAJ">Google Scholar</a><br />
+            <a href="https://www.linkedin.com/in/leonardo-de-moura-26a27b5/">LinkedIn</a>
           </p>
-        </div>
-        <div class="contact">
-        <p>
-          <div class="fb_like">
-            <div class="fb-like" data-send="false" data-layout="button_count" data-width="90px" data-show-faces="false" data-font="arial"></div>
-          </div>
-          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </p>
         </div>
         <div class="rss">
           <a href="{{site.baseurl}}/feed.xml">
