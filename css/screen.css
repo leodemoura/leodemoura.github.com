@@ -7,6 +7,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -14,46 +15,56 @@ html, body {
 }
 
 body {
-  background-color: white;
-  font: 13.34px Inconsolata, helvetica, arial, clean, sans-serif;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
   text-align: center;
+  line-height: 1.6;
 }
 
 h1 {
-  font-size: 125%;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #222;
 }
 
 h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.1em;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  color: #222;
 }
 
 p {
-  margin: 1em 0;
+  margin: 0.8em 0;
 }
 
 ol.bibliography li a.details {
- margin: 0 0 0 5px;
+  margin: 0 0 0 5px;
 }
 
 a {
-  color: #00a;
+  color: #1a6fb5;
+  text-decoration: none;
 }
 
 a:hover {
-  color: black;
+  color: #0d4f84;
+  text-decoration: underline;
 }
 
 a:visited {
-  color: #a0a;
+  color: #6b5b95;
 }
 
 table {
   font-size: inherit;
-  font: 100%;
+}
+
+code, pre {
+  font-family: "Inconsolata", "SF Mono", "Menlo", "Consolas", monospace;
 }
 
 /*****************************************************************************/
@@ -70,9 +81,9 @@ ul.posts li {
 }
 
 ul.posts span {
-    color: #aaa;
-    font-family: Monaco, "Courier New", monospace; 
-    font-size: 80%;
+    color: #999;
+    font-family: "Inconsolata", "SF Mono", monospace;
+    font-size: 0.85em;
 }
 
 /*****************************************************************************/
@@ -80,65 +91,69 @@ ul.posts span {
 /*****************************************************************************/
 
 dl {
-    width:100%;
-    overflow:hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
 dt {
     float: left;
-    width: 8%; /* adjust the width; make sure the total of both is 100% */
+    width: 8%;
 }
 
 dd {
-    float:left;
-    width: 92%; /* adjust the width; make sure the total of both is 100% */
+    float: left;
+    width: 92%;
     margin: 0 0 1em 0;
 }
 
-
 .site {
-    font-size: 110%;
-    text-align: justify;
-    width: 70%;
+    font-size: 1em;
+    text-align: left;
+    width: 65%;
     float: left;
-    margin: 3em auto 2em auto;
-    line-height: 1.5em;
+    margin: 2em auto 2em auto;
+    line-height: 1.6;
 }
 
 .title {
-    color: #a00;
     font-weight: bold;
     margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
 }
 
 .site .title a {
-    color: #a00;
+    color: #222;
     text-decoration: none;
+    font-size: 1.2em;
 }
 
 .site .title a:hover {
-    color: black;
-  }
+    color: #1a6fb5;
+}
 
 .site .title a.extra {
-    color: #aaa;
+    color: #888;
     text-decoration: none;
-    margin-left: 1em;
+    margin-left: 1.2em;
+    font-size: 0.85em;
+    font-weight: normal;
 }
 
 .site .title a.extra:hover {
-    color: black;
+    color: #1a6fb5;
 }
 
 .site .meta {
-    color: #aaa;
+    color: #999;
 }
 
 .site .footer {
-    font-size: 80%;
+    font-size: 0.85em;
     color: #666;
-    border-top: 4px solid #eee;
-    margin-top: 2em;
+    border-top: 1px solid #eee;
+    margin-top: 3em;
+    padding-top: 1.5em;
     width: 100%;
     overflow: hidden;
 }
@@ -149,7 +164,7 @@ dd {
 }
 
 .site .footer .contact a {
-    color: #8085C1;
+    color: #1a6fb5;
 }
 
 .site .footer .rss {
@@ -167,17 +182,13 @@ dd {
 /* Posts
 /*****************************************************************************/
 
-#post {
-    
-}
-
-/* standard */
-
 #post pre {
     white-space: pre-wrap;
-    border: 1px solid #ddd;
-    background-color: #eef;
-    padding: 0 .4em;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+    padding: 0.8em 1em;
+    border-radius: 4px;
+    overflow-x: auto;
 }
 
 #post ul, #post ol {
@@ -185,26 +196,29 @@ dd {
 }
 
 #post code {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    font-size: 85%;
-    padding: 0 .2em;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+    font-size: 0.9em;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
 }
 
 #post pre code {
     border: none;
+    padding: 0;
+    background: none;
 }
 
-  /* terminal */
+/* terminal */
 
 #post pre.terminal {
-    border: 1px solid black;
-    background-color: #333;
-    color: white;
+    border: 1px solid #444;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
 }
 
 #post pre.terminal code {
-    background-color: #333;
+    background-color: #2d2d2d;
 }
 
 #related {
@@ -215,6 +229,10 @@ dd {
     margin-bottom: 1em;
 }
 
+/*****************************************************************************/
+/* Layout
+/*****************************************************************************/
+
 div#outer {
     float: left;
     width: 100%;
@@ -224,37 +242,23 @@ div#left {
     width: 25%;
     margin: 3em auto 2em auto;
     float: left;
+    text-align: center;
+}
+
+div#left img {
+    max-width: 180px;
+    border-radius: 8px;
 }
 
 div#right {
-    width: 25%;
+    width: 10%;
     float: left;
 }
 
 div#top {
-  height: 20px;
-  float: left;
-  width: 100%;
-}
-
-div#recentposts{
-    margin-left: auto;
-    margin-right: auto;
-    width:150px;
-    font-size:10px;
-    color:#000;
-    background-color:#eef;
-    border-radius:10px;
-    padding:10px;
-    text-align:left;
-    margin-top: 15px;
-}
-
-div#recentposts h3 {
-    text-transform:uppercase;
-    color:#000000;
-    margin:0;
-    font-size:1.1em;
+    height: 20px;
+    float: left;
+    width: 100%;
 }
 
 /*****************************************************************************/
@@ -270,17 +274,25 @@ div#recentposts h3 {
     width: 100%;
     float: none;
     text-align: center;
-    margin: 1em 0;
+    margin: 1.5em 0;
   }
 
   div#left img {
-    max-width: 150px;
+    max-width: 140px;
   }
 
   .site {
     width: 90%;
     float: none;
     margin: 1em auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .site .title a.extra {
+    margin-left: 0.8em;
   }
 
   div#right {
