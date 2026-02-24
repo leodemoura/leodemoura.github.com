@@ -515,16 +515,16 @@ example : odd 3 := ⟨1, rfl⟩   -- witness: k = 1, and 3 = 2*1 + 1</code></pre
         <p>Theorem statement:</p>
         <pre><code class="language-lean">theorem odd_add_odd (h1 : odd m) (h2 : odd n)
     : even (m + n) := by
-  obtain ⟨k1, rfl⟩ := h1
-  obtain ⟨k2, rfl⟩ := h2
+  obtain ⟨k1, _⟩ := h1
+  obtain ⟨k2, _⟩ := h2
   exact ⟨k1 + k2 + 1, by ring⟩</code></pre>
       </div>
       <div>
         <p>An incorrect proof (Lean rejects it):</p>
         <pre><code class="language-lean">theorem odd_add_odd' (h1 : odd m) (h2 : odd n)
     : even (m + n) := by
-  obtain ⟨k1, rfl⟩ := h1
-  obtain ⟨k2, rfl⟩ := h2
+  obtain ⟨k1, _⟩ := h1
+  obtain ⟨k2, _⟩ := h2
   exact ⟨k1 + k2, by ring⟩
   -- Error: ring failed to prove
   -- 2 * k1 + 1 + (2 * k2 + 1)
@@ -553,7 +553,7 @@ example : odd 3 := ⟨1, rfl⟩   -- witness: k = 1, and 3 = 2*1 + 1</code></pre
           dramatically. Compact proofs = better training data = better AI provers.</li>
     </ul>
     <div class="key-box">
-      A calculator doesn't make math irrelevant. It lets you skip arithmetic and focus on the real problem.
+      AI use calculators. It lets them skip arithmetic and focus on the real problem.
       The tactics you'll see today
       (<code>omega</code>, <code>bv_decide</code>, <code>grind</code>) are the calculator for proofs.
     </div>
@@ -762,7 +762,9 @@ h2 : odd n
 ▶ Odd.lean:6:2
 
 k1 k2 : ℕ
-⊢ even (2 * k1 + 1 + (2 * k2 + 1))</div>
+_ : k1 = 2 * m + 1
+_ : k2 = 2 * n + 1
+⊢ even (n + m)</div>
     </div>
     <p>After two <code>obtain</code> moves, the hypotheses are unpacked
        and the goal is simplified.</p>
@@ -929,18 +931,18 @@ theorem and_swap' (p q : Prop)
     <div class="slide-header">
       <img src="images/slide2_img2.png" alt="Lean">
     </div>
-    <h2>A Verified Function: <code>List.reverse</code></h2>
-    <pre><code class="language-lean">-- Define reverse with an accumulator
-def List.rev (acc : List α) : List α → List α
-  | []      => acc
-  | x :: xs => rev (x :: acc) xs
+    <h2>A Verified Function: <code>append</code></h2>
+    <pre><code class="language-lean">-- Define List append 
 
--- Prove it's correct: reversing twice gives back the original
-theorem List.rev_rev (xs : List α) :
-    (xs.rev []).rev [] = xs := by
-  induction xs with
+def append : (xs ys : List α) → List α
+  | [],      bs => bs
+  | a :: as, bs => a :: append as bs
+
+theorem append_assoc (as bs cs : List α) 
+     : append (append as bs) cs = append as (append bs cs) := by
+  induction as with
   | nil => rfl
-  | cons x xs ih => simp_all [rev]</code></pre>
+  | cons a as ih => simp [ih, append]</code></pre>
     <div class="key-box">
       <strong>Write code and prove properties about it</strong>, in the same language, same file.
       No separate specification language, no model extraction, no translation.
