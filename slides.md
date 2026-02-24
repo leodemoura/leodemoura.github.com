@@ -4,6 +4,7 @@ title: Slides
 ---
 
 # Slides
+- [From Decision Procedures to Proof Automation in Lean]({{site.baseurl}}/stanford2026/), Stanford CS257, 2026
 - Lean related presentations can be found [here](https://leanprover.github.io/publications/).
 - [Lost in translation: how easy problems become hard due to bad encodings]({{site.baseurl}}/files/Vampire2015.pdf), [Vampire workshop](http://easychair.org/smart-program/Vampire2015/), Berlin, 2015
 - [The Lean Theorem Prover Tutorial](http://leanprover.github.io/presentations/20150803_CADE), [CADE-25 Tutorial](http://conference.mi.fu-berlin.de/cade-25/events), Berlin, 2015
