@@ -5,6 +5,8 @@ date: 2026-02-18
 categories: blog
 ---
 
+# Proof Assistants in the Age of AI
+
 AI is transforming how we write formal proofs. Language models can now generate thousands of lines of verified mathematics with minimal human guidance, and the cost keeps dropping. This is exciting, and it raises a natural question: what role does the choice of proof assistant play when AI is doing more of the work?
 
 I believe the answer is that it matters more, not less.
