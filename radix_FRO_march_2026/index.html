@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean for AI, AI for Lean</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="lib/reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="custom.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-color="#312e81">
+          <h2>
+            Lean for AI, AI for Lean</h2>
+          <p>
+            Leonardo de Moura</p>
+          <p>
+            Lean FRO | March 2026</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Result</h2>
+          <p>
+            10 AI agents built a <strong>verified embedded DSL</strong> with proved optimizations in <strong>a single weekend</strong>.</p>
+          <ul>
+            <li>
+              <p>
+                Zero <code>sorry</code> — 52 theorems, all complete</p>
+              </li>
+            <li>
+              <p>
+                5 verified compiler optimizations</p>
+              </li>
+            <li>
+              <p>
+                Determinism, type safety, memory safety — all proved</p>
+              </li>
+            <li>
+              <p>
+                Linear ownership typing with soundness proof</p>
+              </li>
+            <li>
+              <p>
+                Interpreter correctness — sound and complete</p>
+              </li>
+            <li>
+              <p>
+                27 modules, ~7,400 lines of Lean</p>
+              </li>
+            </ul>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lessons Learned</h2>
+          <ul>
+            <li>
+              <p>
+                I did not touch the code. Zero lines. Full agent autonomy.</p>
+              </li>
+            <li>
+              <p>
+                Unlike most human users, Claude <em>reads the documentation</em>. One stuck agent? I said "Read the <code>grind</code> docs." It downloaded, understood, unblocked.</p>
+              </li>
+            <li>
+              <p>
+                Examples are powerful: agents found our DSL declaration examples and adopted the same pattern for Radix syntax.</p>
+              </li>
+            <li>
+              <p>
+                Claude struggled with <em>mutual induction</em> — but found workarounds every time.</p>
+              </li>
+            <li>
+              <p>
+                Claude struggled with <em>monadic code</em> and avoided it. We don't have enough examples for that.</p>
+              </li>
+            <li>
+              <p>
+                I created a GitHub token scoped to the Radix repo only. Good thing — Claude tried to push to <code>leanprover/lean4</code>.</p>
+              </li>
+            <li>
+              <p>
+                Toolchain version issues (v4.29.0) confused Claude when generating these slides.</p>
+              </li>
+            </ul>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Radix — A Real Program</h2>
+          <p>
+            Agents write Radix using concrete syntax macros. Verso elaborates every line:</p>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.definition-1614">def</span><span class="inter-text"> </span><span class="const token" data-binding="const-slideBubbleSort" data-verso-hover="0">slideBubbleSort</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">`[RStmt|</span><span class="inter-text">
+  </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtLet_:=New_[_];»-1648">let</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtLet_:=New_[_];»-1648">new</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Radix.rtyUint64-1663">uint64</span><span class="unknown token" data-binding="">[]</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">10</span><span class="unknown token" data-binding="">]</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">0</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">5</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">3</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">2</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">8</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">3</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">4</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">9</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">5</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">2</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">6</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">7</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">7</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">4</span><span class="unknown token" data-binding="">;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">8</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">6</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="typed token" data-binding="" data-verso-hover="1">9</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">0</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">i</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">0</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtWhile(_){_}»-1827">while</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="unknown token" data-binding="">i</span><span class="inter-text"> </span><span class="unknown token" data-binding="">&lt;</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">9</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">0</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+    </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtWhile(_){_}»-1859">while</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">&lt;</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">9</span><span class="inter-text"> </span><span class="unknown token" data-binding="">-</span><span class="inter-text"> </span><span class="unknown token" data-binding="">i</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="inter-text">
+      </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtLet_:_=_;»-1885">let</span><span class="inter-text"> </span><span class="unknown token" data-binding="">a</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Radix.rtyUint64-1893">uint64</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="unknown token" data-binding="">j</span><span class="unknown token" data-binding="">]</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+      </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtLet_:_=_;»-1916">let</span><span class="inter-text"> </span><span class="unknown token" data-binding="">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="keyword token" data-binding="kw-occ-Radix.rtyUint64-1924">uint64</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">]</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+      </span><span class="keyword token" data-binding="kw-occ-Radix.«rstmtIf(_){_}Else{_}»-1951">if</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="unknown token" data-binding="">a</span><span class="inter-text"> </span><span class="unknown token" data-binding="">&gt;</span><span class="inter-text"> </span><span class="unknown token" data-binding="">b</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">{</span><span class="inter-text">
+        </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="unknown token" data-binding="">j</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">b</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+        </span><span class="unknown token" data-binding="">arr</span><span class="unknown token" data-binding="">[</span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">]</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">a</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+      </span><span class="unknown token" data-binding="">}</span><span class="inter-text">
+      </span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">j</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">}</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">i</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">i</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="1">1</span><span class="unknown token" data-binding="">;</span><span class="inter-text">
+  </span><span class="unknown token" data-binding="">}</span><span class="inter-text">
+</span><span class="unknown token" data-binding="">]</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Big-Step Semantics — 16 Rules</h2>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- Big-step: ⟨σ, s⟩ ⇓ r
+-- 16 rules: skip, assign, decl, seqNormal, seqReturn,
+-- ifTrue, ifFalse, whileTrue, whileReturn, whileFalse,
+-- alloc, free, arrSet, ret, block, callStmt, scope
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-2306">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.Stmt.skip" data-verso-hover="4">.skip</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.StmtResult.normal" data-verso-hover="5">.normal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.BigStep.skip" data-verso-hover="6">BigStep.skip</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-2364">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.120" data-verso-hover="7">he</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.110" data-verso-hover="8">e</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Expr.eval" data-verso-hover="9">eval</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.62" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="const token" data-binding="const-Option.some" data-verso-hover="10">some</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="11">v</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.130" data-verso-hover="12">hs</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.62" data-verso-hover="3">σ</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.PState.setVar" data-verso-hover="13">setVar</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.86" data-verso-hover="14">x</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="11">v</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="const token" data-binding="const-Option.some" data-verso-hover="10">some</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.38" data-verso-hover="3">σ'</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.62" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Stmt.assign" data-verso-hover="15">.assign</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.86" data-verso-hover="14">x</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.110" data-verso-hover="8">e</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.StmtResult.normal" data-verso-hover="5">.normal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.38" data-verso-hover="3">σ'</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.BigStep.assign" data-verso-hover="16">BigStep.assign</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.120" data-verso-hover="17">he</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.130" data-verso-hover="18">hs</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-2505">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.175" data-verso-hover="19">h₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.153" data-verso-hover="3">σ₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.157" data-verso-hover="20">s₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.StmtResult.normal" data-verso-hover="5">.normal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.161" data-verso-hover="3">σ₂</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.177" data-verso-hover="21">h₂</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.161" data-verso-hover="3">σ₂</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.167" data-verso-hover="20">s₂</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.173" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.153" data-verso-hover="3">σ₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.157" data-verso-hover="20">s₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">;;</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.167" data-verso-hover="20">s₂</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.173" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.BigStep.seqNormal" data-verso-hover="23">BigStep.seqNormal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.175" data-verso-hover="24">h₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.177" data-verso-hover="25">h₂</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-2661">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.275" data-verso-hover="26">hc</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.249" data-verso-hover="8">e</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Expr.eval" data-verso-hover="27">eval</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.205" data-verso-hover="3">σ₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="const token" data-binding="const-Option.some" data-verso-hover="28">some</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Value.bool" data-verso-hover="29">.bool</span><span class="inter-text"> </span><span class="const token" data-binding="const-Bool.true" data-verso-hover="30">true</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.277" data-verso-hover="31">hb</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.205" data-verso-hover="3">σ₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.219" data-verso-hover="20">b</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.StmtResult.normal" data-verso-hover="5">.normal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.233" data-verso-hover="3">σ₂</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.279" data-verso-hover="32">hw</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.233" data-verso-hover="3">σ₂</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Stmt.while" data-verso-hover="33">.while</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.249" data-verso-hover="8">e</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.219" data-verso-hover="20">b</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.265" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.205" data-verso-hover="3">σ₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Stmt.while" data-verso-hover="33">.while</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.249" data-verso-hover="8">e</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.219" data-verso-hover="20">b</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.265" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.BigStep.whileTrue" data-verso-hover="34">BigStep.whileTrue</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.275" data-verso-hover="35">hc</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.277" data-verso-hover="36">hb</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.279" data-verso-hover="37">hw</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Determinism — <code>grind</code> Does The Work</h2>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- Same state + same statement → same result
+-- 80-line proof by induction on h₁
+-- grind closes equational contradictions
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-3040">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="38">h₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r₁</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.22" data-verso-hover="39">h₂</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="22">r₂</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="22">r₂</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.BigStep.det" data-verso-hover="40">BigStep.det</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="41">h₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.22" data-verso-hover="42">h₂</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            In the real proof: <code>cases h₂ with | assign =&gt; grind</code> handles equational cases. <code>grind</code> decides contradictions like <code>some true = some false</code>. Explicit IH application for recursive cases (<code>seq</code>, <code>while</code>, <code>call</code>, <code>scope</code>).</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Interpreter Correctness — Sound and Complete</h2>
+          <p>
+            A fuel-based interpreter (<code>Stmt.interp</code>) proved equivalent to the relational semantics in both directions:</p>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- Completeness: BigStep implies interp succeeds
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-3590">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="43">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">∃</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="44">fuel</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.interp" data-verso-hover="45">interp</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.20" data-verso-hover="44">fuel</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text">
+      </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Except.ok" data-verso-hover="46">.ok</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.StmtResult.retVal" data-verso-hover="47">retVal</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.StmtResult.state" data-verso-hover="48">state</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.interp_complete" data-verso-hover="49">Stmt.interp_complete</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="50">h</span><span class="inter-text">
+-- Soundness: interp success implies BigStep
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-3757">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.179" data-verso-hover="51">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.124" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.interp" data-verso-hover="52">interp</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.165" data-verso-hover="44">fuel</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.106" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Except.ok" data-verso-hover="53">.ok</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="54">rv</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.88" data-verso-hover="3">σ'</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.106" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.124" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.toStmtResult" data-verso-hover="55">toStmtResult</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="54">rv</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.88" data-verso-hover="3">σ'</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.interp_sound" data-verso-hover="56">Stmt.interp_sound</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.179" data-verso-hover="57">h</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            The relational semantics is the spec. The interpreter is the implementation. These two theorems say they agree exactly.</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Verified Optimizations — 5 Passes, 0 Sorry</h2>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- Each pass: Stmt → Stmt with correctness theorem
+-- "If the original runs, the optimized runs too"
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-4155">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="43">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.constFold" data-verso-hover="58">constFold</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.constFold_correct" data-verso-hover="59">Stmt.constFold_correct</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.14" data-verso-hover="60">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-4245">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.38" data-verso-hover="61">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.28" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.32" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.36" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.28" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.32" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.deadCodeElim" data-verso-hover="62">deadCodeElim</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.36" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.deadCodeElim_correct" data-verso-hover="63">Stmt.deadCodeElim_correct</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.38" data-verso-hover="64">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-4341">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.62" data-verso-hover="65">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.52" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.56" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.60" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.52" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.56" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.copyPropagation" data-verso-hover="66">copyPropagation</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.60" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.copyProp_correct" data-verso-hover="67">Stmt.copyProp_correct</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.62" data-verso-hover="68">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-4436">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.86" data-verso-hover="69">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.76" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.80" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.84" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.76" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.80" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.constPropagation" data-verso-hover="70">constPropagation</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.84" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.constPropagation_correct" data-verso-hover="71">Stmt.constPropagation_correct</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.86" data-verso-hover="72">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-4540">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.117" data-verso-hover="73">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.100" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.104" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.108" data-verso-hover="22">r</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.121" data-verso-hover="74">hf</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.100" data-verso-hover="3">σ</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.PState.funs" data-verso-hover="75">funs</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.115" data-verso-hover="76">funs</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">∀</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.125" data-verso-hover="44">depth</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.100" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.104" data-verso-hover="20">s</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.Stmt.inline" data-verso-hover="77">inline</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.115" data-verso-hover="76">funs</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.125" data-verso-hover="44">depth</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.108" data-verso-hover="22">r</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.Stmt.inline_correct" data-verso-hover="78">Stmt.inline_correct</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.117" data-verso-hover="79">h</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.121" data-verso-hover="80">hf</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Optimizations — What The Proofs Actually Look Like</h2>
+          <p>
+            <strong>Constant folding:</strong> <code>Expr.inferTag</code> conservatively infers output types to guard identity rules. <code>e + 0 → e</code> is sound when <code>e</code> produces <code>uint64</code>. <code>e * 0 → 0</code> is NOT sound — if <code>e</code> fails (e.g., out-of-bounds), the original returns <code>none</code> but the rewrite returns <code>some 0</code>.</p>
+          <p>
+            <strong>Copy propagation:</strong> <code>CopyMap.agrees</code> invariant — every mapping <code>x → y</code> means <code>σ.getVar x = σ.getVar y</code>. Reset at control flow joins to stay sound.</p>
+          <p>
+            <strong>Inline:</strong> rewrites <code>callStmt</code> into <code>scope</code> (frame-isolated body), bounded depth, non-recursive only. Proves function table invariant preserved through execution.</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Linear Ownership — Soundness</h2>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- LinearOk O s O' : owned-set O → stmt s → owned-set O'
+-- 13 rules. Key ones:
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-5454">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.Stmt.skip" data-verso-hover="4">.skip</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.LinearOk.skip" data-verso-hover="83">LinearOk.skip</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-5502">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.379" data-verso-hover="84">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26" data-verso-hover="14">x</span><span class="inter-text"> </span><span class="unknown token" data-binding="">∉</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="82">O</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Stmt.alloc" data-verso-hover="85">.alloc</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26" data-verso-hover="14">x</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.145" data-verso-hover="86">ty</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.264" data-verso-hover="8">sz</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.17" data-verso-hover="82">O</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Std.HashSet.insert" data-verso-hover="87">insert</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26" data-verso-hover="14">x</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.LinearOk.alloc" data-verso-hover="88">LinearOk.alloc</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.379" data-verso-hover="89">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-5593">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.704" data-verso-hover="90">h</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.535" data-verso-hover="14">x</span><span class="inter-text"> </span><span class="unknown token" data-binding="">∈</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.472" data-verso-hover="82">O</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.472" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Stmt.free" data-verso-hover="91">.free</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.Expr.var" data-verso-hover="92">.var</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.535" data-verso-hover="14">x</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.472" data-verso-hover="82">O</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Std.HashSet.erase" data-verso-hover="93">erase</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.535" data-verso-hover="14">x</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.LinearOk.free" data-verso-hover="94">LinearOk.free</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.704" data-verso-hover="95">h</span><span class="inter-text">
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-5682">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.755" data-verso-hover="96">h₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.733" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.737" data-verso-hover="20">s₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.741" data-verso-hover="82">O'</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.757" data-verso-hover="97">h₂</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.741" data-verso-hover="82">O'</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.747" data-verso-hover="20">s₂</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.753" data-verso-hover="82">O''</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.733" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.737" data-verso-hover="20">s₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">;;</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.747" data-verso-hover="20">s₂</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.753" data-verso-hover="82">O''</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.LinearOk.seq" data-verso-hover="98">LinearOk.seq</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.755" data-verso-hover="99">h₁</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.757" data-verso-hover="100">h₂</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Linear Ownership — The Real Invariant</h2>
+          <p>
+            The soundness proof (644 lines) maintains <code>OwnershipInv</code> — a three-part invariant:</p>
+          <ul>
+            <li>
+              <p>
+                <strong>(1) Heap well-formed:</strong> all stored addresses &lt; <code>nextAddr</code></p>
+              </li>
+            <li>
+              <p>
+                <strong>(2) Liveness:</strong> every owned variable holds a live heap address</p>
+              </li>
+            <li>
+              <p>
+                <strong>(3) Distinctness:</strong> different owned variables hold different addresses</p>
+              </li>
+            </ul>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="inter-text">-- Soundness: OwnershipInv preserved through execution
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-6212">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.26" data-verso-hover="101">hlin</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.LinearOk" data-verso-hover="81">LinearOk</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="82">O</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="82">O'</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.28" data-verso-hover="102">hstep</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.BigStep" data-verso-hover="2">BigStep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.8" data-verso-hover="20">s</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="const token" data-binding="const-Radix.StmtResult.normal" data-verso-hover="5">.normal</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.24" data-verso-hover="3">σ'</span><span class="unknown token" data-binding="">)</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.30" data-verso-hover="103">hinv</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.OwnershipInv" data-verso-hover="104">OwnershipInv</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="3">σ</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.4" data-verso-hover="82">O</span><span class="unknown token" data-binding="">)</span><span class="inter-text">
+    </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.32" data-verso-hover="105">hwt</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Radix.WellTypedFuns" data-verso-hover="106">WellTypedFuns</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.18" data-verso-hover="3">σ</span><span class="unknown token" data-binding="">.</span><span class="const token" data-binding="const-Radix.PState.funs" data-verso-hover="107">funs</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text">
+    </span><span class="const token" data-binding="const-Radix.OwnershipInv" data-verso-hover="104">OwnershipInv</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.24" data-verso-hover="3">σ'</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.12" data-verso-hover="82">O'</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text">
+  </span><span class="const token" data-binding="const-Radix.LinearOk.soundness" data-verso-hover="108">LinearOk.soundness</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.26" data-verso-hover="109">hlin</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.28" data-verso-hover="110">hstep</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.30" data-verso-hover="111">hinv</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.32" data-verso-hover="112">hwt</span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            Proved by induction on BigStep — every rule preserves all three parts. The <code>alloc</code> case uses <code>Heap.alloc_fresh</code> for distinctness. The <code>free</code> case uses <code>Heap.free_preserves_ne</code>.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The 10 Agents</h2>
+          <p>
+            Not 10 interchangeable "coding agents." 10 <em>domain experts</em>:</p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <em>Chris Lattner</em> — AST, IR, module structure</p>
+                </li>
+              <li>
+                <p>
+                  <em>Simon Peyton Jones</em> — types, syntax macros</p>
+                </li>
+              <li>
+                <p>
+                  <em>Xavier Leroy</em> — verification strategy</p>
+                </li>
+              <li>
+                <p>
+                  <em>Adam Chlipala</em> — proof engineering</p>
+                </li>
+              <li>
+                <p>
+                  <em>Emina Torlak</em> — type checking, tests</p>
+                </li>
+              <li>
+                <p>
+                  <em>Derek Dreyer</em> — semantics, memory model</p>
+                </li>
+              <li>
+                <p>
+                  <em>John Regehr</em> — edge cases, coverage</p>
+                </li>
+              <li>
+                <p>
+                  <em>Dan Grossman</em> — memory safety proofs</p>
+                </li>
+              <li>
+                <p>
+                  <em>Nadia Polikarpova</em> — formal specifications</p>
+                </li>
+              <li>
+                <p>
+                  <em>Tiark Rompf</em> — interpreter, optimizations</p>
+                </li>
+              </ul>
+            </div>
+          <p>
+            All Claude. One weekend.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Surprise</h2>
+          <p>
+            The agents gave us <em>better feedback on Lean</em> than our human users.</p>
+          <ul>
+            <li>
+              <p>
+                More precise: structured error context, not "it doesn't work"</p>
+              </li>
+            <li>
+              <p>
+                More systematic: they hit every edge case, not just the one they needed</p>
+              </li>
+            <li>
+              <p>
+                More actionable: "tactic X fails on pattern Y because Z"</p>
+              </li>
+            </ul>
+          <p>
+            Adam's <code>grind</code> report was better than most human post-mortems.</p>
+          </section>
+        <section data-background-color="#312e81">
+          <h2>
+            Optimize Lean for AI too, not just humans.</h2>
+          <p>
+            Nobody has built this yet.</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Spec and The Feedback Loop</h2>
+          <ul>
+            <li>
+              <p>
+                <em>Better diagnostics:</em> when a tactic fails, structured error metadata — not just prose. Claude happily processes them.</p>
+              </li>
+            <li>
+              <p>
+                <em>Links to documentation:</em> tactic docstrings and error messages should contain links to the actual documentation. Claude reads them.</p>
+              </li>
+            <li>
+              <p>
+                <em>Faster startup:</em> Claude can try different approaches more efficiently.</p>
+              </li>
+            <li>
+              <p>
+                <em>More examples:</em> and instructions on how to find them. Claude started the Radix project by reading all our examples in the core repo.</p>
+              </li>
+            <li>
+              <p>
+                <em>Attribute guides:</em> teach Claude how to use <code>@[simp]</code>, <code>@[grind]</code>, etc.</p>
+              </li>
+            <li>
+              <p>
+                <em>Implicit information:</em> a pretty printer that shows implicit arguments and avoids exponential blowup. Claude claims it will help — confirming with Anthropic.</p>
+              </li>
+            </ul>
+          <p>
+            <em>Next experiment:</em> Two agent teams in parallel. One builds a hard project and generates friction reports. The other patches Lean to eliminate the friction. We architect and steer.</p>
+          </section>
+        <section data-background-color="#312e81">
+          <h2>
+            A Probable Future</h2>
+          <ul>
+            <li>
+              <p>
+                People will not write Lean. AI will write it. Humans read and audit.</p>
+              </li>
+            <li>
+              <p>
+                People will not write Verso. AI will produce lectures, papers, slides — with machine-checked math and code. Humans focus on the content.</p>
+              </li>
+            </ul>
+          <p>
+            Humans move up the stack. They become designers, architects, readers, auditors.
+</p>
+          </section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/reveal.js/plugin/math/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        disableLayout: true,
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'slide',
+        width: 960,
+        height: 700,
+        margin: 0.000000,
+        navigationMode: 'default',
+        math: { local: 'lib/katex' },
+        plugins: [ RevealNotes, RevealHighlight, RevealMath.KaTeX ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    </body>
+  </html>
