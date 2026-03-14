@@ -1,0 +1,14 @@
+---
+layout: default
+title: Lean Notes — Leonardo de Moura
+---
+
+<div id="home">
+  <h1>Lean Notes</h1>
+  <p>Short updates on Lean development — what's changing, why, and where things are heading.</p>
+  <ul class="posts">
+    {% for post in site.categories.notes %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
