@@ -1,0 +1,2214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Decision Procedures to Proof Automation in Lean | Stanford CS257</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lean-teal: #0891b2;
+      --lean-blue: #3b82f6;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    .reveal {
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      color: var(--text-dark);
+      font-size: 3.4vh;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+      text-transform: none;
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 500;
+    }
+
+    .reveal .slides section {
+      text-align: left;
+      padding: 2vh 3vw;
+      box-sizing: border-box;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* ── Slide header (logo + line) ── */
+    .slide-header {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0.5em;
+    }
+    .slide-header img {
+      height: 6vh;
+      flex-shrink: 0;
+    }
+    .slide-header::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: var(--lean-teal);
+    }
+
+    /* ── Title slide ── */
+    .title-slide {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      text-align: left;
+      padding: 0 !important;
+    }
+    .title-slide .top-area {
+      padding: 1.2em 1.5em 0.8em;
+    }
+    .title-slide .logo {
+      height: 140px;
+    }
+    .title-slide .blue-band {
+      background: #0073A3;
+      flex: 1;
+      padding: 1em 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .title-slide h1 {
+      font-size: 2em;
+      font-weight: 300;
+      margin: 0 0 0.6em 0;
+      color: #ffffff;
+    }
+    .title-slide .meta {
+      font-size: 0.85em;
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    .title-slide .meta strong {
+      font-weight: 500;
+    }
+    .title-slide .date {
+      font-size: 0.85em;
+      font-weight: 300;
+      color: #ffffff;
+      margin-top: auto;
+      padding-bottom: 0.5em;
+    }
+
+    /* ── Content slides ── */
+    .reveal h2 {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin: 0 0 0.5em 0;
+      color: var(--text-dark);
+    }
+
+    .reveal ul {
+      font-size: 0.85em;
+      font-weight: 300;
+      line-height: 1.8;
+      margin: 0;
+      padding-left: 1.2em;
+    }
+    .reveal ul li {
+      margin-bottom: 0.3em;
+    }
+    .reveal ul ul {
+      font-size: 1em;
+    }
+
+    .reveal p {
+      font-size: 0.85em;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .reveal a {
+      color: #0e7490;
+      font-weight: 600;
+    }
+
+    /* ── Two-column layout ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+      align-items: start;
+    }
+    .two-col.wide-left {
+      grid-template-columns: 3fr 2fr;
+    }
+    .two-col.wide-right {
+      grid-template-columns: 2fr 3fr;
+    }
+
+    /* ── Code blocks ── */
+    .reveal pre {
+      font-size: 0.68em;
+      width: 100%;
+      margin: 0.4em 0;
+      box-shadow: none;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      background: #f8fafc;
+    }
+    .reveal pre code {
+      padding: 0.8em 1em;
+      max-height: 70vh;
+      background: #f8fafc;
+    }
+
+    /* ── Highlight / emphasis ── */
+    .accent {
+      color: var(--lean-teal);
+      font-weight: 600;
+    }
+    .reveal blockquote {
+      font-size: 0.7em;
+      border-left: 4px solid var(--lean-blue);
+      padding: 0.3em 0.8em;
+      margin: 0.5em 0;
+      background: #f1f5f9;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* ── Section break slides ── */
+    .section-break {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0073A3 0%, #0891b2 100%);
+    }
+    .section-break h2 {
+      color: #ffffff;
+      font-size: 2em;
+      font-weight: 400;
+    }
+    .section-break p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1em;
+    }
+
+    /* ── Spectrum bar ── */
+    .spectrum {
+      display: flex;
+      align-items: stretch;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0.8em 0;
+      font-size: 0.8em;
+    }
+    .spectrum .seg {
+      flex: 1;
+      padding: 0.8em 0.5em;
+      text-align: center;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── Pipeline diagram ── */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 0.5em 0;
+      font-size: 0.7em;
+      flex-wrap: wrap;
+    }
+    .pipeline .step {
+      background: #e0f2fe;
+      border: 1px solid #0891b2;
+      border-radius: 6px;
+      padding: 0.4em 0.7em;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    .pipeline .arrow {
+      font-size: 1.2em;
+      color: var(--lean-teal);
+      padding: 0 0.2em;
+    }
+
+    /* ── Key-value highlight boxes ── */
+    .key-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 0.6em 1em;
+      margin: 0.4em 0;
+      font-size: 0.85em;
+    }
+    .key-box strong {
+      color: var(--lean-teal);
+    }
+
+    /* ── Small code (for inline) ── */
+    .reveal code {
+      font-size: 0.9em;
+      background: #f1f5f9;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+    .reveal pre code {
+      background: #f8fafc;
+      padding: 0.8em 1em;
+    }
+
+    /* ── Diagnostics panel (fake IDE) ── */
+    .ide-panel {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      align-items: start;
+      gap: 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.68em;
+      margin: 0.4em 0;
+    }
+    .ide-panel .ide-code {
+      background: #f8fafc;
+      padding: 0.8em 1em;
+      border-right: 1px solid #e2e8f0;
+      font-family: monospace;
+      white-space: pre;
+      line-height: 1.5;
+    }
+    .ide-panel .ide-code pre {
+      margin: 0;
+      background: transparent;
+      border: none;
+      padding: 0;
+      box-shadow: none;
+      font-size: 1em;
+      width: auto;
+    }
+    .ide-panel .ide-code pre code {
+      background: transparent;
+      padding: 0;
+      font-size: 1em;
+      max-height: none;
+    }
+    .ide-panel .ide-info {
+      background: #f8fafc;
+      padding: 0.8em 1em;
+      font-family: monospace;
+      white-space: pre;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* ── Screenshot image (only for actual diagrams) ── */
+    .screenshot {
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+  </style>
+</head>
+<body style="background: #fff;">
+<div class="reveal">
+<div class="slides">
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1: Title slide                                          -->
+  <!-- ============================================================ -->
+  <section class="title-slide">
+    <div class="top-area">
+      <img class="logo" src="images/slide1_img1.png" alt="Lean Logo">
+    </div>
+    <div class="blue-band">
+      <h1>From Decision Procedures to<br>Proof Automation in Lean</h1>
+      <div class="meta">
+        <strong>Leo de Moura</strong><br>
+        Senior Principal Applied Scientist, AWS<br>
+        Chief Architect, Lean FRO<br><br>
+        Stanford CS257 | Introduction to Automated Reasoning<br>
+        Caroline Trippel
+      </div>
+      <div class="date">February 24, 2026</div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2: About Lean                                           -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>About Lean</h2>
+    <ul>
+      <li>Lean is an open-source <span class="accent">programming language</span> and
+          <span class="accent">proof assistant</span> that is transforming how we approach
+          mathematics, software verification, and AI.</li>
+      <li>Lean and its tooling are implemented in Lean. Lean is very <strong>extensible</strong>.</li>
+      <li>LSP, Parser, Macro System, Elaborator, Type Checker, Tactic Framework,
+          Proof Automation, Compiler, Build System.</li>
+      <li>Lean has a small trusted kernel; proofs can be exported and independently checked.</li>
+      <li>The <span class="accent">Lean FRO</span> is a nonprofit dedicated to developing Lean.</li>
+      <li><a href="https://lean-lang.org" style="font-weight:600; font-size:1.1em;">lean-lang.org</a></li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 3: The verification spectrum                            -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Verification Spectrum</h2>
+    <div class="spectrum">
+      <div class="seg" style="background:#67e8f9; color:#0e4a5c;">Testing</div>
+      <div class="seg" style="background:#22d3ee; color:#083344;">Model Checking</div>
+      <div class="seg" style="background:#0891b2; color:#fff;">SMT Solving</div>
+      <div class="seg" style="background:#164e63; color:#fff;">ITP (Lean)</div>
+    </div>
+    <ul>
+      <li><strong>Testing:</strong> finds bugs, can't prove absence of bugs.</li>
+      <li><strong>Model checking:</strong> exhaustive for finite-state systems.</li>
+      <li><strong>SMT:</strong> automatic for decidable theories (SAT, QF_LIA, QF_BV, arrays, ...).
+          Returns <em>sat/unsat/unknown</em>. You know this from CS257!</li>
+      <li><strong>Interactive theorem proving (ITP):</strong> works for arbitrary mathematical statements.
+          Produces <span class="accent">proof objects</span>, independently checkable certificates.</li>
+      <li>Key insight: <strong>these approaches are complementary, not competing.</strong>
+          Decision procedures become <em>tactics</em> inside a proof assistant.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4: What SMT solvers do well                             -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>What SMT Solvers Do Well</h2>
+    <ul>
+      <li>You've studied these in CS257:</li>
+      <li><strong>SAT:</strong> DPLL, CDCL, conflict analysis, learned clauses</li>
+      <li><strong>DPLL(T):</strong> SAT solver + theory solvers cooperating</li>
+      <li><strong>Theories:</strong> QF_LIA, QF_BV, arrays, equality + uninterpreted functions</li>
+      <li><strong>Quantifier elimination:</strong> Cooper's algorithm for Presburger arithmetic</li>
+    </ul>
+    <p style="margin-top:0.8em">These are powerful and fully automatic. For their decidable fragments, they're the best tool.</p>
+    <div class="key-box">
+      <strong>Today's talk:</strong> How the same algorithms you learned become verified tactics inside Lean,
+      producing proof objects that are checked by a small trusted kernel.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Will AI make this obsolete?                            -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Will AI Make This Obsolete?</h2>
+    <ul>
+      <li><strong>Decision procedures make reasoning <em>free</em>.</strong>
+          Sound, complete, predictable for their fragment. No hallucinations, no retries.</li>
+      <li>There is no point using AI to normalize arithmetic expressions, do Gaussian elimination,
+          or factor polynomials. AI <em>can</em> do these, but less efficiently and less reliably.
+          It is like using AI to multiply big numbers.</li>
+      <li><strong>Low-level heuristic reasoning won't disappear either.</strong>
+          SAT solvers grind through massive problems. When a problem is converted to SAT,
+          the high-level structure has been obfuscated. Some problems are inherently combinatorial.
+          You need to grind.</li>
+    </ul>
+    <div class="key-box">
+      <strong>Short answer: no.</strong> Decision procedures and SAT solvers are here to stay.
+      But something <em>will</em> change.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Where AI changes the game                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Where AI Changes the Game</h2>
+    <ul>
+      <li><strong>High-level reasoning in undecidable fragments:</strong> this is where AI shines.
+          AI can simulate the high-level intuitions humans use when proving non-trivial theorems.
+          It has already solved problems beyond the reach of SMT solvers and ITP (IMO 2024, 2025).</li>
+      <li><strong>The Z3 quantifier problem:</strong> Z3 users proudly report that Z3 instantiated
+          <em>millions</em> of quantifiers to solve a problem. But the problem is often simple, 
+          and comes from software verification. <em>Z3 is instantiating a huge number of useless facts</em>. 
+          Only a handful are actually used in the proof. AI could select the right instantiations.</li>
+      <li>More broadly: lemma selection, high-level proof search strategy.
+          All places where human-like intuition beats brute force.</li>
+    </ul>
+    <div class="key-box">
+      <strong>AI will not make SMT obsolete, but it will change how we architect them.</strong>
+      The low-level engines stay. The high-level orchestration gets smarter and controlled by AI.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Why a programming language + proof assistant?           -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Why a Programming Language + Proof Assistant?</h2>
+    <ul>
+      <li><strong>SMT solvers are proof automation tools.</strong> They provide a collection of decision
+          procedures. Fast and automatic, but limited in expressiveness.</li>
+      <li><strong>Lean is a modeling and programming tool.</strong> It is more expressive, and
+          enables users to build formal libraries with rich structure.</li>
+      <li><strong>Programming language infrastructure:</strong> Build system, IDE support, package manager,
+          compiler, the same tools you expect from modern programming languages.</li>
+      <li><strong>Composability:</strong> Build trustworthy tools like verification condition generators.
+          Glue components together. Prove they are correct.</li>
+      <li><strong>Decision procedures become tactics:</strong> The same algorithms you study in CS257,
+          running inside Lean, producing proof objects.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6: Lean is based on DTT, code example                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Lean Is Based on Dependent Type Theory</h2>
+    <p>A small example:</p>
+    <pre><code class="language-lean">def odd (n : Nat) := ∃ k, n = 2 * k + 1</code></pre>
+    <p>Lean checks this definition: <code>odd</code> maps a natural number to a proposition.
+       The type of <code>odd 3</code> is <code>Prop</code>, a statement that can be true or false.</p>
+    <pre><code class="language-lean">-- We can evaluate:
+#eval odd 3    -- This doesn't work! odd returns a Prop, not a Bool.
+
+-- But we can prove it:
+example : odd 3 := ⟨1, rfl⟩   -- witness: k = 1, and 3 = 2*1 + 1</code></pre>
+    <div class="key-box">
+      In Lean, <strong>propositions are types</strong>, and encode specifications. The type checker ensures every proof is valid.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 7: Our first theorem                                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Our First Theorem</h2>
+    <div class="two-col">
+      <div>
+        <p>Theorem statement:</p>
+        <pre><code class="language-lean">theorem odd_add_odd (h1 : odd m) (h2 : odd n)
+    : even (m + n) := by
+  obtain ⟨k1, _⟩ := h1
+  obtain ⟨k2, _⟩ := h2
+  exact ⟨k1 + k2 + 1, by ring⟩</code></pre>
+      </div>
+      <div>
+        <p>An incorrect proof (Lean rejects it):</p>
+        <pre><code class="language-lean">theorem odd_add_odd' (h1 : odd m) (h2 : odd n)
+    : even (m + n) := by
+  obtain ⟨k1, _⟩ := h1
+  obtain ⟨k2, _⟩ := h2
+  exact ⟨k1 + k2, by ring⟩
+  -- Error: ring failed to prove
+  -- 2 * k1 + 1 + (2 * k2 + 1)
+  --   = 2 * (k1 + k2)</code></pre>
+      </div>
+    </div>
+    <p>Lean catches the mistake immediately: the witness is wrong.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Why we need proof automation                           -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>AI + Decision Procedures = The Winning Combination</h2>
+    <ul>
+      <li><strong>AI navigates the search space:</strong> selects lemmas, chooses proof strategies,
+          handles the creative steps in undecidable fragments.</li>
+      <li><strong>Decision procedures close the goals:</strong> once AI reduces a subgoal to
+          linear arithmetic, bit-vectors, or ground equalities, the tactic finishes it reliably.
+          No hallucinations, no retries.</li>
+      <li><strong>Better tactics → better AI.</strong>
+          When a decision procedure closes a goal in one step instead of fifty, the AI's search tree shrinks
+          dramatically. Compact proofs = better training data = better AI provers.</li>
+    </ul>
+    <div class="key-box">
+      AI use calculators. It lets them skip arithmetic and focus on the real problem.
+      The tactics you'll see today
+      (<code>omega</code>, <code>bv_decide</code>, <code>grind</code>) are the calculator for proofs.
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 8: Curry-Howard correspondence                          -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Curry–Howard Correspondence</h2>
+    <p>The deep connection between logic and programming:</p>
+    <ul>
+      <li><strong>Types</strong> are <strong>propositions</strong>. <code>P : Prop</code></li>
+      <li><strong>Programs</strong> (terms) are <strong>proofs</strong>. <code>h : P</code> means <code>h</code> is a proof of <code>P</code>.</li>
+      <li><strong>Function types</strong> are <strong>implications</strong>.
+          <code>P → Q</code> = "given a proof of P, produce a proof of Q".</li>
+      <li><strong>Dependent function types</strong> are <strong>universal quantifiers</strong>.
+          <code>(n : Nat) → P n</code> = "for all n, P(n) holds".</li>
+      <li><strong>Inductive types</strong> are <strong>logical connectives</strong>.
+          <code>And P Q</code>, <code>Or P Q</code>, <code>Exists</code>, etc.</li>
+    </ul>
+    <div class="key-box">
+      In Lean, <strong>proving a theorem = constructing a term of the right type</strong>.
+      The kernel type-checks your proof term. If it type-checks, it's correct.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: DTT examples                                          -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Dependent Types in Action</h2>
+    <pre><code class="language-lean">-- Types can depend on values
+def Vector (α : Type) (n : Nat) := { a : Array α // a.size = n }
+
+-- The type system prevents out-of-bounds access
+def Vector.get (v : Vector α n) (i : Fin n) : α :=
+  v.val[i]    -- Lean knows i < n = v.val.size
+
+-- Propositions are types, proofs are terms
+example : 2 + 2 = 4 := rfl            -- definitional equality
+example : ∀ n : Nat, 0 + n = n := fun n => rfl  -- a function is a proof of ∀
+
+-- Dependent pairs: the type of the second component depends on the first
+example : (n : Nat) × Vector String n :=
+  ⟨3, ⟨#["a", "b", "c"], rfl⟩⟩</code></pre>
+    <div class="key-box">
+      Types carry <strong>invariants</strong>. The compiler and kernel enforce them. No runtime checks needed.
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 9: Proof objects vs SAT certificates                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>SAT Certificates vs Proof Objects</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="font-size:1em;">LRAT Certificate (SAT)</h3>
+        <ul>
+          <li>SAT solver produces a resolution proof</li>
+          <li>LRAT format: sequence of clause additions with hints</li>
+          <li>Checked by a simple, verified checker</li>
+          <li>Works for propositional logic (SAT)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1em;">Lean Proof Term</h3>
+        <ul>
+          <li>Tactic produces a term in dependent type theory</li>
+          <li>Checked by Lean's kernel (type checker)</li>
+          <li>Works for <em>any</em> statement expressible in Lean</li>
+          <li>Proofs compose: combine results from different tactics</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-box" style="margin-top:0.8em;">
+      <strong>Common principle:</strong> Separate <em>proof search</em> (complex, untrusted) from
+      <em>proof checking</em> (simple, trusted). Both LRAT checkers and Lean's kernel follow this pattern.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 10: Why this matters, big picture                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Why This Matters Beyond This Course</h2>
+    <ul>
+      <li><strong>AI + Formal Proofs:</strong> AlphaProof (Google DeepMind) won silver at IMO 2024 using Lean.
+          At IMO 2025, Harmonic achieved gold and ByteDance's SEED Prover achieved silver, both using Lean.
+          Three independent teams, same foundation.</li>
+      <li><strong>Software verification at scale:</strong>
+          <a href="https://www.cedarpolicy.com/">Cedar</a> (AWS),
+          SampCert (differential privacy),
+          SymCrypt (Microsoft), all verified in Lean.</li>
+      <li><strong>"Vibe proving":</strong> LLMs (Claude, GPT, Gemini) can write Lean proofs.
+          But the kernel still checks everything. You can't fake a proof.</li>
+    </ul>
+    <div class="key-box">
+      Better decision procedures inside Lean → better automation → better AI provers → more adoption.
+      <strong>The tools you study in this course are the foundation.</strong>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PART 2: LEAN CRASH COURSE                                     -->
+  <!-- ============================================================ -->
+
+  
+  <!-- ============================================================ -->
+  <!-- SLIDE 11: Lean is an IDE                                      -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Lean Is an IDE for Formal Verification</h2>
+    <ul>
+      <li>Rich user interface and integrated tooling.</li>
+      <li>Build system (Lake), LSP server, and VS Code plugin work seamlessly together.</li>
+      <li><strong>Real-time feedback:</strong> errors, goals, and hints as you type.</li>
+      <li>The math community using Lean is growing rapidly.</li>
+      <li>Lean is used in several software verification projects at AWS since 2023.</li>
+    </ul>
+
+    <div class="ide-panel">
+      <div class="ide-code"><pre><code class="language-lean">theorem add_comm (n m : Nat) : n + m = m + n := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    simp [Nat.succ_add, ih]
+   ▲ cursor here</code></pre></div>
+      <div class="ide-info"><strong>Lean Infoview</strong>
+▶ AddComm.lean:5:4
+
+case succ
+m n : Nat
+ih : n + m = m + n
+⊢ n + 1 + m = m + (n + 1)</div>
+    </div>
+    <p style="font-size:0.75em; color:var(--text-muted);">
+      The Lean Infoview panel shows goals, types, and diagnostics in real time.
+    </p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 12: Interactive game                                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Theorem Proving in Lean Is an Interactive Game</h2>
+    <blockquote>
+      "You have written my favorite computer game" &ndash; Kevin Buzzard
+    </blockquote>
+    <p>The "game board": you see goals and hypotheses, then apply "moves" (tactics).</p>
+    <div class="ide-panel">
+      <div class="ide-code"><pre><code class="language-lean">theorem odd_add_odd
+    (h1 : odd m) (h2 : odd n)
+    : even (m + n) := by
+  done   -- ← cursor here</code></pre></div>
+      <div class="ide-info"><strong>Lean Infoview</strong>
+▶ Odd.lean:4:2
+
+m n : ℕ
+h1 : odd m
+h2 : odd n
+⊢ even (m + n)</div>
+    </div>
+    <p>The goal <code>⊢ even (m + n)</code> is what we need to prove.
+       Each tactic transforms the goal until nothing remains.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 13: A game move aka tactic                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>A "Game Move" aka Tactic</h2>
+    <p>The <code>obtain</code> tactic destructs an existential hypothesis:</p>
+    <div class="ide-panel">
+      <div class="ide-code"><pre><code class="language-lean">theorem odd_add_odd
+    (h1 : odd m) (h2 : odd n)
+    : even (m + n) := by
+  obtain ⟨k1, _⟩ := h1
+  obtain ⟨k2, _⟩ := h2
+  done   -- ← cursor here</code></pre></div>
+      <div class="ide-info"><strong>Lean Infoview</strong>
+▶ Odd.lean:6:2
+
+k1 k2 : ℕ
+_ : k1 = 2 * m + 1
+_ : k2 = 2 * n + 1
+⊢ even (n + m)</div>
+    </div>
+    <p>After two <code>obtain</code> moves, the hypotheses are unpacked
+       and the goal is simplified.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 14: The simp move                                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The <code>simp</code> Move</h2>
+    <p>The simplifier, one of the most popular moves in our game.
+       Rewrites the goal using a database of lemmas:</p>
+    <pre><code class="language-lean">-- simp can solve many routine goals:
+example (xs : List α) : (xs ++ []).length = xs.length := by simp
+
+example (n : Nat) : n + 0 = n := by simp
+
+-- simp? tells you which lemmas it used:
+example (xs : List α) : (xs ++ []).length = xs.length := by
+  simp?   -- Try this: simp [List.append_nil]</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 15: The use and exact moves                             -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Proving Existentials: <code>use</code> and <code>exact</code></h2>
+    <pre><code class="language-lean">-- "use" provides a witness for an existential goal
+example : ∃ n : Nat, n > 3 := by
+  use 4    -- now the goal is: 4 > 3
+
+-- "exact" provides the exact proof term
+example : ∃ n : Nat, n > 3 := by
+  use 4
+  exact Nat.lt_of_sub_eq_succ rfl
+
+-- "decide" is proof by evaluation
+example : ∃ n : Nat, n > 3 := by
+  use 4
+  decide
+
+-- Or combine them:
+example : ∃ n : Nat, n > 3 := ⟨4, by decide⟩</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 16: The linarith move                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The <code>linarith</code> Move</h2>
+    <p>Linear arithmetic. Closes goals about linear inequalities:</p>
+    <pre><code class="language-lean">-- linarith combines linear hypotheses to derive the goal
+example (x y z : Int) (h1 : x + y ≥ 3) (h2 : y + z ≤ 5)
+    (h3 : x ≥ 0) : x + 2*y + z ≤ x + 8 := by
+  linarith
+
+-- It works with naturals, integers, and rationals
+example (a b : Nat) (h : a ≤ b) : 2 * a ≤ 2 * b := by
+  linarith</code></pre>
+    <div class="key-box">
+      <code>linarith</code> finds a non-negative linear combination of hypotheses
+      that contradicts the negation of the goal. Same idea as Farkas' lemma.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 18: Lean syntax: types and functions                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Lean Syntax: Types and Functions</h2>
+    <p>Just enough syntax to read the code in this talk:</p>
+    <div class="two-col">
+      <pre><code class="language-lean">-- Inductive types (algebraic data types)
+inductive Weekday where
+  | monday | tuesday | wednesday
+  | thursday | friday
+  | saturday | sunday
+
+-- Pattern matching
+def Weekday.isWeekend : Weekday → Bool
+  | .saturday => true
+  | .sunday   => true
+  | _         => false
+
+-- Recursive types
+inductive MyList (α : Type) where
+  | nil  : MyList α
+  | cons : α → MyList α → MyList α</code></pre>
+      <pre><code class="language-lean">-- Functions with type annotations
+def double (n : Nat) : Nat := n * 2
+
+-- Anonymous functions
+#eval (fun x => x + 1) 5  -- 6
+
+-- Structures (like records)
+structure Point where
+  x : Float
+  y : Float
+
+-- Dependent types: length-indexed vectors
+inductive Vec (α : Type) : Nat → Type where
+  | nil  : Vec α 0
+  | cons : α → Vec α n → Vec α (n + 1)</code></pre>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 19: Lean syntax: propositions and proofs                -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Lean Syntax: Propositions and Proofs</h2>
+    <div class="two-col">
+      <pre><code class="language-lean">-- Prop vs Bool
+-- Bool: computed (true/false)
+-- Prop: proved (constructive evidence)
+
+-- theorem: a named proof
+theorem add_comm (a b : Nat) :
+    a + b = b + a := by
+  omega  -- decision procedure!
+
+-- example: an unnamed proof
+example : 2 + 3 = 5 := by decide
+
+-- by: enter tactic mode
+-- Tactics transform proof goals
+-- until no goals remain</code></pre>
+      <pre><code class="language-lean">-- Tactic mode example
+theorem and_swap (p q : Prop)
+    (h : p ∧ q) : q ∧ p := by
+  -- Goal: q ∧ p
+  obtain ⟨hp, hq⟩ := h
+  -- Goals: q, p
+  exact ⟨hq, hp⟩
+
+-- Term-mode proof (no tactics)
+theorem and_swap' (p q : Prop)
+    (h : p ∧ q) : q ∧ p :=
+  ⟨h.2, h.1⟩
+
+-- Mix both styles freely!</code></pre>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 20: A verified function                                 -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>A Verified Function: <code>append</code></h2>
+    <pre><code class="language-lean">-- Define List append 
+
+def append : (xs ys : List α) → List α
+  | [],      bs => bs
+  | a :: as, bs => a :: append as bs
+
+theorem append_assoc (as bs cs : List α) 
+     : append (append as bs) cs = append as (append bs cs) := by
+  induction as with
+  | nil => rfl
+  | cons a as ih => simp [ih, append]</code></pre>
+    <div class="key-box">
+      <strong>Write code and prove properties about it</strong>, in the same language, same file.
+      No separate specification language, no model extraction, no translation.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 21: Why is proof automation hard?                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Why Is Proof Automation Hard in Lean?</h2>
+    <p><strong>Dependent types:</strong> more expressive, but harder to automate.</p>
+    <pre><code class="language-lean">def Array.get {α : Type u} (as : Array α) (i : Nat) (h : i < as.size) : α</code></pre>
+    <ul>
+      <li>The return type can depend on <em>values</em>, not just types.</li>
+      <li>Suppose we want to rewrite <code>2 + i - 1</code> to <code>i + 1</code> inside <code>Array.get as (2+i-1) h</code>.</li>
+      <li>We can prove <code>2 + i - 1 = i + 1</code>, but naively substituting produces a type-incorrect term:
+          the proof <code>h</code> has type <code>2+i-1 < as.size</code>, not <code>i+1 < as.size</code>.</li>
+      <li>Lean generates custom <span class="accent">congruence theorems</span> that "patch" the proof term.</li>
+    </ul>
+    <p>This kind of bookkeeping is invisible in SMT (no dependent types), but pervasive in Lean.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Type classes                                           -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Type Classes: Ad-Hoc Polymorphism at Scale</h2>
+    <ul>
+      <li>Type classes let you write generic code. The compiler resolves the right implementation:</li>
+    </ul>
+    <pre><code class="language-lean">class Mul (α : Type u) where mul : α → α → α
+instance : Mul Nat where mul := Nat.mul
+instance : Mul Int where mul := Int.mul
+-- n * n resolves to Nat.mul; i * i resolves to Int.mul</code></pre>
+    <ul>
+      <li>Approx. <strong>1,500 classes</strong> and <strong>20,000 instances</strong> in Mathlib.</li>
+      <li>Type class resolution is <span class="accent">backward chaining</span>: instances are Horn clauses.
+          Lean uses <strong>tabled resolution</strong>.</li>
+      <li>Proof automation must detect that different synthesized instances are definitionally equal.</li>
+    </ul>
+    <pre><code class="language-lean">-- An instance can depend on other instances (backward chaining):
+instance [Semiring α] [AddRightCancel α] [NoNatZeroDivisors α]
+    : NoNatZeroDivisors (OfSemiring.Q α) where ...</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: The Lean ecosystem for automation                      -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Lean Ecosystem for Automation</h2>
+    <p>The Lean community is actively developing proof automation:</p>
+    <ul>
+      <li><strong>LeanHammer:</strong> Combines multiple proof search and reconstruction techniques. (CMU)</li>
+      <li><strong>Duper:</strong> Superposition theorem prover written in Lean for proof reconstruction.</li>
+      <li><strong>lean-smt:</strong> SMT tactic using CVC5 (UFMG, Stanford, Iowa). More on this later!</li>
+      <li><strong>lean-auto:</strong> Interface between Lean and automated provers. (CMU/Stanford)</li>
+      <li><strong>bv_decide:</strong> Fastest verified bit-blaster. Uses CaDiCaL SAT solver.</li>
+      <li><strong>grind:</strong> SMT-inspired tactic, native to dependent type theory.</li>
+    </ul>
+    <div class="key-box">
+      <strong>All produce Lean proof terms.</strong> The kernel checks everything.
+      No axioms, no trust-me flags.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Section break                                                 -->
+  <!-- ============================================================ -->
+  <section class="section-break">
+    <h2>The Tactics You Know</h2>
+    <p>Decision procedures from this course appear as Lean tactics</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PART 3: DECISION PROCEDURES AS LEAN TACTICS                   -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 28: bv_decide overview                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>bv_decide</code>: An Efficient Verified Bit-Blaster</h2>
+    <ul>
+      <li>Developed primarily by Henrik Böving (Lean FRO).</li>
+      <li>Based on a verified LRAT proof checker by Josh Clune (AWS intern).</li>
+      <li>Uses LRAT proof-producing SAT solver: CaDiCaL.</li>
+    </ul>
+    <div class="pipeline">
+      <div class="step">Simplify</div><span class="arrow">→</span>
+      <div class="step">Reflect</div><span class="arrow">→</span>
+      <div class="step">Bit-blast</div><span class="arrow">→</span>
+      <div class="step">AIG</div><span class="arrow">→</span>
+      <div class="step">CNF</div><span class="arrow">→</span>
+      <div class="step">SAT solver</div><span class="arrow">→</span>
+      <div class="step">LRAT Proof</div><span class="arrow">→</span>
+      <div class="step" style="background:#d1fae5; border-color:#059669;">Verified checker</div>
+    </div>
+    <p>Entirely implemented in Lean. The LRAT checker is verified, so bugs in CaDiCaL can't produce false proofs.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 29: bv_decide? pattern                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>bv_decide?</code>: The "Try" Pattern</h2>
+    <p>Many tactics implement this: <code>simp?</code>, <code>aesop?</code>, <code>grind?</code>, <code>bv_decide?</code></p>
+    <pre><code class="language-lean">theorem simple (x : BitVec 64) : x + x = 2 * x := by
+  bv_decide?
+  -- Quick Fix: Try this: bv_check "Arith.lean-simple-43-2.lrat"</code></pre>
+    <ul>
+      <li><code>bv_decide?</code> runs the SAT solver, saves the LRAT proof to a file.</li>
+      <li><code>bv_check</code> replays the saved proof. Fast, no SAT solver needed at build time.</li>
+      <li>This is the <strong>search/check separation</strong>: expensive search once, cheap replay forever.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 30: Blasting popcount                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>"Blasting" <code>popcount</code> with <code>bv_decide</code></h2>
+    <div class="two-col">
+      <div>
+        <p>Imperative popcount (Hacker's Delight):</p>
+        <pre><code class="language-lean">def popcount : Stmt := imp {
+  x := x - ((x >>> 1) &&& 0x55555555);
+  x := (x &&& 0x33333333)
+     + ((x >>> 2) &&& 0x33333333);
+  x := (x + (x >>> 4)) &&& 0x0F0F0F0F;
+  x := x + (x >>> 8);
+  x := x + (x >>> 16);
+  x := x &&& 0x0000003F;
+}</code></pre>
+      </div>
+      <div>
+        <p>Specification (loop-based):</p>
+        <pre><code class="language-lean">def pop_spec (x : BitVec 32) : BitVec 32 :=
+  go x 0 32
+where
+  go (x : BitVec 32) (pop : BitVec 32) (i : Nat) : BitVec 32 :=
+    match i with
+    | 0     => pop
+    | i + 1 =>
+      let pop := pop + (x &&& 1#32)
+      go (x >>> 1#32) pop i</code></pre>
+      </div>
+    </div>
+    <pre><code class="language-lean">theorem popcount_correct : ∀ x, run popcount x = pop_spec x := by
+  simp [run, popcount, Expr.eval, Expr.BindOp.app]
+  bv_decide</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: omega, Cooper's algorithm as a Lean tactic              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>omega</code>: Cooper's Algorithm as a Lean Tactic</h2>
+    <ul>
+      <li>Implements a variant of <strong>Cooper's algorithm</strong>. You just learned this in CS257!</li>
+      <li>Quantifier-free Presburger arithmetic. Works on <code>Nat</code>, <code>Int</code>,
+          <code>Fin</code>, <code>UInt</code>, <code>BitVec</code>. Completely verified.</li>
+    </ul>
+    <pre><code class="language-lean">example (a b : Nat) (h : a ≤ b) : a + (b - a) = b := by omega
+
+example (x y : Int) (h1 : x + y ≥ 3) (h2 : x ≤ 1) : y ≥ 2 := by omega
+
+example (n : Nat) (h : n % 2 = 0) : (n + 2) % 2 = 0 := by omega
+
+example (a : Fin 10) : a.val < 10 := by omega</code></pre>
+    <div class="key-box">
+      <code>omega</code> is a standalone tactic, but <code>grind</code> subsumes it:
+      grind's <code>cutsat</code> solver handles linear integer arithmetic as one of its satellite engines.
+      Same core ideas from Cooper (case splits, bounds propagation), integrated into the E-graph.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 36: grind, what is it                                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>What Is <code>grind</code>?</h2>
+    <ul>
+      <li>New proof automation (Lean v4.22) developed by Kim Morrison and myself.</li>
+      <li>A proof-automation tactic inspired by modern SMT solvers.
+          Think of it as a <span class="accent">virtual whiteboard</span>:</li>
+      <ul>
+        <li>Discovers new equalities, inequalities, etc.</li>
+        <li>Writes facts on the board and merges equivalent terms</li>
+        <li>Multiple engines cooperate on the same workspace</li>
+      </ul>
+      <li><strong>Cooperating Engines:</strong> Congruence closure, E-matching,
+          Constraint propagation, Guided case analysis</li>
+      <li><strong>Satellite solvers:</strong> linear integer arithmetic (cutsat),
+          commutative rings, linear arithmetic</li>
+      <li>Supports dependent types, type-class system, and dependent pattern matching.</li>
+      <li>Produces ordinary Lean proof terms for every fact.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 37: What grind is NOT                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>What <code>grind</code> Is NOT</h2>
+    <ul>
+      <li>Not designed for <strong>combinatorially explosive</strong> search spaces:</li>
+      <ul>
+        <li>Large-n pigeonhole instances</li>
+        <li>Graph-coloring reductions</li>
+        <li>High-order N-queens boards</li>
+        <li>200-variable Sudoku with Boolean constraints</li>
+      </ul>
+      <li>Why? These require thousands/millions of case-splits that overwhelm grind's branching search.</li>
+      <li><strong>Key takeaway:</strong> grind excels at <em>cooperative reasoning</em> with multiple engines,
+          but struggles with brute-force combinatorial problems.</li>
+      <li>For massive case-analysis, use <code>bv_decide</code>.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 38: grind design principles                             -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Design Principles</h2>
+    <ul>
+      <li><strong>Native to Dependent Type Theory:</strong> No translation to first-order or higher-order logic needed.</li>
+      <li><strong>Solves trivial goals automatically.</strong></li>
+      <li><strong>Fast startup time:</strong> No server startup, no external tool dependencies, no translations.
+          Great for software verification applications.</li>
+      <li><strong>Rich diagnostics:</strong> When it fails, it tells you <em>why</em>.</li>
+      <li><strong>Configurable via Type Classes.</strong></li>
+      <li><strong>Extensible:</strong> Users can plug in their own theory solvers.</li>
+      <li>Stdlib and Mathlib pre-annotated.</li>
+      <li>Provides <code>grind?</code> similarly to <code>bv_decide?</code> and <code>aesop?</code>.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 39: grind architecture                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Architecture</h2>
+    <ul>
+      <li><strong>Preprocessing:</strong> normalization, canonicalization, extracting nested proofs, hash-consing</li>
+      <li><strong>Internalization:</strong> converting Lean expressions into the solver's internal data structures</li>
+      <li><strong>E-graph:</strong> congruence closure, E-matching, constraint propagation</li>
+      <li><strong>Satellite Solvers:</strong> cutsat, commutative rings, linear arithmetic</li>
+    </ul>
+    <div class="pipeline" style="margin-top:0.8em;">
+      <div class="step">Lean Goal</div><span class="arrow">→</span>
+      <div class="step">Preprocessing</div><span class="arrow">→</span>
+      <div class="step">Internalization</div><span class="arrow">→</span>
+      <div class="step" style="background:#d1fae5; border-color:#059669;">E-graph</div><span class="arrow">↔</span>
+      <div class="step">cutsat</div><span class="arrow">↔</span>
+      <div class="step">rings</div><span class="arrow">↔</span>
+      <div class="step">linarith</div>
+    </div>
+    <p style="margin-top:0.5em;">The E-graph is the central data structure. Satellite solvers read from it and propagate back.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 40: grind model-based theory solvers                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Model-Based Theory Solvers</h2>
+    <p>For linear arithmetic (<code>linarith</code>) and linear integer arithmetic (<code>cutsat</code>).</p>
+    <ul>
+      <li><code>linarith</code> is parametrized by a Module over the integers.
+          Supports preorders, partial orders, and linear orders.</li>
+      <li><code>cutsat</code> is parametrized by the <code>ToInt</code> type class, which embeds types
+          like <code>Int32</code>, <code>BitVec 64</code> into the integers.</li>
+    </ul>
+    <pre><code class="language-lean">example {R} [OrderedVectorSpace R] (x y z : R)
+    : x ≤ 2•y → y < z → x < 2•z := by
+  grind</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 41: grind cutsat in action                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: <code>cutsat</code> in Action</h2>
+    <pre><code class="language-lean">example (x y : Int) :
+    27 ≤ 11*x + 13*y → 11*x + 13*y ≤ 45 →
+    -10 ≤ 7*x - 9*y → 7*x - 9*y ≤ 4 → False := by
+  grind
+
+example (a b c : UInt32) :
+    - a + - c > 1 →
+    a + 2*b = 0 →
+    - c + 2*b = 0 → False := by
+  grind
+
+example (a : Fin 4) : 1 < a → a ≠ 2 → a ≠ 3 → False := by grind</code></pre>
+    <p><code>cutsat</code> handles integers, fixed-width integers, and finite types uniformly
+       via the <code>ToInt</code> type class.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 42: grind commutative rings                             -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Commutative Rings and Fields</h2>
+    <p>Uses Gröbner basis. Parametrized by: <code>CommRing</code>, <code>CommSemiring</code>,
+       <code>NoNatZeroDivisors</code>, <code>Field</code>, <code>AddRightCancel</code>, <code>IsCharP</code>.</p>
+    <pre><code class="language-lean">example {α} [CommRing α] (a b c : α)
+    : a + b + c = 3 →
+      a^2 + b^2 + c^2 = 5 →
+      a^3 + b^3 + c^3 = 7 →
+      a^4 + b^4 + c^4 = 9 := by
+  grind
+
+example [Field R] (a : R) : (2 * a)⁻¹ = a⁻¹ / 2 := by grind
+
+example [Field R] (a : R) : (2 : R) ≠ 0 →
+    1 / a + 1 / (2 * a) = 3 / (2 * a) := by grind
+
+example [Field R] [IsCharP R 0] (a : R) :
+    1 / a + 1 / (2 * a) = 3 / (2 * a) := by grind
+
+-- BitVec 8 is a CommRing of characteristic 256
+-- No bitvector-specific theory needed!
+example (x : BitVec 8) : (x - 16) * (x + 16) = x^2 := by grind
+
+example (x y : BitVec 16) : x^2*y = 1 → x*y^2 = y → y*x = 1 := by grind</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: grind theory combination                               -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Theory Combination</h2>
+    <p>Satellite solvers share information through the E-graph.
+       When one solver discovers an equality, all solvers see it.</p>
+    <pre><code class="language-lean">example [CommRing α] [NoNatZeroDivisors α]
+    (a b c : α) (f : α → Nat) :
+    a + b + c = 3 → a^2 + b^2 + c^2 = 5 → a^3 + b^3 + c^3 = 7 →
+    f (a^4 + b^4) + f (9 - c^4) ≠ 1 := by grind</code></pre>
+    <p>Three solvers cooperate:</p>
+    <ul>
+      <li><strong>Ring solver</strong> derives <code>a^4 + b^4 = 9 - c^4</code></li>
+      <li><strong>Congruence closure</strong> deduces <code>f (a^4 + b^4) = f (9 - c^4)</code></li>
+      <li><strong>Linear integer arithmetic</strong> closes <code>2 * f (9 - c^4) ≠ 1</code></li>
+    </ul>
+    <div class="key-box">
+      This is <strong>theory combination</strong>, the same idea from DPLL(T), running inside Lean.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 43: grind E-matching                                    -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: E-Matching</h2>
+    <p>E-matching is a heuristic for instantiating universally quantified lemmas.
+       It is used in many SMT solvers. <strong>You know this from DPLL(T)!</strong></p>
+    <p>Matching modulo the equalities in the E-graph:</p>
+    <pre><code class="language-lean">-- Annotate a lemma for E-matching:
+@[grind =] theorem fg {x} : f (g x) = x := by
+  unfold f g; omega
+
+-- grind finds the right instantiation via E-matching:
+example {a b c} : f a = b → a = g c → b = c := by
+  grind</code></pre>
+    <div class="key-box">
+      E-matching finds instances of <code>f (g ?x)</code> in the E-graph,
+      even when the match requires following equality chains.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: grind annotations and forward reasoning                -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Annotations and Forward Reasoning</h2>
+    <p>Library authors annotate theorems to control how grind uses them:</p>
+    <ul>
+      <li><code>[grind =]</code> use left-hand side as E-matching pattern</li>
+      <li><code>[grind _=_]</code> use both sides</li>
+      <li><code>[grind →]</code> forward reasoning: extract patterns from hypotheses</li>
+      <li><code>[grind ←]</code> backward reasoning: extract patterns from conclusion</li>
+      <li><code>[grind]</code> automatic pattern selection</li>
+    </ul>
+    <pre><code class="language-lean">def R : Nat → Nat → Prop
+@[grind →] theorem Rtrans : R x y → R y z → R x z
+@[grind →] theorem Rsymm  : R x y → R y x
+
+-- grind chains transitivity and symmetry automatically:
+example : R a b → R c b → R d c → R a d := by grind</code></pre>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 45: grind extensibility                                 -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Extensibility</h2>
+    <ul>
+      <li>Configure grind using <strong>type classes</strong>.</li>
+      <li>Annotate theorems and definitions with the <code>[grind]</code> attribute.</li>
+      <li>grind is implemented in Lean. You can extend it using Lean itself.</li>
+      <li>No need to learn another programming language or create shared objects.</li>
+    </ul>
+    <pre><code class="language-lean">-- Annotate a lemma for grind:
+@[grind =]
+theorem getElem?_cons {a l i} : (a :: l)[i]? = if i = 0 then some a else l[i-1]? := by
+  cases i <;> simp
+
+-- Now grind can use this lemma automatically in any proof about list indexing.</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 46: grind diagnostics                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Diagnostics at Your Fingertips</h2>
+    <p>When grind fails, it tells you <em>why</em>. Example:</p>
+    <div class="ide-panel">
+      <div class="ide-code"><pre><code class="language-lean">example {α} (as bs cs : Array α)
+    (v₁ v₂ : α) (i₁ i₂ j : Nat)
+    (h₁ : i₁ < as.size)
+    (h₂ : bs = as.set i₁ v₁)
+    (h₃ : i₂ < bs.size)
+    (h₄ : cs = bs.set i₂ v₂)
+    (h₅ : i₁ ≠ j)
+    (h₆ : j < cs.size)
+    (h₇ : j < as.size)
+    : cs[j] = as[j] := by
+  grind</code></pre></div>
+      <div class="ide-info">[grind] Goal diagnostics ▼
+ [facts] Asserted facts ▶
+ [eqc] True propositions ▶
+ [eqc] False propositions ▼
+   [prop] i₁ = j
+   [prop] ¬i₂ = j
+ [eqc] Equivalence classes ▶
+ [ematch] E-matching patterns ▶
+ [cutsat] Assignment satisfying
+          linear constraints ▼
+   [assign] i₁ := 0
+   [assign] i₂ := 1
+   [assign] j  := 1
+ [limits] Thresholds reached ▶</div>
+    </div>
+    <ul style="margin-top:0.3em;">
+      <li>The diagnostics also show which E-matching lemmas were instantiated and how many times.</li>
+      <li>If grind fails, you can see <em>exactly</em> what it tried and what's missing.</li>
+      <li>Often the fix is: add a <code>[grind]</code> annotation to the missing lemma.</li>
+    </ul>
+    <div class="key-box">
+      Unlike a black-box SMT solver, grind tells you <strong>why</strong> it can't solve the goal.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: grind interactive mode                                 -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>grind</code>: Interactive Mode</h2>
+    <p><code>grind =></code> exposes a DSL for stepping through the solver's execution.
+       Mix grind steps with ordinary tactics.</p>
+    <pre><code class="language-lean">example : (cos x + sin x)^2 = 2 * cos x * sin x + 1 := by
+  grind =>
+    instantiate only [trig_identity]
+    ring</code></pre>
+    <ul>
+      <li><code>grind?</code> outputs a self-contained script with the exact steps used.
+          It does not depend on environment annotations, improving <strong>proof stability</strong>.</li>
+      <li>Users can invoke individual solver steps, trigger E-matching,
+          perform case splits, inspect equivalence classes.</li>
+    </ul>
+    <div class="key-box">
+      Automation that is opaque is useful. Automation that is <strong>transparent and steerable</strong>
+      is transformative, for both humans and AI.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 48: Connection to DPLL(T)                               -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Connection to DPLL(T)</h2>
+    <p>grind's architecture mirrors the <span class="accent">DPLL(T)</span> framework you studied:</p>
+    <div class="two-col">
+      <div>
+        <h3 style="font-size:1em;">DPLL(T) (from CS257)</h3>
+        <ul>
+          <li>Core SAT engine: decisions + BCP</li>
+          <li>Theory solvers: check consistency</li>
+          <li>Theory propagation</li>
+          <li>Backjumping + conflict analysis</li>
+          <li>Theories: EUF, LIA, arrays, BV</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1em;"><code>grind</code> in Lean</h3>
+        <ul>
+          <li>Case splitting + constraint propagation</li>
+          <li>Satellite solvers: check consistency</li>
+          <li>E-graph propagation</li>
+          <li>Backjumping</li>
+          <li>Solvers: CC, cutsat, rings, linarith</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-box" style="margin-top:0.8em;">
+      <strong>Same architecture, different setting.</strong>
+      grind operates directly on dependent type theory. No translation to FOL.
+      Every inference produces a Lean proof term.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 49: lean-smt                                            -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>lean-smt</code>: Invoking CVC5 from Lean</h2>
+    <ul>
+      <li>Developed at <strong>Stanford</strong>, <strong>UFMG</strong>, and <strong>University of Iowa</strong>.</li>
+      <li>Translates Lean goals to <strong>SMT-LIB</strong>, calls CVC5, reconstructs the proof in Lean.</li>
+    </ul>
+    <pre><code class="language-lean">import Smt
+
+-- lean-smt translates the goal to SMT-LIB and calls CVC5
+example (a b c : Int) (h1 : a + b > c)
+    (h2 : c > a) : b > 0 := by
+  smt [h1, h2]
+
+-- It handles quantifiers too
+example : ∀ x : Int, x * x ≥ 0 := by
+  smt</code></pre>
+    <div class="key-box">
+      lean-smt bridges the world of SMT solving you study in CS257 with verified proofs in Lean.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PART 4: WORKED EXAMPLE                                        -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 50: Section break                                       -->
+  <!-- ============================================================ -->
+  <section class="section-break">
+    <h2>Putting It All Together</h2>
+    <p>The if-normalization challenge</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 51: The challenge                                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Challenge (Leino, Merz, and Shankar)</h2>
+    <ul>
+      <li>Normalize <strong>if-then-else expressions</strong> over Boolean variables.</li>
+      <li>The normalized expression must satisfy four conditions:</li>
+      <ul>
+        <li>No <strong>nested ifs</strong> in the condition position</li>
+        <li>No <strong>constant</strong> conditions (<code>if true then ...</code>)</li>
+        <li>No <strong>redundant ifs</strong> (same then/else branch)</li>
+        <li>Each variable evaluated <strong>at most once</strong> on any path</li>
+      </ul>
+      <li>The normalized expression must <strong>preserve semantics</strong>: <code>eval(normalize(e)) = eval(e)</code></li>
+      <li>This is a well-known verification challenge. Leino, Merz, and Shankar are names you may know from this field.</li>
+      <li>Kim Morrison wrote this up beautifully in the <a href="https://lean-lang.org/doc/reference/latest/">Lean reference manual</a>.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 52: The IfExpr type                                     -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The <code>IfExpr</code> Type</h2>
+    <pre><code class="language-lean">inductive IfExpr
+  | lit : Bool → IfExpr          -- constant: true or false
+  | var : Nat → IfExpr           -- variable: x₀, x₁, x₂, ...
+  | ite : IfExpr → IfExpr → IfExpr → IfExpr  -- if i then t else e
+  deriving DecidableEq
+
+namespace IfExpr</code></pre>
+    <pre><code class="language-lean">def eval (f : Nat → Bool) : IfExpr → Bool
+  | lit b     => b
+  | var i     => f i
+  | ite i t e => bif i.eval f then t.eval f else e.eval f</code></pre>
+    <p>Simple inductive type with three constructors. <code>eval</code> gives the semantics.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 53: The predicates (1)                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Predicates: <code>hasNestedIf</code>, <code>hasConstantIf</code></h2>
+    <pre><code class="language-lean">def hasNestedIf : IfExpr → Bool
+  | lit _               => false
+  | var _               => false
+  | ite (ite _ _ _) _ _ => true    -- nested if in condition!
+  | ite _ t e           => t.hasNestedIf || e.hasNestedIf
+
+def hasConstantIf : IfExpr → Bool
+  | lit _             => false
+  | var _             => false
+  | ite (lit _) _ _   => true      -- constant condition!
+  | ite i t e         => i.hasConstantIf || t.hasConstantIf || e.hasConstantIf</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 54: The predicates (2)                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Predicates: <code>hasRedundantIf</code>, <code>disjoint</code></h2>
+    <pre><code class="language-lean">def hasRedundantIf : IfExpr → Bool
+  | lit _     => false
+  | var _     => false
+  | ite i t e => t == e || i.hasRedundantIf || t.hasRedundantIf || e.hasRedundantIf
+
+def vars : IfExpr → List Nat
+  | lit _ => []
+  | var i => [i]
+  | ite i t e => i.vars ++ t.vars ++ e.vars
+
+/-- Each variable evaluated at most once on any path -/
+def disjoint : IfExpr → Bool
+  | lit _ => true
+  | var _ => true
+  | ite i t e =>
+      i.vars.disjoint t.vars && i.vars.disjoint e.vars
+      && i.disjoint && t.disjoint && e.disjoint</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 55: The normalized predicate                            -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The <code>normalized</code> Predicate + <code>eval</code></h2>
+    <pre><code class="language-lean">/-- Normalized: no nested, constant, or redundant ifs,
+    and each variable evaluated at most once. -/
+def normalized (e : IfExpr) : Bool :=
+  !e.hasNestedIf && !e.hasConstantIf && !e.hasRedundantIf && e.disjoint</code></pre>
+    <p>Four conditions combined into one predicate.
+       The challenge: construct a function <code>Z</code> such that:</p>
+    <pre><code class="language-lean">-- The formal statement we need to inhabit:
+{ Z : IfExpr → IfExpr // ∀ e, (Z e).normalized ∧ (Z e).eval = e.eval }</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 56: Other solutions                                     -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Other Solutions</h2>
+    <ul>
+      <li><strong>Chris Hughes:</strong> Aesop-based proof, ~15 lines of manual proof + subtyping. Creative but complex.</li>
+      <li><strong>Wojciech Nawrocki:</strong> ~300 lines. Thorough but verbose.</li>
+      <li>Multiple solutions in other proof assistants (Dafny, Coq, Isabelle, ACL2).</li>
+    </ul>
+    <p style="margin-top:1em;">Can we do better with <code>grind</code>?</p>
+    <p style="font-size:1.2em; font-weight:500; color:var(--lean-teal); margin-top:0.5em;">Yes. Dramatically.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 57: The normalize function                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The <code>normalize</code> Function</h2>
+    <pre><code class="language-lean">def normalize (assign : Std.HashMap Nat Bool) : IfExpr → IfExpr
+  | lit b => lit b
+  | var v =>
+    match assign[v]? with
+    | none   => var v
+    | some b => lit b
+  | ite (lit true)  t _ => normalize assign t
+  | ite (lit false) _ e => normalize assign e
+  | ite (ite a b c) t e => normalize assign (ite a (ite b t e) (ite c t e))
+  | ite (var v) t e =>
+    match assign[v]? with
+    | none =>
+      let t' := normalize (assign.insert v true) t
+      let e' := normalize (assign.insert v false) e
+      if t' = e' then t' else ite (var v) t' e'
+    | some b => normalize assign (ite (lit b) t e)
+  termination_by e => e.normSize</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 58: Termination challenge                               -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Termination Challenge</h2>
+    <ul>
+      <li>Lean requires all functions to terminate (total functional programming).</li>
+      <li>The recursive call for nested ifs <em>grows</em> the expression:</li>
+    </ul>
+    <pre><code class="language-lean">-- This case GROWS the expression:
+| ite (ite a b c) t e => normalize assign (ite a (ite b t e) (ite c t e))
+-- The condition gets simpler, but t and e are duplicated!</code></pre>
+    <ul>
+      <li>Lean can't see termination with the default structural recursion.</li>
+      <li>Solution: a custom termination measure that weights the condition more.</li>
+    </ul>
+    <pre><code class="language-lean">@[simp] def normSize : IfExpr → Nat
+  | lit _       => 0
+  | var _       => 1
+  | .ite i t e  => 2 * normSize i + max (normSize t) (normSize e) + 1
+
+-- Add to normalize:
+termination_by e => e.normSize</code></pre>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 59: The specification                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Specification</h2>
+    <p>We need to prove three properties simultaneously:</p>
+    <pre><code class="language-lean">theorem normalize_spec (assign : Std.HashMap Nat Bool) (e : IfExpr) :
+    (normalize assign e).normalized
+    ∧ (∀ f, (normalize assign e).eval f = e.eval fun w => assign[w]?.getD (f w))
+    ∧ ∀ v, v ∈ vars (normalize assign e) → ¬ v ∈ assign
+    := by
+  ???</code></pre>
+    <ul>
+      <li><strong>normalized:</strong> The result satisfies all four conditions.</li>
+      <li><strong>eval-preserving:</strong> Semantics are unchanged (modulo the assignment).</li>
+      <li><strong>variable elimination:</strong> Assigned variables don't appear in the output.</li>
+      <li>The function is recursive with a complex case structure.
+          Many subcases, many recursive calls.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 60: The proof, one line                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Proof: One Line</h2>
+    <pre><code class="language-lean">theorem normalize_spec (assign : Std.HashMap Nat Bool) (e : IfExpr) :
+    (normalize assign e).normalized
+    ∧ (∀ f, (normalize assign e).eval f = e.eval fun w => assign[w]?.getD (f w))
+    ∧ ∀ v, v ∈ vars (normalize assign e) → ¬ v ∈ assign
+    := by
+  fun_induction normalize with grind +locals</code></pre>
+    <ul>
+      <li><code>fun_induction normalize</code>: generates one subgoal per recursive case of <code>normalize</code>,
+          with appropriate inductive hypotheses for each recursive call.</li>
+      <li><code>grind +locals</code>: unfolds all local definitions and puts all facts together.
+          Congruence closure + E-matching + case splitting does the rest.</li>
+      <li><strong>No manual case analysis.</strong> No algebra extensions. No explicit lemma applications.</li>
+    </ul>
+    <div class="key-box">
+      <strong>This is the entire proof.</strong> Compare to ~300 lines in other approaches.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 61: What grind +locals means                            -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>What <code>grind +locals</code> Means</h2>
+    <pre><code class="language-lean">-- Instead of manually annotating each definition:
+attribute [local grind] normalized hasNestedIf hasConstantIf
+                        hasRedundantIf disjoint vars eval List.disjoint
+
+-- The +locals flag tells grind to unfold all definitions
+-- in the current file/section:
+grind +locals
+
+-- grind can then:
+-- 1. Unfold normalized, hasNestedIf, etc. on each case
+-- 2. Use congruence closure to reason about equalities
+-- 3. Use E-matching to apply inductive hypotheses
+-- 4. Case-split on Boolean conditions
+-- 5. Use the HashMap lemmas from Std</code></pre>
+    <p>All the decision procedure machinery from this course
+       (case splitting, equality reasoning, arithmetic)
+       working together on dependent types.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 62: try? finds it too                                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2><code>try?</code> Finds It Too</h2>
+    <div class="ide-panel">
+      <div class="ide-code"><pre><code class="language-lean">theorem normalize_spec
+    (assign : Std.HashMap Nat Bool)
+    (e : IfExpr) :
+    (normalize assign e).normalized
+  ∧ ... := by
+  try?</code></pre></div>
+      <div class="ide-info"><strong>Lean Infoview</strong>
+▼ Suggestions
+
+Try these:
+• (fun_induction normalize) <;> grind</div>
+    </div>
+    <ul>
+      <li><code>try?</code> is an interactive tactic suggestion tool.</li>
+      <li>It tries many different tactics, guesses induction principles, and is extensible.</li>
+      <li>The automation is <strong>discoverable</strong>, not just powerful.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 63: Robustness, different formulations                   -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Robustness: Different Formulations</h2>
+    <pre><code class="language-lean">-- Change the variable-elimination condition:
+
+-- Version 1: ¬ v ∈ assign
+-- Version 2: assign.contains v = false
+-- Version 3: assign[v]? = none
+
+-- Same proof works for ALL THREE formulations!
+-- grind doesn't care about the surface syntax,
+-- it reasons about the underlying semantics.</code></pre>
+    <div class="key-box">
+      Traditional tactic proofs are <strong>fragile</strong>: small changes to definitions
+      break the proof. <code>grind</code> proofs are <strong>robust</strong> because grind reasons
+      semantically, not syntactically.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 64: Robustness, HashMap → TreeMap                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Robustness: <code>HashMap</code> → <code>TreeMap</code></h2>
+    <pre><code class="language-lean">-- Swap the data structure:
+-- Std.HashMap Nat Bool  →  Std.TreeMap Nat Bool
+
+-- The proof is UNCHANGED.
+
+-- Why? grind uses whatever lemmas are annotated
+-- with [grind] in the standard library.
+-- Both HashMap and TreeMap have the same interface lemmas:
+--   insert_get, get_insert_ne, etc.
+-- grind finds and applies them automatically.</code></pre>
+    <ul>
+      <li>This is the power of <strong>annotation-driven automation</strong>.</li>
+      <li>Library authors annotate their API lemmas with <code>[grind]</code>.</li>
+      <li>Users get automation for free, for any data structure.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 66: Where automation fails                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Where Automation Fails</h2>
+    <p>When does grind <strong>not</strong> work?</p>
+    <ul>
+      <li><strong>Combinatorial explosion:</strong> Problems requiring millions of case splits.
+          → Use <code>bv_decide</code> instead (SAT-based).</li>
+      <li><strong>Missing annotations:</strong> grind can't use lemmas it doesn't know about.
+          → Use <code>grind</code> diagnostics to find what's missing. Add <code>[grind]</code> attributes.</li>
+      <li><strong>Non-linear arithmetic:</strong> <code>x * y = y * x</code> is fine (ring solver),
+          but <code>x * x ≥ 0</code> over integers needs special handling.
+          → Future work: interval propagation, nonlinear extensions.</li>
+      <li><strong>Creative lemma application:</strong> When the proof requires a non-obvious intermediate step
+          that doesn't follow from E-matching.
+          → Use <code>have</code> to provide the hint, then <code>grind</code>.</li>
+    </ul>
+    <div class="key-box">
+      <strong>The right tool for the right job:</strong>
+      <code>bv_decide</code> for bit-vectors and combinatorial explosion,
+      <code>grind</code> for everything else (including linear arithmetic via <code>cutsat</code>),
+      <code>lean-smt</code> when you want CVC5's power (e.g., lots of case-analysis).
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WRAP-UP                                                       -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: The big picture                                        -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>The Big Picture</h2>
+    <ul>
+      <li>The <strong>decision procedures</strong> you learned in CS257 are <strong>components</strong> inside proof assistants.</li>
+      <li>Same algorithms, <strong>stronger guarantees</strong>: every result is an independently checkable proof object.</li>
+    </ul>
+    <div style="margin: 0.8em 0; font-size: 0.85em;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background:#e0f2fe;">
+          <th style="padding:0.4em 0.6em; text-align:left; border:1px solid #bae6fd;">CS257 Concept</th>
+          <th style="padding:0.4em 0.6em; text-align:left; border:1px solid #bae6fd;">Lean Tactic</th>
+        </tr>
+        <tr>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;">SAT solving (CDCL)</td>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;"><code>bv_decide</code> + LRAT checker</td>
+        </tr>
+        <tr>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;">Cooper's algorithm (QE)</td>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;"><code>omega</code> / <code>grind</code> (cutsat)</td>
+        </tr>
+        <tr>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;">DPLL(T) architecture</td>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;"><code>grind</code></td>
+        </tr>
+        <tr>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;">E-matching, congruence closure</td>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;"><code>grind</code></td>
+        </tr>
+        <tr>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;">SMT / CVC5</td>
+          <td style="padding:0.4em 0.6em; border:1px solid #e2e8f0;"><code>lean-smt</code></td>
+        </tr>
+      </table>
+    </div>
+    <p style="font-size:0.8em; margin-top:0.5em;">
+      <strong>Adoption:</strong> <code>grind</code> alone is used ~3,400 times in Mathlib (28% avg LoC reduction),
+      ~500 times each in CSLib, the Prime Number Theorem project, and Terence Tao's Analysis I.<br>
+    </p>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Lean in industry                                       -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Lean in Industry</h2>
+    <ul>
+      <li><strong>Cedar:</strong> language for defining permissions as policies (AWS).
+          <a href="https://www.cedarpolicy.com/">cedarpolicy.com</a></li>
+      <li><strong>SampCert:</strong> verified differential privacy primitives (AWS).
+          Tristan's implementation is not only verified, but also 2x faster than the previous one.</li>
+      <li><strong>SymCrypt:</strong> verified cryptography (Microsoft).
+          Using Aeneas, the Rust verification framework.</li>
+      <li><strong>Neuron Compiler</strong> (AWS).</li>
+    </ul>
+    <div class="key-box">
+      These are production systems. Not research prototypes.
+      Cedar policies protect real AWS customer data. SampCert runs in production.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: CSLib                                                  -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>CSLib: A Mathlib for Computer Science</h2>
+    <p>A foundation for computer science in Lean.</p>
+    <p style="margin-bottom:0.3em;"><strong>Steering committee:</strong></p>
+    <div class="two-col" style="font-size:0.85em;">
+      <ul>
+        <li>Clark Barrett (Stanford, Amazon)</li>
+        <li>Swarat Chaudhuri (Google DeepMind, UT Austin)</li>
+        <li>Leo de Moura (Amazon, Lean FRO)</li>
+      </ul>
+      <ul>
+        <li>Jim Grundy (Amazon)</li>
+        <li>Pushmeet Kohli (Google DeepMind)</li>
+      </ul>
+    </div>
+    <p>CSLib aims to be a foundation for <strong>teaching</strong>, <strong>research</strong>,
+       and new <strong>verification efforts</strong>, including AI-assisted.</p>
+    <img src="images/CADE25_slide16_img2.png" class="screenshot" style="width:55%; margin-top:0.3em;">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Resources                                              -->
+  <!-- ============================================================ -->
+  <section>
+    <div class="slide-header">
+      <img src="images/slide2_img2.png" alt="Lean">
+    </div>
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://lean-lang.org">lean-lang.org</a> &ndash; main website, documentation, downloads</li>
+      <li><a href="https://live.lean-lang.org">live.lean-lang.org</a> &ndash; try Lean in your browser, right now</li>
+      <li><a href="https://leanprover.zulipchat.com/">Lean Zulip</a> &ndash; community chat, very active and welcoming</li>
+      <li><a href="https://lean-lang.org/doc/reference/latest/">Lean Reference Manual</a> &ndash; includes the grind reference</li>
+      <li><a href="https://reservoir.lean-lang.org/">Reservoir</a> &ndash; package ecosystem (like crates.io for Lean)</li>
+      <li><strong>lean-smt:</strong> <a href="https://github.com/ufmg-smite/lean-smt">github.com/ufmg-smite/lean-smt</a></li>
+      <li><strong>These slides:</strong> <a href="https://leodemoura.github.io/stanford2026/">leodemoura.github.io/stanford2026</a></li>
+    </ul>
+    <div class="key-box" style="margin-top:0.5em;">
+      <strong>Getting started:</strong> Open <a href="https://live.lean-lang.org">live.lean-lang.org</a>,
+      type <code>#eval 2 + 3</code>, and hit enter. You're using Lean.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: Thank You                                              -->
+  <!-- ============================================================ -->
+  <section class="title-slide">
+    <div class="top-area">
+      <img class="logo" src="images/slide1_img1.png" alt="Lean Logo">
+    </div>
+    <div class="blue-band">
+      <h1>Thank You</h1>
+      <div class="meta">
+        <strong>Leo de Moura</strong><br>
+        <a href="https://lean-lang.org" style="color:#93c5fd;">lean-lang.org</a><br>
+        <a href="https://leanprover.zulipchat.com/" style="color:#93c5fd;">leanprover.zulipchat.com</a><br><br>
+        X: @leanprover<br>
+        LinkedIn: Lean FRO<br>
+        Mastodon: @leanprover@functional.cafe<br>
+        #leanlang #leanprover
+      </div>
+      <div class="date">Stanford CS257 | February 24, 2026</div>
+    </div>
+  </section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script>
+  function registerLean(hljs) {
+    var LEAN_IDENT_RE = /[A-Za-z_][\w\u207F-\u209C\u1D62-\u1D6A\u2079\']*/;
+
+    var LEAN_KEYWORDS = {
+      $pattern: /\w+|[λ∀Π∃]/u,
+      keyword:
+        'theorem|10 lemma|10 def definition class structure instance example ' +
+        'inductive ' +
+        'axiom constant ' +
+        'universe universes variable variables ' +
+        'section namespace end ' +
+        'import open ' +
+        'set_option ' +
+        'calc match do by let in where extends ' +
+        'fun ' +
+        'if then else return ' +
+        'for while repeat try catch throw ' +
+        'mutual macro syntax elab abbrev opaque ' +
+        'deriving attribute ' +
+        '#check #eval #reduce #print #guard ' +
+        'λ ∀ ∃ Π',
+      built_in:
+        'Type Prop|10 Sort ' +
+        'rw|10 rewrite rwa simp dsimp simpa simp_all ' +
+        'unfold delta ' +
+        'exact exacts refine apply ' +
+        'intro intros ' +
+        'cases rcases obtain induction with ' +
+        'refl rfl funext propext ' +
+        'constructor left right split injection ' +
+        'rename assumption revert generalize specialize clear ' +
+        'contradiction by_contra ' +
+        'trivial ' +
+        'congr ext ' +
+        'have replace at suffices show from ' +
+        'norm_num ring linarith omega nlinarith positivity ' +
+        'decide native_decide ' +
+        'aesop grind tauto ' +
+        'push_neg norm_cast push_cast ' +
+        'field_simp ring_nf ' +
+        'fun_induction termination_by ',
+      literal:
+        'true false none some',
+      type:
+        'Nat Int Bool String Float Char ' +
+        'UInt8 UInt16 UInt32 UInt64 ' +
+        'List Array Option Except IO Unit Fin BitVec ' +
+        'True False And Or Not Iff Eq ' +
+        'HashMap TreeMap',
+      meta:
+        'noncomputable|10 private protected partial unsafe scoped local',
+      sorry:
+        'sorry admit'
+    };
+
+    var DASH_COMMENT = hljs.COMMENT('--', '$');
+    var MULTI_LINE_COMMENT = hljs.COMMENT('/-[^-]', '-/');
+    var DOC_COMMENT = {
+      className: 'doctag',
+      begin: '/-[-!]',
+      end: '-/'
+    };
+
+    var ATTRIBUTE_DECORATOR = {
+      className: 'meta',
+      begin: '@\\[',
+      end: '\\]'
+    };
+
+    var LEAN_DEFINITION = {
+      className: 'theorem',
+      beginKeywords: 'def theorem lemma class instance structure inductive abbrev',
+      end: /(:=|where\b|$)/,
+      excludeEnd: true,
+      contains: [
+        {
+          className: 'keyword',
+          begin: /\b(extends|where)\b/,
+        },
+        hljs.inherit(hljs.TITLE_MODE, {
+          begin: LEAN_IDENT_RE
+        }),
+        {
+          className: 'params',
+          begin: /[([{]/, end: /[)\]}]/, endsParent: false,
+          keywords: LEAN_KEYWORDS,
+        },
+        {
+          className: 'symbol',
+          begin: /:=/,
+          endsParent: true
+        },
+        {
+          className: 'symbol',
+          begin: /:/,
+          endsParent: true
+        },
+      ],
+      keywords: LEAN_KEYWORDS
+    };
+
+    return {
+      name: 'Lean',
+      aliases: ['lean', 'lean4'],
+      keywords: LEAN_KEYWORDS,
+      contains: [
+        hljs.QUOTE_STRING_MODE,
+        hljs.NUMBER_MODE,
+        DASH_COMMENT,
+        MULTI_LINE_COMMENT,
+        DOC_COMMENT,
+        LEAN_DEFINITION,
+        ATTRIBUTE_DECORATOR,
+        { begin: /⟨/ }
+      ]
+    };
+  }
+
+  var style = document.createElement('style');
+  style.textContent = '.hljs-sorry { color: #dc2626; font-weight: 600; }';
+  document.head.appendChild(style);
+
+  Reveal.initialize({
+    hash: true,
+    center: false,
+    disableLayout: true,
+    margin: 0,
+    transition: 'none',
+    highlight: {
+      beforeHighlight: (hljs) => {
+        hljs.registerLanguage('lean', registerLean);
+      }
+    },
+    plugins: [ RevealHighlight ]
+  });
+</script>
+</body>
+</html>

@@ -1,1 +1,6 @@
 _site/
+.lake/
+cv.aux
+cv.log
+cv.out
+cv.pdf
