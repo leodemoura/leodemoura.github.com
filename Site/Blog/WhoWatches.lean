@@ -13,7 +13,7 @@ categories := [Site.blog]
 
 In 2026, a skilled researcher using Claude (Opus 4.6), with real-time support from the Rocq development team, found seven kernel bugs in Rocq, a widely used proof assistant. Seven independent paths to proving something false.
 
-Rocq is a serious system with decades of foundational work. But even Rocq is vulnerable when AI applies sustained adversarial pressure to a single implementation. The question is not whether AI will find the bugs, but whether the architecture is designed to survive them.
+Rocq is a serious system with decades of foundational work. But even Rocq is vulnerable when AI applies sustained adversarial pressure to a single implementation. The question is not whether AI will find the bugs, but whether the architecture is built to survive them.
 
 I started [Z3](https://github.com/Z3Prover/z3), the most widely used SMT solver in the world, and bugs that produce incorrect results are still regularly found by ordinary users after nearly two decades of development. Z3 does not have independent kernels, and its trusted base is large.
 
@@ -53,6 +53,6 @@ Multiple kernels also let us innovate without fear. We can implement a new optim
 
 # Why this is different
 
-Testing can show the presence of bugs, never their absence. Code review scales linearly with code size. AI systems can be evaluated statistically, but no individual output can be verified with certainty. Lean's trust model is different in kind: here is a mathematical certificate, and here are several independent programs that verified it. The checking is deterministic: run it again, get the same answer. This is the structure that lets Lean serve as a trust anchor for AI-generated proofs, verified software, and the critical infrastructure that depends on both.
+Testing can show the presence of bugs, never their absence. Code review scales linearly with code size. AI systems can be evaluated statistically, but no individual output can be verified with certainty. Lean is built around a simpler idea: here is a machine-checkable certificate, and here are several independent programs that verified it. The checking is deterministic: run it again, get the same answer. This is the structure that lets Lean serve as a reliable foundation for AI-generated proofs, verified software, and the critical infrastructure that depends on both.
 
 _The [Lean Kernel Arena](https://arena.lean-lang.org/) is open for new kernels and benchmarks. The [Lean reference manual](https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-proofs) covers the full technical details on validating Lean proofs. Lean is [open source](https://github.com/leanprover/lean4)._
