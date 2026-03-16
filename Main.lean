@@ -9,6 +9,7 @@ import Site.Blog
 import Site.Blog.TeachingAI
 import Site.Blog.WhenAIWrites
 import Site.Blog.ProofAssistants
+import Site.Blog.WhoWatches
 import Site.Notes
 import Site.Notes.SymInteractive
 import Site.Notes.VersoPort
@@ -21,6 +22,7 @@ def mySite : Site := site Site.FrontPage /
   "about" Site.About
   "publications" Site.Publications
   "blog" Site.Blog with
+    Site.Blog.WhoWatches
     Site.Blog.TeachingAI
     Site.Blog.WhenAIWrites
     Site.Blog.ProofAssistants
