@@ -11,6 +11,7 @@ import Site.Blog.WhenAIWrites
 import Site.Blog.ProofAssistants
 import Site.Notes
 import Site.Notes.SymInteractive
+import Site.Notes.VersoPort
 
 open Verso Genre Blog Site Syntax
 
@@ -25,6 +26,7 @@ def mySite : Site := site Site.FrontPage /
     Site.Blog.ProofAssistants
   "notes" Site.Notes with
     Site.Notes.SymInteractive
+    Site.Notes.VersoPort
   "slides" Site.Slides
 
 def main := blogMain Site.theme mySite
