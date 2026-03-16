@@ -5,10 +5,10 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean for AI, AI for Lean](/static/radix_FRO_march_2026/), Lean FRO
 - [From Decision Procedures to Proof Automation in Lean](/static/stanford2026/), Stanford
 - [The State of Lean](/static/files/UW2026.pdf), University of Washington
 - [The State of Lean](/static/files/LeanTogether2026.pdf), Lean Together
-- [Lean for AI, AI for Lean](/static/radix_FRO_march_2026/), Lean FRO
 
 # 2025
 
