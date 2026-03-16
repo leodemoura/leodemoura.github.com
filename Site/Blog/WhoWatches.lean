@@ -55,6 +55,4 @@ Multiple kernels also let us innovate without fear. We can implement a new optim
 
 Testing can show the presence of bugs, never their absence. Code review scales linearly with code size. AI systems can be evaluated statistically, but no individual output can be verified with certainty. Lean's trust model is different in kind: here is a mathematical certificate, and here are several independent programs that verified it. The checking is deterministic — run it again, get the same answer. This is the structure that lets Lean serve as a trust anchor for AI-generated proofs, verified software, and the critical infrastructure that depends on both.
 
----
-
 _The [Lean Kernel Arena](https://arena.lean-lang.org/) is open for new kernels and benchmarks. The [Lean reference manual](https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-proofs) covers the full technical details on validating Lean proofs. Lean is [open source](https://github.com/leanprover/lean4)._
