@@ -8,5 +8,5 @@ def blog : Category where
   slug := "blog"
 
 def notes : Category where
-  name := "Lean Notes"
+  name := "Notes"
   slug := "lean-notes"

@@ -25,8 +25,8 @@ def mySite : Site := site Site.FrontPage /
     Site.Blog.WhenAIWrites
     Site.Blog.ProofAssistants
   "notes" Site.Notes with
-    Site.Notes.SymInteractive
     Site.Notes.VersoPort
+    Site.Notes.SymInteractive
   "slides" Site.Slides
 
 def main := blogMain Site.theme mySite

@@ -44,7 +44,7 @@ def theme : Theme := { Theme.default with
                   <a class="nav" href="/about/">"about me"</a>
                   <a class="nav" href="https://scholar.google.com/citations?user=CwazDKgAAAAJ">"publications"</a>
                   <a class="nav" href="/blog/">"blog"</a>
-                  <a class="nav" href="/notes/">"lean notes"</a>
+                  <a class="nav" href="/notes/">"notes"</a>
                   <a class="nav" href="/slides/">"presentations"</a>
                 </nav>
               </div>
