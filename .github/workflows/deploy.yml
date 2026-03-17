@@ -29,6 +29,7 @@ jobs:
         run: |
           lake build
           .lake/build/bin/generate-site --output _site
+          cp -r redirects/* _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
