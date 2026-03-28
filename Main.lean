@@ -11,6 +11,7 @@ import Site.Blog.WhenAIWrites
 import Site.Blog.ProofAssistants
 import Site.Blog.WhoWatches
 import Site.Notes
+import Site.Notes.CrayColloquium
 import Site.Notes.SymInteractive
 import Site.Notes.VersoPort
 
@@ -27,6 +28,7 @@ def mySite : Site := site Site.FrontPage /
     Site.Blog.WhenAIWrites
     Site.Blog.ProofAssistants
   "notes" Site.Notes with
+    Site.Notes.CrayColloquium
     Site.Notes.VersoPort
     Site.Notes.SymInteractive
   "slides" Site.Slides
