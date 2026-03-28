@@ -9,7 +9,7 @@ date := {year := 2026, month := 3, day := 28}
 categories := [Site.notes]
 %%%
 
-Next Monday, I am giving the [Cray Distinguished Colloquium](https://cse.umn.edu/cs/cray-distinguished-colloquium-series) at the University of Minnesota Department of Computer Science & Engineering.
+Next Monday, I am giving the [Cray Distinguished Colloquium](https://cse.umn.edu/cs/cray) at the University of Minnesota Department of Computer Science & Engineering.
 The Cray Colloquium Series was founded more than 30 years ago with a donation from Cray Inc. to honor the contributions and legacies of Dr. Seymour Cray.
 Past speakers include Turing Award winners and members of the National Academy of Engineering.
 
