@@ -323,7 +323,7 @@
 /* ── Images: scale to fit slide ── */
 .reveal section img {
   max-width: 70%;
-  max-height: 35vh;
+  max-height: 25vh;
   object-fit: contain;
 }
 /* Tall images: use class in Main.lean post-processing */
