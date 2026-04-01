@@ -22,6 +22,7 @@ He is the main architect of several automated reasoning tools: [Lean](https://le
 
 # Links
 
+- [Wikipedia](https://en.wikipedia.org/wiki/Leonardo_de_Moura)
 - [Google Scholar](http://scholar.google.com/citations?user=CwazDKgAAAAJ&hl=en)
 - [DBLP](http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/m/Moura:Leonardo_Mendon=ccedil=a_de.html)
 - [LinkedIn](https://www.linkedin.com/in/leonardo-de-moura-26a27b5/)
