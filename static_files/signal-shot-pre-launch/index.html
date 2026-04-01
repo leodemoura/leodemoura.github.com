@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Lean?</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="lib/reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="custom.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-slide">
+          <div class="top-area"><img class="logo" src="lean-logo-large.png" alt="Lean Logo"></div>
+          <div class="blue-band"><h1>Why Lean?</h1>
+          <div class="meta"><strong>Leo de Moura</strong><br>Senior Principal Applied Scientist, AWS<br>Chief Architect, Lean FRO</div>
+          <div class="date">Signal Shot Pre-Launch | April 1, 2026</div>
+          </div></section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            What is Lean?</h2>
+          <ul>
+            <li>
+              <p>
+                A <strong>programming language</strong> and a <strong>proof assistant</strong>. Same language for code and proofs.</p>
+              </li>
+            <li>
+              <p>
+                Small trusted kernel. <strong>Multiple independent kernels</strong>. Proofs can be exported and independently checked.</p>
+              </li>
+            <li>
+              <p>
+                Implemented in Lean. <strong>Very extensible</strong>.</p>
+              </li>
+            <li>
+              <p>
+                Open source. Lean FRO — Nonprofit. Controlled by no single company.</p>
+              </li>
+            </ul>
+          <p>
+            <a href="https://lean-lang.org/">lean-lang.org</a></p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean Is Taking Mathematics by Storm</h2>
+          <p>
+            Five Fields Medalists engaged: Tao, Scholze, Viazovska, Gowers, Hairer.</p>
+          <ul>
+            <li>
+              <p>
+                <a href="https://leanprover-community.github.io/mathlib4_docs/">Mathlib</a>: 200,000+ theorems, 750+ contributors, 2.2M+ LoC</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://xenaproject.wordpress.com/2021/06/05/half-a-year-of-the-liquid-tensor-experiment-amazing-developments/">Liquid Tensor Experiment</a>: verified a proof Scholze himself had "lingering doubts" about.</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://terrytao.wordpress.com/2024/10/12/the-equational-theories-project-a-brief-tour/">Equational Theories Project</a> — Terence Tao</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://www.math.inc/sphere-packing">Fields Medal sphere packing</a> — AI assisted</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://leanprover-community.github.io/blog/posts/FLT-announcement/">Fermat's Last Theorem</a> — Kevin Buzzard</p>
+              </li>
+            </ul>
+          <p>
+            <strong>The same platform that Fields Medalists use for cutting-edge mathematics is the platform you'll use to verify Signal's cryptographic proofs.</strong></p>
+          <p>
+            The math infrastructure is already there.</p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            No Reward Hacking</h2>
+          <blockquote><p>
+              "It's really important with these formal proof assistants that there are no backdoors or exploits you can use to somehow get your certified proof without actually proving it, because reinforcement learning is just so good at finding these backdoors." — Terence Tao</p>
+            </blockquote><p>
+            The kernel's soundness is AI safety infrastructure.</p>
+          <ul>
+            <li>
+              <p>
+                <strong>Multiple independent kernels</strong>. <a href="https://arena.lean-lang.org/">arena.lean-lang.org</a></p>
+              </li>
+            <li>
+              <p>
+                You don't need to trust us, or our proof automation. You only need to trust the small kernel, and we have several.</p>
+              </li>
+            </ul>
+          <p>
+            <strong>The same trust model you want for your protocol — no single point of failure, independently verifiable — is how Lean proofs work.</strong></p>
+          <p>
+            <a href="https://leodemoura.github.io/blog/2026-3-16-who-watches-the-provers/">Who Watches the Provers?</a> |
+<a href="https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-proofs">Validating a Lean Proof</a></p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            zlib: AI Proved It Correct</h2>
+          <p>
+            A <strong>general-purpose AI</strong>, with no special training for theorem proving, converted zlib (a C compression library) to <a href="https://lean-lang.org">Lean</a>, passed the test suite, and then <strong>proved</strong> that the code is <strong>correct</strong>.</p>
+          <pre>theorem zlib_decompressSingle_compress (data : ByteArray) (level : UInt8)
+    (hsize : data.size &lt; 1024 * 1024 * 1024) :
+    ZlibDecode.decompressSingle (ZlibEncode.compress data level) = .ok data
+</pre><p>
+            Decompression always recovers the original data. Every compression level. Machine-checked.</p>
+          <p>
+            The barrier is no longer AI capability. It is platform readiness.</p>
+          <p>
+            <strong>Signal Shot will use AI + Lean the same way: translate Rust via Aeneas, then prove correctness.</strong></p>
+          <p>
+            <a href="https://github.com/kim-em/lean-zip">lean-zip</a> |
+<a href="https://leodemoura.github.io/blog/2026-2-28-when-ai-writes-the-worlds-software-who-verifies-it/">When AI Writes the World's Software, Who Verifies It?</a></p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Software Verification: Aeneas, SymCrypt, Veil, Velvet</h2>
+          <ul>
+            <li>
+              <p>
+                <strong><a href="https://github.com/AeneasVerif/aeneas">Aeneas</a></strong> (Son Ho, Microsoft): Rust → Lean translation. The bridge for Signal. Verified Rust code as written by software engineers.</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/symcrypt-aeneas.png" alt="SymCrypt verification with Aeneas" class="img-wide"></p>
+          <ul>
+            <li>
+              <p>
+                <strong><a href="https://github.com/microsoft/symcrypt">SymCrypt</a></strong> (Microsoft): Core cryptographic library, verified using Aeneas + Lean. They adapt to rewrites as hardware optimizations evolve.</p>
+              </li>
+            <li>
+              <p>
+                <strong><a href="https://github.com/cedar-policy/cedar-spec">Cedar</a></strong> (AWS): Authorization policy engine. Verified in Lean.</p>
+              </li>
+            <li>
+              <p>
+                <strong><a href="https://veil.dev/">Veil</a></strong> (Ilya Sergey): Verified distributed protocols.</p>
+              </li>
+            </ul>
+          <p>
+            <strong>These are not future plans. These tools exist and are being used today.</strong></p>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            SymM + grind: Making Verification Scale</h2>
+          <ul>
+            <li>
+              <p>
+                <code>grind</code>: <a href="https://leodemoura.github.io/static/files/grind.pdf">SMT-inspired tactic</a>. Native to dependent type theory.</p>
+              </li>
+            <li>
+              <p>
+                <code>SymM</code>: new monadic framework for high-performance software verification. Born after the <a href="https://hackmd.io/sjPWIMP9TIuKW5tuWUfxXA">Lean@Google Hackathon</a> last December.</p>
+              </li>
+            <li>
+              <p>
+                Designed for tools like Aeneas, mvcgen and Velvet that need to <em>discharge thousands of verification conditions efficiently</em>.</p>
+              </li>
+            </ul>
+          <p>
+            <strong>Without this, verifying something as large as Signal is slow and painful. With it, verification conditions get discharged efficiently.</strong></p>
+          <ul>
+            <li>
+              <p>
+                AI replaces heuristics. The algorithmic core is more valuable than ever. <a href="https://leodemoura.github.io/blog/2026-2-18-proof-assistants-in-the-age-of-ai/">Proof Assistants in the Age of AI</a></p>
+              </li>
+            </ul>
+          <div class="r-hstack">
+            <p>
+              <img src="images/symm-benchmark.png" alt="SymM vs MetaM benchmark"></p>
+            <p>
+              <img src="images/symm-cache-reuse.png" alt="SymM with cache reuse"></p>
+            </div>
+          </section>
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Why Lean?</h2>
+          <ul>
+            <li>
+              <p>
+                Open source. Nonprofit. Controlled by no single company.</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://lean-lang.org/fro/">Lean FRO</a>: 20 engineers advancing Lean for the future.</p>
+              </li>
+            <li>
+              <p>
+                The ecosystem: 8,000+ GitHub repos, 200,000+ VS Code + Open VSX unique installs.</p>
+              </li>
+            <li>
+              <p>
+                Every AI system that solved IMO problems with formal proofs used Lean. No competing platform.</p>
+              </li>
+            <li>
+              <p>
+                AI startups using Lean: <a href="https://axiommath.ai/">Axiom</a>, <a href="https://harmonic.fun/">Harmonic</a>, <a href="https://logicalintelligence.com/">Logical Intelligence</a>, <a href="https://www.math.inc/">Math Inc</a>, <a href="https://mistral.ai/news/leanstral">Mistral</a></p>
+              </li>
+            <li>
+              <p>
+                <a href="https://www.cslib.io/">CSLib</a>: a Mathlib for computer science.</p>
+              </li>
+            <li>
+              <p>
+                ACM SIGPLAN Award 2025: "<em>Lean has become the de facto choice for AI-based systems of mathematical reasoning.</em>"</p>
+              </li>
+            </ul>
+          <p>
+            <strong>Lean is where the math, the tools, scalable verification, the AI, and the community already are.</strong></p>
+          <p>
+            <strong>Let's do it! Signal Shot will be the Liquid Tensor Experiment of Software Verification.</strong></p>
+          </section>
+        <section class="title-slide">
+          <div class="top-area"><img class="logo" src="lean-logo-large.png" alt="Lean Logo"></div>
+          <div class="blue-band"><h1>Thank You</h1>
+          <div class="meta"><strong>Leo de Moura</strong><br><a href="https://lean-lang.org" style="color:#93c5fd;">lean-lang.org</a><br><a href="https://leanprover.zulipchat.com/" style="color:#93c5fd;">leanprover.zulipchat.com</a><br><br><a href="https://leodemoura.github.io/" style="color:#93c5fd;">leodemoura.github.io</a></div>
+          <div class="date">Signal Shot Pre-Launch | April 1, 2026</div>
+          </div></section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/reveal.js/plugin/math/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        disableLayout: true,
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'fade',
+        width: 960,
+        height: 700,
+        margin: 0.000000,
+        navigationMode: 'default',
+        math: { local: 'lib/katex' },
+        plugins: [ RevealNotes, RevealHighlight, RevealMath.KaTeX ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/lean-comments.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    </body>
+  </html>

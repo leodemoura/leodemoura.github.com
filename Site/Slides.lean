@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Why Lean?](/static/signal-shot-pre-launch/), Signal Shot Pre-Launch
 - [Lean: Machine-Checked Mathematics and Verified Programming](/static/minnesota2026/), University of Minnesota
 - [Lean for AI, AI for Lean](/static/radix_FRO_march_2026/), Lean FRO
 - [From Decision Procedures to Proof Automation in Lean](/static/stanford2026/), Stanford
