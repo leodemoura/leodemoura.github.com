@@ -22,7 +22,7 @@ My research areas are automated reasoning, theorem proving, decision procedures,
 
 # Recent Writing
 
+- [Why Lean?](/blog/2026-4-2-why-lean/) — what makes Lean different, including what it's bad at
 - [Who Watches the Provers?](/blog/2026-3-16-who-watches-the-provers/) — why Lean's multi-kernel architecture survives AI-scale adversarial pressure
-- [Teaching AI to Make Proof Automation Work](/blog/2026-3-14-teaching-ai-to-make-proof-automation-work/) — a research challenge for the ML community
 - [When AI Writes the World's Software, Who Verifies It?](/blog/2026-2-28-when-ai-writes-the-worlds-software-who-verifies-it/) — the case for verified software at AI scale
 - [Proof Assistants in the Age of AI](/blog/2026-2-18-proof-assistants-in-the-age-of-ai/) — why proof assistant design matters more, not less
