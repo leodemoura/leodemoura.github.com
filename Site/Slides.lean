@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean: Machine-Checked Mathematics](/static/shanghai2026/), SIMIS
 - [Why Lean?](/static/signal-shot-pre-launch/), Signal Shot Pre-Launch
 - [Lean: Machine-Checked Mathematics and Verified Programming](/static/minnesota2026/), University of Minnesota
 - [Lean for AI, AI for Lean](/static/radix_FRO_march_2026/), Lean FRO
