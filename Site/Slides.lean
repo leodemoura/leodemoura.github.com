@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean: How AI and Proof Automation Are Changing Mathematics](/static/aitpm2026/), AITPM Workshop
 - [Lean: Machine-Checked Mathematics](/static/shanghai2026/), SIMIS
 - [Why Lean?](/static/signal-shot-pre-launch/), Signal Shot Pre-Launch
 - [Lean: Machine-Checked Mathematics and Verified Programming](/static/minnesota2026/), University of Minnesota
