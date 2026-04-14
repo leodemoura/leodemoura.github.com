@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean: A Unified Platform for Verification, Programming, and AI](/static/etaps-industry-2026/), ETAPS Industry Day
 - [The Lean Programming Language and Theorem Prover (Tutorial)](/static/etaps2026/), ETAPS
 - [Lean: How AI and Proof Automation Are Changing Mathematics](/static/aitpm2026/), AITPM Workshop
 - [Lean: Machine-Checked Mathematics](/static/shanghai2026/), SIMIS
