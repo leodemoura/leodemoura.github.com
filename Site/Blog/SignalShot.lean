@@ -39,7 +39,8 @@ The clearest current example is **SymM**, a new monadic framework I started in D
 
 On our software-verification benchmarks, SymM is orders of magnitude faster than the standard `MetaM` infrastructure. It turns quadratic blowups into linear passes. It already gives roughly a 100x speedup on stress tests that were bringing the old machinery to a halt. Aeneas, the tool Signal Shot will lean on for `libsignal` verification conditions, is being ported onto it now.
 
-I am giving a talk on this at the Lean Paris Hackathon on April 20, titled _Scalable Software Verification in Lean 4_. Most of the Signal Shot collaborators will be in the room. Scalability is the part of this moonshot we own, and when something in Signal Shot hits a wall, it is our job to move the wall.
+I am giving a talk on this at the Lean Paris Hackathon on April 20, titled _[Scalable Software Verification in Lean 4](https://leodemoura.github.io/static/svil26/)_ at [SViL2026](https://beneficial-ai-foundation.github.io/SVIL2026/).
+Most of the Signal Shot collaborators will be in the room. Scalability is the part of this moonshot we own, and when something in Signal Shot hits a wall, it is our job to move the wall.
 
 The kernel stays small and stays sound. Multiple independent kernel implementations exist at [arena.lean-lang.org](https://arena.lean-lang.org/). A proof produced by Signal Shot is a proof any reviewer can check independently, without trusting the people who wrote it. That is the property the whole moonshot rests on. As Terence Tao [put it](https://www.youtube.com/watch?v=Q8Fkpi18QXU&t=3180s), reinforcement learning finds every backdoor in your verification pipeline, so there cannot be any. The kernel's soundness is AI safety infrastructure.
 
