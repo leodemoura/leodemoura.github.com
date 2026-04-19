@@ -11,7 +11,7 @@ categories := [Site.blog]
 
 Markus de Medeiros wanted to understand [garbled circuits](https://www.markusde.ca/pages/leanrocks.html). He had no formal training in cryptography. He spent an afternoon in [Lean](https://lean-lang.org/): a circuit evaluator in functional style, a custom DSL via metaprogramming, OpenSSL bindings via FFI, a correctness proof for his serializer, and a mutable garbling algorithm in imperative style. All in one tool.
 
-His conclusion: "I genuinely do not know of another tool that can do all of the following." And then: "**I fucking love this shit.**"
+His conclusion: "I genuinely do not know of another tool that can do all of the following." And then: "*I fucking love this shit.*"
 
 That reaction keeps happening. This post is about why.
 
