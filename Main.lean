@@ -4,6 +4,7 @@ import Site.FrontPage
 import Site.About
 import Site.Publications
 import Site.Slides
+import Site.Feed
 
 import Site.Blog
 import Site.Blog.TeachingAI
@@ -37,4 +38,14 @@ def mySite : Site := site Site.FrontPage /
     Site.Notes.SymInteractive
   "slides" Site.Slides
 
-def main := blogMain Site.theme mySite
+def main (args : List String) : IO UInt32 := do
+  let status ← blogMain Site.theme mySite (linkTargets := {}) args
+  if status != 0 then return status
+  let dest := Site.parseDestination args
+  Site.writeFeed
+    "https://leodemoura.github.io"
+    "Leonardo de Moura"
+    "Blog posts and notes from Leonardo de Moura — creator of Lean and Z3."
+    dest mySite
+  IO.println s!"Generated RSS feed at {dest}/feed.xml"
+  return 0

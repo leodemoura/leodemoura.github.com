@@ -21,6 +21,7 @@ def theme : Theme := { Theme.default with
           <meta name="author" content="Leonardo de Moura"/>
           <meta name="description" content="Leonardo de Moura — Creator of Lean and Z3"/>
           <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css"/>
+          <link rel="alternate" type="application/rss+xml" title="Leonardo de Moura" href="/feed.xml"/>
           <style>{{siteCSS}}</style>
           {{← builtinHeader}}
         </head>
@@ -64,7 +65,8 @@ def theme : Theme := { Theme.default with
                     <a href="https://github.com/leodemoura">"GitHub"</a> <br/>
                     <a href="https://scholar.google.com/citations?user=CwazDKgAAAAJ">"Google Scholar"</a> <br/>
                     <a href="https://www.linkedin.com/in/leonardo-de-moura-26a27b5/">"LinkedIn"</a> <br/>
-                    <a href="https://x.com/Leonard41111588">"X"</a>
+                    <a href="https://x.com/Leonard41111588">"X"</a> <br/>
+                    <a href="/feed.xml">"RSS Feed"</a>
                   </p>
                 </div>
               </div>
