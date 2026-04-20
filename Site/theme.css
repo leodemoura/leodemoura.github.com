@@ -85,11 +85,12 @@ pre code { border: none; padding: 0; background: none; font-size: inherit; }
 /* Footer */
 .footer {
   font-size: 0.85em; color: #666; border-top: 1px solid #bbb;
-  margin-top: 3.5em; padding-top: 1.8em; width: 100%; overflow: hidden;
+  margin-top: 3.5em; padding-top: 0.8em; width: 100%; overflow: hidden;
 }
 .footer .contact { float: left; margin-right: 3.5em; }
 .footer .contact a { color: #1a6fb5; }
-.footer .contact p { line-height: 1.8; }
+.footer .contact p { line-height: 1.8; margin-top: 0; }
+.footer .rss img { width: 36px; height: 36px; display: block; }
 
 /* Hamburger menu */
 .nav-toggle { display: none; }

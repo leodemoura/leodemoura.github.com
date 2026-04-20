@@ -65,9 +65,13 @@ def theme : Theme := { Theme.default with
                     <a href="https://github.com/leodemoura">"GitHub"</a> <br/>
                     <a href="https://scholar.google.com/citations?user=CwazDKgAAAAJ">"Google Scholar"</a> <br/>
                     <a href="https://www.linkedin.com/in/leonardo-de-moura-26a27b5/">"LinkedIn"</a> <br/>
-                    <a href="https://x.com/Leonard41111588">"X"</a> <br/>
-                    <a href="/feed.xml">"RSS Feed"</a>
+                    <a href="https://x.com/Leonard41111588">"X"</a>
                   </p>
+                </div>
+                <div class="contact rss">
+                  <a href="/feed.xml" title="Subscribe via RSS">
+                    <img src="/static/images/rss.png" alt="Subscribe via RSS"/>
+                  </a>
                 </div>
               </div>
             </div>
