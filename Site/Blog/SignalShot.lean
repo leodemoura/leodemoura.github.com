@@ -30,6 +30,7 @@ Not long ago this was impossible. Today all the pieces are on the same table.
 **AI.** Teams are already doing serious mathematical formalization in Lean and Mathlib with heavy AI assistance.
 [Hariharan](https://thefundamentaltheor3m.github.io/Sphere-Packing-Lean/)'s project is one example: he recently led a team formalizing Viazovska's Fields Medal proof on sphere packings,
 where [Math Inc.](https://www.math.inc/sphere-packing)'s agent Gauss accelerated progress to achieve a formal proof in weeks, not years.
+Others are doing comparable work. I expect Signal Shot to look similar: the models do the autoformalization and the routine work, humans choose the abstractions and spot the subtle flaws.
 
 No single piece is enough. All of them together, maybe.
 
