@@ -27,7 +27,9 @@ Not long ago this was impossible. Today all the pieces are on the same table.
 
 **grind and SymM.** [`grind`](https://lean-lang.org/doc/reference/latest/The--grind--tactic/#grind-tactic) is our SMT-inspired tactic: congruence closure, E-matching, linear arithmetic, theory solvers. `SymM` is our new monadic framework for software verification. I say more about it below. Without them, verifying `libsignal` is manual and painful. With them, verification conditions get discharged efficiently.
 
-**AI.** Teams are already doing serious mathematical formalization in Lean and Mathlib with heavy AI assistance. [Math Inc.](https://www.math.inc/sphere-packing) is one example: they recently autoformalized Viazovska's Fields-Medal proof on sphere packings in weeks, not years. Others are doing comparable work. I expect Signal Shot to look similar: the models do the autoformalization and the routine work, humans choose the abstractions and spot the subtle flaws.
+**AI.** Teams are already doing serious mathematical formalization in Lean and Mathlib with heavy AI assistance.
+[Hariharan](https://thefundamentaltheor3m.github.io/Sphere-Packing-Lean/)'s project is one example: he recently led a team formalizing Viazovska's Fields Medal proof on sphere packings,
+where [Math Inc.](https://www.math.inc/sphere-packing)'s agent Gauss accelerated progress to achieve a formal proof in weeks, not years.
 
 No single piece is enough. All of them together, maybe.
 
