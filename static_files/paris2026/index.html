@@ -1,0 +1,826 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean: Extensible, Scalable, Trusted.</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="lib/reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="lib/diagram.css">
+    <link rel="stylesheet" href="lib/illuminate-anim.css">
+    <link rel="stylesheet" href="lib/table.css">
+    <link rel="stylesheet" href="lib/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="custom.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-slide">
+          <div class="top-area"><img class="logo" src="lean-logo-large.png" alt="Lean Logo"></div>
+          <div class="blue-band"><h1>Lean: Extensible, Scalable, Trusted.</h1>
+          <div class="meta"><strong>Leo de Moura</strong><br>Senior Principal Applied Scientist, AWS<br>Chief Architect, Lean FRO</div>
+          <div class="date">Paris Lean Meetup | April 23, 2026</div>
+          </div></section>
+        <section data-transition="fade" data-background-color="#0073A3">
+          <h2>
+            Signal Shot, announced April 21, 2026</h2>
+          <p>
+            <em>Signal, Beneficial AI Foundation, and the Lean FRO announced a public moonshot.</em></p>
+          <p>
+            <em>Verify the Signal protocol and its Rust implementation in <strong>Lean</strong>.</em></p>
+          <p>
+            <em>Signal secures the messages of 100M+ people</em></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            What is Lean?</h2>
+          <p>
+            <em>A programming language and a proof assistant</em></p>
+          <p>
+            Same language for definitions and proofs. No translation layer.</p>
+          <p>
+            Lean is implemented in Lean. <strong>Very extensible</strong>.</p>
+          <p>
+            Lean is <strong>scalable</strong>.</p>
+          <p>
+            Small <strong>trusted</strong> kernel. Proofs can be exported and independently checked.</p>
+          <div class="slide-footer">
+            <p>
+              <strong>More:</strong> <a href="https://leodemoura.github.io/blog/2026-4-2-why-lean/">Why Lean?</a></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean is a Game</h2>
+          <blockquote><p>
+              "You have written my favorite computer game" — Kevin Buzzard, Prof. Mathematics, Imperial College</p>
+            </blockquote><div class="code-with-panel">
+            <code class="hl lean block"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.definition-1457">def</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="0">odd</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="3">Prop</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">∃</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">k</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">=</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="unknown token" data-binding="">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">k</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="4">1</span><span class="inter-text">
+
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.theorem-1507">theorem</span><span class="inter-text"> </span><span class="const token" data-binding="const-square_of_odd_is_odd" data-verso-hover="5">square_of_odd_is_odd</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="inter-text"> </span><span class="unknown token" data-binding="">(</span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="unknown token" data-binding="">)</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="tactic" data-tactic-range="1563-1565"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.byTactic-1563" data-verso-hover="7">by</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;16\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;20\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;337\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;85\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,16,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[7,17,\&quot;n\&quot;]]]]]]],[4,\&quot; →\&quot;,[4,1,[6,[3,2,[4,[6,[3,2,[7,20,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[7,337,\&quot;n\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,85,\&quot;n\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">(</span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">)</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1568-1590"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.intro-1568" data-verso-hover="11">intro</span><span class="inter-text"> </span><span class="unknown token" data-binding="">⟨</span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.212" data-verso-hover="12">e₁</span><span class="unknown token" data-binding="">⟩</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;21\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;4\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;81\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,4,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[7,81,\&quot;n\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,21,\&quot;n\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">(</span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">)</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1593-1609"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.simp-1593" data-verso-hover="16">simp</span><span class="inter-text"> </span><span class="unknown token" data-binding="">[</span><span class="var token" data-binding="var-_uniq.212" data-verso-hover="12">e₁</span><span class="unknown token" data-binding="">,</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="unknown token" data-binding="">]</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;16\&quot;:{\&quot;binding\&quot;:\&quot;const-Exists\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;2\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.1676\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;345157\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5445\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.1676\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;86341\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[7,16,\&quot;∃\&quot;],[4,1,[4,[7,2,\&quot;k\&quot;],[4,[4,\&quot;,\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1380625,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,345157,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21573,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,345361,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,86341,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,5397,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,21777,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,5445,\&quot;k\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,341,\&quot;1\&quot;]]]]]]]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Exists" data-verso-hover="17">∃</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1676" data-verso-hover="4">k</span><span class="const token" data-binding="const-Exists" data-verso-hover="17">,</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1676" data-verso-hover="4">k</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1612-1645"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.«tacticExists_,,»-1612" data-verso-hover="18">exists</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="unknown token" data-binding="">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="inter-text"> </span><span class="unknown token" data-binding="">+</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="unknown token" data-binding="">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17477\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;20805\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;332869\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;4421\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5205\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,69905,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,17477,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,1093,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,17681,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,4421,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,277,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1331473,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,332869,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,20805,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[4,[6,[3,2,[7,20817,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,5205,\&quot;k₁\&quot;]]]]]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="1648-1651"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.lia-1648" data-verso-hover="19">lia</span><span class="tactic-state" style="display:none">All goals completed! 🐙</span></span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            The "game board": you see goals and hypotheses, then apply "moves" (tactics).</p>
+          <p>
+            <strong>Each tactic transforms the goal until nothing remains.</strong></p>
+          <p>
+            The kernel checks the final proof term.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Kernel Catches Mistakes</h2>
+          <div class="code-with-panel">
+            <code class="hl lean block"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.example-1910">example</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="20">odd</span><span class="inter-text"> </span><span class="typed token" data-binding="" data-verso-hover="4">3</span><span class="inter-text"> </span><span class="unknown token" data-binding="">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="const-Exists.intro" data-verso-hover="21">⟨</span><span class="typed token" data-binding="" data-verso-hover="4">2</span><span class="unknown token" data-binding="const-Exists.intro" data-verso-hover="21">,</span><span class="inter-text"> </span><span class="tactic" data-tactic-range="1935-1937"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.byTactic-1935" data-verso-hover="7">by</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;3\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;2\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="unknown token" data-binding="">3</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text"> </span><span class="has-info error"><span class="tactic" data-tactic-range="1938-1944"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.decide-1938" data-verso-hover="22">decide</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;3\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;2\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="unknown token" data-binding="">3</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="hover-info messages" style="display:none"><code class="verso-message error"><span class="text"></span><span class="text">Tactic `</span><span class="text">decide</span><span class="text">` proved that the proposition</span><span class="text">
+  </span><span class="highlighted"><span class="inter-text"></span><span class="unknown token" data-binding="">3</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span><span class="text"></span><span class="text">
+</span><span class="text">is false</span></code></span></span><span class="unknown token" data-binding="const-Exists.intro" data-verso-hover="21">⟩</span><span class="inter-text">
+
+
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            You don't need to trust me, or my automation. You only need to trust the small kernel.</p>
+          <p>
+            <strong>An incorrect proof is rejected immediately</strong>.</p>
+          <p>
+            Lean has <strong>multiple independent kernels</strong>.</p>
+          <p>
+            You can build your own and submit it to <a href="https://arena.lean-lang.org">arena.lean-lang.org</a>.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The State of Lean</h2>
+          <p>
+            <strong>240,000+</strong> unique installations: <a href="https://marketplace.visualstudio.com/items?itemName=leanprover.lean4">VS Code</a> (140K) + <a href="https://open-vsx.org/extension/leanprover/lean4">Open VSX</a> (102K). 8,000+ GitHub repositories.</p>
+          <p>
+            Ecosystem: 8,000+ GitHub repositories depending on Lean.</p>
+          <p>
+            <strong>Every IMO medal-level AI system with formal proofs used Lean.</strong></p>
+          <p>
+            Industry: AWS, Google, Microsoft, Mistral, Nethermind, Galois, others.</p>
+          <blockquote><p>
+              "<em>Lean has become the de facto choice for AI-based systems of mathematical reasoning.</em>" — ACM SIGPLAN Award</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Mathlib: 2.2M+ lines of formalized mathematics</h2>
+          <p>
+            <em>The Lean Mathematical Library</em></p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <strong>Formal Mathematics = Machine-Checkable Mathematics</strong></p>
+                </li>
+              <li>
+                <p>
+                  270,000+ formalized theorems.</p>
+                </li>
+              <li>
+                <p>
+                  750+ contributors.</p>
+                </li>
+              <li>
+                <p>
+                  2.2M+ lines of Lean.</p>
+                </li>
+              <li>
+                <p>
+                  1,500+ type classes and 20,000+ instances.</p>
+                </li>
+              <li>
+                <p>
+                  Fewer than 1,000 definitions separate Mathlib from full modern-research-math coverage.</p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/mathlib-deps.png" alt="Mathlib dependency graph" class="img-tall" style="width: 70%;" class="explicit-size"></p>
+            </div>
+          <blockquote><p>
+              "I’m investing time now so that somebody in the future can have that amazing experience." — Heather Macbeth, Prof. Mathematics, Imperial College</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Liquid Tensor Experiment</h2>
+          <p>
+            In 2020, Peter Scholze posed a formalization challenge.</p>
+          <blockquote><p>
+              "I spent much of 2019 obsessed with the proof of this theorem, almost getting crazy over it. I still have some small lingering doubts." — Peter Scholze</p>
+            </blockquote><p>
+            Johan Commelin led a team that verified the proof, with only minor corrections.</p>
+          <p>
+            <strong>They verified and simplified it without fully understanding the proof.</strong> Lean was a guide.</p>
+          <blockquote><p>
+              "The Lean Proof Assistant was really that: an assistant in navigating through the thick jungle that this proof is." — Peter Scholze</p>
+            </blockquote><p>
+            <img src="images/nature-lte.png" alt="Nature article on LTE" class="img-tall"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean Is Taking Mathematics by Storm</h2>
+          <p>
+            Six Fields Medalists engaged: Tao, Scholze, Viazovska, Gowers, Hairer, Freedman.</p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <a href="https://leanprover-community.github.io/sphere-eversion/">Sphere Eversion</a> (completed) — Massot, Nash, and van Doorn</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://terrytao.wordpress.com/2024/10/12/the-equational-theories-project-a-brief-tour/">Equational Theories Project</a> (completed) — Tao</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://florisvandoorn.com/carleson//">Carleson's Theorem</a> (completed) — van Doorn</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://thefundamentaltheor3m.github.io/Sphere-Packing-Lean/">Sphere Packing</a> — Birkbeck, Hariharan, Lee, Ma, Mehta, Viazovska</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://leanprover-community.github.io/blog/posts/FLT-announcement/">Fermat's Last Theorem</a> — Buzzard</p>
+                </li>
+              <li>
+                <p>
+                  Inter-Universal Teichmuller (IUT) Theory — Mochizuki</p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/tao-lex.png" alt="Tao on Lex Fridman"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Formal Math is More Maintainable</h2>
+          <blockquote><p>
+              "We had formalized the proof with this constant 12, and then when this new paper came out, we said, 'Okay, let's update the 12 to 11.' And what you can do with Lean is that you just in your headline theorem change a 12 to 11. You run the compiler and... of the thousands of lines of code you have, 90% of them still work." — Terence Tao, Lex Fridman interview</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Reading vs Writing Formal Math</h2>
+          <ul>
+            <li>
+              <p>
+                <strong>It is easier to read formal math than write it.</strong></p>
+              </li>
+            <li>
+              <p>
+                Formal math is easier to read than LaTeX.</p>
+              </li>
+            <li>
+              <p>
+                You can click through, inspect definitions, check types.</p>
+              </li>
+            <li>
+              <p>
+                AI can explain formal proofs, and is making the writing part easier.</p>
+              </li>
+            <li>
+              <p>
+                Humans need to be able to read formal math.</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/lean-formal-math.png" alt="Formal math in Lean" style="width: 90%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Verso: Written in Lean. Checked by Lean.</h2>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  Future math papers will have Lean code that is checked.</p>
+                </li>
+              <li>
+                <p>
+                  Lecture notes, papers, and slides — all in one tool.</p>
+                </li>
+              <li>
+                <p>
+                  These slides are written in <a href="https://verso.lean-lang.org/">Verso</a>.</p>
+                </li>
+              <li>
+                <p>
+                  Every example is checked by Lean.</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://lean-lang.org/">lean-lang.org</a> is written in Verso.</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://leodemoura.github.io/">My homepage</a> is written in Verso.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Verso is a domain-specific language embedded in Lean.</strong></p>
+                </li>
+              <li>
+                <p>
+                  Built by David Thrane Christiansen at the Lean FRO.</p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/verso-example.png" alt="Verso: source and rendered output" class="img-tall"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Verso Blueprint: A Map for Large Formalizations</h2>
+          <ul>
+            <li>
+              <p>
+                <a href="https://github.com/PatrickMassot/leanblueprint">Massot's Lean Blueprints</a> have been widely adopted in the Lean community.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Verso Blueprint is the next generation.</strong></p>
+              </li>
+            <li>
+              <p>
+                Large projects like FLT (50+ contributors) and sphere packing need more than proofs. They need a <strong>map</strong>.</p>
+              </li>
+            <li>
+              <p>
+                It tracks definitions, lemmas, and dependencies.</p>
+              </li>
+            <li>
+              <p>
+                The blueprint is a Lean document with inline code that is type-checked.</p>
+              </li>
+            <li>
+              <p>
+                When AI generates 200,000+ lines of formalization, humans need tools to <strong>visualize and understand</strong> what was built.</p>
+              </li>
+            <li>
+              <p>
+                Built by Emilio Jesús Gallego Arias at the Lean FRO.</p>
+              </li>
+            <li>
+              <p>
+                Emilio ported major projects onto it: FLT, Carleson, Sphere Packing, Noperthedron.</p>
+              </li>
+            </ul>
+          <p>
+            <a href="https://github.com/leanprover/verso-blueprint">verso-blueprint</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Verso Blueprint: TeX and Lean in One Document</h2>
+          <p>
+            <img src="images/verso-blueprint-code.png" alt="Verso Blueprint code mixing TeX and Lean" style="width: 70%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Verso Blueprint: Dependency Graph</h2>
+          <p>
+            <img src="images/verso-blueprint-graph.png" alt="Verso Blueprint dependency graph" style="width: 70%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean Verbose</h2>
+          <p>
+            Natural language tactics to teach mathematics using Lean 4.</p>
+          <p>
+            <strong>Playing the Lean game using mouse clicks and natural language.</strong></p>
+          <p>
+            <a href="https://github.com/PatrickMassot/verbose-lean4">Lean Verbose</a> is implemented in Lean by Patrick Massot.</p>
+          <p>
+            <img src="images/verbose_widget_test_en.gif" alt="Lean Verbose" style="width: 100%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            What We Learned from Mathematics</h2>
+          <ul>
+            <li>
+              <p>
+                <strong>Machine-checkable proofs enable a new level of collaboration.</strong></p>
+              </li>
+            <li>
+              <p>
+                Auto refactoring and generalization for free.</p>
+              </li>
+            <li>
+              <p>
+                It is not just about proving but also <em>understanding</em> complex objects and proofs, getting new insights, and navigating through structures beyond our cognitive abilities.</p>
+              </li>
+            </ul>
+          <blockquote><p>
+              "Lean enables large-scale collaboration by allowing mathematicians to break down complex proofs into smaller, verifiable components. With Lean, we are beginning to see how AI can accelerate the formalization of mathematics, opening up new possibilities for research." — Terence Tao, Fields Medalist, UCLA</p>
+            </blockquote><p>
+            <img src="images/brasca-generalization.png" alt="Auto-generalization in Mathlib"></p>
+          </section>
+        <section data-transition="fade" data-background-color="#0073A3">
+          <h2>
+            Software Verification</h2>
+          <p>
+            <em>Lean is not only for mathematics.</em></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Cedar (AWS)</h2>
+          <ul>
+            <li>
+              <p>
+                <a href="https://github.com/cedar-policy/cedar-spec">Authorization policy engine.</a> Verified in Lean.</p>
+              </li>
+            <li>
+              <p>
+                No version ships unless proofs pass.</p>
+              </li>
+            </ul>
+          <blockquote><p>
+              "We've found Lean to be a great tool for verified software development." — Emina Torlak</p>
+            </blockquote><ul>
+            <li>
+              <p>
+                Proved validator soundness in 18 person-days.</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/cedar-qed.png" alt="Cedar QED comparison" class="img-wide"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            SymCrypt (Microsoft)</h2>
+          <p>
+            <img src="images/symcrypt-aeneas.png" alt="SymCrypt verification with Aeneas" class="img-wide"></p>
+          <ul>
+            <li>
+              <p>
+                <a href="https://www.microsoft.com/en-us/research/blog/rewriting-symcrypt-in-rust-to-modernize-microsofts-cryptographic-library/">Core cryptographic library</a>. Verified using Aeneas + Lean.</p>
+              </li>
+            <li>
+              <p>
+                They verify the Rust code as written by software engineers.</p>
+              </li>
+            <li>
+              <p>
+                Code is evolving (new optimizations for specific hardware). They must adapt to rewrites.</p>
+              </li>
+            </ul>
+          <blockquote><p>
+              "We are verifying code faster than we can write it" — Son Ho, SymCrypt, Microsoft</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Anneal: Verified Unsafe Rust (Google)</h2>
+          <p>
+            <img src="images/anneal-logo.png" alt="Anneal logo" class="img-small"></p>
+          <p>
+            Google's <a href="https://github.com/google/zerocopy">zerocopy</a> team building "literate verification" for unsafe Rust using Lean and Aeneas.</p>
+          <p>
+            Unsafe Rust accounts for ~2/3 of vulnerabilities in the Rust ecosystem. Safety invariants documented only in prose comments.</p>
+          <p>
+            <strong>Anneal</strong>: developers write Lean specifications directly in Rust doc comments. <code>cargo anneal verify</code> runs the pipeline: Charon → Aeneas → Lean.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Strata: Language Syntax and Semantics (AWS)</h2>
+          <p>
+            <a href="https://strata-org.github.io/Strata/">Strata</a>: extensible platform for formalizing language syntax and semantics. Built in Lean. Open source.</p>
+          <p>
+            Key idea: <strong>dialects</strong> (inspired by MLIR). Orthogonal, composable building blocks for modeling programming constructs. Define a dialect, get AST, parser, pretty printer, type checker.</p>
+          <ul>
+            <li>
+              <p>
+                Core, C_Simp, Laurel, SMTLib, Python, Boole</p>
+              </li>
+            <li>
+              <p>
+                Laurel pipeline: Python/Java/JavaScript → Laurel → Strata Core → VCG → SMT</p>
+              </li>
+            <li>
+              <p>
+                <strong>Dialect Definition Mechanism (DDM)</strong>: embedded DSL in Lean for defining syntax and typing rules</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/strata-logo.png" alt="Strata logo"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Kraken: x64 Semantics in Lean (Google)</h2>
+          <p>
+            <a href="https://github.com/AeneasVerif/kraken">Kraken</a> is an x64 model written in Lean.</p>
+          <p>
+            It is intended for verifying sequential software that performs computations using common registers and memory.</p>
+          <p>
+            Project started after the <a href="https://sites.google.com/view/lean-at-googl-2025/home">Lean@Google</a> Hackathon last December.</p>
+          <p>
+            <a href="https://leodemoura.github.io/static/svil26/">Scalable Software Verification in Lean 4</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Veil: Verified Distributed Protocols</h2>
+          <p>
+            <a href="https://veil.dev/">Veil</a>: verification of distributed protocols. <strong>Built on Lean as a library using Lean metaprogramming.</strong></p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  Push-button verification via SMT (cvc5/Z3) for decidable fragments</p>
+                </li>
+              <li>
+                <p>
+                  Full interactive proofs in Lean when automation falls short</p>
+                </li>
+              <li>
+                <p>
+                  Seamless transition between the two modes</p>
+                </li>
+              <li>
+                <p>
+                  <strong>Foundational</strong>: Veil's VCG is proven sound w.r.t. the specification language semantics.</p>
+                </li>
+              <li>
+                <p>
+                  16 distributed protocol case studies. All 16 verified. Ivy failed on 2. <strong>87.5% verified in under 15 seconds.</strong></p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/veil-example.png" alt="Veil: ring leader election" class="img-tall"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Move Borrow Checker: The Problem</h2>
+          <p>
+            Ilya Sergey (VERSE lab) formalized and verified Move's borrow checker in Lean. <strong>39,000 lines</strong> of mechanized metatheory in <strong>27 working days</strong>, using an AI coding assistant.</p>
+          <p>
+            <strong>Move</strong>: smart contract language for the Sui and Aptos blockchains. Rust-like ownership discipline. References are access paths rooted in local variables. No lifetime annotations.</p>
+          <p>
+            <strong>The borrow checker</strong>: tracks reachability between references using regular expressions over field paths.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            CSLib</h2>
+          <p>
+            <a href="https://www.cslib.io/">CSLib</a> aims to be a foundation for teaching, research, and new verification efforts, including AI-assisted.</p>
+          <p>
+            <a href="https://docs.google.com/presentation/d/1aJFM3EaI4LcppHR_2YFQHiBjUfMMhMKxCeM3BfINi48/edit?slide=id.p#slide=id.p">A Foundation for Computer Science in Lean</a></p>
+          <p>
+            <img src="images/cslib-diagram.png" alt="CSLib: adding to CS foundations" class="img-wide"></p>
+          <p>
+            Steering committee: Clark Barrett, Swarat Chaudhuri, Jim Grundy, Pushmeet Kohli, Leo de Moura, Fabrizio Montesi.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Signal Shot</h2>
+          <p>
+            <a href="https://www.beneficialaifoundation.org/blog/signal-shot">Signal Shot</a> is a public moonshot to verify the Signal protocol and its Rust implementation using Lean.</p>
+          <p>
+            It is a joint effort of Signal (Rolfe Schmidt), the <a href="https://www.beneficialaifoundation.org/">Beneficial AI Foundation</a> (Max Tegmark), and the Lean FRO.</p>
+          <p>
+            The pieces:</p>
+          <ul>
+            <li>
+              <p>
+                Aeneas,</p>
+              </li>
+            <li>
+              <p>
+                Mathlib and <a href="https://www.cslib.io/">CSLib</a>,</p>
+              </li>
+            <li>
+              <p>
+                Symbolic proof automation (<code>grind</code>) and scalable verification generation (<code>SymM</code>),</p>
+              </li>
+            <li>
+              <p>
+                and AI.</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade" data-background-color="#0073A3">
+          <h2>
+            AI</h2>
+          <p>
+            <em>Accelerating formal verification.</em></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            "Vibe Proving"</h2>
+          <p>
+            So many people are choosing Lean that even casual users are proving theorems with ChatGPT. <strong>"We used ChatGPT to vibe code a Lean proof."</strong></p>
+          <p>
+            <img src="images/erdos-paper.png" alt="Erdos Prize paper"></p>
+          <blockquote><p>
+              "The bottleneck for using AI to create strategies and make conjectures is we have to rely on human experts and the test of time to validate whether something is plausible or not." — Terence Tao, Dwarkesh Patel interview</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            International Mathematical Olympiad (IMO)</h2>
+          <p>
+            To date, every AI achieving medal-level IMO performance with formal proofs used Lean.</p>
+          <ul>
+            <li>
+              <p>
+                <strong>AlphaProof</strong> (Google DeepMind) — silver medal, IMO 2024</p>
+              </li>
+            <li>
+              <p>
+                <strong>Aristotle</strong> (Harmonic) — gold medal, IMO 2025</p>
+              </li>
+            <li>
+              <p>
+                <strong>SEED Prover</strong> (ByteDance) — silver medal, IMO 2025</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            AI startups</h2>
+          <ul>
+            <li>
+              <p>
+                <strong>Leanstral</strong> (Mistral): the first open-source code agent designed for Lean 4.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Axiom:</strong> solved 12/12 problems on Putnam 2025.</p>
+              </li>
+            <li>
+              <p>
+                <strong>DeepSeek Prover-V2:</strong> 88.9% on miniF2F. Open-source, 671B parameters.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Harmonic:</strong> Built the Aristotle AI — gold medal, IMO 2025.</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/startup-logos.png" alt="Startups using Lean"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            zlib in Lean</h2>
+          <p>
+            <strong>AI converted zlib (a C compression library) to Lean.</strong></p>
+          <p>
+            The <a href="https://github.com/kim-em/lean-zip">Lean version</a> passed the test suite, and then <strong>proved</strong> the code <strong>correct</strong>.</p>
+          <pre>theorem zlib_decompressSingle_compress (data : ByteArray) (level : UInt8)
+    (hsize : data.size &lt; 1024 * 1024 * 1024) :
+    ZlibDecode.decompressSingle (ZlibEncode.compress data level) = .ok data
+</pre><p>
+            Decompression always recovers the original data. Every compression level. Machine-checked.</p>
+          <p>
+            The barrier is no longer AI capability. It is platform readiness.</p>
+          <p>
+            <a href="https://leodemoura.github.io/blog/2026-2-28-when-ai-writes-the-worlds-software-who-verifies-it/">When AI Writes the World's Software, Who Verifies It?</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Radix: 10 AI Agents, One Weekend</h2>
+          <p>
+            10 AI agents built a <strong>verified embedded DSL</strong> with proved optimizations in <strong>a single weekend</strong>.</p>
+          <ul>
+            <li>
+              <p>
+                52 theorems.</p>
+              </li>
+            <li>
+              <p>
+                5 verified compiler optimizations.</p>
+              </li>
+            <li>
+              <p>
+                Determinism, type safety, memory safety.</p>
+              </li>
+            <li>
+              <p>
+                Interpreter correctness — sound and complete.</p>
+              </li>
+            <li>
+              <p>
+                27 modules, ~7,400 lines of Lean.</p>
+              </li>
+            <li>
+              <p>
+                I did not touch the code. Zero lines. Full agent autonomy.</p>
+              </li>
+            </ul>
+          <p>
+            <a href="https://github.com/leodemoura/RadixExperiment">github.com/leodemoura/RadixExperiment</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            AI Changed How I Work</h2>
+          <p>
+            AI is not just changing who uses Lean. It changed how <strong>I</strong> work.</p>
+          <p>
+            Kim Morrison (Lean FRO) showed me a major refactoring step: more than 10,000 lines changed across Mathlib, implemented by AI.</p>
+          <p>
+            Since then, <strong>AI has removed the pain of developing software.</strong></p>
+          <blockquote><p>
+              I used to believe my superpower was that I could tolerate a lot of pain. That superpower is no longer relevant.</p>
+            </blockquote><p>
+            <strong>AI now isolates issues, tries new ideas, runs experiments, analyzes performance, and much more.</strong></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Validation Bottleneck</h2>
+          <blockquote><p>
+              "The bottleneck for using AI to create strategies and make conjectures is we have to rely on human experts and the test of time to validate whether something is plausible or not." — Terence Tao, Dwarkesh Patel interview</p>
+            </blockquote><p>
+            Lean automates the validation. <strong>That's the unlock.</strong></p>
+          <p>
+            AI will write proofs. AI will even draft specifications from natural language.</p>
+          <p>
+            But reading the formal statement and saying "yes, this is what I meant." remains the human job. <strong>The formal statement is the trust anchor.</strong></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Kernel as AI Safety Infrastructure</h2>
+          <blockquote><p>
+              "It's really important with these formal proof assistants that there are no backdoors or exploits you can use to somehow get your certified proof without actually proving it, because reinforcement learning is just so good at finding these backdoors." — Terence Tao</p>
+            </blockquote><p>
+            The kernel's soundness is not just a theoretical property. It is <strong>AI safety infrastructure</strong>.</p>
+          <p>
+            RL agents will find every shortcut. The kernel is the one thing they can't fake.</p>
+          <p>
+            <a href="https://leodemoura.github.io/blog/2026-3-16-who-watches-the-provers/">Who Watches the Provers?</a> |
+<a href="https://github.com/leanprover/comparator">Comparator</a> |
+<a href="https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-proofs">Validating a Lean Proof</a></p>
+          </section>
+        <section data-background-color="#0073A3">
+          <h2>
+            The Infrastructure</h2>
+          <p>
+            <em>Everyone wants the platform to be neutral, open, scalable, extensible, and trustworthy.</em></p>
+          <p>
+            <em>That requires an institution whose job is the platform.</em></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Lean FRO</h2>
+          <p>
+            Nonprofit. 20 engineers. Open source. Controlled by no single company.</p>
+          <p>
+            <a href="https://sebasti.a.nullri.ch/">Sebastian Ullrich</a> and I launched it in August 2023.</p>
+          <p>
+            <strong>28 releases and 8,000+ pull requests merged since its launch.</strong></p>
+          <blockquote><p>
+              "Lean is not a research project anymore. We run the Lean FRO as a startup."</p>
+            </blockquote><p>
+            <a href="https://lean-lang.org/fro/roadmap/y3/">Public roadmaps</a> |
+<a href="https://lean-lang.org/fro/team/">Our team</a></p>
+          <p>
+            The Lean project was featured in: NY Times, Quanta, Scientific American, Wired, etc.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Conclusion</h2>
+          <p>
+            I opened this talk with Signal Shot: verifying the Signal protocol and its Rust implementation in Lean.</p>
+          <p>
+            That is not an isolated project. It is the result of years of work on mathematics, extensibility, scalability, verification, and infrastructure.</p>
+          <p>
+            Formalization is not just about proving. It is about understanding, communicating, and building trust at a scale beyond our cognitive abilities.</p>
+          <p>
+            <strong>More of the world will depend on systems that do not have to be taken on faith.</strong></p>
+          <blockquote><p>
+              “Lean is a great language with good tools, a large library and a huge, enthusiastic user community that has lately accomplished astounding things." — Larry Paulson, creator of Isabelle</p>
+            </blockquote></section>
+        <section data-background-color="#0073A3">
+          <h2>
+            Thank You</h2>
+          <p>
+            <em>Leo de Moura</em></p>
+          <p>
+            lean-lang.org | leanprover.zulipchat.com
+</p>
+          </section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/katex/dist/katex.min.js"></script>
+    <script src="lib/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        disableLayout: true,
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'slide',
+        width: 960,
+        height: 700,
+        margin: 0.000000,
+        navigationMode: 'default',
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        plugins: [ RevealNotes, RevealHighlight ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/lean-comments.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    <script src="lib/illuminate-reveal.js"></script>
+    </body>
+  </html>
