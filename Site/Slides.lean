@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Machine-Checked Mathematics in the Age of AI](/static/stanford-fmi-2026/), Stanford Future of Mathematics Symposium
 - [Lean: Extensible, Scalable, Trusted.](/static/paris2026/), Paris Lean Meetup
 - [Scalable Software Verification in Lean 4](/static/svil26/), SViL, INRIA Paris
 - [Lean: A Unified Platform for Verification, Programming, and AI](/static/etaps-industry-2026/), ETAPS Industry Day
