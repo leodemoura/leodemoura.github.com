@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean 4: A Unified Platform for Programming and Verification](/static/nfm2026/), NASA Formal Methods Symposium
 - [Machine-Checked Mathematics in the Age of AI](/static/stanford-fmi-2026/), Stanford Future of Mathematics Symposium
 - [Lean: Extensible, Scalable, Trusted.](/static/paris2026/), Paris Lean Meetup
 - [Scalable Software Verification in Lean 4](/static/svil26/), SViL, INRIA Paris
