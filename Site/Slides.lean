@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean: Verified Software at AWS](/static/aws-june-2026/), AWS
 - [Lean: Machine-Checked Proofs as Infrastructure for AI and Science](/static/sair26/), Science x AI Summit (SAIR Foundation)
 - [Lean: Machine-Checked Mathematics and AI Collaboration](/static/uw-hackathon-26/), University of Washington Hackathon
 - [Lean 4: A Unified Platform for Programming and Verification](/static/nfm2026/), NASA Formal Methods Symposium
