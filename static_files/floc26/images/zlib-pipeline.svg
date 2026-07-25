@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1120 270" xmlns="http://www.w3.org/2000/svg" style="width:80%;height:auto;" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <!-- AI zone: translation, tests, and proofs are all AI's work -->
+  <rect x="24" y="56" width="830" height="192" rx="14" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="439" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309" letter-spacing="1">DONE BY AI</text>
+
+  <!-- zlib card -->
+  <rect x="48" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="155" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">zlib</text>
+  <text x="155" y="183" text-anchor="middle" font-size="13.5" fill="#475569">C compression library</text>
+
+  <!-- translate arrow -->
+  <text x="298" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">translate</text>
+  <line x1="270" y1="164" x2="308" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="308,157 326,164 308,171" fill="#b45309"/>
+  <text x="298" y="191" text-anchor="middle" font-size="11.5" fill="#64748b">C → Lean</text>
+
+  <!-- lean-zip card -->
+  <rect x="334" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="441" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0c4a6e">lean-zip</text>
+  <text x="441" y="183" text-anchor="middle" font-size="13.5" fill="#475569">Lean implementation</text>
+
+  <!-- test arrow -->
+  <text x="584" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">test</text>
+  <line x1="556" y1="164" x2="594" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="594,157 612,164 594,171" fill="#b45309"/>
+
+  <!-- tests pass card -->
+  <rect x="620" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+  <circle cx="675" cy="151" r="12" fill="#0891b2"/>
+  <path d="M669 151 L673 156 L682 145" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="739" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0c4a6e">Tests pass</text>
+  <text x="727" y="183" text-anchor="middle" font-size="13.5" fill="#475569">zlib test suite</text>
+
+  <!-- Lean guarantee zone -->
+  <rect x="874" y="56" width="222" height="192" rx="14" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="985" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#0073A3" letter-spacing="1">LEAN'S GUARANTEE</text>
+
+  <!-- prove arrow (AI writes the proofs; drawn after the zone so the head stays visible) -->
+  <text x="854" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">prove</text>
+  <line x1="838" y1="164" x2="868" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="868,157 886,164 868,171" fill="#b45309"/>
+
+  <!-- proved correct card -->
+  <rect x="890" y="104" width="190" height="120" rx="10" fill="#0073A3"/>
+  <text x="985" y="152" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Proved correct</text>
+  <text x="985" y="176" text-anchor="middle" font-size="12.5" fill="#cfe8f5">round-trip theorem,</text>
+  <text x="985" y="194" text-anchor="middle" font-size="12.5" fill="#cfe8f5">kernel-checked</text>
+</svg>
