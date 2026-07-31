@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lean FRO</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="lib/github.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="lib/diagram.css">
+    <link rel="stylesheet" href="lib/illuminate-anim.css">
+    <link rel="stylesheet" href="lib/table.css">
+    <link rel="stylesheet" href="lib/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="custom.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Lean FRO</h2>
+          <p>
+            The nonprofit behind the <a href="https://lean-lang.org/">Lean</a> programming language and proof assistant.</p>
+          <p>
+            Launched in July 2023 by Leo de Moura and Sebastian Ullrich under <a href="https://www.convergentresearch.org/">Convergent Research</a>.</p>
+          <ul>
+            <li>
+              <p>
+                Mission: make formal verification accessible across <em>mathematics</em>, <em>software and hardware verification</em>, and <em>AI-assisted theorem proving</em>.</p>
+              </li>
+            <li>
+              <p>
+                Focus: <strong>scalability</strong>, <strong>usability</strong>, <strong>proof automation</strong>, <strong>documentation</strong> — and guiding Lean toward long-term self-sustainability.</p>
+              </li>
+            <li>
+              <p>
+                <strong>20 engineers.</strong> Open source. <strong>Controlled by no single company.</strong> Many team members recruited from the Lean community.</p>
+              </li>
+            <li>
+              <p>
+                <strong>32 releases and 9,000+ pull requests merged since launch.</strong></p>
+              </li>
+            <li>
+              <p>
+                Supported by philanthropic donations: Alex Gerko, Alfred P. Sloan Foundation, Amazon, Richard Merkin Foundation, Simons Foundation.</p>
+              </li>
+            </ul>
+          <p>
+            <strong>Industrial users: <a href="https://www.amazon.science/news/amazon-is-investing-in-the-lean-focused-research-organization?sc_channel=sm&amp;sc_publisher=LINKEDIN&amp;sc_country=global&amp;sc_geo=GLOBAL&amp;sc_outcome=awareness&amp;trk=Announcement&amp;linkId=986828929">Amazon</a>,
+Google, Meta, and <a href="https://www.linkedin.com/posts/markrussinovich_weve-open-sourced-formal-verification-proofs-activity-7482557264608841728-YfNM?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAADt6rIBFuTaMBZazr9cExmc-G9GqxN7W8c">Microsoft</a>.</strong></p>
+          <div class="slide-footer">
+            <p>
+              <a href="https://lean-lang.org/fro">lean-lang.org/fro</a> | <a href="https://lean-lang.org/fro/roadmap/y3/">Public roadmaps</a> | <a href="https://lean-lang.org/fro/team/">Our team</a></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            AI Startups</h2>
+          <ul>
+            <li>
+              <p>
+                <strong>Leanstral</strong> (Mistral): the first open-source code agent designed for Lean 4.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Axiom:</strong> solved 12/12 problems on Putnam 2025.</p>
+              </li>
+            <li>
+              <p>
+                <strong>DeepSeek Prover-V2:</strong> 88.9% on miniF2F. Open-source, 671B parameters.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Harmonic:</strong> built the Aristotle AI — gold medal, IMO 2025.</p>
+              </li>
+            </ul>
+          <p>
+            <img src="images/startup-logos.png" alt="Startups using Lean"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Current Work: Mathematics</h2>
+          <ul>
+            <li>
+              <p>
+                <strong>Lean Eval</strong> — <a href="https://lean-lang.org/eval/">public leaderboard</a> of AI formalization results on a benchmark of <em>hard</em> Lean problems.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Tau Ceti</strong> — <a href="https://taucetiproject.github.io/TauCeti/">AI-authored Lean mathematics</a>: humans own the roadmap, AIs write and review the code, and progress is gated by open, adversarial review.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Verso</strong> — <a href="https://verso.lean-lang.org/">type-checked documents</a>: papers, lecture notes, slides, and websites in one tool. Every Lean example is checked. <a href="https://lean-lang.org/">lean-lang.org</a> is written in Verso.</p>
+              </li>
+            <li>
+              <p>
+                <strong>Lean Workbench</strong> (coming soon) — zero installation: manage Lean and Verso Blueprint projects in the browser, pre-configured with AI. Built for teaching.</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Current Work: Software Verification</h2>
+          <ul>
+            <li>
+              <p>
+                <strong><code>grind</code></strong> — SMT-inspired proof automation, native to dependent type theory. Congruence closure, E-matching, and theory solvers. Produces kernel-checkable Lean proofs. 5,000+ uses in Mathlib.</p>
+              </li>
+            <li>
+              <p>
+                <strong><code>SymM</code></strong> — new monadic framework for high-performance symbolic verification. Built for tools that must discharge <em>thousands of verification conditions</em> efficiently.</p>
+              </li>
+            <li>
+              <p>
+                <strong><code>vcgen</code></strong> — Lean's verification-condition generator for monadic programs. Ported to <code>SymM</code>: tactic and kernel time now scale <em>linearly</em> with goal size.</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://github.com/leanprover-community/iris-lean"><strong>Iris Lean</strong></a> (external) — <a href="https://github.com/leanprover-community/iris-lean">port</a> of the <a href="https://iris-project.org/">Iris</a> higher-order concurrent separation logic framework from Rocq to Lean.</p>
+              </li>
+            </ul>
+          <div class="slide-footer">
+            <p>
+              These pieces come together in <a href="https://www.beneficialaifoundation.org/blog/signal-shot">Signal Shot</a>: verifying the Signal protocol and its Rust implementation in Lean.</p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Andres' Challenge</h2>
+          <p>
+            <strong><a href="https://andres.systems/">Andres Erbsen</a></strong> — Google ISE Formal. Bedrock2. Fiat Cryptography.</p>
+          <p>
+            A Rocq veteran distilled the scaling problem into a minimal challenge at the <a href="https://hackmd.io/sjPWIMP9TIuKW5tuWUfxXA">Lean@Google Hackathon</a>.</p>
+          <p>
+            A <a href="https://github.com/leanprover/lean4/blob/master/tests/bench/sym/add_sub_cancel.lean">parametric example</a> for a small, deeply embedded imperative language.</p>
+          <p>
+            With Lean's default tactic framework, <code>MetaM</code>, this is <strong>superlinear</strong>.</p>
+          <p>
+            <img src="images/andres-scaling.svg" alt="Andres' Challenge tactics time by goal size" style="height: 32vh;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            SymM: Scalable Symbolic Verification</h2>
+          <ul>
+            <li>
+              <p>
+                <code>SymM</code>: new monadic framework for high-performance software verification. Born after the <a href="https://hackmd.io/sjPWIMP9TIuKW5tuWUfxXA">Lean@Google Hackathon</a>.</p>
+              </li>
+            <li>
+              <p>
+                Designed for tools like Aeneas, vcgen, and Velvet that need to <em>discharge thousands of verification conditions efficiently</em>.</p>
+              </li>
+            </ul>
+          <p>
+            <strong>Without this, verifying something as large as Signal is slow and painful. With it, verification conditions get discharged efficiently.</strong></p>
+          <div class="r-hstack">
+            <p>
+              <img src="images/symm-benchmark.png" alt="SymM vs MetaM benchmark" style="width: 80%;" class="explicit-size"></p>
+            <p>
+              <img src="images/symm-cache-reuse.png" alt="SymM with cache reuse" style="width: 80%;" class="explicit-size"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            vcgen — Ported to <code>SymM</code></h2>
+          <p>
+            Lean's VC generator for monadic programs. Ported to <code>SymM</code> by <strong>Sebastian Graf</strong> (Lean FRO).</p>
+          <p>
+            Andres' Challenge using Lean monadic code. <strong>Linear</strong> out to n=1000.</p>
+          <div class="r-hstack">
+            <p>
+              <img src="images/mvcgen-tactic.svg" alt="Tactic time" style="height: 42vh;" class="explicit-size"></p>
+            <p>
+              <img src="images/mvcgen-kernel.svg" alt="Kernel time" style="height: 42vh;" class="explicit-size"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Iris Lean</h2>
+          <p>
+            <a href="https://iris-project.org/">Iris</a> is a higher-order concurrent separation logic framework implemented in Rocq.</p>
+          <p>
+            Very popular. 150+ papers since 2015.</p>
+          <p>
+            <a href="https://leanprover-community.github.io/iris-lean/">Iris Lean</a> is a port of Iris to Lean. <strong>Progress (last week): 70.3%</strong></p>
+          <p>
+            Started as Lars König's master's thesis (2022). Maintained by Mario Carneiro until 2025; then Markus de Medeiros and many others got interested.</p>
+          <p>
+            <a href="https://www.youtube.com/watch?v=1TPmpuRaTvc">Introduction to Iris-Lean by Zongyuan Liu</a>. Why port Iris to Lean? Zongyuan's answer:</p>
+          <p>
+            <img src="images/iris-why-lean.png" alt="Why port Iris to Lean: comprehensive Mathlib, good metaprogramming, pleasant user experience, active community, advanced automation, better AI support, good performance" style="width: 45%;" class="explicit-size">
+</p>
+          </section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/katex/dist/katex.min.js"></script>
+    <script src="lib/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        disableLayout: true,
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'slide',
+        width: 960,
+        height: 700,
+        margin: 0.000000,
+        navigationMode: 'default',
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        plugins: [ RevealNotes, RevealHighlight ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    <script src="lib/illuminate-reveal.js"></script>
+    </body>
+  </html>
