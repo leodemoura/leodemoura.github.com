@@ -15,9 +15,9 @@ A soundness bug in the Lean kernel ([#14576](https://github.com/leanprover/lean4
 
 # What happened
 
-On July 25, Ramana Kumar published a repository containing a sorry-free "disproof" of the Collatz conjecture, produced with LLM assistance. It is not a valid proof because it exploits a bug in the kernel's handling of nested inductive types. On July 28, Kiran Gopinathan reduced it to a small proof of False and opened issue [#14576](https://github.com/leanprover/lean4/issues/14576). We pushed a fix one hour after the report ([#14577](https://github.com/leanprover/lean4/pull/14577)). [Joachim Breitner](https://www.joachim-breitner.de/) reviewed it and suggested improvements, and it was merged. New patch releases are out.
+On July 25, Ramana Kumar published a repository containing a `sorry`-free "disproof" of the Collatz conjecture, produced with AI assistance. It is not a valid proof because it exploits a bug in the kernel's handling of nested inductive types. On July 28, Kiran Gopinathan reduced it to a small proof of False and opened issue [#14576](https://github.com/leanprover/lean4/issues/14576). We pushed a fix one hour after the report ([#14577](https://github.com/leanprover/lean4/pull/14577)). [Joachim Breitner](https://www.joachim-breitner.de/) reviewed it and suggested improvements, and it was merged. New patch releases are out.
 
-The bug: when the kernel eliminates a nested occurrence under an inductive type `T` with parameters `Ds`, and these parameters are phantom (not mentioned in constructor fields), they disappear from the generated auxiliary type and thus escape type checking. An ill-typed argument in that position could be used to make the kernel accept a proof of `False`. The bug is only reachable through metaprogramming, by sending the inductive declaration to the kernel directly. The frontend checks the arguments and catches the ill-typed term. This is an implementation bug, not a hole in Lean's meta-theory.
+The bug: when the kernel eliminates a nested occurrence under an inductive type `T` with parameters `Ds`, and these parameters are phantom (not mentioned in constructor fields), they disappear from the generated auxiliary type and thus escape type checking. An ill-typed argument in that position could be used to make the kernel accept a proof of `False`. The bug is only reachable through metaprogramming, by sending the inductive declaration to the kernel directly. The frontend checks the arguments and catches the ill-typed term. **This is an implementation bug, not a hole in Lean's meta-theory.**
 
 # Why nanoda did not catch it
 
@@ -37,7 +37,7 @@ One suggestion in the discussion is to remove or restrict metaprogramming so tha
 
 # What the FRO is doing
 
-- Regression tests for the exploit, and for a related non-uniform-parameter case raised by Arthur Adjedj, are in the Kernel Arena.
+- Regression tests for the exploit, and for a related non-uniform-parameter case raised by Arthur Adjedj, are in the [Kernel Arena](https://arena.lean-lang.org/).
 
 - A follow-up PR ([#14582](https://github.com/leanprover/lean4/pull/14582)) makes the kernel check that the parameters of a nested occurrence actually behave as parameters, rather than only re-type-checking them.
 
