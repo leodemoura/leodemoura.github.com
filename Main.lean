@@ -13,6 +13,7 @@ import Site.Blog.ProofAssistants
 import Site.Blog.WhyLean
 import Site.Blog.WhoWatches
 import Site.Blog.SignalShot
+import Site.Blog.KernelPostmortem
 import Site.Notes
 import Site.Notes.CrayColloquium
 import Site.Notes.SymInteractive
@@ -26,6 +27,7 @@ def mySite : Site := site Site.FrontPage /
   "about" Site.About
   "publications" Site.Publications
   "blog" Site.Blog with
+    Site.Blog.KernelPostmortem
     Site.Blog.SignalShot
     Site.Blog.WhyLean
     Site.Blog.WhoWatches
