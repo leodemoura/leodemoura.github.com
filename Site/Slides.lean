@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean 4 for Program Verification in the Age of AI](/static/marktoberdorf2026/), Marktoberdorf Summer School (4 lectures)
 - [grind: An SMT-Inspired Tactic for Lean 4](/static/ijcar26/), IJCAR, Lisbon
 - [The Lean Theorem Prover: Design, Evolution, and Impact](/static/floc26/), FLoC plenary, Lisbon
 - [Machine-Checked Mathematics in the Age of AI](/static/icml2026/), AI4Math Workshop at ICML
