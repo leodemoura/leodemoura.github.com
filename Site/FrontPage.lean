@@ -22,6 +22,7 @@ My research areas are automated reasoning, theorem proving, decision procedures,
 
 # Recent Writing
 
+- [Postmortem for the Kernel Soundness Bug Hunt](/blog/2026-8-24-postmortem-for-the-kernel-soundness-bug-hunt/) — the bug hunt with OpenAI internal models, the new bugs found, and the next steps to increase trust
 - [Postmortem for Kernel Soundness Bug #14576](/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/) — what happened, why the independent checker missed it, and what the FRO is doing
 - [Signal Shot: The Platform Is Ready](/blog/2026-4-20-signal-shot-the-platform-is-ready/) — the moonshot to verify the Signal protocol and its Rust implementation in Lean
 - [Why Lean?](/blog/2026-4-2-why-lean/) — what makes Lean different, including what it's bad at
