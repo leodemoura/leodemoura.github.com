@@ -1,0 +1,64 @@
+<svg viewBox="0 0 1200 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="36" fill="#f1f5f9"/>
+  <g font-weight="700" fill="#0f172a" font-size="13.5">
+    <text x="12"  y="24">fix</text>
+    <text x="100" y="24">component</text>
+    <text x="200" y="24">what was fixed (PR title)</text>
+    <text x="700" y="24">merged</text>
+    <text x="790" y="24">released</text>
+    <text x="890" y="24">bogus proof rejected by</text>
+  </g>
+  <g fill="#0f172a">
+    <rect x="0" y="36" width="1200" height="56" fill="#fff"/>
+    <text x="12" y="59" font-weight="600">#14577</text><text x="100" y="59">kernel</text>
+    <text x="200" y="59">missing check at kernel inductive declaration</text>
+    <text x="200" y="79" font-size="12.5" fill="#64748b">issue #14576 (Collatz), Jul 28 03:28 UTC; fix merged 13:39; v4.32.2 released 16:34. The exploit also needed a nanoda bug, fixed Jul 27</text>
+    <text x="700" y="59">Jul 28</text><text x="790" y="59">Jul 28</text>
+    <text x="890" y="59" fill="#047857">nanoda from Jul 27 (PR #22) or later</text>
+
+    <rect x="0" y="92" width="1200" height="40" fill="#f8fafc"/>
+    <text x="12" y="117" font-weight="600">#14613</text><text x="100" y="117">kernel</text>
+    <text x="200" y="117">recognize sorts as Prop up to universe normalization</text>
+    <text x="700" y="117">Jul 31</text><text x="790" y="117">Aug 21</text>
+    <text x="890" y="117" fill="#047857">nanoda, ind-models</text>
+
+    <rect x="0" y="132" width="1200" height="40" fill="#fff"/>
+    <text x="12" y="157" font-weight="600">#14616</text><text x="100" y="157">kernel</text>
+    <text x="200" y="157">reject declarations naming the kernel's _nested auxiliary types</text>
+    <text x="700" y="157">Jul 31</text><text x="790" y="157">Aug 21</text>
+    <text x="890" y="157" fill="#047857">nanoda, ind-models</text>
+
+    <rect x="0" y="172" width="1200" height="40" fill="#f8fafc"/>
+    <text x="12" y="197" font-weight="600">#14806</text><text x="100" y="197">kernel</text>
+    <text x="200" y="197">make kernel is_def_eq caching order-independent</text>
+    <text x="700" y="197">Aug 18</text><text x="790" y="197">Aug 21</text>
+    <text x="890" y="197" fill="#047857">nanoda, ind-models</text>
+
+    <rect x="0" y="212" width="1200" height="56" fill="#fff"/>
+    <text x="12" y="235" font-weight="600">#14807</text><text x="12" y="255" font-weight="600">#14843</text><text x="100" y="235">kernel</text>
+    <text x="200" y="235">make the kernel is_prop check require a sort</text>
+    <text x="200" y="255" font-size="12.5" fill="#64748b">lean4lean never had this bug (its isProp used ensureSortCore)</text>
+    <text x="700" y="235">Aug 18</text><text x="700" y="255">Aug 19</text><text x="790" y="235">Aug 21</text>
+    <text x="890" y="235" fill="#047857">ind-models, lean4lean</text>
+
+    <rect x="0" y="268" width="1200" height="40" fill="#f8fafc"/>
+    <text x="12" y="293" font-weight="600">#14838</text><text x="100" y="293">runtime</text>
+    <text x="200" y="293">freeze objects when their reference count overflows</text>
+    <text x="700" y="293">Aug 20</text><text x="790" y="293">Aug 21</text>
+    <text x="890" y="293" fill="#047857">nanoda; any non-Lean-runtime checker</text>
+
+    <rect x="0" y="308" width="1200" height="56" fill="#fff"/>
+    <text x="12" y="331" font-weight="600">#14833</text><text x="100" y="331">runtime</text>
+    <text x="200" y="331">require GMP 6.3.0</text>
+    <text x="200" y="351" font-size="12.5" fill="#64748b">Linux builds had used GMP 6.1.2 for libc compatibility</text>
+    <text x="700" y="331">Aug 20</text><text x="790" y="331">Aug 21</text>
+    <text x="890" y="331" fill="#047857">nanoda; any non-Lean-runtime checker</text>
+  </g>
+  <rect x="0" y="372" width="1200" height="70" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <g font-size="13" fill="#065f46">
+    <text x="12" y="393">Every bogus proof was rejected by at least one external checker available at the time. All fixes shipped in Lean v4.33.1 on Aug 21, 2026: 24 days after the first report.</text>
+    <text x="12" y="412">None of the seven can be triggered by a proof written in Lean. In each exploit the step that triggers the bug is built by a program that skips the front end; the rest can be ordinary Lean.</text>
+    <text x="12" y="431">#14577 shipped in v4.32.2 within 13 hours of the report. Not soundness bugs, fixed in the same period: #14607, #14608, #14609, #14615, #14849. Hardening: #14582, #14621, #14631, #14632.</text>
+  </g>
+</svg>

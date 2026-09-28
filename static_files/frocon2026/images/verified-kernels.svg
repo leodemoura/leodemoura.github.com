@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="15">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+  <rect x="20" y="30" width="350" height="200" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+  <text x="195" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#064e3b">con-leche</text>
+  <g fill="#0f172a">
+    <text x="195" y="92" text-anchor="middle">a proof checker written in Lean</text>
+    <text x="195" y="116" text-anchor="middle">with a proof, checked by Lean, that it</text>
+    <text x="195" y="136" text-anchor="middle">never accepts a proof of a false statement</text>
+    <text x="195" y="168" text-anchor="middle" font-size="13" fill="#047857">Joachim Breitner, Lean FRO · released Sep 10, 2026</text>
+    <text x="195" y="188" text-anchor="middle" font-size="13" fill="#047857">written and proved by Claude under his supervision</text>
+    <text x="195" y="212" text-anchor="middle" font-size="13" fill="#047857">checks all of Mathlib in about 20 minutes</text>
+  </g>
+  <rect x="425" y="30" width="350" height="200" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+  <text x="600" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#064e3b">con-ron</text>
+  <g fill="#0f172a">
+    <text x="600" y="92" text-anchor="middle">the same checker, translated to Rust</text>
+    <text x="600" y="116" text-anchor="middle">with a proof that it computes</text>
+    <text x="600" y="136" text-anchor="middle">exactly what con-leche computes</text>
+    <text x="600" y="168" text-anchor="middle" font-size="13" fill="#047857">Sep 13, 2026 · proof via Aeneas (Rust → Lean)</text>
+    <text x="600" y="188" text-anchor="middle" font-size="13" fill="#047857">runs on a different compiler and runtime</text>
+    <text x="600" y="212" text-anchor="middle" font-size="13" fill="#047857">no GMP, no Lean runtime</text>
+  </g>
+  <rect x="830" y="30" width="350" height="200" rx="12" fill="#eff6ff" stroke="#0284c7" stroke-width="1.8"/>
+  <text x="1005" y="62" text-anchor="middle" font-size="20" font-weight="700" fill="#0c4a6e">run both</text>
+  <g fill="#0f172a">
+    <text x="1005" y="92" text-anchor="middle">a proof is accepted only if</text>
+    <text x="1005" y="116" text-anchor="middle">both checkers accept it</text>
+    <text x="1005" y="148" text-anchor="middle" font-size="13" fill="#0369a1">a bug in Lean's runtime (Aug 2026: reference</text>
+    <text x="1005" y="168" text-anchor="middle" font-size="13" fill="#0369a1">counter, GMP) cannot fool the Rust build,</text>
+    <text x="1005" y="188" text-anchor="middle" font-size="13" fill="#0369a1">and a bug in Rust's cannot fool the Lean build</text>
+    <text x="1005" y="212" text-anchor="middle" font-size="13" fill="#0369a1">both bundled with Lean v4.35</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2.5" fill="none" marker-end="url(#a)">
+    <path d="M370 130 L 422 130"/><path d="M775 130 L 827 130"/>
+  </g>
+  <text x="20" y="272" font-size="12.5" fill="#475569">github.com/leanprover/con-leche · github.com/leanprover/con-ron · arena.lean-lang.org (con-leche: Mathlib 22.3 min; con-ron: 19.9 min; official kernel: 32.9 min, virtual CPU time)</text>
+</svg>

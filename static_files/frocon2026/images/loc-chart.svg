@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<text x="346" y="62" text-anchor="end" font-weight="700" fill="#0f172a" font-size="15">Anthropic, Fermat's Last Theorem</text>
+<text x="346" y="82" text-anchor="end" fill="#64748b" font-size="11.5">anthropics/fermats-last-theorem · Sep 4, 2026 · 60,478 files</text>
+<rect x="360" y="44" width="600" height="40" rx="5" fill="#0073A3"/>
+<text x="970" y="70" fill="#0f172a" font-size="15" font-weight="600">13,499,380 lines of Lean</text>
+<text x="346" y="140" text-anchor="end" font-weight="700" fill="#0f172a" font-size="15">Mathlib (all .lean files)</text>
+<text x="346" y="160" text-anchor="end" fill="#64748b" font-size="11.5">leanprover-community/mathlib4</text>
+<rect x="360" y="122" width="108" height="40" rx="5" fill="#2f8bb8"/>
+<text x="478" y="148" fill="#0f172a" font-size="15" font-weight="600">2,424,810 lines of Lean</text>
+<text x="346" y="218" text-anchor="end" font-weight="700" fill="#0f172a" font-size="15">Buckmaster–Alpöge, fluid_lean</text>
+<text x="346" y="238" text-anchor="end" fill="#64748b" font-size="11.5">tristanbuckmaster/fluid_lean · Sep 8, 2026</text>
+<rect x="360" y="200" width="81" height="40" rx="5" fill="#5aa9cc"/>
+<text x="451" y="226" fill="#0f172a" font-size="15" font-weight="600">1,811,649 lines of Lean</text>
+<text x="346" y="296" text-anchor="end" font-weight="700" fill="#0f172a" font-size="15">OpenAI, Navier–Stokes and Euler</text>
+<text x="346" y="316" text-anchor="end" fill="#64748b" font-size="11.5">openai/NavierStokesAndEuler · Sep 8, 2026</text>
+<rect x="360" y="278" width="29" height="40" rx="5" fill="#8ac4de"/>
+<text x="399" y="304" fill="#0f172a" font-size="15" font-weight="600">641,332 lines of Lean</text>
+<line x1="360" y1="358" x2="960" y2="358" stroke="#cbd5e1"/>
+<line x1="360" y1="358" x2="360" y2="364" stroke="#94a3b8"/>
+<text x="360" y="380" text-anchor="middle" fill="#64748b" font-size="12">0M</text>
+<line x1="582" y1="358" x2="582" y2="364" stroke="#94a3b8"/>
+<text x="582" y="380" text-anchor="middle" fill="#64748b" font-size="12">5M</text>
+<line x1="804" y1="358" x2="804" y2="364" stroke="#94a3b8"/>
+<text x="804" y="380" text-anchor="middle" fill="#64748b" font-size="12">10M</text>
+<text x="20" y="410" fill="#475569" font-size="12.5">wc -l over all .lean files outside .lake/, shallow clones from GitHub on 2026-09-22. FLT: P2M/ 11,943,519 · Theorems/ 1,276,305 · Definitions/ 279,497 lines.</text>
+<text x="20" y="430" fill="#475569" font-size="12.5">Checking FLT with comparator (repository README): 14 h 46 min, peak memory 230 GB, export 37.8 GB, Lean 4.33.1.</text>
+</svg>

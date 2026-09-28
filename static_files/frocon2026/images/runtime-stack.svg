@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="18">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <g>
+    <rect x="200" y="20" width="520" height="60" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="460" y="48" text-anchor="middle" font-weight="600" fill="#0f172a">the proof</text>
+    <text x="460" y="70" text-anchor="middle" font-size="14" fill="#64748b">declarations, one after another</text>
+
+    <rect x="200" y="92" width="520" height="60" rx="10" fill="#0073A3"/>
+    <text x="460" y="120" text-anchor="middle" font-weight="700" fill="#fff">the kernel</text>
+    <text x="460" y="142" text-anchor="middle" font-size="14" fill="#cfe8f5">7,556 lines of C++ · decides accept or reject</text>
+
+    <rect x="200" y="164" width="520" height="60" rx="10" fill="#e2e8f0"/>
+    <text x="460" y="192" text-anchor="middle" font-weight="600" fill="#0f172a">the runtime</text>
+    <text x="460" y="214" text-anchor="middle" font-size="14" fill="#475569">memory management (reference counting) · big-number arithmetic (GMP)</text>
+
+    <rect x="200" y="236" width="520" height="60" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="460" y="264" text-anchor="middle" font-weight="600" fill="#0f172a">operating system, hardware</text>
+  </g>
+  <g font-size="15" fill="#0f172a">
+    <rect x="760" y="164" width="420" height="60" rx="10" fill="#fff" stroke="#0073A3" stroke-width="1.5"/>
+    <text x="776" y="188" font-weight="600">Two runtime bugs, Aug 2026</text>
+    <text x="776" y="210" font-size="14" fill="#475569">reference counter overflow · GMP 6.1.2 in Linux builds</text>
+    <rect x="760" y="236" width="420" height="60" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <text x="776" y="260" font-weight="600" fill="#064e3b">Fixed in Lean v4.33.1, Aug 21</text>
+    <text x="776" y="282" font-size="14" fill="#047857">#14838 freeze on overflow · #14833 GMP 6.3.0 · #14849 numeral bound</text>
+  </g>
+  <line x1="720" y1="194" x2="758" y2="194" stroke="#94a3b8" stroke-width="2"/>
+  <text x="20" y="322" font-size="13" fill="#64748b">A checker written in Lean runs on the same runtime. A checker written in another language (nanoda, con-ron) does not.</text>
+</svg>

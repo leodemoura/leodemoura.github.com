@@ -1,0 +1,77 @@
+<svg viewBox="0 0 1200 546" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<line x1="150" y1="22" x2="150" y2="500" stroke="#cbd5e1" stroke-width="2"/>
+<text x="136" y="35" text-anchor="end" font-weight="700" fill="#0f172a">Jul 25</text>
+<circle cx="150" cy="30" r="5" fill="#64748b"/>
+<rect x="170" y="20" width="88" height="20" rx="10" fill="#f1f5f9"/><text x="214" y="34" text-anchor="middle" font-size="11.5" font-weight="600" fill="#64748b">report</text>
+<text x="272" y="35" fill="#0f172a">Collatz "disproof": ordinary Lean around a hand-built step fed to the kernel past the front end; needed two bugs (kernel, nanoda)</text>
+<text x="136" y="62" text-anchor="end" font-weight="700" fill="#0f172a">Jul 26</text>
+<circle cx="150" cy="57" r="5" fill="#64748b"/>
+<rect x="170" y="47" width="88" height="20" rx="10" fill="#f1f5f9"/><text x="214" y="61" text-anchor="middle" font-size="11.5" font-weight="600" fill="#64748b">report</text>
+<text x="272" y="62" fill="#0f172a">Jeremy Chen reports three soundness bugs in nanoda (Arena test PRs #81, #82, #83)</text>
+<text x="136" y="89" text-anchor="end" font-weight="700" fill="#0f172a">Jul 27</text>
+<circle cx="150" cy="84" r="5" fill="#0073A3"/>
+<rect x="170" y="74" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="88" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="89" fill="#0f172a">nanoda PR #22 fixes them</text>
+<text x="136" y="116" text-anchor="end" font-weight="700" fill="#0f172a">Jul 28</text>
+<circle cx="150" cy="111" r="5" fill="#0073A3"/>
+<rect x="170" y="101" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="115" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="116" fill="#0f172a">Issue #14576 filed 03:28 UTC · fix #14577 merged 13:39 · Lean v4.32.2 released 16:34</text>
+<text x="136" y="143" text-anchor="end" font-weight="700" fill="#0f172a">Jul 30</text>
+<circle cx="150" cy="138" r="5" fill="#0073A3"/>
+<rect x="170" y="128" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="142" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="143" fill="#0f172a">Bug hunt with OpenAI internal models begins · #14607, #14608, #14609 merged</text>
+<text x="136" y="170" text-anchor="end" font-weight="700" fill="#0f172a">Jul 31</text>
+<circle cx="150" cy="165" r="5" fill="#0073A3"/>
+<rect x="170" y="155" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="169" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="170" fill="#0f172a">#14613, #14615, #14616 merged · hardening #14621</text>
+<text x="136" y="197" text-anchor="end" font-weight="700" fill="#0f172a">Aug 1</text>
+<circle cx="150" cy="192" r="5" fill="#64748b"/>
+<rect x="170" y="182" width="88" height="20" rx="10" fill="#f1f5f9"/><text x="214" y="196" text-anchor="middle" font-size="11.5" font-weight="600" fill="#64748b">report</text>
+<text x="272" y="197" fill="#0f172a">Postmortem for #14576 published · hardening #14631, #14632</text>
+<text x="136" y="224" text-anchor="end" font-weight="700" fill="#0f172a">Aug 11</text>
+<circle cx="150" cy="219" r="5" fill="#047857"/>
+<rect x="170" y="209" width="88" height="20" rx="10" fill="#ecfdf5"/><text x="214" y="223" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">new checker</text>
+<text x="272" y="224" fill="#0f172a">lean-inductive-models: models of inductive types, checked by the kernel (Joachim Breitner)</text>
+<text x="136" y="251" text-anchor="end" font-weight="700" fill="#0f172a">Aug 18–19</text>
+<circle cx="150" cy="246" r="5" fill="#0073A3"/>
+<rect x="170" y="236" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="250" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="251" fill="#0f172a">#14806, #14807, #14843 merged (kernel)</text>
+<text x="136" y="278" text-anchor="end" font-weight="700" fill="#0f172a">Aug 20</text>
+<circle cx="150" cy="273" r="5" fill="#0073A3"/>
+<rect x="170" y="263" width="88" height="20" rx="10" fill="#e0f2fe"/><text x="214" y="277" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0073A3">fix</text>
+<text x="272" y="278" fill="#0f172a">#14838, #14833, #14849 merged (runtime) · bug hunt ends: the model finds no more issues</text>
+<text x="136" y="305" text-anchor="end" font-weight="700" fill="#0f172a">Aug 21</text>
+<circle cx="150" cy="300" r="5" fill="#0e7490"/>
+<rect x="170" y="290" width="88" height="20" rx="10" fill="#cffafe"/><text x="214" y="304" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e7490">release</text>
+<text x="272" y="305" fill="#0f172a">Lean v4.33.1: all fixes shipped, 24 days after the first report</text>
+<text x="136" y="332" text-anchor="end" font-weight="700" fill="#0f172a">Aug 24</text>
+<circle cx="150" cy="327" r="5" fill="#64748b"/>
+<rect x="170" y="317" width="88" height="20" rx="10" fill="#f1f5f9"/><text x="214" y="331" text-anchor="middle" font-size="11.5" font-weight="600" fill="#64748b">report</text>
+<text x="272" y="332" fill="#0f172a">Postmortem for the bug hunt published</text>
+<text x="136" y="359" text-anchor="end" font-weight="700" fill="#0f172a">Sep 4</text>
+<circle cx="150" cy="354" r="5" fill="#64748b"/>
+<rect x="170" y="344" width="88" height="20" rx="10" fill="#f1f5f9"/><text x="214" y="358" text-anchor="middle" font-size="11.5" font-weight="600" fill="#64748b">report</text>
+<text x="272" y="359" fill="#0f172a">Anthropic: Fermat's Last Theorem, 13.5M lines of Lean, checked with comparator (14 h 46 min)</text>
+<text x="136" y="386" text-anchor="end" font-weight="700" fill="#0f172a">Sep 10</text>
+<circle cx="150" cy="381" r="5" fill="#047857"/>
+<rect x="170" y="371" width="88" height="20" rx="10" fill="#ecfdf5"/><text x="214" y="385" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">new checker</text>
+<text x="272" y="386" fill="#0f172a">con-leche released: kernel written in Lean with a consistency proof</text>
+<text x="136" y="413" text-anchor="end" font-weight="700" fill="#0f172a">Sep 13</text>
+<circle cx="150" cy="408" r="5" fill="#047857"/>
+<rect x="170" y="398" width="88" height="20" rx="10" fill="#ecfdf5"/><text x="214" y="412" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">new checker</text>
+<text x="272" y="413" fill="#0f172a">con-ron: Rust port of con-leche, refinement proof via Aeneas</text>
+<text x="136" y="440" text-anchor="end" font-weight="700" fill="#0f172a">Sep 14</text>
+<circle cx="150" cy="435" r="5" fill="#0e7490"/>
+<rect x="170" y="425" width="88" height="20" rx="10" fill="#cffafe"/><text x="214" y="439" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e7490">release</text>
+<text x="272" y="440" fill="#0f172a">Lean v4.34.0</text>
+<text x="136" y="467" text-anchor="end" font-weight="700" fill="#0f172a">Sep 15</text>
+<circle cx="150" cy="462" r="5" fill="#0e7490"/>
+<rect x="170" y="452" width="88" height="20" rx="10" fill="#cffafe"/><text x="214" y="466" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0e7490">release</text>
+<text x="272" y="467" fill="#0f172a">Lean v4.35.0-rc1: lake check --paranoid · nanoda, lean4lean, con-leche, con-ron bundled</text>
+<text x="136" y="494" text-anchor="end" font-weight="700" fill="#0f172a">Sep 18</text>
+<circle cx="150" cy="489" r="5" fill="#047857"/>
+<rect x="170" y="479" width="88" height="20" rx="10" fill="#ecfdf5"/><text x="214" y="493" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">new checker</text>
+<text x="272" y="494" fill="#0f172a">metalean: verified checker for an idealised Lean type theory (intgrah)</text>
+<text x="30" y="534" font-size="12" fill="#64748b">Dates from GitHub (issue, PR merge, release and repository creation dates), Zulip, and the postmortems of Aug 1 and Aug 24, 2026.</text>
+</svg>

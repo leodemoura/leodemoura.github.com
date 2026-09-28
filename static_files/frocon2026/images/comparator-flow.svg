@@ -1,0 +1,76 @@
+<svg viewBox="0 0 1200 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+  <!-- inputs -->
+  <rect x="20" y="40" width="200" height="70" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="120" y="66" text-anchor="middle" font-weight="700" fill="#92400e">Challenge.lean</text>
+  <text x="120" y="86" text-anchor="middle" font-size="12.5" fill="#92400e">statement + sorry · trusted</text>
+  <text x="120" y="102" text-anchor="middle" font-size="12.5" fill="#92400e">minimal imports</text>
+
+  <rect x="20" y="150" width="200" height="70" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="120" y="176" text-anchor="middle" font-weight="700" fill="#0f172a">Solution.lean + project</text>
+  <text x="120" y="196" text-anchor="middle" font-size="12.5" fill="#64748b">proof, arbitrary imports</text>
+  <text x="120" y="212" text-anchor="middle" font-size="12.5" fill="#64748b">not trusted</text>
+
+  <!-- sandbox -->
+  <rect x="270" y="30" width="300" height="210" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="420" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c" letter-spacing="1">SANDBOX (bubblewrap)</text>
+  <rect x="290" y="70" width="260" height="46" rx="8" fill="#fff" stroke="#fca5a5"/>
+  <text x="420" y="90" text-anchor="middle" font-weight="600">lake build</text>
+  <text x="420" y="107" text-anchor="middle" font-size="12" fill="#64748b">elaborator, tactics, metaprograms run here</text>
+  <rect x="290" y="130" width="260" height="46" rx="8" fill="#fff" stroke="#fca5a5"/>
+  <text x="420" y="150" text-anchor="middle" font-weight="600">lean4export</text>
+  <text x="420" y="167" text-anchor="middle" font-size="12" fill="#64748b">proof terms → export format (NDJSON)</text>
+  <text x="420" y="205" text-anchor="middle" font-size="12" fill="#7f1d1d">protects against malicious code in the build step</text>
+  <text x="420" y="222" text-anchor="middle" font-size="12" fill="#7f1d1d">export can also be produced on a separate machine</text>
+
+  <!-- arrows in -->
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M220 75 L 268 75"/>
+    <path d="M220 185 L 268 185"/>
+    <path d="M570 135 L 618 135"/>
+  </g>
+
+  <!-- outside: validation + checkers -->
+  <rect x="620" y="30" width="560" height="210" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="900" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#047857" letter-spacing="1">OUTSIDE THE SANDBOX</text>
+  <rect x="640" y="70" width="160" height="46" rx="8" fill="#fff" stroke="#a7f3d0"/>
+  <text x="720" y="90" text-anchor="middle" font-weight="600">validate export</text>
+  <text x="720" y="107" text-anchor="middle" font-size="12" fill="#64748b">format check</text>
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M800 93 L 838 93"/>
+    <path d="M800 93 C 820 93 820 150 838 150"/>
+    <path d="M800 93 C 820 93 820 207 838 207"/>
+  </g>
+  <rect x="840" y="70" width="150" height="46" rx="8" fill="#fff" stroke="#a7f3d0"/>
+  <text x="915" y="90" text-anchor="middle" font-weight="600">official kernel</text>
+  <text x="915" y="107" text-anchor="middle" font-size="12" fill="#64748b">lean4checker</text>
+  <rect x="840" y="127" width="150" height="46" rx="8" fill="#fff" stroke="#a7f3d0"/>
+  <text x="915" y="147" text-anchor="middle" font-weight="600">nanoda</text>
+  <text x="915" y="164" text-anchor="middle" font-size="12" fill="#64748b">default on comparator.live</text>
+  <rect x="840" y="184" width="150" height="46" rx="8" fill="#fff" stroke="#a7f3d0"/>
+  <text x="915" y="204" text-anchor="middle" font-weight="600">other checkers</text>
+  <text x="915" y="221" text-anchor="middle" font-size="12" fill="#64748b">lean4lean, con-leche, ...</text>
+  <rect x="1010" y="70" width="160" height="160" rx="8" fill="#fff" stroke="#a7f3d0"/>
+  <text x="1090" y="94" text-anchor="middle" font-weight="600">verdict</text>
+  <text x="1090" y="118" text-anchor="middle" font-size="12.5">all checkers accept</text>
+  <text x="1090" y="138" text-anchor="middle" font-size="12.5">axioms ⊆ {propext,</text>
+  <text x="1090" y="154" text-anchor="middle" font-size="12.5">Classical.choice, Quot.sound}</text>
+  <text x="1090" y="178" text-anchor="middle" font-size="12.5">statement + closure</text>
+  <text x="1090" y="194" text-anchor="middle" font-size="12.5">= challenge statement</text>
+  <text x="1090" y="218" text-anchor="middle" font-size="12.5" font-weight="600" fill="#047857">accept / reject</text>
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M990 93 L 1008 93"/><path d="M990 150 L 1008 150"/><path d="M990 207 L 1008 207"/>
+  </g>
+  <!-- challenge to verdict -->
+  <path d="M120 110 L 120 135 L 240 135 L 240 262 L 1090 262 L 1090 232" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#a)"/>
+  <text x="660" y="280" text-anchor="middle" font-size="12" fill="#92400e">challenge statement is compared against the exported solution, outside the sandbox</text>
+
+  <g font-size="12.5" fill="#475569">
+    <text x="20" y="320">comparator: github.com/leanprover/comparator, 1,065 lines of Lean (2026-09-22). Public instance: comparator.live.lean-lang.org.</text>
+    <text x="20" y="340">What it defends against: proofs that use metaprogramming, unsafe code, forged .olean files, or a modified build to make the in-process kernel accept a bad term.</text>
+    <text x="20" y="360">What remains trusted: the challenge statement and its elaboration, comparator, the sandbox, the OS, the hardware, and at least one of the checkers.</text>
+    <text x="20" y="380">Anthropic FLT (Sep 2026): comparator run took 14 h 46 min, peak memory 230 GB; export 37.8 GB; nanoda check about 30 min at 16 threads (repo README).</text>
+    <text x="20" y="400">Source: Lean Reference Manual, "Validating a Lean Proof"; anthropics/fermats-last-theorem README.</text>
+  </g>
+</svg>

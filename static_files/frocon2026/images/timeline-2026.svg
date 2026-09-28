@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 386" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="16">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<line x1="200" y1="30" x2="200" y2="336" stroke="#e2e8f0" stroke-width="2"/>
+<text x="184" y="46" text-anchor="end" font-weight="600" fill="#334155">Jul 25</text>
+<circle cx="200" cy="40" r="6" fill="#94a3b8"/>
+<text x="222" y="46" fill="#0f172a">Collatz "disproof": an exploit built to fool two checkers at once, the official kernel and nanoda</text>
+<text x="184" y="86" text-anchor="end" font-weight="600" fill="#334155">Jul 28</text>
+<circle cx="200" cy="80" r="6" fill="#0073A3"/>
+<text x="222" y="86" fill="#0f172a">Issue #14576 filed. Fix merged 10 hours later; Lean v4.32.2 released the same day</text>
+<text x="184" y="126" text-anchor="end" font-weight="600" fill="#334155">Jul 30 – Aug 20</text>
+<circle cx="200" cy="120" r="6" fill="#0073A3"/>
+<text x="222" y="126" fill="#0f172a">Bug hunt with OpenAI internal models: 6 more soundness fixes (4 kernel, 2 runtime)</text>
+<text x="184" y="166" text-anchor="end" font-weight="600" fill="#334155">Aug 11</text>
+<circle cx="200" cy="160" r="6" fill="#047857"/>
+<text x="222" y="166" fill="#0f172a">lean-inductive-models: every inductive type modelled and re-checked</text>
+<text x="184" y="206" text-anchor="end" font-weight="600" fill="#334155">Aug 21</text>
+<circle cx="200" cy="200" r="6" fill="#0073A3"/>
+<text x="222" y="206" fill="#0f172a">Lean v4.33.1: all fixes shipped</text>
+<text x="184" y="246" text-anchor="end" font-weight="600" fill="#334155">Sep 10</text>
+<circle cx="200" cy="240" r="6" fill="#047857"/>
+<text x="222" y="246" fill="#0f172a">con-leche released: kernel written in Lean, with a consistency proof</text>
+<text x="184" y="286" text-anchor="end" font-weight="600" fill="#334155">Sep 13</text>
+<circle cx="200" cy="280" r="6" fill="#047857"/>
+<text x="222" y="286" fill="#0f172a">con-ron: verified Rust port of con-leche</text>
+<text x="184" y="326" text-anchor="end" font-weight="600" fill="#334155">Sep 15</text>
+<circle cx="200" cy="320" r="6" fill="#0073A3"/>
+<text x="222" y="326" fill="#0f172a">Lean v4.35.0-rc1: lake check --paranoid; nanoda, lean4lean, con-leche, con-ron bundled</text>
+<circle cx="212" cy="359" r="5" fill="#0073A3"/><text x="224" y="364" font-size="12.5" fill="#64748b">fixes and releases</text>
+<circle cx="372" cy="359" r="5" fill="#047857"/><text x="384" y="364" font-size="12.5" fill="#64748b">new checkers</text>
+<text x="520" y="364" font-size="12.5" fill="#64748b">Dates from GitHub and the postmortems of Aug 1 and Aug 24, 2026. PR numbers: see the table.</text>
+</svg>

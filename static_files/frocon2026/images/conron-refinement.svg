@@ -1,0 +1,65 @@
+<svg viewBox="0 0 1200 470" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+  <!-- con-leche -->
+  <rect x="20" y="30" width="340" height="150" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+  <text x="190" y="58" text-anchor="middle" font-size="18" font-weight="700" fill="#064e3b">con-leche</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="190" y="82" text-anchor="middle">checker written in Lean</text>
+    <text x="190" y="102" text-anchor="middle">consistency proof: model_exists</text>
+    <text x="190" y="122" text-anchor="middle">ConLeche/: 217,121 lines</text>
+    <text x="190" y="146" text-anchor="middle" font-size="12.5" fill="#047857">runs on: Lean compiler, Lean runtime, GMP</text>
+    <text x="190" y="164" text-anchor="middle" font-size="12.5" fill="#047857">Nat operations use Lean's Nat</text>
+  </g>
+  <!-- con-ron -->
+  <rect x="840" y="30" width="340" height="150" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/>
+  <text x="1010" y="58" text-anchor="middle" font-size="18" font-weight="700" fill="#064e3b">con-ron</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="1010" y="82" text-anchor="middle">the same checker, ported to Rust</text>
+    <text x="1010" y="102" text-anchor="middle">"ported to Rust very closely" (README)</text>
+    <text x="1010" y="122" text-anchor="middle">crates/con-ron-core: 86,964 lines</text>
+    <text x="1010" y="146" text-anchor="middle" font-size="12.5" fill="#047857">runs on: rustc, Rust runtime</text>
+    <text x="1010" y="164" text-anchor="middle" font-size="12.5" fill="#047857">own refcounted tagged pointers (unsafe, outside the proof)</text>
+  </g>
+  <!-- middle: Aeneas + refinement -->
+  <rect x="400" y="30" width="400" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="600" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">Aeneas: Rust → Lean</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="600" y="82" text-anchor="middle">translation of the Rust core into Lean</text>
+    <text x="600" y="100" text-anchor="middle" font-size="12.5" fill="#64748b">proof/ConRon/Generated: 76,316 lines (generated)</text>
+    <text x="600" y="126" text-anchor="middle">refinement proof, in Lean:</text>
+    <text x="600" y="144" text-anchor="middle" font-size="12.5" fill="#64748b">proof/ConRon/Refine: 126,345 lines</text>
+    <text x="600" y="166" text-anchor="middle" font-size="12.5">where the Rust function succeeds, it computes what con-leche's computes</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2.5" fill="none" marker-end="url(#a)">
+    <path d="M838 105 L 802 105"/>
+    <path d="M400 105 L 364 105"/>
+  </g>
+  <text x="820" y="96" text-anchor="middle" font-size="11.5" fill="#64748b">translate</text>
+  <text x="380" y="96" text-anchor="middle" font-size="11.5" fill="#64748b">refines</text>
+
+  <!-- consequence -->
+  <rect x="20" y="210" width="1160" height="60" rx="10" fill="#fff" stroke="#059669" stroke-width="1.5"/>
+  <text x="36" y="234" font-size="13" font-weight="700" fill="#047857" letter-spacing="1">RESULT</text>
+  <text x="36" y="256" font-size="14" fill="#0f172a">con-leche's consistency statement carries over to what con-ron accepts, modulo Aeneas as a Rust-to-Lean translator (partial correctness; the Rust code has additional failure conditions).</text>
+
+  <!-- two stacks -->
+  <rect x="20" y="290" width="560" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="36" y="314" font-size="13" font-weight="700" fill="#334155" letter-spacing="1">A PROOF ACCEPTED BY BOTH</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="36" y="338">is checked by one verified algorithm running on two unrelated stacks:</text>
+    <text x="36" y="358">Lean compiler + Lean runtime + GMP   |   rustc + Rust runtime</text>
+    <text x="36" y="378">The Aug 2026 runtime exploits (#14838 refcount overflow, #14833 GMP 6.1.2) affect only the left stack.</text>
+  </g>
+  <rect x="620" y="290" width="560" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="636" y="314" font-size="13" font-weight="700" fill="#334155" letter-spacing="1">PERFORMANCE (OVERVIEW.md §7.2, Mathlib, 691,128 declarations)</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="636" y="338">1 job:   con-leche 1,220 s, 8.75 GB   ·   con-ron 1,979 s, 7.80 GB</text>
+    <text x="636" y="358">8 jobs: con-leche 337 s, 9.1 GB   ·   con-ron 929 s, 17.8 GB</text>
+    <text x="636" y="378">con-ron executes 2–10% fewer instructions; wall time 1.1–1.6× (1 job).</text>
+  </g>
+  <g font-size="12.5" fill="#475569">
+    <text x="20" y="430">github.com/leanprover/con-ron, created Sep 13, 2026. "Written by AI under supervision from Joachim Breitner at the Lean FRO." README: "This is not a high assurance verification effort, given the reliance on Aeneas."</text>
+    <text x="20" y="450">Arena (2026-09-22): con-ron 64 rejects / 0 false accepts / 7 declines; 124 accepts / 0 false rejects / 6 declines. Mathlib 19.9 min vs con-leche 22.3 min (virtual CPU time).</text>
+  </g>
+</svg>

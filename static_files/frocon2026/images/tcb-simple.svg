@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="18">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <rect x="20" y="20" width="560" height="310" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="300" y="54" text-anchor="middle" font-size="22" font-weight="700" fill="#334155">What you trust with lake build</text>
+  <g fill="#0f172a">
+    <text x="48" y="100">the statement and everything it imports</text>
+    <text x="48" y="140">the whole front end: parser, elaborator, tactics, metaprograms</text>
+    <text x="48" y="180">the compiler</text>
+    <text x="48" y="220">the kernel (7,556 lines of C++)</text>
+    <text x="48" y="260">the Lean runtime, including GMP</text>
+    <text x="48" y="300">the operating system and the hardware</text>
+  </g>
+  <rect x="620" y="20" width="560" height="310" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="900" y="54" text-anchor="middle" font-size="22" font-weight="700" fill="#064e3b">With comparator, con-leche and con-ron</text>
+  <g fill="#0f172a">
+    <text x="648" y="100">the statement, in a challenge file with minimal imports</text>
+    <text x="648" y="140">comparator: 1,065 lines of Lean</text>
+    <text x="648" y="180">con-leche's theorem: 124 lines, checked by Lean</text>
+    <text x="648" y="220">con-ron: the same theorem, on the Rust stack</text>
+    <text x="648" y="260">the sandbox, the operating system, the hardware</text>
+    <text x="648" y="300" fill="#047857">front end, compiler, C++ kernel: no longer trusted</text>
+  </g>
+</svg>

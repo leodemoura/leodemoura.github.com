@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="14">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+  <!-- pipeline -->
+  <g font-weight="600" fill="#0f172a">
+    <rect x="20"  y="60" width="150" height="60" rx="9" fill="#f8fafc" stroke="#cbd5e1"/><text x="95" y="86" text-anchor="middle">export file</text><text x="95" y="105" text-anchor="middle" font-size="12" font-weight="400" fill="#64748b">lean4export, bytes</text>
+    <rect x="210" y="60" width="170" height="60" rx="9" fill="#f8fafc" stroke="#cbd5e1"/><text x="295" y="86" text-anchor="middle">parseChunks</text><text x="295" y="105" text-anchor="middle" font-size="12" font-weight="400" fill="#64748b">fast parser ≡ naive parser</text>
+    <rect x="420" y="60" width="170" height="60" rx="9" fill="#f8fafc" stroke="#cbd5e1"/><text x="505" y="86" text-anchor="middle">preparePrelude</text><text x="505" y="105" text-anchor="middle" font-size="12" font-weight="400" fill="#64748b">reorders, adds prelude decls</text>
+    <rect x="630" y="52" width="200" height="76" rx="9" fill="#ecfdf5" stroke="#059669" stroke-width="1.8"/><text x="730" y="80" text-anchor="middle">checkDecls .verified</text><text x="730" y="99" text-anchor="middle" font-size="12" font-weight="400" fill="#047857">type checker, written in Lean</text><text x="730" y="115" text-anchor="middle" font-size="12" font-weight="400" fill="#047857">own term representation, not Lean.Expr</text>
+    <rect x="870" y="60" width="130" height="60" rx="9" fill="#f8fafc" stroke="#cbd5e1"/><text x="935" y="86" text-anchor="middle">.ok env</text><text x="935" y="105" text-anchor="middle" font-size="12" font-weight="400" fill="#64748b">or .error e</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M170 90 L 208 90"/><path d="M380 90 L 418 90"/><path d="M590 90 L 628 90"/><path d="M830 90 L 868 90"/>
+  </g>
+
+  <!-- theorem boxes -->
+  <rect x="20" y="160" width="700" height="150" rx="10" fill="#fff" stroke="#059669" stroke-width="1.5"/>
+  <text x="36" y="184" font-size="13" font-weight="700" fill="#047857" letter-spacing="1">MAIN THEOREM  (ConLeche/MainTheorem.lean, 124 lines)</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#0f172a">
+    <text x="36" y="210">theorem model_exists (V : Type w) [SetTheory V]</text>
+    <text x="36" y="228">    (pins : List NatOpPinSet) (ds : Array Declaration) (env : Env)</text>
+    <text x="36" y="246">    (accepted : checkDecls .verified pins ds = .ok env) :</text>
+    <text x="36" y="264">    Nonempty (Model V env)</text>
+  </g>
+  <text x="36" y="294" font-size="12.5" fill="#475569">Model V env: every constant denotes a member of the denotation of its type; False denotes ∅; Eq denotes set equality.</text>
+
+  <rect x="20" y="326" width="700" height="96" rx="10" fill="#fff" stroke="#059669" stroke-width="1.5"/>
+  <text x="36" y="350" font-size="13" font-weight="700" fill="#047857" letter-spacing="1">MAIN COROLLARY</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#0f172a">
+    <text x="36" y="374">theorem no_False_declaration ... (h : jsonWithTheoremFalse chunks) :</text>
+    <text x="36" y="392">    ∃ e, (parse → prepare → checkDecls .verified) = .error e</text>
+  </g>
+  <text x="36" y="412" font-size="12.5" fill="#475569">Stated on the raw input bytes. False is hard-coded, so a redefined False does not help.</text>
+
+  <!-- set theory box -->
+  <rect x="750" y="160" width="430" height="262" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="766" y="184" font-size="13" font-weight="700" fill="#334155" letter-spacing="1">SetTheory V</text>
+  <g font-size="13.5" fill="#0f172a">
+    <text x="766" y="210">ZF without infinity and choice:</text>
+    <text x="766" y="228">extensionality, pairing, union, power set,</text>
+    <text x="766" y="246">regularity, replacement</text>
+    <text x="766" y="270">+ ω-chain of Grothendieck universes (Tarski form)</text>
+    <text x="766" y="288">univ 0 ∈ univ 1 ∈ ...</text>
+    <text x="766" y="312">Choice: inherited from Lean as the meta-logic.</text>
+    <text x="766" y="340">Instantiated on Mathlib's ZFSet from the</text>
+    <text x="766" y="358">ω-many-inaccessibles hypothesis of Carneiro's</text>
+    <text x="766" y="376">consistency analysis (lean4lean-model):</text>
+    <text x="766" y="394" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5">theorem carneiro_implies_conleche</text>
+    <text x="766" y="412" font-size="12" fill="#64748b">bridge/lean4lean-model (separate package, needs Mathlib)</text>
+  </g>
+
+  <g font-size="12.5" fill="#475569">
+    <text x="20" y="452">github.com/leanprover/con-leche, released Sep 10, 2026. "Implemented and proven to be consistent by Claude (Fable and Opus), under heavy supervision by Joachim Breitner at the Lean FRO."</text>
+    <text x="20" y="472">ConLeche/: 217,121 lines of Lean (2026-09-22). Model 74,668 · Verify 69,578 · Semantics 23,264 · Kernel 18,287 · Frontend 16,287 · Cached 5,361 · other 9,676.</text>
+    <text x="20" y="492">Accepts only propext, Classical.choice, Quot.sound; declines other axioms. Mathlib: 0.79× the instructions of the official kernel v4.33.0 (PERF.md, 2026-09-20).</text>
+  </g>
+</svg>

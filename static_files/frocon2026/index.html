@@ -1,0 +1,834 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Checks the Proof Checkers?</title><link rel="stylesheet" href="lib/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="lib/github.css">
+    <link rel="stylesheet" href="lib/highlighting.css">
+    <link rel="stylesheet" href="lib/tippy-border.css">
+    <link rel="stylesheet" href="lib/slides-highlight.css">
+    <link rel="stylesheet" href="lib/panel.css">
+    <link rel="stylesheet" href="lib/lightbox.css">
+    <link rel="stylesheet" href="lib/diagram.css">
+    <link rel="stylesheet" href="lib/illuminate-anim.css">
+    <link rel="stylesheet" href="lib/table.css">
+    <link rel="stylesheet" href="lib/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="custom.css">
+    </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-slide">
+          <div class="top-area"><img class="logo" src="lean-logo-large.png" alt="Lean Logo"></div>
+          <div class="blue-band"><h1>Who Checks the Proof Checkers?</h1>
+          <div class="meta"><strong>Leo de Moura</strong><br>Chief Architect, Lean FRO</div>
+          <div class="date">FROCON 2026, Santa Cruz | September 2026</div>
+          </div></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Sep 4 …</h2>
+          <p>
+            <img src="images/ifip-anthropic-flt.png" alt="Anthropic: Formalizing Fermat's Last Theorem" style="width: 70%;" class="explicit-size"></p>
+          <blockquote><p>
+              "We are sharing the first complete computer-checked proof of Fermat's Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language."</p>
+            </blockquote><p>
+            <a href="https://anthropic.com/research/formalizing-fermats-last-theorem">anthropic.com/research/formalizing-fermats-last-theorem</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            … Sep 7 … Sep 8 …</h2>
+          <div class="r-hstack">
+            <p>
+              <img src="images/ifip-buckmaster-mastodon.png" alt="Buckmaster and Alpoge announce three blow-up results" style="width: 100%;" class="explicit-size"></p>
+            <p>
+              <img src="images/ifip-openai-ns.png" alt="OpenAI: On the Navier–Stokes Millennium Prize Problem" style="width: 100%;" class="explicit-size"></p>
+            </div>
+          <p>
+            <a href="https://mastodon.social/@tristanbuckmaster/117233413705701198">mastodon.social/@tristanbuckmaster</a> ∣ <a href="https://openai.com/index/navier-stokes-solution">openai.com/index/navier-stokes-solution</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            What is Lean?</h2>
+          <p>
+            <em>A proof assistant and programming language that is
+transforming how we approach mathematics, software verification, and AI.</em></p>
+          <p>
+            Lean provides <strong>machine-checkable proofs</strong>.</p>
+          <p>
+            Lean addresses the <strong>trust bottleneck</strong>.</p>
+          <p>
+            Lean is implemented in Lean, and is <strong>very extensible</strong> and <strong>scalable</strong>.</p>
+          <p>
+            It is based on dependent type theory.</p>
+          <p>
+            Small <strong>trusted</strong> kernel. Proofs can be exported and independently checked.</p>
+          <p>
+            <strong>325,000+</strong> unique installations: <a href="https://marketplace.visualstudio.com/items?itemName=leanprover.lean4">VS Code</a> (184K) + <a href="https://open-vsx.org/extension/leanprover/lean4">Open VSX</a> (141K).</p>
+          <p>
+            <img src="images/ifip-lean-ide.png" alt="Lean in the editor: proof state alongside the code" style="width: 70%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean is a "Game"</h2>
+          <blockquote><p>
+              "You have written my favorite computer game" — Kevin Buzzard, Prof. of Mathematics, Imperial College</p>
+            </blockquote><div class="code-with-panel r-stretch">
+            <code class="hl lean block"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.definition-2262">def</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="0">odd</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-2270">(</span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-2270">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-Nat" data-verso-hover="2">Nat</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.explicitBinder-2270">)</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-2280">:</span><span class="inter-text"> </span><span class="sort token" data-binding="sort-14430969920833713138" data-verso-hover="3">Prop</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-2287">:=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">∃</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">k</span><span class="punctuation separator token" data-binding="kw-occ-«term∃_,_»-2290">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.2" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_=_»-2297">=</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-2301">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.10" data-verso-hover="1">k</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-2301">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="4">1</span><span class="inter-text">
+
+</span><span class="keyword token" data-binding="kw-occ-Lean.Parser.Command.theorem-2312">theorem</span><span class="inter-text"> </span><span class="const token" data-binding="const-square_of_odd_is_odd" data-verso-hover="5">square_of_odd_is_odd</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Term.typeSpec-2341">:</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-Lean.Parser.Term.arrow-2343">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.hygienicLParen-2357">(</span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-2358">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.142" data-verso-hover="1">n</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.paren-2357">)</span><span class="inter-text"> </span><span class="built-in delim token" data-binding="kw-occ-Lean.Parser.Command.declValSimple-2365">:=</span><span class="inter-text"> </span><span class="tactic" data-tactic-range="2368-2370"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Term.byTactic-2368" data-verso-hover="7">by</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;16\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;20\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;337\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;85\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,16,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[7,17,\&quot;n\&quot;]]]]]]],[4,\&quot; →\&quot;,[4,1,[6,[3,2,[4,[6,[3,2,[7,20,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[7,337,\&quot;n\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,85,\&quot;n\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="unknown token" data-binding="">→</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">(</span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">)</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="2373-2395"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.intro-2373" data-verso-hover="11">intro</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.anonymousCtor-2379">⟨</span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="punctuation separator token" data-binding="kw-occ-Lean.Parser.Term.anonymousCtor-2379">,</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.212" data-verso-hover="12">e₁</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Term.anonymousCtor-2379">⟩</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;21\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;4\&quot;:{\&quot;binding\&quot;:\&quot;const-odd\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;81\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,4,\&quot;odd\&quot;]]],[4,1,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[7,81,\&quot;n\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,21,\&quot;n\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-odd" data-verso-hover="9">odd</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">(</span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">)</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="2398-2414"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.simp-2398" data-verso-hover="16">simp</span><span class="inter-text"> </span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Tactic.simp-2398">[</span><span class="var token" data-binding="var-_uniq.212" data-verso-hover="12">e₁</span><span class="punctuation separator token" data-binding="kw-occ-Lean.Parser.Tactic.simp-2398">,</span><span class="inter-text"> </span><span class="const token" data-binding="const-odd" data-verso-hover="6">odd</span><span class="punctuation bracket token" data-binding="kw-occ-Lean.Parser.Tactic.simp-2398">]</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;16\&quot;:{\&quot;binding\&quot;:\&quot;const-Exists\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;},\&quot;2\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.1675\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;345157\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5445\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.1675\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;86341\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[7,16,\&quot;∃\&quot;],[4,1,[4,[7,2,\&quot;k\&quot;],[4,[4,\&quot;,\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1380625,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,345157,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21573,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,345361,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,86341,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,5397,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,21777,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,5445,\&quot;k\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,341,\&quot;1\&quot;]]]]]]]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Exists" data-verso-hover="17">∃</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1675" data-verso-hover="4">k</span><span class="const token" data-binding="const-Exists" data-verso-hover="17">,</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.1675" data-verso-hover="4">k</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="2417-2450"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.«tacticExists_,,»-2417" data-verso-hover="18">exists</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-2424">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-2424">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_+_»-2424">+</span><span class="inter-text"> </span><span class="literal number token" data-binding="" data-verso-hover="4">2</span><span class="inter-text"> </span><span class="punctuation operator token" data-binding="kw-occ-«term_*_»-2442">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="1">k₁</span><span class="tactic-state" style="display:none" data-rich-format="[{&quot;goalPrefix&quot;:&quot;⊢ &quot;,&quot;hypotheses&quot;:[{&quot;names&quot;:[&quot;n&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;k₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;1\&quot;:{\&quot;binding\&quot;:\&quot;const-Nat\&quot;,\&quot;cssClass\&quot;:\&quot;const\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[7,1,\&quot;Nat\&quot;]]]]}&quot;},{&quot;names&quot;:[&quot;e₁&quot;],&quot;ppType&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.182\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;325\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[7,17,\&quot;n\&quot;]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,325,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}],&quot;name&quot;:null,&quot;ppConclusion&quot;:&quot;{\&quot;annotations\&quot;:{\&quot;17477\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;20805\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;332869\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;4421\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;},\&quot;5205\&quot;:{\&quot;binding\&quot;:\&quot;var-_uniq.211\&quot;,\&quot;cssClass\&quot;:\&quot;var\&quot;}},\&quot;fmt\&quot;:[6,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,69905,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,17477,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,1093,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,17681,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,4421,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,277,\&quot;1\&quot;]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; =\&quot;,1],[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1297,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[4,\&quot;(\&quot;,[4,[3,-2,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[4,[6,[3,2,[7,1331473,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,332869,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,20805,\&quot;k₁\&quot;]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[4,[6,[3,2,[7,20817,\&quot;2\&quot;]]],[4,[4,\&quot; *\&quot;,1],[6,[3,2,[7,5205,\&quot;k₁\&quot;]]]]]]]]]]]],\&quot;)\&quot;]]]]]]]],[4,[4,\&quot; +\&quot;,1],[6,[3,2,[7,21,\&quot;1\&quot;]]]]]]]]]]]]}&quot;}]"><span class="goal"><span class="hypotheses"><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="const token" data-binding="const-Nat" data-verso-hover="8">Nat</span><span class="inter-text"></span></span></span><span class="hypothesis"><span class="name"><span class="var token" data-binding="var-_uniq.212" data-verso-hover="13">e₁</span></span><span class="colon">:</span><span class="type"><span class="inter-text"></span><span class="var token" data-binding="var-_uniq.182" data-verso-hover="4">n</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span><span class="conclusion"><span class="prefix">⊢ </span><span class="type"><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-Eq" data-verso-hover="14">=</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">(</span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">2</span><span class="inter-text"> </span><span class="const token" data-binding="const-HMul.hMul" data-verso-hover="10">*</span><span class="inter-text"> </span><span class="var token" data-binding="var-_uniq.211" data-verso-hover="4">k₁</span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">)</span><span class="inter-text"> </span><span class="const token" data-binding="const-HAdd.hAdd" data-verso-hover="15">+</span><span class="inter-text"> </span><span class="unknown token" data-binding="">1</span></span></span></span></span></span><span class="inter-text">
+  </span><span class="tactic" data-tactic-range="2453-2456"><span class="keyword token" data-binding="kw-occ-Lean.Parser.Tactic.lia-2453" data-verso-hover="19">lia</span><span class="tactic-state" style="display:none">All goals completed! 🐙</span></span><span class="inter-text">
+</span><span class="unknown token" data-binding=""></span></code><div class="panel-divider"></div>
+            <div class="panel-cell">
+              <div class="info-panel"></div>
+              </div>
+            </div>
+          <p>
+            The "game board": you see goals and hypotheses, then apply "moves" (tactics).</p>
+          <p>
+            <strong>Each tactic transforms the game board.</strong></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Mathlib: The Lean Mathematical Library</h2>
+          <p>
+            Created in July 2017, in Lean 3 during <a href="https://www.newton.ac.uk/event/bpr/">Big Proof</a>. An open-source, community-driven library. <strong>Today</strong>:</p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <strong>280,000+</strong> formalized theorems.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>2.4M+</strong> lines of Lean. <strong>50,000+</strong> lines of extensions.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>750+</strong> contributors.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>1,500+</strong> type classes, <strong>20,000+</strong> instances.</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://github.com/leanprover-community/mathlib4">github.com/leanprover-community/mathlib4</a></p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/mathlib-deps.png" alt="Mathlib dependency graph" class="img-tall" style="width: 50%;" class="explicit-size"></p>
+            </div>
+          <blockquote><p>
+              "I'm investing time now so that somebody in the future can have that amazing experience." — Heather Macbeth, Prof. of Mathematics, Imperial College</p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Mathematics Is Adopting Lean</h2>
+          <p>
+            Six Fields Medalists engaged: Tao, Scholze, Viazovska, Gowers, Hairer, Freedman.</p>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <a href="https://florisvandoorn.com/carleson//">Carleson's Theorem</a> (completed) — van Doorn</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://www.nature.com/articles/d41586-021-01627-2">Liquid Tensor Experiment</a> (completed) — Commelin</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://github.com/teorth/pfr">The Polynomial Freiman-Ruzsa Conjecture</a>, Tao (completed)</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://teorth.github.io/equational_theories/">Equational Theories Project</a>, Tao (completed)</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://thefundamentaltheor3m.github.io/Sphere-Packing-Lean/">Sphere Packing</a> — Birkbeck, Hariharan, Lee, Ma, Mehta, Viazovska</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://leanprover-community.github.io/blog/posts/FLT-announcement/">Fermat's Last Theorem</a> — Buzzard</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://aitpm.github.io/slides/Mochizuki.pdf">Inter-Universal Teichmüller Theory</a> — Mochizuki</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://anthropic.com/research/formalizing-fermats-last-theorem">Fermat's Last Theorem</a> — Anthropic</p>
+                </li>
+              <li>
+                <p>
+                  <a href="https://openai.com/index/navier-stokes-solution">Navier–Stokes Millennium Prize Problem</a> — OpenAI</p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/tao-lex.png" alt="Tao on Lex Fridman"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Software Verification</h2>
+          <p>
+            <em>Lean is not only for mathematics.</em></p>
+          <ul>
+            <li>
+              <p>
+                <a href="https://github.com/cedar-policy/cedar-spec">Cedar</a> (AWS): Verified Authorization</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://www.microsoft.com/en-us/research/blog/rewriting-symcrypt-in-rust-to-modernize-microsofts-cryptographic-library/">SymCrypt</a> (Microsoft): Verified Cryptography</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://github.com/AeneasVerif/kraken">Kraken</a> (Google): x64 Semantics</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://github.com/Verified-zkEVM/ArkLib">ArkLib</a> (Ethereum Foundation): Formally Verified Arguments of Knowledge</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://www.beneficialaifoundation.org/signal-shot">Signal Shot</a> (Beneficial AI): Verify the Signal protocol and app</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://github.com/leanprover/SampCert">SampCert</a> (AWS): Differential Privacy</p>
+              </li>
+            <li>
+              <p>
+                <a href="https://www.cslib.io/">CSLib</a>: Computer Science Library</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The IMO Grand Challenge (2019)</h2>
+          <p>
+            <img src="images/ifip-imo-grand-challenge.png" alt="IMO Grand Challenge page and committee" style="width: 85%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            AlphaProof and the International Math Olympiad (2024)</h2>
+          <div class="r-hstack">
+            <p>
+              <img src="images/ifip-imo2024-problem.png" alt="IMO 2024 problem 1 in Lean" style="width: 100%;" class="explicit-size"></p>
+            <p>
+              <img src="images/ifip-imo2024-score.png" alt="AlphaProof score on IMO 2024 problems" style="width: 100%;" class="explicit-size"></p>
+            </div>
+          <p>
+            <a href="https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level">deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Extensibility and Introspection</h2>
+          <blockquote><p>
+              "At Google DeepMind, we used Lean to build AlphaProof, a new reinforcement-learning based system for formal math reasoning. Lean's extensibility and verification capabilities were key in enabling the development of AlphaProof." — Pushmeet Kohli, Vice President, Research, Google DeepMind</p>
+            </blockquote><p>
+            Lean 4 is implemented in Lean, allowing for unprecedented extension and introspection by users.</p>
+          <p>
+            <a href="https://github.com/leanprover-community/repl">leanprover-community/repl</a> is a simple Lean program for communicating with the Lean compiler via JSON.</p>
+          <p>
+            AI labs have customized it in many ways, especially around parallelized proof tree search.</p>
+          <p>
+            <a href="https://github.com/stanford-centaur/PyPantograph">stanford-centaur/PyPantograph</a> is the state of the art for open-source Lean REPLs.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            IMO 2025: 3 Gold, 1 Silver</h2>
+          <div class="r-hstack">
+            <div class="r-vstack">
+              <p>
+                <strong>OpenAI (informal)</strong></p>
+              <p>
+                <img src="images/ifip-openai-imo2025.png" alt="OpenAI announces gold-medal performance" style="width: 100%;" class="explicit-size"></p>
+              <p>
+                <strong>Harmonic (Lean)</strong></p>
+              <p>
+                <img src="images/ifip-harmonic-imo2025.png" alt="Aristotle achieves gold-medal performance" style="width: 100%;" class="explicit-size"></p>
+              </div>
+            <div class="r-vstack">
+              <p>
+                <strong>DeepMind (informal)</strong></p>
+              <p>
+                <img src="images/ifip-deepmind-imo2025.png" alt="Gemini Deep Think achieves gold-medal standard" style="width: 100%;" class="explicit-size"></p>
+              <p>
+                <strong>ByteDance (Lean)</strong></p>
+              <p>
+                <img src="images/ifip-bytedance-imo2025.png" alt="Seed Prover achieves silver-medal score" style="width: 100%;" class="explicit-size"></p>
+              </div>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            IMO-Level Proof Search as a Service</h2>
+          <div class="r-hstack">
+            <p>
+              <img src="images/ifip-aristotle-api.png" alt="Aristotle Lean 4 API" style="width: 100%;" class="explicit-size"></p>
+            <p>
+              <img src="images/ifip-alphaproof-form.png" alt="AlphaProof interest form" style="width: 100%;" class="explicit-size"></p>
+            </div>
+          <p>
+            <a href="https://aristotle.harmonic.fun">aristotle.harmonic.fun</a> ∣ <a href="https://deepmind.google/alphaproof">deepmind.google/alphaproof</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Autoformalization (2025)</h2>
+          <div class="r-hstack">
+            <p>
+              <img src="images/ifip-gauss-post.png" alt="Math, Inc. announces Gauss and the strong Prime Number Theorem" style="width: 100%;" class="explicit-size"></p>
+            <p>
+              <img src="images/ifip-gauss-graph.png" alt="Dependency graph of the strong PNT formalization" style="width: 100%;" class="explicit-size"></p>
+            </div>
+          <p>
+            <a href="https://github.com/math-inc/strongpnt">github.com/math-inc/strongpnt</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            "Vibe Proving"</h2>
+          <p>
+            Alexeev & Mixon resolved a <strong>$1000 Erdős prize problem</strong>.</p>
+          <blockquote><p>
+              "We used ChatGPT to vibe code a Lean proof." — Alexeev & Mixon</p>
+            </blockquote><p>
+            <strong>The proof is checked by Lean.</strong> <a href="https://borisalexeev.com/pdf/erdos707.pdf">Paper</a></p>
+          <p>
+            <img src="images/erdos-paper.png" alt="Erdos prize paper"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            2026: Putnam Bench Saturated</h2>
+          <p>
+            <img src="images/ifip-putnam-leaderboard.png" alt="PutnamBench leaderboard: all 672 problems solved" style="width: 36%;" class="explicit-size"></p>
+          <p>
+            💚 fully open-sourced · 💙 partially open-sourced</p>
+          <p>
+            <a href="https://trishullab.github.io/PutnamBench/leaderboard.html">trishullab.github.io/PutnamBench/leaderboard.html</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            zlib in Lean</h2>
+          <p>
+            <strong>AI converted zlib (a C compression library) to Lean.</strong></p>
+          <pre>theorem zlib_decompressSingle_compress (data : ByteArray) (level : UInt8)
+    (maxOutputSize : Nat) (hsize : data.size ≤ maxOutputSize) :
+    ZlibDecode.decompressSingle (ZlibEncode.compress data level) maxOutputSize = .ok data
+</pre><p>
+            <svg viewBox="0 0 1120 270" xmlns="http://www.w3.org/2000/svg" style="width:80%;height:auto;" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <!-- AI zone: translation, tests, and proofs are all AI's work -->
+  <rect x="24" y="56" width="830" height="192" rx="14" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="439" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309" letter-spacing="1">DONE BY AI</text>
+
+  <!-- zlib card -->
+  <rect x="48" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="155" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">zlib</text>
+  <text x="155" y="183" text-anchor="middle" font-size="13.5" fill="#475569">C compression library</text>
+
+  <!-- translate arrow -->
+  <text x="298" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">translate</text>
+  <line x1="270" y1="164" x2="308" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="308,157 326,164 308,171" fill="#b45309"/>
+  <text x="298" y="191" text-anchor="middle" font-size="11.5" fill="#64748b">C → Lean</text>
+
+  <!-- lean-zip card -->
+  <rect x="334" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="441" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0c4a6e">lean-zip</text>
+  <text x="441" y="183" text-anchor="middle" font-size="13.5" fill="#475569">Lean implementation</text>
+
+  <!-- test arrow -->
+  <text x="584" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">test</text>
+  <line x1="556" y1="164" x2="594" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="594,157 612,164 594,171" fill="#b45309"/>
+
+  <!-- tests pass card -->
+  <rect x="620" y="104" width="214" height="120" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+  <circle cx="675" cy="151" r="12" fill="#0891b2"/>
+  <path d="M669 151 L673 156 L682 145" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="739" y="156" text-anchor="middle" font-size="17" font-weight="700" fill="#0c4a6e">Tests pass</text>
+  <text x="727" y="183" text-anchor="middle" font-size="13.5" fill="#475569">zlib test suite</text>
+
+  <!-- Lean guarantee zone -->
+  <rect x="874" y="56" width="222" height="192" rx="14" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="985" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#0073A3" letter-spacing="1">LEAN'S GUARANTEE</text>
+
+  <!-- prove arrow (AI writes the proofs; drawn after the zone so the head stays visible) -->
+  <text x="854" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">prove</text>
+  <line x1="838" y1="164" x2="868" y2="164" stroke="#b45309" stroke-width="3"/>
+  <polygon points="868,157 886,164 868,171" fill="#b45309"/>
+
+  <!-- proved correct card -->
+  <rect x="890" y="104" width="190" height="120" rx="10" fill="#0073A3"/>
+  <text x="985" y="152" text-anchor="middle" font-size="16.5" font-weight="700" fill="#fff">Proved correct</text>
+  <text x="985" y="176" text-anchor="middle" font-size="12.5" fill="#cfe8f5">round-trip theorem,</text>
+  <text x="985" y="194" text-anchor="middle" font-size="12.5" fill="#cfe8f5">kernel-checked</text>
+</svg>
+</p>
+          <blockquote><p>
+              "The Lean library isn't just tested and validated, it's proved correct. This allows us to let AIs loose optimizing the code, requiring that they update the proof whenever the implementation materially changes.
+This gives us the confidence to allow them to work autonomously in a way that would be unthinkable in other languages."
+— Kim Morrison, <a href="https://kim-em.github.io/blog/2026-7-24-why-lean-is-faster-than-rust/">Why Lean is faster than Rust</a></p>
+            </blockquote></section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Tau Ceti: AI-Authored Lean Mathematics</h2>
+          <div class="r-hstack">
+            <ul>
+              <li>
+                <p>
+                  <strong>AI-authored Lean mathematics, directed by a human-owned roadmap and gated by open, adversarial review.</strong></p>
+                </li>
+              <li>
+                <p>
+                  Humans own the roadmap: mathematicians choose the targets.</p>
+                </li>
+              <li>
+                <p>
+                  AIs write and review the code.</p>
+                </li>
+              <li>
+                <p>
+                  On the roadmap: universal covers, the Jacobian challenge, reductive algebraic groups, PDEs.</p>
+                </li>
+              <li>
+                <p>
+                  <strong>1,657,293 lines of Lean</strong> as of Sep 25, 2026, up from zero on Jun 3.</p>
+                </li>
+              </ul>
+            <p>
+              <img src="images/tau-ceti.png" alt="Tau Ceti: lines of Lean, Jun 3 to Sep 25, 2026" style="width: 100%;" class="explicit-size"></p>
+            </div>
+          <p>
+            <a href="https://taucetiproject.github.io/TauCeti/">taucetiproject.github.io/TauCeti</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Formal Verification for Everyday Code</h2>
+          <p>
+            Boris Cherny (Anthropic, creator of Claude Code), Sep 22, 2026:</p>
+          <blockquote><p>
+              "I used Opus 5.5 to formally verify the Claude Agent SDK using Lean. A couple short prompts = 16 PRs fixing various bugs and race conditions."</p>
+            </blockquote><blockquote><p>
+              "I don't know either language well, but Claude is excellent at both. This approach is super useful for formally modeling your code and finding bugs that a human probably wouldn't have spotted."</p>
+            </blockquote><p>
+            <a href="https://x.com/bcherny/status/2102543349102338309">x.com/bcherny/status/2102543349102338309</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            AI-Generated Proofs at Scale</h2>
+          <p>
+            <img src="images/loc-chart.svg" alt="Lines of Lean: FLT, Mathlib, Buckmaster–Alpöge, OpenAI" style="width: 100%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            The Statement / Specification Is Your Responsibility</h2>
+          <p>
+            <svg viewBox="0 0 1120 410" xmlns="http://www.w3.org/2000/svg" style="width:80%;height:auto;" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+  <!-- human responsibility zone -->
+  <rect x="24" y="56" width="650" height="330" rx="14" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="349" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309" letter-spacing="1">HUMAN RESPONSIBILITY</text>
+
+  <!-- human intent card -->
+  <rect x="48" y="112" width="216" height="210" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="156" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Human intent</text>
+  <line x1="66" y1="160" x2="246" y2="160" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="156" y="196" text-anchor="middle" font-size="14.5" font-weight="600" fill="#0f172a">Fermat's Last Theorem</text>
+  <g font-size="13.5" fill="#475569" text-anchor="middle">
+    <text x="156" y="226">“No solution in positive</text>
+    <text x="156" y="246">integers to a<tspan font-size="9.5" baseline-shift="super">n</tspan> + b<tspan font-size="9.5" baseline-shift="super">n</tspan> = c<tspan font-size="9.5" baseline-shift="super">n</tspan></text>
+    <text x="156" y="266">for n &gt; 2.”</text>
+  </g>
+
+  <!-- AI arrow -->
+  <text x="309" y="196" text-anchor="middle" font-size="14.5" font-weight="700" fill="#b45309">AI</text>
+  <line x1="272" y1="217" x2="328" y2="217" stroke="#b45309" stroke-width="3"/>
+  <polygon points="328,210 346,217 328,224" fill="#b45309"/>
+
+  <!-- formal statement card -->
+  <rect x="354" y="112" width="296" height="210" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="502" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#0c4a6e">Formal statement</text>
+  <line x1="374" y1="160" x2="630" y2="160" stroke="#e0f2fe" stroke-width="1.5"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="12" fill="#334155">
+    <text x="372" y="198"><tspan fill="#0e7490" font-weight="600">theorem</tspan> fermat_last_theorem :</text>
+    <text x="372" y="224">    n &gt; 2 → a &gt; 0 → b &gt; 0 → c &gt; 0 →</text>
+    <text x="372" y="250">    a^n + b^n ≠ c^n := <tspan fill="#0e7490" font-weight="600">by</tspan></text>
+    <text x="372" y="278">  … Proof …</text>
+  </g>
+
+  <!-- human responsibility captions -->
+  <text x="349" y="350" text-anchor="middle" font-size="14.5" font-style="italic" fill="#92400e">The formal statement must reflect your intent.</text>
+  <text x="349" y="372" text-anchor="middle" font-size="14.5" font-weight="700" fill="#b45309">Lean cannot check whether AI autoformalized the statement correctly.</text>
+
+  <!-- Lean guarantee zone -->
+  <rect x="744" y="56" width="352" height="330" rx="14" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="920" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#0073A3" letter-spacing="1">LEAN'S GUARANTEE</text>
+
+  <!-- check arrow (drawn after the zone so the head is not covered) -->
+  <text x="707" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#0073A3" letter-spacing="1.5">CHECK</text>
+  <line x1="658" y1="217" x2="744" y2="217" stroke="#0073A3" stroke-width="3.5"/>
+  <polygon points="744,209 762,217 744,225" fill="#0073A3"/>
+
+  <!-- checked proof card -->
+  <rect x="768" y="112" width="304" height="210" rx="10" fill="#0073A3"/>
+  <circle cx="920" cy="172" r="27" fill="#fff"/>
+  <path d="M907 172 L917 183 L935 159" fill="none" stroke="#0073A3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="920" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Checked proof</text>
+  <text x="920" y="268" text-anchor="middle" font-size="13.5" fill="#cfe8f5">Verified by the Lean kernel.</text>
+
+  <!-- Lean guarantee captions -->
+  <text x="920" y="350" text-anchor="middle" font-size="14.5" font-style="italic" fill="#0c4a6e">The proof proves exactly that statement.</text>
+  <text x="920" y="372" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0073A3">Lean guarantees this.</text>
+</svg>
+</p>
+          <div class="r-hstack">
+            <p>
+              <a href="https://google-deepmind.github.io/formal-conjectures/">Formal Conjectures</a> (Google DeepMind): curated, human-verified formal statements of open problems.</p>
+            <p>
+              <img src="images/formal-conjectures.png" alt="Formal Conjectures website" style="width: 60%;" class="explicit-size"></p>
+            </div>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validation Architecture</h2>
+          <p>
+            <img src="images/kernel-trust.svg" alt="Kernel trust: declarations, official kernel, export, independent re-checks" style="width: 70%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating Lean Proofs</h2>
+          <blockquote><p>
+              "It's really important with these formal proof assistants that there are no backdoors or exploits you can use to somehow get your certified proof without actually proving it, because reinforcement learning is just so good at finding these backdoors." — Terence Tao</p>
+            </blockquote><p>
+            Lean has <strong>multiple independent kernels</strong>. You can build your own and submit it to <a href="https://arena.lean-lang.org">arena.lean-lang.org</a>.</p>
+          <p>
+            <a href="https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-proofs">Validating a Lean Proof</a> ∣ <a href="https://leodemoura.github.io/blog/2026-3-16-who-watches-the-provers/">Who Watches the Provers?</a></p>
+          <p>
+            <img src="images/kernel-arena-top.png" alt="Kernel Arena leaderboard" class="img-tall" style="width: 72%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating a Lean Proof: Level I</h2>
+          <p>
+            The "blue double check marks" signify in-process acceptance by the official C++ kernel.</p>
+          <p>
+            <img src="images/ifip-level1-code.png" alt="Blue check marks next to a theorem in the editor" style="width: 60%;" class="explicit-size"></p>
+          <p>
+            Protects against "innocent" mistakes:</p>
+          <ul>
+            <li>
+              <p>
+                incomplete proofs / <code>sorry</code></p>
+              </li>
+            <li>
+              <p>
+                tactics producing incorrect proof terms</p>
+              </li>
+            </ul>
+          <p>
+            … in the current theorem.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating a Lean Proof: Level II</h2>
+          <p>
+            <code>#print axioms</code> lists all axioms (transitively) used by a theorem.</p>
+          <p>
+            Three built-in axioms relied on pervasively in Lean: choice, propositional extensionality, quotient lifting.</p>
+          <p>
+            <strong>The Gold Standard of the pre-AI world.</strong></p>
+          <p>
+            Protects against</p>
+          <ul>
+            <li>
+              <p>
+                <strong>inherited</strong> incomplete/incorrect proof terms</p>
+              </li>
+            <li>
+              <p>
+                custom axioms</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating a Lean Proof: Level III</h2>
+          <p>
+            The kernel can be run as its own process: <code>leanchecker</code>.</p>
+          <p>
+            Protects against</p>
+          <ul>
+            <li>
+              <p>
+                incorrect kernel handling by Lean (e.g. imported declarations are trusted)</p>
+              </li>
+            <li>
+              <p>
+                metaprograms bypassing the in-process kernel or otherwise corrupting processing</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating a Lean Proof: Level IV</h2>
+          <p>
+            <code>comparator</code> <strong>isolates</strong> statement processing, proof processing, and <code>leanchecker</code> into separate, <strong>sandboxed</strong> processes. Optionally runs additional checkers as well.</p>
+          <p>
+            Protects against</p>
+          <ul>
+            <li>
+              <p>
+                actively malicious proofs (but not incorrect statements)</p>
+              </li>
+            <li>
+              <p>
+                bugs in some but not all checkers</p>
+              </li>
+            </ul>
+          <p>
+            <a href="https://github.com/leanprover/comparator">Comparator</a> is a judge for Lean proofs. <a href="https://comparator.live.lean-lang.org/">comparator.live.lean-lang.org</a></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Validating a Lean Proof: Level IV</h2>
+          <p>
+            A <strong>Challenge.lean</strong> file contains only the statement with minimal dependencies for review.</p>
+          <p>
+            <img src="images/ifip-flt-challenge.png" alt="The FLT challenge theorem with sorry" style="width: 80%;" class="explicit-size"></p>
+          <p>
+            <strong>Solution.lean</strong> then is checked to be a refinement of the challenge with arbitrary further imports.</p>
+          <p>
+            The solution is accepted if it passes all checkers and axiom checks (i.e. no <code>sorry</code>) and its statement plus relevant closure is equal to that in the challenge.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Comparator in Action</h2>
+          <p>
+            A challenge asks for a proof of <code>False</code>.</p>
+          <p>
+            A candidate tries to smuggle one past the kernel with a metaprogramming trick that exploits a missing check in the official kernel.</p>
+          <p>
+            Real <a href="https://github.com/leanprover/lean4/issues/14484">GitHub issue</a>. <strong>Comparator rejects it.</strong> The proof is exported and re-checked independently, defeating the exploit.</p>
+          <p>
+            <strong>Nanoda</strong> (Lean kernel written in Rust) and <strong>Lean4Lean</strong> reject it too.</p>
+          <p>
+            <img src="images/comparator-live.png" alt="Comparator Live rejecting a proof of False" style="width: 50%;" class="explicit-size"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            2026: Bugs Found and Fixed</h2>
+          <p>
+            An <strong>adversarial</strong> user or AI is not trying to prove a theorem. It is looking for a bug in the checker and using it to make the checker accept something that is not true.</p>
+          <p>
+            <strong>AI is excellent at finding exploits.</strong></p>
+          <p>
+            <svg viewBox="0 0 1200 386" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" role="img" font-family="Source Sans 3, sans-serif" font-size="16">
+  <rect data-bg="1" x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<line x1="200" y1="30" x2="200" y2="336" stroke="#e2e8f0" stroke-width="2"/>
+<text x="184" y="46" text-anchor="end" font-weight="600" fill="#334155">Jul 25</text>
+<circle cx="200" cy="40" r="6" fill="#94a3b8"/>
+<text x="222" y="46" fill="#0f172a">Collatz "disproof": an exploit built to fool two checkers at once, the official kernel and nanoda</text>
+<text x="184" y="86" text-anchor="end" font-weight="600" fill="#334155">Jul 28</text>
+<circle cx="200" cy="80" r="6" fill="#0073A3"/>
+<text x="222" y="86" fill="#0f172a">Issue #14576 filed. Fix merged 10 hours later; Lean v4.32.2 released the same day</text>
+<text x="184" y="126" text-anchor="end" font-weight="600" fill="#334155">Jul 30 – Aug 20</text>
+<circle cx="200" cy="120" r="6" fill="#0073A3"/>
+<text x="222" y="126" fill="#0f172a">Bug hunt with OpenAI internal models: 6 more soundness fixes (4 kernel, 2 runtime)</text>
+<text x="184" y="166" text-anchor="end" font-weight="600" fill="#334155">Aug 11</text>
+<circle cx="200" cy="160" r="6" fill="#047857"/>
+<text x="222" y="166" fill="#0f172a">lean-inductive-models: every inductive type modelled and re-checked</text>
+<text x="184" y="206" text-anchor="end" font-weight="600" fill="#334155">Aug 21</text>
+<circle cx="200" cy="200" r="6" fill="#0073A3"/>
+<text x="222" y="206" fill="#0f172a">Lean v4.33.1: all fixes shipped</text>
+<text x="184" y="246" text-anchor="end" font-weight="600" fill="#334155">Sep 10</text>
+<circle cx="200" cy="240" r="6" fill="#047857"/>
+<text x="222" y="246" fill="#0f172a">con-leche released: kernel written in Lean, with a consistency proof</text>
+<text x="184" y="286" text-anchor="end" font-weight="600" fill="#334155">Sep 13</text>
+<circle cx="200" cy="280" r="6" fill="#047857"/>
+<text x="222" y="286" fill="#0f172a">con-ron: verified Rust port of con-leche</text>
+<text x="184" y="326" text-anchor="end" font-weight="600" fill="#334155">Sep 15</text>
+<circle cx="200" cy="320" r="6" fill="#0073A3"/>
+<text x="222" y="326" fill="#0f172a">Lean v4.35.0-rc1: lake check --paranoid; nanoda, lean4lean, con-leche, con-ron bundled</text>
+<circle cx="212" cy="359" r="5" fill="#0073A3"/><text x="224" y="364" font-size="12.5" fill="#64748b">fixes and releases</text>
+<circle cx="372" cy="359" r="5" fill="#047857"/><text x="384" y="364" font-size="12.5" fill="#64748b">new checkers</text>
+<text x="520" y="364" font-size="12.5" fill="#64748b">Dates from GitHub and the postmortems of Aug 1 and Aug 24, 2026. PR numbers: see the table.</text>
+</svg></p>
+          <ul>
+            <li>
+              <p>
+                Seven implementation bugs (five in the kernel, two in the runtime), found with adversarial AI. All fixed; all shipped in Lean v4.33.1 on Aug 21.</p>
+              </li>
+            <li>
+              <p>
+                <strong>No Mathlib or CSLib proof was affected.</strong></p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            con-leche: A Verified Kernel</h2>
+          <p>
+            <a href="https://github.com/leanprover/con-leche">con-leche</a>: a proof checker written in Lean, with a consistency proof. Released Sep 10, 2026.</p>
+          <p>
+            Written and proved by Claude, under close supervision by Joachim Breitner (Lean FRO).</p>
+          <p>
+            <strong>Checks all of Mathlib, FLT, and Navier-Stokes</strong>. A few days after the first release, it is already ~50% faster than the official kernel.</p>
+          <p>
+            The main theorem: every set of declarations it accepts has a model in set theory.</p>
+          <p>
+            <strong>Does not protect against bugs in the Lean runtime.</strong></p>
+          <p>
+            Next steps include separating the specification from the implementation.</p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            con-ron: con-leche in Rust</h2>
+          <p>
+            Joachim Breitner used AI to translate con-leche to Rust.</p>
+          <p>
+            He uses Aeneas+Lean to prove that con-ron and con-leche are equivalent.</p>
+          <p>
+            <strong>It is very unlikely that the Lean and Rust runtimes have the same bug.</strong></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Lean v4.35</h2>
+          <p>
+            Release candidate Sep 15, 2026.</p>
+          <ul>
+            <li>
+              <p>
+                <code>lake check</code>: build, export, replay the proof through a specific kernel.</p>
+              </li>
+            <li>
+              <p>
+                <code>lake check --paranoid</code>: run every bundled checker; accept only if all agree.</p>
+              </li>
+            <li>
+              <p>
+                Bundled: nanoda (Rust), lean4lean (Lean), con-leche (Lean, verified), con-ron (Rust, verified).</p>
+              </li>
+            </ul>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Scalability and Proof Digestion</h2>
+          <p>
+            Trust is not the only challenge created by AI.</p>
+          <p>
+            <strong>Scalability: we managed to keep up with humans. Keeping up with AI is harder.</strong></p>
+          <p>
+            <img src="images/mathlib-build-cost.svg" alt="Two aligned charts: Mathlib lines of code rising 66% since Feb 2024, while instructions to build Mathlib peaked in Dec 2025 and fell 28%; green markers show Lean releases"></p>
+          </section>
+        <section data-transition="fade">
+          <div class="slide-header"><img src="lean-logo.png" alt="Lean"></div>
+          <h2>
+            Conclusion</h2>
+          <p>
+            <a href="https://lean-lang.org/">Lean</a> is <strong>extensible</strong>, <strong>scalable</strong>, and <strong>trusted</strong>.</p>
+          <p>
+            Mathematics, software verification, and AI labs rely on it.</p>
+          <p>
+            <strong>The 2026 soundness bugs were found by adversarial AI, fixed in less than 24 hours, and turned into regression tests.</strong></p>
+          <p>
+            Proofs in Mathlib, CSLib, and other major Lean projects were not affected.</p>
+          <p>
+            <strong>We released two new verified kernels: con-leche and con-ron.</strong></p>
+          <p>
+            More verified kernels coming soon: Lean4Lean, MetaLean.</p>
+          <p>
+            Many new unverified kernels in <a href="https://arena.lean-lang.org/">arena.lean-lang.org</a>.</p>
+          <p>
+            Lean v4.35 includes <code>lake check --paranoid</code> with four independent checkers bundled.</p>
+          <p>
+            <strong>Verified runtimes and compilers are the next frontier.</strong></p>
+          <p>
+            Scalability and proof digestion are new challenges too.</p>
+          </section>
+        <section class="title-slide">
+          <div class="top-area"><img class="logo" src="lean-logo-large.png" alt="Lean Logo"></div>
+          <div class="blue-band"><h1>Thank You</h1>
+          <div class="meta"><strong>Leo de Moura</strong><br><a href="https://lean-lang.org" style="color:#93c5fd;">lean-lang.org</a><br><a href="https://leanprover.zulipchat.com/" style="color:#93c5fd;">leanprover.zulipchat.com</a><br><br><a href="https://leodemoura.github.io/" style="color:#93c5fd;">leodemoura.github.io</a></div>
+          <div class="date">FROCON 2026, Santa Cruz | September 2026</div>
+          </div></section>
+        </div>
+      </div>
+    <script src="lib/reveal.js/dist/reveal.js"></script>
+    <script src="lib/reveal.js/plugin/notes/notes.js"></script>
+    <script src="lib/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="lib/katex/dist/katex.min.js"></script>
+    <script src="lib/math.js"></script>
+    <script>
+      
+      Reveal.initialize({
+        disableLayout: true,
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        center: false,
+        transition: 'slide',
+        width: 960,
+        height: 700,
+        margin: 0.000000,
+        navigationMode: 'default',
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        plugins: [ RevealNotes, RevealHighlight ]
+      });
+    </script>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/popper.js"></script>
+    <script src="lib/tippy.js"></script>
+    <script src="lib/tippy-panel-filter.js"></script>
+    <script src="lib/highlighting.js"></script>
+    <script src="lib/code-block-bg.js"></script>
+    <script src="lib/pretty.js"></script>
+    <script src="lib/panel.js"></script>
+    <script src="lib/lightbox.js"></script>
+    <script src="lib/illuminate-reveal.js"></script>
+    </body>
+  </html>
