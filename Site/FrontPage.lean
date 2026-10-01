@@ -8,7 +8,7 @@ showInNav := false
 htmlId := some "frontpage"
 %%%
 
-I'm a Vice President and Distinguished Scientist in the Automated Reasoning Group at [AWS](https://aws.amazon.com/).
+I'm a Distinguished Scientist in the Automated Reasoning Group at [AWS](https://aws.amazon.com/).
 I'm also the Chief Architect and co-founder of the [Lean FRO](https://lean-fro.org),
 a non-profit organization dedicated to the development of the [Lean](https://lean-lang.org) theorem prover and programming language.
 

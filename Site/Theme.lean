@@ -55,7 +55,7 @@ def theme : Theme := { Theme.default with
                 <div class="contact">
                   <p>
                     "Leonardo de Moura" <br/>
-                    "Vice President and Distinguished Scientist at " <a href="https://aws.amazon.com/">"AWS"</a> <br/>
+                    "Distinguished Scientist at " <a href="https://aws.amazon.com/">"AWS"</a> <br/>
                     "Chief Architect and co-founder of the " <a href="https://lean-fro.org">"Lean FRO"</a> <br/>
                     <a href="mailto:leodemoura0@gmail.com">"leodemoura0@gmail.com"</a>
                   </p>
