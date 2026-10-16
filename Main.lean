@@ -15,6 +15,7 @@ import Site.Blog.WhoWatches
 import Site.Blog.SignalShot
 import Site.Blog.KernelPostmortem
 import Site.Blog.KernelBugHunt
+import Site.Blog.VerifiedKernels
 import Site.Notes
 import Site.Notes.CrayColloquium
 import Site.Notes.SymInteractive
@@ -28,6 +29,7 @@ def mySite : Site := site Site.FrontPage /
   "about" Site.About
   "publications" Site.Publications
   "blog" Site.Blog with
+    Site.Blog.VerifiedKernels
     Site.Blog.KernelBugHunt
     Site.Blog.KernelPostmortem
     Site.Blog.SignalShot
