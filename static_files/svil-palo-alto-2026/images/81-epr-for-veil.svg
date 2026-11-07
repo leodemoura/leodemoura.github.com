@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="astra3-81-epr-for-veil-title astra3-81-epr-for-veil-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title id="astra3-81-epr-for-veil-title">EPR for Veil: finite encoding, SAT, and model-based instantiation</title>
+<desc id="astra3-81-epr-for-veil-desc">Prototype by Henrik Böving, October 30. Veil verification goals, most in EPR, become a many-sorted EPR problem, then a finite bit-vector encoding and SAT. A candidate model is checked against quantifiers; a violating instance refines the encoding. A valid model yields a counterexample. UNSAT leads toward a proof, with prototype proof reconstruction unconfirmed. The card example instantiates the universal hypothesis at c; c equals a or b, and either case contradicts a predicate disequality.</desc>
+<rect x="0" y="0" width="1600" height="720" rx="0" fill="#ffffff"/>
+<text x="32" y="38" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" data-region="32,7,980,42.0">Prototype · Henrik Böving</text>
+<text x="1568" y="38" font-size="26" font-weight="600" fill="#0073A3" text-anchor="end" data-region="1100,9,468,39.0" font-family="'Menlo', monospace" xml:space="preserve">bv_decide +epr +uf</text>
+<rect x="32" y="78" width="170" height="110" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="117.0" y="116" font-size="26" font-weight="700" fill="#0f172a" text-anchor="middle" data-region="46,87,142,39.0">Veil</text>
+<text x="117.0" y="159" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="46,134,142,33.0">Protocol</text>
+<rect x="236" y="78" width="270" height="110" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="371.0" y="116" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle" data-region="250,89,242,36.0">Verification goals</text>
+<text x="371.0" y="159" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="250,134,242,33.0">Most lie in EPR</text>
+<rect x="540" y="78" width="300" height="110" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="690.0" y="116" font-size="26" font-weight="700" fill="#0073A3" text-anchor="middle" data-region="554,87,272,39.0">Many-sorted EPR</text>
+<text x="690.0" y="159" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="554,134,272,33.0">∃*∀*</text>
+<rect x="874" y="78" width="270" height="110" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="1009.0" y="116" font-size="23" font-weight="700" fill="#0073A3" text-anchor="middle" data-region="888,90,242,34.5">Bit-vector encoding</text>
+<text x="1009.0" y="159" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="888,134,242,33.0">Finite sort domains</text>
+<rect x="1178" y="78" width="110" height="110" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="1233.0" y="116" font-size="26" font-weight="700" fill="#0073A3" text-anchor="middle" data-region="1192,87,82,39.0">SAT</text>
+<rect x="1340" y="78" width="228" height="110" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="1454.0" y="116" font-size="26" font-weight="700" fill="#0073A3" text-anchor="middle" data-region="1354,87,200,39.0">Proof</text>
+<path d="M202,132 L230,132" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M230.00,132.00 L220.00,127.50 L220.00,136.50 Z" fill="#0073A3"/>
+<path d="M506,132 L534,132" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M534.00,132.00 L524.00,127.50 L524.00,136.50 Z" fill="#0073A3"/>
+<path d="M840,132 L868,132" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M868.00,132.00 L858.00,127.50 L858.00,136.50 Z" fill="#0073A3"/>
+<path d="M1144,132 L1172,132" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M1172.00,132.00 L1162.00,127.50 L1162.00,136.50 Z" fill="#0073A3"/>
+<path d="M1288,132 L1334,132" fill="none" stroke="#0073A3" stroke-width="2" stroke-dasharray="7 6"/>
+<path d="M1334.00,132.00 L1324.00,127.50 L1324.00,136.50 Z" fill="#0073A3"/>
+<text x="1328.5" y="75" font-size="22" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="1287,50,83,33.0">UNSAT</text>
+<rect x="610" y="246" width="350" height="84" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="630" y="280" font-size="25" font-weight="600" fill="#0073A3" text-anchor="start" data-region="630,252,310,37.5">Add a ground instance</text>
+<text x="630" y="318" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="630,293,310,33.0">Violated quantifier</text>
+<rect x="1040" y="246" width="286" height="84" rx="5" fill="#eff6ff" stroke="#0073A3" stroke-width="1.5"/>
+<text x="1058" y="280" font-size="27" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1058,250,250,40.5">MBQI</text>
+<text x="1058" y="318" font-size="22" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1058,293,250,33.0">Check quantifiers</text>
+<path d="M1233,188 L1233,239" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M1233.00,239.00 L1237.50,229.00 L1228.50,229.00 Z" fill="#0073A3"/>
+<text x="1260" y="223" font-size="22" font-weight="400" fill="#0073A3" text-anchor="start" data-region="1260,198,308,33.0">SAT · candidate model</text>
+<path d="M1040,288 L966,288" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M966.00,288.00 L976.00,292.50 L976.00,283.50 Z" fill="#0073A3"/>
+<path d="M785,246 L785,210 L1004,210 L1004,195" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M1004.00,195.00 L999.50,205.00 L1008.50,205.00 Z" fill="#0073A3"/>
+<text x="32" y="393" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="32,366,900,36.0">MBQI · model-based quantifier instantiation</text>
+<rect x="1370" y="246" width="198" height="84" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+<text x="1469.0" y="280" font-size="22" font-weight="700" fill="#15803d" text-anchor="middle" data-region="1380,255,178,33.0">Counterexample</text>
+<text x="1469.0" y="318" font-size="22" font-weight="400" fill="#15803d" text-anchor="middle" data-region="1380,293,178,33.0">Valid model</text>
+<path d="M1326,288 L1364,288" fill="none" stroke="#059669" stroke-width="2"/>
+<path d="M1364.00,288.00 L1354.00,283.50 L1354.00,292.50 Z" fill="#059669"/>
+<path d="M32,420 L1568,420" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="458" font-size="28" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,427,790,42.0">Worked example · card</text>
+<rect x="32" y="479" width="838" height="222" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="52" y="515" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="52,489,798,34.5" font-family="'Menlo', monospace" xml:space="preserve">theorem card {α : Type} (a b c d : α) (p : α → Prop)</text>
+<text x="108" y="556" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="108,530,742,34.5" font-family="'Menlo', monospace" xml:space="preserve">(h1 : ∀ (x : α), x = a ∨ x = b)</text>
+<text x="108" y="597" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="108,571,742,34.5" font-family="'Menlo', monospace" xml:space="preserve">(h2 : p a ≠ p c)</text>
+<text x="108" y="638" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="108,612,742,34.5" font-family="'Menlo', monospace" xml:space="preserve">(h5 : p b ≠ p c) : False := by</text>
+<text x="80" y="679" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="80,653,770,34.5" font-family="'Menlo', monospace" xml:space="preserve">bv_decide +epr +uf</text>
+<text x="920" y="458" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" data-region="920,429,648,39.0">Instantiate h1 at c:  c = a ∨ c = b</text>
+<rect x="920" y="492" width="308" height="127" rx="5" fill="#fef2f2" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="936" y="524" font-size="25" font-weight="700" fill="#0f172a" text-anchor="start" data-region="936,496,276,37.5" font-family="'Menlo', monospace" xml:space="preserve">c = a</text>
+<text x="936" y="565" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="936,539,276,34.5" font-family="'Menlo', monospace" xml:space="preserve">p c = p a</text>
+<text x="936" y="604" font-size="22" font-weight="400" fill="#b91c1c" text-anchor="start" data-region="936,579,276,33.0" font-family="'Menlo', monospace" xml:space="preserve">h2 : p a ≠ p c</text>
+<rect x="1260" y="492" width="308" height="127" rx="5" fill="#fef2f2" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="1276" y="524" font-size="25" font-weight="700" fill="#0f172a" text-anchor="start" data-region="1276,496,276,37.5" font-family="'Menlo', monospace" xml:space="preserve">c = b</text>
+<text x="1276" y="565" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1276,539,276,34.5" font-family="'Menlo', monospace" xml:space="preserve">p c = p b</text>
+<text x="1276" y="604" font-size="22" font-weight="400" fill="#b91c1c" text-anchor="start" data-region="1276,579,276,33.0" font-family="'Menlo', monospace" xml:space="preserve">h5 : p b ≠ p c</text>
+<path d="M1074,619 L1074,647 L1244,647" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<path d="M1414,619 L1414,647 L1244,647 L1244,666" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<path d="M1244.00,666.00 L1248.50,656.00 L1239.50,656.00 Z" fill="#b91c1c"/>
+<text x="1244.0" y="698" font-size="25" font-weight="700" fill="#b91c1c" text-anchor="middle" data-region="920,670,648,37.5">False · both cases contradict the hypotheses</text>
+</svg>

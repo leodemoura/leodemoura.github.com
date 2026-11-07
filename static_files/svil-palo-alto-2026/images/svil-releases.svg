@@ -1,0 +1,46 @@
+<svg viewBox="0 0 1600 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Lean releases from May to November 2026: v4.30 to v4.36</title>
+<line x1="110" y1="120" x2="1490" y2="120" stroke="#94a3b8" stroke-width="4"/>
+<circle cx="110.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="110.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.30</text>
+<text x="110.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >May 26</text>
+<text x="110.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >sym =&gt;, cbv</text>
+<text x="110.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >Lake cache</text>
+<text x="110.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >overhaul</text>
+<circle cx="340.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="340.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.31</text>
+<text x="340.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Jun 15</text>
+<text x="340.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >mvcgen on SymM</text>
+<text x="340.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >incremental</text>
+<text x="340.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >diagnostics</text>
+<circle cx="570.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="570.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.32</text>
+<text x="570.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Jul 13</text>
+<text x="570.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >new do elaborator</text>
+<text x="570.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >import Mathlib</text>
+<text x="570.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >~10% faster</text>
+<circle cx="800.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="800.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.33</text>
+<text x="800.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Aug 10</text>
+<text x="800.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >kernel hardening</text>
+<text x="800.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >content-stable</text>
+<text x="800.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >cache archives</text>
+<circle cx="1030.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="1030.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.34</text>
+<text x="1030.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Sep 14</text>
+<text x="1030.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >bv_decide on SymM</text>
+<text x="1030.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >41 GB elaboration</text>
+<text x="1030.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >now 1.2 s</text>
+<circle cx="1260.0" cy="120" r="16" fill="#0073A3" stroke="#0073A3" stroke-width="4"/>
+<text x="1260.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.35</text>
+<text x="1260.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Oct 12</text>
+<text x="1260.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >lake check, lake</text>
+<text x="1260.0" y="248.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >comparator</text>
+<text x="1260.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >5 bundled</text>
+<text x="1260.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >checkers</text>
+<circle cx="1490.0" cy="120" r="16" fill="#ffffff" stroke="#0073A3" stroke-width="4"/>
+<text x="1490.0" y="84.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="middle" >v4.36</text>
+<text x="1490.0" y="172.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="middle" >Nov 16 (planned)</text>
+<text x="1490.0" y="220.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >lean-beam bundled</text>
+<text x="1490.0" y="300.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >Mathlib −8%</text>
+<text x="1490.0" y="328.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >wall-clock</text>
+</svg>

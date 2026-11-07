@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1600 730" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>New code generator: Lean to HIR, MIR, LIR to C or LLVM IR. Every IR has a formal semantics; each pass is proved correct; AI writes IR to IR optimizations checked against the semantics.</title>
+<defs><marker id="c2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#059669"/></marker><marker id="c2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0891b2"/></marker><marker id="c2g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker></defs>
+<rect x="20" y="190" width="250" height="150" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/>
+<text x="145.0" y="280.0" font-size="44" font-weight="700" fill="#0f172a" text-anchor="middle" >Lean</text>
+<rect x="357" y="190" width="250" height="150" rx="14" fill="#eff6ff" stroke="#0073A3" stroke-width="3"/>
+<text x="482.0" y="262.0" font-size="46" font-weight="700" fill="#0073A3" text-anchor="middle" >HIR</text>
+<text x="482.0" y="308.0" font-size="24" font-weight="600" fill="#15803d" text-anchor="middle" >formal semantics</text>
+<rect x="694" y="190" width="250" height="150" rx="14" fill="#eff6ff" stroke="#0073A3" stroke-width="3"/>
+<text x="819.0" y="262.0" font-size="46" font-weight="700" fill="#0073A3" text-anchor="middle" >MIR</text>
+<text x="819.0" y="308.0" font-size="24" font-weight="600" fill="#15803d" text-anchor="middle" >formal semantics</text>
+<rect x="1031" y="190" width="250" height="150" rx="14" fill="#eff6ff" stroke="#0073A3" stroke-width="3"/>
+<text x="1156.0" y="262.0" font-size="46" font-weight="700" fill="#0073A3" text-anchor="middle" >LIR</text>
+<text x="1156.0" y="308.0" font-size="24" font-weight="600" fill="#15803d" text-anchor="middle" >formal semantics</text>
+<rect x="1330" y="190" width="250" height="150" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/>
+<text x="1455.0" y="258.0" font-size="34" font-weight="700" fill="#0f172a" text-anchor="middle" >C or LLVM IR</text>
+<text x="1455.0" y="302.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="middle" >future: assembly</text>
+<line x1="276" y1="265.0" x2="349" y2="265.0" stroke="#059669" stroke-width="4" marker-end="url(#c2a)"/>
+<line x1="613" y1="265.0" x2="686" y2="265.0" stroke="#059669" stroke-width="4" marker-end="url(#c2a)"/>
+<circle cx="650.5" cy="231.0" r="17" fill="#059669"/>
+<path d="M642.5,231.0 l6,6 l11,-12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="950" y1="265.0" x2="1023" y2="265.0" stroke="#059669" stroke-width="4" marker-end="url(#c2a)"/>
+<circle cx="987.5" cy="231.0" r="17" fill="#059669"/>
+<path d="M979.5,231.0 l6,6 l11,-12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1287" y1="265.0" x2="1322" y2="265.0" stroke="#64748b" stroke-width="4" marker-end="url(#c2g)"/>
+<path d="M422.0,186 C412.0,100 552.0,100 542.0,182" fill="none" stroke="#0891b2" stroke-width="3.5" stroke-dasharray="9 6" marker-end="url(#c2b)"/>
+<text x="482.0" y="116.0" font-size="24" font-weight="700" fill="#0891b2" text-anchor="middle" >AI</text>
+<path d="M759.0,186 C749.0,100 889.0,100 879.0,182" fill="none" stroke="#0891b2" stroke-width="3.5" stroke-dasharray="9 6" marker-end="url(#c2b)"/>
+<text x="819.0" y="116.0" font-size="24" font-weight="700" fill="#0891b2" text-anchor="middle" >AI</text>
+<path d="M1096.0,186 C1086.0,100 1226.0,100 1216.0,182" fill="none" stroke="#0891b2" stroke-width="3.5" stroke-dasharray="9 6" marker-end="url(#c2b)"/>
+<text x="1156.0" y="116.0" font-size="24" font-weight="700" fill="#0891b2" text-anchor="middle" >AI</text>
+<text x="819.0" y="40.0" font-size="30" font-weight="700" fill="#0891b2" text-anchor="middle" >IR → IR optimizations by AI, checked against the semantics</text>
+<text x="819.0" y="398.0" font-size="30" font-weight="700" fill="#15803d" text-anchor="middle" >Each pass proved correct: it preserves the semantics</text>
+<text x="20.0" y="470.0" font-size="26" font-weight="700" fill="#64748b" text-anchor="start" >Design priorities</text>
+<rect x="20.0" y="488" width="372.0" height="70" rx="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="206.0" y="533.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >Stack-allocated objects</text>
+<rect x="416.0" y="488" width="372.0" height="70" rx="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="602.0" y="533.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >Recursive join points</text>
+<rect x="812.0" y="488" width="372.0" height="70" rx="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="998.0" y="533.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >Uniqueness annotations</text>
+<rect x="1208.0" y="488" width="372.0" height="70" rx="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="1394.0" y="533.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >Array programs</text>
+<rect x="614.0" y="576" width="372.0" height="70" rx="35" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="800.0" y="621.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >Layout polymorphism</text>
+</svg>

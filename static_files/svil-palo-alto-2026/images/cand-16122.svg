@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1600 640" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>vcgen on n sequential ifs: time versus number of sequential ifs, log scale. Before: goals and omega time grow exponentially; +jp then omega times out at 12. After: 128 ms at 32.</title>
+<line x1="150" y1="520.0" x2="1350" y2="520.0" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="136.0" y="528.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" >10 ms</text>
+<line x1="150" y1="374.6" x2="1350" y2="374.6" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="136.0" y="382.6" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" >100 ms</text>
+<line x1="150" y1="229.2" x2="1350" y2="229.2" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="136.0" y="237.2" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" >1 s</text>
+<line x1="150" y1="83.8" x2="1350" y2="83.8" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="136.0" y="91.8" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" >10 s</text>
+<text x="300.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >4</text>
+<text x="450.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >8</text>
+<text x="600.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >12</text>
+<text x="750.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >16</text>
+<text x="1050.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >24</text>
+<text x="1350.0" y="554.0" font-size="24" font-weight="500" fill="#64748b" text-anchor="middle" >32</text>
+<text x="750.0" y="594.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" >sequential if/else statements</text>
+<path d="M300.0 369.1 L375.0 283.1 L450.0 190.1 L525.0 95.5" fill="none" stroke="#b91c1c" stroke-width="5"/>
+<circle cx="300.0" cy="369.1" r="7" fill="#b91c1c"/>
+<circle cx="375.0" cy="283.1" r="7" fill="#b91c1c"/>
+<circle cx="450.0" cy="190.1" r="7" fill="#b91c1c"/>
+<circle cx="525.0" cy="95.5" r="7" fill="#b91c1c"/>
+<text x="541.0" y="103.5" font-size="26" font-weight="700" fill="#b91c1c" text-anchor="start" >8.3 s</text>
+<path d="M300.0 442.7 L375.0 360.5 L450.0 252.6 L525.0 138.9" fill="none" stroke="#f59e0b" stroke-width="5"/>
+<circle cx="300.0" cy="442.7" r="7" fill="#f59e0b"/>
+<circle cx="375.0" cy="360.5" r="7" fill="#f59e0b"/>
+<circle cx="450.0" cy="252.6" r="7" fill="#f59e0b"/>
+<circle cx="525.0" cy="138.9" r="7" fill="#f59e0b"/>
+<text x="541.0" y="146.9" font-size="26" font-weight="700" fill="#f59e0b" text-anchor="start" ></text>
+<path d="M300.0 452.8 L450.0 430.9 L600.0 411.2 L750.0 398.9 L1050.0 376.5 L1350.0 359.0" fill="none" stroke="#059669" stroke-width="5"/>
+<circle cx="300.0" cy="452.8" r="7" fill="#059669"/>
+<circle cx="450.0" cy="430.9" r="7" fill="#059669"/>
+<circle cx="600.0" cy="411.2" r="7" fill="#059669"/>
+<circle cx="750.0" cy="398.9" r="7" fill="#059669"/>
+<circle cx="1050.0" cy="376.5" r="7" fill="#059669"/>
+<circle cx="1350.0" cy="359.0" r="7" fill="#059669"/>
+<text x="1366.0" y="367.0" font-size="26" font-weight="700" fill="#059669" text-anchor="start" >128 ms</text>
+<text x="600.0" y="79.8" font-size="46" font-weight="700" fill="#f59e0b" text-anchor="middle" >×</text>
+<text x="626.0" y="71.8" font-size="26" font-weight="700" fill="#f59e0b" text-anchor="start" >timeout</text>
+<rect x="850" y="100" width="34" height="8" fill="#b91c1c"/>
+<text x="896.0" y="112.0" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" >before: vcgen + omega</text>
+<rect x="850" y="140" width="34" height="8" fill="#f59e0b"/>
+<text x="896.0" y="152.0" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" >before: vcgen +jp, omega</text>
+<rect x="850" y="180" width="34" height="8" fill="#059669"/>
+<text x="896.0" y="192.0" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" >after: vcgen +jp, lia</text>
+</svg>

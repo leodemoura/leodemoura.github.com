@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1600 490" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>OpenAI k-SAT formalization, checking time: con-ron 2.4 min, nanoda 3.6, con-agua 8.7, official 20, con-leche 20.7</title>
+<text x="500.0" y="78.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >con-ron (Rust, verified)</text>
+<rect x="520" y="42" width="95.1" height="54" rx="5" fill="#059669"/>
+<text x="629.1" y="79.0" font-size="28" font-weight="700" fill="#059669" text-anchor="start" >2.4 min</text>
+<text x="500.0" y="156.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >nanoda (Rust)</text>
+<rect x="520" y="120" width="142.6" height="54" rx="5" fill="#94a3b8"/>
+<text x="676.6" y="157.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >3.6 min</text>
+<text x="500.0" y="234.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >con-agua (x86, verified)</text>
+<rect x="520" y="198" width="344.6" height="54" rx="5" fill="#059669"/>
+<text x="878.6" y="235.0" font-size="28" font-weight="700" fill="#059669" text-anchor="start" >8.7 min</text>
+<text x="500.0" y="312.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >official kernel (C++)</text>
+<rect x="520" y="276" width="792.3" height="54" rx="5" fill="#94a3b8"/>
+<text x="1326.3" y="313.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >20 min</text>
+<text x="500.0" y="390.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >con-leche (Lean, verified)</text>
+<rect x="520" y="354" width="820.0" height="54" rx="5" fill="#059669"/>
+<text x="1354.0" y="391.0" font-size="28" font-weight="700" fill="#059669" text-anchor="start" >20.7 min</text>
+<text x="520.0" y="474.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" >95,173 declarations. con-leche and con-agua: one job.</text>
+</svg>

@@ -1,0 +1,128 @@
+<svg viewBox="0 0 1600 720" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>lia certificates: shared substitutions and measured kernel checking time</title>
+<desc>The schematic compares independent root-to-leaf substitution paths with shared tree edges. The lower plot evaluates the two source formulas on a logarithmic vertical axis; it is not a timing measurement. The right panel separately gives the disj_all 12 benchmark and the recursor-normalization result.</desc>
+<rect x="0" y="0" width="1600" height="720" fill="#ffffff"/>
+<text x="32" y="43" font-size="34" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,9,1536,45.900000000000006">Share substitution work across case splits</text>
+<text x="32" y="89" font-size="28" font-weight="700" fill="#b91c1c" text-anchor="start" data-region="32,61,460,37.800000000000004">Repeated paths</text>
+<text x="530" y="89" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" data-region="530,61,460,37.800000000000004">Shared prefixes</text>
+<path d="M54,126 L54,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="54" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="54" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="54" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="54" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M108,126 L108,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="108" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="108" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="108" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="108" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M162,126 L162,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="162" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="162" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="162" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="162" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M216,126 L216,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="216" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="216" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="216" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="216" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M270,126 L270,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="270" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="270" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="270" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="270" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M324,126 L324,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="324" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="324" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="324" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="324" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M378,126 L378,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="378" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="378" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="378" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="378" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M432,126 L432,241" fill="none" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="432" cy="126" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="432" cy="165" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="432" cy="203" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="432" cy="241" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M760.0,126 L655.0,164" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M760.0,126 L865.0,164" fill="none" stroke="#059669" stroke-width="2.5"/>
+<circle cx="760.0" cy="126" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<path d="M655.0,164 L602.5,202" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M655.0,164 L707.5,202" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M865.0,164 L812.5,202" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M865.0,164 L917.5,202" fill="none" stroke="#059669" stroke-width="2.5"/>
+<circle cx="655.0" cy="164" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="865.0" cy="164" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<path d="M602.5,202 L576.25,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M602.5,202 L628.75,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M707.5,202 L681.25,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M707.5,202 L733.75,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M812.5,202 L786.25,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M812.5,202 L838.75,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M917.5,202 L891.25,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<path d="M917.5,202 L943.75,240" fill="none" stroke="#059669" stroke-width="2.5"/>
+<circle cx="602.5" cy="202" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="707.5" cy="202" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="812.5" cy="202" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="917.5" cy="202" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="576.25" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="628.75" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="681.25" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="733.75" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="786.25" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="838.75" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="891.25" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="943.75" cy="240" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<text x="32" y="286" font-size="30" font-weight="700" fill="#b91c1c" text-anchor="start" data-region="32,256,460,40.5">n·2ⁿ substitutions</text>
+<text x="530" y="286" font-size="30" font-weight="700" fill="#15803d" text-anchor="start" data-region="530,256,470,40.5">2ⁿ⁺¹ − 2 substitutions</text>
+<text x="32" y="320" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,298,970,29.700000000000003">Schematic paths above; formula values below</text>
+<path d="M1030,80 L1030,676" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<path d="M105,622.0 L815,622.0" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="93" y="630.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" data-region="32,608.0,61,29.700000000000003">2¹</text>
+<path d="M105,572.0 L815,572.0" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="93" y="580.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" data-region="32,558.0,61,29.700000000000003">2⁴</text>
+<path d="M105,505.3333333333333 L815,505.3333333333333" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="93" y="513.3333333333333" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" data-region="32,491.33333333333326,61,29.700000000000003">2⁸</text>
+<path d="M105,438.6666666666667 L815,438.6666666666667" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="93" y="446.6666666666667" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" data-region="32,424.6666666666667,61,29.700000000000003">2¹²</text>
+<path d="M105,372.0 L815,372.0" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="93" y="380.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="end" data-region="32,358.0,61,29.700000000000003">2¹⁶</text>
+<path d="M105,372 L105,622" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M105,622 L815,622" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M295.9090909090909,622 L295.9090909090909,630" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="295.9090909090909" y="657" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" data-region="265.9090909090909,634,60,31.05">4</text>
+<path d="M550.4545454545455,622 L550.4545454545455,630" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="550.4545454545455" y="657" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" data-region="520.4545454545455,634,60,31.05">8</text>
+<path d="M805.0,622 L805.0,630" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="805.0" y="657" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" data-region="775.0,634,60,31.05">12</text>
+<text x="105" y="357" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="105,333,700,32.400000000000006">Substitution steps · log₂ scale</text>
+<path d="M105.00,622.00 L168.64,588.67 L232.27,562.25 L295.91,538.67 L359.55,516.63 L423.18,495.58 L486.82,475.21 L550.45,455.33 L614.09,435.83 L677.73,416.63 L741.36,397.68 L805.00,378.92" fill="none" stroke="#b91c1c" stroke-width="4"/>
+<circle cx="295.9090909090909" cy="538.6666666666666" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="550.4545454545455" cy="455.33333333333337" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<circle cx="805.0" cy="378.91729165464744" r="4" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<path d="M105.00,622.00 L168.64,595.58 L232.27,575.21 L295.91,556.89 L359.55,539.43 L423.18,522.38 L486.82,505.52 L550.45,488.76 L614.09,472.05 L677.73,455.36 L741.36,438.68 L805.00,422.01" fill="none" stroke="#059669" stroke-width="4"/>
+<circle cx="295.9090909090909" cy="556.8851567398581" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="550.4545454545455" cy="488.76077605235236" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="805.0" cy="422.00587105786053" r="4" fill="#059669" stroke="#059669" stroke-width="2"/>
+<text x="831" y="387.91729165464744" font-size="28" font-weight="700" fill="#b91c1c" text-anchor="start" data-region="831,359.91729165464744,165,37.800000000000004">n·2ⁿ</text>
+<text x="831" y="431.00587105786053" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" data-region="831,403.00587105786053,185,37.800000000000004">2ⁿ⁺¹ − 2</text>
+<text x="645.0" y="699" font-size="26" font-weight="600" fill="#0f172a" text-anchor="middle" data-region="380,673,530,35.1">Case splits, n</text>
+<text x="1070" y="104" font-size="28" font-weight="700" fill="#0f172a" text-anchor="start" data-region="1070,76,498,37.800000000000004">Measured kernel checking</text>
+<text x="1070" y="145" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" data-region="1070,120,498,33.75" font-family="'Menlo', monospace">disj_all 12 · PR 15905</text>
+<text x="1070" y="205" font-size="46" font-weight="700" fill="#15803d" text-anchor="start" data-region="1070,159,498,62.1">32 s → 145 ms</text>
+<rect x="1070" y="238" width="448" height="30" fill="#fef2f2"/>
+<rect x="1070" y="238" width="448" height="30" fill="#b91c1c"/>
+<rect x="1070" y="289" width="2.03" height="30" fill="#059669"/>
+<path d="M1075,305 L1140,305" fill="none" stroke="#059669" stroke-width="2"/>
+<text x="1154" y="314" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" data-region="1154,286,390,37.800000000000004">145 ms</text>
+<text x="1070" y="374" font-size="66" font-weight="700" fill="#15803d" text-anchor="start" data-region="1070,308,498,89.10000000000001">220×</text>
+<text x="1070" y="412" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1070,389,498,31.05">One benchmark; common time scale</text>
+<path d="M1070,445 L1568,445" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="1070" y="484" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="1070,456,498,37.800000000000004">Recursor-based normalization</text>
+<text x="1070" y="527.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1070,502.0,498,33.75">Kernel no longer unfolds</text>
+<text x="1070" y="559.5" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1070,534.5,498,33.75">match and structural recursion</text>
+<text x="1070" y="613" font-size="38" font-weight="700" fill="#15803d" text-anchor="start" data-region="1070,575,498,51.300000000000004">38–46% cheaper</text>
+<text x="1070" y="653" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" data-region="1070,628,498,33.75">lia kernel checking</text>
+<text x="1070" y="688" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1070,665,498,31.05">PRs 15911, 15917, 15983</text>
+</svg>

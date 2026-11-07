@@ -1,0 +1,46 @@
+<svg viewBox="0 0 1600 576" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="kraken-title kraken-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <title id="kraken-title">Kraken verification pipeline</title>
+  <desc id="kraken-desc">Kraken separates a trusted model, written by hand and reviewed by people, from untrusted proof construction. The x64 and aarch64 semantics in Lean and the FFmpeg SBR decoder assembly feed vcgen. AI agents use grind to write proofs, which the Lean kernel checks. The decoder has 10,000+ assembly instructions; the Lean development is about 240K lines. The checked result is memory safety under the decoder’s API protocol. Google: Jonathan Protzenko (project lead), Andres Erbsen, and the Kraken team.</desc>
+  <!-- Source: Slides.lean, Kraken: Verified Assembly; sources/ai-software-verification.md, section 2. The Lean line count describes the development. -->
+  <defs>
+    <marker id="kraken-arrow-blue" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#0073A3"/></marker>
+    <marker id="kraken-arrow-muted" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#64748b"/></marker>
+    <marker id="kraken-arrow-greenline" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#059669"/></marker>
+  </defs>
+      <!-- Solid model boundary: the meaning of the instructions is reviewed by people. -->
+  <rect x="24" y="88" width="448" height="236" rx="12" fill="#eff6ff" stroke="#0073A3" stroke-width="2"/>
+  <text x="48" y="132" font-size="32" fill="#0073A3" font-weight="600" text-anchor="start" data-bound="48 104 400 208">Trusted model</text>
+  <text x="48" y="180" font-size="30" fill="#0f172a" font-weight="400" text-anchor="start" data-bound="48 104 400 208" font-family="'Menlo', monospace">x64 / aarch64</text>
+  <text x="48" y="217" font-size="28" fill="#0f172a" font-weight="400" text-anchor="start" data-bound="48 104 400 208">semantics in Lean</text>
+  <text x="48" y="260" font-size="26" fill="#64748b" font-weight="400" text-anchor="start" data-bound="48 104 400 208">Written by hand</text>
+    <!-- The concrete program is an input to proof construction, not a detached caption. -->
+  <rect x="24" y="374" width="448" height="178" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="48" y="416" font-size="32" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="48 390 400 148">FFmpeg SBR decoder</text>
+  <text x="48" y="469" font-size="42" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="48 390 400 148">10,000+</text>
+  <text x="48" y="512" font-size="28" fill="#0f172a" font-weight="400" text-anchor="start" data-bound="48 390 400 148">assembly instructions</text>
+  <!-- Dashed boundary: automation constructs proof terms; it is not trusted for acceptance. -->
+  <rect x="530" y="88" width="640" height="464" rx="12" fill="white" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="554" y="132" font-size="32" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="554 104 592 84">Untrusted proof construction</text>
+    <path d="M 472 226 L 566 294" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#kraken-arrow-blue)"/>
+  <path d="M 472 456 L 566 382" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#kraken-arrow-blue)"/>
+  <rect x="566" y="252" width="234" height="172" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="683" y="304" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="582 268 202 140" font-family="'Menlo', monospace">vcgen</text>
+  <text x="683" y="354" font-size="26" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="582 268 202 140">verification</text>
+  <text x="683" y="390" font-size="26" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="582 268 202 140">conditions</text>
+  <path d="M 800 338 H 850" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#kraken-arrow-blue)"/>
+    <rect x="850" y="252" width="288" height="250" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="994" y="300" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="866 268 256 140">AI agents</text>
+  <text x="994" y="342" font-size="28" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="866 268 256 140" font-family="'Menlo', monospace">+ grind</text>
+  <text x="994" y="390" font-size="26" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="866 268 256 140">write proofs</text>
+  <path d="M 866 424 H 1122" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="994" y="474" font-size="24" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="864 438 260 50">~240K lines of Lean</text>
+  <!-- Only the proof artifact crosses to the checker; the result follows the kernel check. -->
+      <path d="M 1138 338 H 1234" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#kraken-arrow-greenline)"/>
+  <rect x="1234" y="252" width="342" height="172" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1405" y="316" font-size="34" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1254 268 302 140">Lean kernel</text>
+  <text x="1405" y="362" font-size="28" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1254 268 302 140">checks proofs</text>
+  <path d="M 1390 390 L 1401 400 L 1422 377" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 1405 424 V 449" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#kraken-arrow-greenline)"/>
+  <text x="1405" y="484" font-size="32" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1234 452 342 92">Memory safety</text>
+  <text x="1405" y="526" font-size="26" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1234 452 342 92">under its API protocol</text>
+</svg>

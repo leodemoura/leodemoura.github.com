@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1600 650" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>Stacks: source correspondence and formal validity are separate checks</title>
+<desc>StacksFrontier is AI-written and awaits human review against the Stacks Project. StacksCore has that human review and meets Mathlib standards. Lean checks every proof in both tiers. The equal-sized tracks are categorical and do not encode the amounts of code in each tier.</desc>
+<rect x="0" y="0" width="1600" height="650" fill="#ffffff"/>
+<text x="32" y="44" font-size="34" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,10,1500,45.900000000000006">Stacks in Lean: two review tiers</text>
+<text x="32" y="83" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,58,1500,33.75">Stacks in Lean · 15.8M lines · 663,090 declarations · November 4, 2026</text>
+<text x="32" y="131" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,103,340,37.800000000000004">Source text</text>
+<text x="440" y="131" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="440,103,670,37.800000000000004">Correspondence with the source</text>
+<text x="1210" y="131" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="1210,103,358,37.800000000000004">Formal validity</text>
+<rect x="32" y="159" width="325" height="355" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" rx="5"/>
+<text x="55" y="204" font-size="32" font-weight="700" fill="#0f172a" text-anchor="start" data-region="55,172,278,43.2">The Stacks</text>
+<text x="55" y="240" font-size="32" font-weight="700" fill="#0f172a" text-anchor="start" data-region="55,208,278,43.2">Project</text>
+<text x="55" y="295" font-size="30" font-weight="600" fill="#0073A3" text-anchor="start" data-region="55,265,278,40.5">~7,500 pages</text>
+<text x="55" y="350" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="55,326,278,32.400000000000006">Permanent Stacks tag</text>
+<path d="M55,375 L332,375" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="55" y="415" font-size="26" font-weight="400" fill="#0073A3" text-anchor="start" data-region="55,389,278,35.1" font-family="'Menlo', monospace">@[stacks TAG]</text>
+<text x="55" y="463.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="55,439.0,278,32.400000000000006">Links declarations</text>
+<text x="55" y="494.2" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="55,470.2,278,32.400000000000006">to the original text</text>
+<rect x="611" y="159" width="505" height="143" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" rx="5"/>
+<text x="633" y="205" font-size="32" font-weight="700" fill="#0073A3" text-anchor="start" data-region="633,173,460,43.2" font-family="'Menlo', monospace">StacksFrontier</text>
+<text x="633" y="247.0" font-size="26" font-weight="400" fill="#0f172a" text-anchor="start" data-region="633,221.0,460,35.1">AI-written Lean statements</text>
+<text x="633" y="280.8" font-size="26" font-weight="400" fill="#0f172a" text-anchor="start" data-region="633,254.8,460,35.1">and proofs</text>
+<path d="M357,236 L603,236" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 7"/>
+<path d="M603.00,236.00 L591.00,231.00 L591.00,241.00 Z" fill="#94a3b8"/>
+<text x="485.0" y="195" font-size="24" font-weight="400" fill="#64748b" text-anchor="middle" data-region="380,171,210,32.400000000000006">Not yet</text>
+<text x="485.0" y="224" font-size="24" font-weight="400" fill="#64748b" text-anchor="middle" data-region="380,200,210,32.400000000000006">human-reviewed</text>
+<rect x="611" y="371" width="505" height="143" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="5"/>
+<text x="633" y="417" font-size="32" font-weight="700" fill="#15803d" text-anchor="start" data-region="633,385,460,43.2" font-family="'Menlo', monospace">StacksCore</text>
+<text x="633" y="459.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="633,434.0,460,33.75">Checked against the source</text>
+<text x="633" y="491.5" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="633,466.5,460,33.75">Meets Mathlib standards</text>
+<path d="M357,448 L603,448" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M603.00,448.00 L591.00,443.00 L591.00,453.00 Z" fill="#059669"/>
+<text x="485.0" y="402" font-size="28" font-weight="600" fill="#15803d" text-anchor="middle" data-region="380,374,210,37.800000000000004">Human</text>
+<text x="485.0" y="433" font-size="28" font-weight="600" fill="#15803d" text-anchor="middle" data-region="380,405,210,37.800000000000004">review</text>
+<rect x="1205" y="159" width="363" height="355" fill="#ecfdf5" stroke="#059669" stroke-width="2" rx="5"/>
+<path d="M1116,236 L1197,236" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M1197.00,236.00 L1185.00,231.00 L1185.00,241.00 Z" fill="#059669"/>
+<path d="M1116,448 L1197,448" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M1197.00,448.00 L1185.00,443.00 L1185.00,453.00 Z" fill="#059669"/>
+<text x="1227" y="207" font-size="30" font-weight="700" fill="#15803d" text-anchor="start" data-region="1227,177,319,40.5">Lean kernel</text>
+<text x="1227" y="252.0" font-size="26" font-weight="400" fill="#15803d" text-anchor="start" data-region="1227,226.0,319,35.1">Proof checks against</text>
+<text x="1227" y="285.8" font-size="26" font-weight="400" fill="#15803d" text-anchor="start" data-region="1227,259.8,319,35.1">its Lean statement</text>
+<path d="M1227,337 L1546,337" fill="none" stroke="#059669" stroke-width="1"/>
+<text x="1227" y="403.0" font-size="26" font-weight="400" fill="#15803d" text-anchor="start" data-region="1227,377.0,319,35.1">Proof checks against</text>
+<text x="1227" y="436.8" font-size="26" font-weight="400" fill="#15803d" text-anchor="start" data-region="1227,410.8,319,35.1">its Lean statement</text>
+<text x="32" y="611" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,586,1536,33.75">Dozens of statements needed refinement: missing hypotheses, edge cases in positive characteristic.</text>
+</svg>

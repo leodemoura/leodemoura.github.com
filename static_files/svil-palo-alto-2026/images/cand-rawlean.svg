@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1600 334" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Tau Ceti addition law, statements only, instructions: surface 620.51 G, surface with N exponents 10.97 G, lean-raw 1.26 G</title>
+<text x="410.0" y="78.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >surface syntax</text>
+<rect x="430" y="42" width="910.0" height="54" rx="5" fill="#94a3b8"/>
+<text x="1354.0" y="79.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >620.51 G</text>
+<text x="410.0" y="156.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >surface, ℕ exponents</text>
+<rect x="430" y="120" width="16.1" height="54" rx="5" fill="#94a3b8"/>
+<text x="460.1" y="157.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >10.97 G</text>
+<text x="410.0" y="234.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >lean-raw</text>
+<rect x="430" y="198" width="4.0" height="54" rx="5" fill="#0073A3"/>
+<text x="448.0" y="235.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >1.26 G</text>
+<text x="430.0" y="318.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" >Tau Ceti addition law, statements and definitions only.</text>
+</svg>

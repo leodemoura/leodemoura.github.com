@@ -1,0 +1,52 @@
+<svg viewBox="0 0 1600 680" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>Tau Ceti: human targets, AI authorship, review gates, and recorded growth</title>
+<desc>Review requirements feed the merge gate; human review is additionally required for pull requests touching human-owned files. Three recorded line totals are shown on a common linear scale; no daily trajectory is inferred.</desc>
+<rect x="0" y="0" width="1600" height="680" fill="#ffffff"/>
+<text x="32" y="43" font-size="34" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,9,1100,45.900000000000006">Tau Ceti review process</text>
+<text x="32" y="81" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,57,1500,32.400000000000006">Kim Morrison (Lean FRO)</text>
+<rect x="32" y="119" width="260" height="130" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" rx="5"/>
+<text x="52" y="157.0" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,129.0,220,37.800000000000004">Mathematicians</text>
+<text x="52" y="193.4" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,165.4,220,37.800000000000004">choose targets</text>
+<text x="52" y="225" font-size="24" font-weight="400" fill="#0073A3" text-anchor="start" data-region="52,201,220,32.400000000000006">Human roadmap</text>
+<path d="M292,182 L344,182" fill="none" stroke="#0073A3" stroke-width="3"/>
+<path d="M344.00,182.00 L332.00,177.00 L332.00,187.00 Z" fill="#0073A3"/>
+<rect x="350" y="119" width="270" height="130" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" rx="5"/>
+<text x="370" y="157" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" data-region="370,127,230,40.5">AI agents</text>
+<text x="370" y="195.0" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="370,171.0,230,32.400000000000006">Code + proofs</text>
+<text x="370" y="226.2" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="370,202.2,230,32.400000000000006">Pull requests</text>
+<path d="M620,182 H660 V144 H707" fill="none" stroke="#0073A3" stroke-width="3"/>
+<path d="M707.00,144.00 L695.00,139.00 L695.00,149.00 Z" fill="#0073A3"/>
+<path d="M660,182 V255 H707" fill="none" stroke="#0073A3" stroke-width="3"/>
+<path d="M707.00,255.00 L695.00,250.00 L695.00,260.00 Z" fill="#0073A3"/>
+<rect x="713" y="111" width="335" height="92" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" rx="5"/>
+<text x="733" y="145" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" data-region="733,117,295,37.800000000000004">AI reviewers</text>
+<text x="733" y="181" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="733,157,295,32.400000000000006">Open review rubrics</text>
+<rect x="713" y="227" width="335" height="66" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="5"/>
+<text x="733" y="270" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="733,242,295,37.800000000000004">Lean proof checks</text>
+<path d="M1048,155 H1090 V224 H1140" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M1140.00,224.00 L1128.00,219.00 L1128.00,229.00 Z" fill="#059669"/>
+<path d="M1048,260 H1090 V224" fill="none" stroke="#059669" stroke-width="3"/>
+<rect x="1145" y="185" width="420" height="89" fill="#ecfdf5" stroke="#059669" stroke-width="2" rx="5"/>
+<text x="1165" y="223" font-size="32" font-weight="700" fill="#15803d" text-anchor="start" data-region="1165,191,380,43.2">Merge</text>
+<path d="M485,249 V347 H923" fill="none" stroke="#0073A3" stroke-width="2.5"/>
+<path d="M923.00,347.00 L911.00,342.00 L911.00,352.00 Z" fill="#0073A3"/>
+<text x="515" y="332" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="515,308,390,32.400000000000006">Touches human-owned files</text>
+<rect x="930" y="312" width="375" height="70" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" rx="5"/>
+<text x="950" y="356" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="950,328,335,37.800000000000004">Human review required</text>
+<path d="M1305,347 H1355 V282" fill="none" stroke="#0073A3" stroke-width="2.5"/>
+<path d="M1355.00,282.00 L1350.00,294.00 L1360.00,294.00 Z" fill="#0073A3"/>
+<path d="M32,407 L1568,407" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="443" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,415,1000,37.800000000000004">Lines of Lean, from zero on June 3, 2026</text>
+<text x="32" y="497" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,469,195,37.800000000000004">Jun 3</text>
+<path d="M260,470 L1290,470" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M260,452 L260,487" fill="none" stroke="#94a3b8" stroke-width="3"/>
+<text x="278.0" y="480" font-size="30" font-weight="700" fill="#94a3b8" text-anchor="start" data-region="278.0,450,230,40.5">0</text>
+<text x="32" y="565" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,537,195,37.800000000000004">Sep 25</text>
+<path d="M260,538 L1290,538" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="260" y="521" width="306.21" height="34" fill="#0891b2"/>
+<text x="584.21" y="548" font-size="30" font-weight="700" fill="#0891b2" text-anchor="start" data-region="584.21,518,230,40.5">1,657,293</text>
+<text x="32" y="633" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,605,195,37.800000000000004">Nov 5</text>
+<path d="M260,606 L1290,606" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="260" y="589" width="1030.0" height="34" fill="#0073A3"/>
+<text x="1308.0" y="616" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1308.0,586,230,40.5">5,574,734</text>
+</svg>

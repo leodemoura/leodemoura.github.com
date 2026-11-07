@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1600 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Lean since April 20, 2026: 1,650+ pull requests merged into lean4; 6 releases, v4.30 to v4.35; 5 bundled proof checkers; 3 verified checkers</title>
+<rect x="20" y="40" width="365" height="420" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="202.5" y="230.0" font-size="120" font-weight="700" fill="#0073A3" text-anchor="middle" >1,650+</text>
+<text x="202.5" y="320.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >pull requests merged</text>
+<text x="202.5" y="370.0" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" >into lean4 since April 20</text>
+<rect x="410" y="40" width="365" height="420" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="592.5" y="230.0" font-size="120" font-weight="700" fill="#0073A3" text-anchor="middle" >6</text>
+<text x="592.5" y="320.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >releases</text>
+<text x="592.5" y="370.0" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" >v4.30 … v4.35; v4.36 on Nov 16</text>
+<rect x="800" y="40" width="365" height="420" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="982.5" y="230.0" font-size="120" font-weight="700" fill="#0073A3" text-anchor="middle" >5</text>
+<text x="982.5" y="320.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >checkers bundled</text>
+<text x="982.5" y="370.0" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" >lake check --paranoid, v4.35</text>
+<rect x="1190" y="40" width="365" height="420" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="1372.5" y="230.0" font-size="120" font-weight="700" fill="#0073A3" text-anchor="middle" >3</text>
+<text x="1372.5" y="320.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >verified checkers</text>
+<text x="1372.5" y="370.0" font-size="23" font-weight="400" fill="#64748b" text-anchor="middle" >con-leche, con-ron, con-agua</text>
+</svg>

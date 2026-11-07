@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="astra3-73-arithmetic-trust-tracks-title astra3-73-arithmetic-trust-tracks-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title id="astra3-73-arithmetic-trust-tracks-title">Verified Arithmetic and Fast Kernel Reduction</title>
+<desc id="astra3-73-arithmetic-trust-tracks-desc">Three separate work tracks. The current official checker trusts the C++ kernel and GMP arithmetic, plus its execution environment. Verified Lean bignums would replace GMP; boost accelerates selected reduction functions in con-leche; a designed certificate language targets checking speed inside the kernel. Each track has its own maturity label. The instruction comparison is one grind benchmark in con-leche.</desc>
+<rect x="0" y="0" width="1600" height="720" rx="0" fill="#ffffff"/>
+<text x="32" y="37" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,4,550,45.0">Today · official proof checking</text>
+<rect x="32" y="59" width="1536" height="114" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="52" y="101" font-size="27" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,71,245,40.5">Lean proof terms</text>
+<path d="M285,116 L349,116" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M349.00,116.00 L339.00,111.50 L339.00,120.50 Z" fill="#0073A3"/>
+<rect x="355" y="76" width="450" height="78" rx="5" fill="#eff6ff" stroke="#0073A3" stroke-width="1.5"/>
+<text x="375" y="108" font-size="29" font-weight="700" fill="#0073A3" text-anchor="start" data-region="375,76,410,43.5">C++ kernel</text>
+<text x="375" y="143" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="375,116,410,36.0">Type checking + reduction</text>
+<path d="M805,116 L849,116" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M849.00,116.00 L839.00,111.50 L839.00,120.50 Z" fill="#0073A3"/>
+<rect x="855" y="76" width="265" height="78" rx="5" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="875" y="108" font-size="29" font-weight="700" fill="#b91c1c" text-anchor="start" data-region="875,76,225,43.5">GMP</text>
+<text x="875" y="143" font-size="22" font-weight="400" fill="#0f172a" text-anchor="start" data-region="875,118,225,33.0">Big Nat / Int</text>
+<text x="1150" y="102" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1150,76,390,34.5">Trusted implementations</text>
+<text x="1150" y="141" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1150,115,390,34.5">Compiler + runtime assumed</text>
+<text x="32" y="212" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" data-region="32,187,330,33.0">TRACK / STATUS</text>
+<text x="405" y="212" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" data-region="405,187,670,33.0">CHANGE TO CHECKING</text>
+<text x="1130" y="212" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" data-region="1130,187,438,33.0">TRUST / COST EFFECT</text>
+<rect x="32" y="232" width="1536" height="138" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="52" y="269" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" data-region="52,236,325,45.0">Verified bignums</text>
+<text x="52" y="308" font-size="25" font-weight="600" fill="#0073A3" text-anchor="start" data-region="52,280,325,37.5">In progress</text>
+<text x="52" y="347" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,320,325,36.0">Sebastian Ullrich</text>
+<rect x="405" y="251" width="118" height="90" rx="5" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="464.0" y="306" font-size="27" font-weight="600" fill="#b91c1c" text-anchor="middle" data-region="420,276,88,40.5">GMP</text>
+<path d="M523,296 L574,296" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M574.00,296.00 L564.00,291.50 L564.00,300.50 Z" fill="#0073A3"/>
+<rect x="580" y="251" width="500" height="90" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+<text x="600" y="285" font-size="27" font-weight="600" fill="#15803d" text-anchor="start" data-region="600,255,460,40.5">Big-number arithmetic in Lean</text>
+<text x="600" y="326" font-size="24" font-weight="400" fill="#15803d" text-anchor="start" data-region="600,299,460,36.0">Proved correct against Nat / Int</text>
+<rect x="32" y="389" width="1536" height="143" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="52" y="426" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" data-region="52,393,325,45.0" font-family="'Menlo', monospace" xml:space="preserve">#boost</text>
+<text x="52" y="467" font-size="25" font-weight="600" fill="#0073A3" text-anchor="start" data-region="52,439,325,37.5">Prototype · con-leche</text>
+<text x="52" y="508" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,481,325,36.0">Joachim Breitner</text>
+<text x="405" y="426" font-size="28" font-weight="600" fill="#0073A3" text-anchor="start" data-region="405,395,675,42.0">Selected functions run natively</text>
+<text x="405" y="468" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" data-region="405,439,675,39.0">Native evaluation  ↔  kernel reduction</text>
+<text x="1130" y="425" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1130,388,415,51.0">28 G → 0.24 G</text>
+<text x="1130" y="465" font-size="22" font-weight="600" fill="#0f172a" text-anchor="start" data-region="1130,440,438,33.0">Official kernel → con-leche + #boost</text>
+<text x="1130" y="504" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="1130,479,415,33.0" font-family="'Menlo', monospace" xml:space="preserve">one grind proof</text>
+<rect x="32" y="551" width="1536" height="143" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="52" y="588" font-size="29" font-weight="700" fill="#0f172a" text-anchor="start" data-region="52,556,325,43.5">Certificate language</text>
+<text x="52" y="630" font-size="25" font-weight="600" fill="#0073A3" text-anchor="start" data-region="52,602,325,37.5">Design</text>
+<text x="52" y="671" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,644,325,36.0">Inside the kernel</text>
+<text x="405" y="588" font-size="25" font-weight="600" fill="#0f172a" text-anchor="start" data-region="405,560,675,37.5">Certificate → low-level checker → acceptance</text>
+<text x="405" y="630" font-size="26" font-weight="400" fill="#0f172a" text-anchor="start" data-region="405,601,675,39.0">Small language executed by the kernel</text>
+<text x="405" y="671" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="405,644,675,36.0">For certificates such as bv_decide’s</text>
+</svg>

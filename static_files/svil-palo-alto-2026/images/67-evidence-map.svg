@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1600 720" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>Scaling Lean for AI: scale, trust, scalability, and understanding</title>
+<desc>A common linear scale compares selected project line counts; FLT is a lower bound. Three evidence columns map trust, scalability, and understanding to measured results. Each measurement retains its workload or configuration, and the next steps are visually separated.</desc>
+<rect x="0" y="0" width="1600" height="720" fill="#ffffff"/>
+<text x="32" y="40" font-size="32" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,8,1500,43.2">AI-written mathematics · lines of Lean</text>
+<text x="32" y="86" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,62,190,32.400000000000006">Tau Ceti</text>
+<rect x="230" y="60" width="142.28" height="24" fill="#0073A3"/>
+<text x="388.28" y="83" font-size="26" font-weight="700" fill="#0073A3" text-anchor="start" data-region="388.28,57,200,35.1">5.6M</text>
+<text x="32" y="123" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,99,190,32.400000000000006">FLT</text>
+<rect x="230" y="97" width="331.7865429234339" height="24" fill="#0073A3"/>
+<path d="M561.7865429234339,93 L561.7865429234339,125" fill="none" stroke="#0073A3" stroke-width="2" stroke-dasharray="3 3"/>
+<text x="577.7865429234339" y="120" font-size="26" font-weight="700" fill="#0073A3" text-anchor="start" data-region="577.7865429234339,94,200,35.1">13M+</text>
+<text x="32" y="160" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,136,190,32.400000000000006">Stacks</text>
+<rect x="230" y="134" width="403.2482598607889" height="24" fill="#0073A3"/>
+<text x="649.248259860789" y="157" font-size="26" font-weight="700" fill="#0073A3" text-anchor="start" data-region="649.248259860789,131,200,35.1">15.8M</text>
+<text x="32" y="197" font-size="24" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,173,190,32.400000000000006">CFSG</text>
+<rect x="230" y="171" width="1100.0" height="24" fill="#0073A3"/>
+<text x="1346.0" y="194" font-size="26" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1346.0,168,200,35.1">43.1M</text>
+<path d="M32,223 L1568,223" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<path d="M544,245 L544,631" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<path d="M1056,245 L1056,631" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="272" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="32,238,470,45.900000000000006">Trust</text>
+<text x="570" y="272" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="570,238,458,45.900000000000006">Scalability</text>
+<text x="1082" y="272" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1082,238,486,45.900000000000006">Understanding</text>
+<text x="32" y="338" font-size="38" font-weight="700" fill="#15803d" text-anchor="start" data-region="32,300,470,51.300000000000004">5 checkers accept</text>
+<text x="32" y="374" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,350,470,32.400000000000006">OpenAI’s k-SAT formalization</text>
+<circle cx="52" cy="410" r="10" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="161" cy="410" r="10" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="270" cy="410" r="10" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="379" cy="410" r="10" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="489" cy="410" r="10" fill="#059669" stroke="#059669" stroke-width="2"/>
+<text x="32" y="463" font-size="25" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,438,470,33.75">Mathlib · one worker</text>
+<text x="32" y="498" font-size="24" font-weight="600" fill="#94a3b8" text-anchor="start" data-region="32,474,470,32.400000000000006">28.9 min · official kernel</text>
+<rect x="32" y="509" width="440" height="18" fill="#94a3b8"/>
+<text x="32" y="554" font-size="24" font-weight="600" fill="#059669" text-anchor="start" data-region="32,530,470,32.400000000000006">10.7 min · con-leche</text>
+<rect x="32" y="565" width="162.9065743944637" height="18" fill="#059669"/>
+<text x="570" y="340" font-size="60" font-weight="700" fill="#15803d" text-anchor="start" data-region="570,280,458,81.0">−51%</text>
+<text x="570" y="375" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="570,351,458,32.400000000000006">Mathlib build instructions</text>
+<text x="570" y="413" font-size="24" font-weight="600" fill="#94a3b8" text-anchor="start" data-region="570,389,458,32.400000000000006">Dec 2025 peak: 187 T</text>
+<rect x="570" y="423" width="440" height="16" fill="#94a3b8"/>
+<text x="570" y="467" font-size="24" font-weight="600" fill="#059669" text-anchor="start" data-region="570,443,458,32.400000000000006">Lean nightly: 92 T</text>
+<rect x="570" y="477" width="216.47058823529412" height="16" fill="#059669"/>
+<text x="570" y="540" font-size="34" font-weight="700" fill="#15803d" text-anchor="start" data-region="570,506,458,45.900000000000006">32 s → 145 ms</text>
+<text x="570" y="572" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="570,548,458,32.400000000000006">lia kernel checking</text>
+<text x="570" y="598" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="570,576,458,29.700000000000003" font-family="'Menlo', monospace">vcgen +jp with lia</text>
+<text x="570" y="630" font-size="29" font-weight="700" fill="#15803d" text-anchor="start" data-region="570,601,458,39.150000000000006">32 ifs · 128 ms</text>
+<text x="1082" y="340" font-size="60" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1082,280,486,81.0">999</text>
+<text x="1082" y="375" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="1082,351,486,32.400000000000006">Palomar registered results</text>
+<text x="1082" y="425" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" data-region="1082,399,486,35.1">Verso Blueprint · FLT warm edit</text>
+<text x="1082" y="466" font-size="28" font-weight="700" fill="#94a3b8" text-anchor="start" data-region="1082,438,486,37.800000000000004">46.0 s</text>
+<rect x="1082" y="476" width="430" height="18" fill="#94a3b8"/>
+<text x="1082" y="522" font-size="28" font-weight="700" fill="#059669" text-anchor="start" data-region="1082,494,486,37.800000000000004">8.18 s</text>
+<rect x="1082" y="532" width="76.46521739130435" height="18" fill="#059669"/>
+<rect x="32" y="644" width="1536" height="66" fill="#f8fafc"/>
+<text x="48" y="669" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="48,646,480,31.05">Next: official kernel;</text>
+<text x="48" y="697" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="48,674,480,31.05">verified bignums</text>
+<text x="570" y="669" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="570,646,458,31.05">Next: lean-raw; lazy import;</text>
+<text x="570" y="697" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="570,674,458,31.05">new code generator</text>
+<text x="1082" y="669" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1082,646,470,31.05">Next: Blueprint review of</text>
+<text x="1082" y="697" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="1082,674,470,31.05">AI-generated developments</text>
+</svg>

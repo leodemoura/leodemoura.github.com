@@ -1,0 +1,65 @@
+<svg viewBox="0 0 1600 700" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>Lean validation in 2026: response in hours, hardening over weeks</title>
+<desc>A July 28 inset distinguishes the one-hour fix push, ten-hour merge, and same-day release. Calendar swimlanes show the later bug hunt, releases, and independent checker work. Calendar locations are proportional to dates; the same-day release time is not invented.</desc>
+<rect x="0" y="0" width="1600" height="700" fill="#ffffff"/>
+<text x="32" y="43" font-size="34" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,9,1500,45.900000000000006">July 28: report → fix → release</text>
+<rect x="32" y="68" width="1536" height="172" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" rx="5"/>
+<text x="54" y="101" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" data-region="54,75,500,35.1">Kernel issue #14576</text>
+<path d="M160,167 L960,167" fill="none" stroke="#94a3b8" stroke-width="3"/>
+<circle cx="160" cy="167" r="7" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="48" y="144" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="48,116,155,37.800000000000004">Report</text>
+<text x="48" y="209" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="48,185,155,32.400000000000006">Jul 28</text>
+<circle cx="240" cy="167" r="7" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="255" y="145" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="255,117,260,37.800000000000004">Fix pushed</text>
+<text x="255" y="209" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" data-region="255,181,260,37.800000000000004">+1 h</text>
+<circle cx="960" cy="167" r="7" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="975" y="145" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="975,117,260,37.800000000000004">Fix merged</text>
+<text x="975" y="209" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" data-region="975,181,260,37.800000000000004">+10 h</text>
+<path d="M1145,93 L1145,217" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="1170" y="132" font-size="32" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1170,100,370,43.2" font-family="'Menlo', monospace">v4.32.2</text>
+<text x="1170" y="175" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="1170,147,370,37.800000000000004">Released the same day</text>
+<text x="1170" y="213" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="1170,189,370,32.400000000000006">July 28, 2026</text>
+<text x="32" y="282" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,252,940,40.5">Hardening and independent checking</text>
+<text x="1568" y="282" font-size="24" font-weight="400" fill="#64748b" text-anchor="end" data-region="1120,258,448,32.400000000000006">Calendar time · 2026</text>
+<path d="M260.0,325 L260.0,612" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="260.0" y="318" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="190.0,296,140,29.700000000000003">Jul 25</text>
+<path d="M675.1923076923076,325 L675.1923076923076,612" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="675.1923076923076" y="318" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="605.1923076923076,296,140,29.700000000000003">Aug 11</text>
+<path d="M919.423076923077,325 L919.423076923077,612" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="919.423076923077" y="318" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="849.423076923077,296,140,29.700000000000003">Aug 21</text>
+<path d="M1530.0,325 L1530.0,612" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="1530.0" y="318" font-size="22" font-weight="400" fill="#64748b" text-anchor="middle" data-region="1460.0,296,140,29.700000000000003">Sep 15</text>
+<text x="32" y="382" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,354,220,37.800000000000004">Reports</text>
+<path d="M260,375 L1530,375" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="467" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,439,220,37.800000000000004">Fix / release</text>
+<path d="M260,460 L1530,460" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="565" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="32,537,220,37.800000000000004">Checkers</text>
+<path d="M260,558 L1530,558" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<circle cx="260.0" cy="375" r="6" fill="#b91c1c" stroke="#b91c1c" stroke-width="2"/>
+<text x="275" y="366" font-size="22" font-weight="600" fill="#b91c1c" text-anchor="start" data-region="275,344,210,29.700000000000003">Collatz exploit</text>
+<rect x="382.11538461538464" y="389" width="512.8846153846154" height="43" fill="#eff6ff"/>
+<text x="392.11538461538464" y="418" font-size="23" font-weight="600" fill="#0073A3" text-anchor="start" data-region="392.11538461538464,395,500,31.05">Jul 30–Aug 20 · OpenAI bug hunt</text>
+<circle cx="333.2692307692308" cy="460" r="6" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="277" y="494" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="277,470,250,32.400000000000006" font-family="'Menlo', monospace">v4.32.2</text>
+<path d="M919.423076923077,460 V477 H889" fill="none" stroke="#0073A3" stroke-width="1.5"/>
+<circle cx="919.423076923077" cy="460" r="6" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="934.423076923077" y="452.0" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="934.423076923077,428.0,580,32.400000000000006">6 more fixes · 4 kernel, 2 runtime</text>
+<text x="640" y="494" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="640,470,270,32.400000000000006">v4.33.1 · Aug 21</text>
+<circle cx="675.1923076923076" cy="558" r="6" fill="#059669" stroke="#059669" stroke-width="2"/>
+<text x="565.1923076923076" y="590.0" font-size="22" font-weight="600" fill="#15803d" text-anchor="start" data-region="565.1923076923076,568.0,450,29.700000000000003">lean-inductive-models</text>
+<text x="738" y="540" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="738,518,510,29.700000000000003">Every inductive type re-checked</text>
+<circle cx="1407.8846153846155" cy="558" r="6" fill="#059669" stroke="#059669" stroke-width="2"/>
+<circle cx="1481.1538461538462" cy="558" r="6" fill="#059669" stroke="#059669" stroke-width="2"/>
+<path d="M1407.8846153846155,558 V515 H1200" fill="none" stroke="#059669" stroke-width="2"/>
+<text x="1070" y="505" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="1070,481,340,32.400000000000006">Sep 10 · con-leche</text>
+<path d="M1481.1538461538462,558 V604 H1210" fill="none" stroke="#059669" stroke-width="2"/>
+<text x="1190" y="631" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="1190,607,370,32.400000000000006">Sep 13 · con-ron</text>
+<circle cx="1530.0" cy="460" r="6" fill="#0073A3" stroke="#0073A3" stroke-width="2"/>
+<text x="1230" y="337" font-size="24" font-weight="700" fill="#0073A3" text-anchor="start" data-region="1230,313,330,32.400000000000006" font-family="'Menlo', monospace">v4.35.0-rc1</text>
+<text x="1110" y="375" font-size="22" font-weight="400" fill="#0073A3" text-anchor="start" data-region="1110,353,450,29.700000000000003">lake check --paranoid</text>
+<text x="1110" y="416" font-size="22" font-weight="400" fill="#0073A3" text-anchor="start" data-region="1110,394,450,29.700000000000003">Bundled independent checkers</text>
+<path d="M1530.0,424 L1530.0,450" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M1530.00,450.00 L1535.00,438.00 L1525.00,438.00 Z" fill="#0073A3"/>
+<rect x="32" y="650" width="1536" height="40" fill="#ecfdf5"/>
+<text x="48" y="679" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" data-region="48,651,1490,37.800000000000004">No Mathlib or CSLib proof was affected.</text>
+</svg>

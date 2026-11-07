@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1600 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Full Mathlib, one worker: official kernel 28.9 min, 11.44 GiB, 10.26 T instructions; con-leche 10.7 min, 4.27 GiB, 7.05 T</title>
+<rect x="120" y="80.0" width="150" height="320.0" rx="6" fill="#94a3b8"/>
+<text x="195.0" y="66.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >28.9 min</text>
+<text x="195.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >official kernel</text>
+<rect x="310" y="281.5" width="150" height="118.5" rx="6" fill="#059669"/>
+<text x="385.0" y="267.5" font-size="30" font-weight="700" fill="#15803d" text-anchor="middle" >10.7 min</text>
+<text x="385.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >con-leche</text>
+<text x="295.0" y="484.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >Time</text>
+<rect x="630" y="80.0" width="150" height="320.0" rx="6" fill="#94a3b8"/>
+<text x="705.0" y="66.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >11.44 GiB</text>
+<text x="705.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >official kernel</text>
+<rect x="820" y="280.6" width="150" height="119.4" rx="6" fill="#059669"/>
+<text x="895.0" y="266.6" font-size="30" font-weight="700" fill="#15803d" text-anchor="middle" >4.27 GiB</text>
+<text x="895.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >con-leche</text>
+<text x="805.0" y="484.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >Peak memory</text>
+<rect x="1140" y="80.0" width="150" height="320.0" rx="6" fill="#94a3b8"/>
+<text x="1215.0" y="66.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >10.26 T</text>
+<text x="1215.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >official kernel</text>
+<rect x="1330" y="180.1" width="150" height="219.9" rx="6" fill="#059669"/>
+<text x="1405.0" y="166.1" font-size="30" font-weight="700" fill="#15803d" text-anchor="middle" >7.05 T</text>
+<text x="1405.0" y="434.0" font-size="22" font-weight="500" fill="#64748b" text-anchor="middle" >con-leche</text>
+<text x="1315.0" y="484.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="middle" >Instructions</text>
+<line x1="40" y1="400" x2="1560" y2="400" stroke="#94a3b8" stroke-width="2"/>
+</svg>

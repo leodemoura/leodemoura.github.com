@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1600 570" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Developers pushing Lean code on GitHub per quarter, 2024 to Q2 2026</title>
+<line x1="100" y1="394.7" x2="1560" y2="394.7" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="88.0" y="401.7" font-size="20" font-weight="400" fill="#64748b" text-anchor="end" >2,000</text>
+<line x1="100" y1="269.3" x2="1560" y2="269.3" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="88.0" y="276.3" font-size="20" font-weight="400" fill="#64748b" text-anchor="end" >4,000</text>
+<line x1="100" y1="144.0" x2="1560" y2="144.0" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="88.0" y="151.0" font-size="20" font-weight="400" fill="#64748b" text-anchor="end" >6,000</text>
+<line x1="100" y1="520" x2="1560" y2="520" stroke="#94a3b8" stroke-width="2"/>
+<rect x="123.4" y="487.9" width="99.3" height="7.6" fill="#a5d8e6"/>
+<rect x="123.4" y="495.4" width="99.3" height="24.6" fill="#0073A3"/>
+<text x="173.0" y="550.0" font-size="22" font-weight="600" fill="#0f172a" text-anchor="middle" >2024</text>
+<rect x="269.4" y="487.9" width="99.3" height="7.2" fill="#a5d8e6"/>
+<rect x="269.4" y="495.1" width="99.3" height="24.9" fill="#0073A3"/>
+<rect x="415.4" y="483.5" width="99.3" height="7.3" fill="#a5d8e6"/>
+<rect x="415.4" y="490.8" width="99.3" height="29.2" fill="#0073A3"/>
+<rect x="561.4" y="470.7" width="99.3" height="17.0" fill="#a5d8e6"/>
+<rect x="561.4" y="487.7" width="99.3" height="32.3" fill="#0073A3"/>
+<rect x="707.4" y="465.4" width="99.3" height="23.3" fill="#a5d8e6"/>
+<rect x="707.4" y="488.7" width="99.3" height="31.3" fill="#0073A3"/>
+<text x="757.0" y="550.0" font-size="22" font-weight="600" fill="#0f172a" text-anchor="middle" >2025</text>
+<rect x="853.4" y="459.4" width="99.3" height="19.3" fill="#a5d8e6"/>
+<rect x="853.4" y="478.7" width="99.3" height="41.3" fill="#0073A3"/>
+<rect x="999.4" y="425.7" width="99.3" height="38.8" fill="#a5d8e6"/>
+<rect x="999.4" y="464.5" width="99.3" height="55.5" fill="#0073A3"/>
+<rect x="1145.4" y="385.8" width="99.3" height="61.9" fill="#a5d8e6"/>
+<rect x="1145.4" y="447.6" width="99.3" height="72.4" fill="#0073A3"/>
+<rect x="1291.4" y="288.6" width="99.3" height="120.7" fill="#a5d8e6"/>
+<rect x="1291.4" y="409.3" width="99.3" height="110.7" fill="#0073A3"/>
+<text x="1341.0" y="550.0" font-size="22" font-weight="600" fill="#0f172a" text-anchor="middle" >2026</text>
+<rect x="1437.4" y="104.1" width="99.3" height="247.0" fill="#a5d8e6"/>
+<rect x="1437.4" y="351.1" width="99.3" height="168.9" fill="#0073A3"/>
+<text x="1487.0" y="385.1" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle" >2,696</text>
+<text x="1487.0" y="94.1" font-size="22" font-weight="700" fill="#0f172a" text-anchor="middle" >6,637</text>
+<rect x="130" y="60" width="22" height="22" fill="#0073A3"/>
+<text x="160.0" y="79.0" font-size="21" font-weight="500" fill="#0f172a" text-anchor="start" >United States</text>
+<rect x="130" y="96" width="22" height="22" fill="#a5d8e6"/>
+<text x="160.0" y="115.0" font-size="21" font-weight="500" fill="#0f172a" text-anchor="start" >Other economies</text>
+</svg>

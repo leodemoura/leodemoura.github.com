@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1600 580" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <title>lean-raw bypasses surface elaboration and constructs Expr directly</title>
+  <desc>The surface pipeline parses syntax, expands macros and elaborates terms before the kernel checks Expr. lean-raw uses a hand-written parser to produce Expr directly. Holes reconnect to normal elaboration.</desc>
+  <!-- Source: Slides.lean, slide 52; sources/lean-raw.md -->
+  <defs>
+    <marker id="leanraw-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#64748b"/></marker>
+    <marker id="leanraw-arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#0073A3"/></marker>
+    <marker id="leanraw-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#059669"/></marker>
+    <marker id="leanraw-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#b91c1c"/></marker>
+    <marker id="leanraw-arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#0891b2"/></marker>
+  </defs>
+  <text x="24" y="47" font-size="34" fill="#0f172a" font-weight="600" text-anchor="start">Surface syntax</text>
+  <text x="24" y="369" font-size="34" fill="#0073A3" font-weight="600" text-anchor="start" font-family="'Menlo', monospace">lean-raw</text>
+  <path d="M 169 197 H 418" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-muted)"/>
+  <path d="M 628 197 H 674" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-muted)"/>
+  <path d="M 1064 197 H 1120" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-muted)"/>
+  <path d="M 1250 197 H 1310" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-muted)"/>
+  <rect x="24" y="139" width="145" height="116" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="96.5" y="208" font-size="32" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="36 147 121 100">text</text>
+    <rect x="418" y="139" width="210" height="116" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="523.0" y="190" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="430 147 186 100">extensible</text>
+  <text x="523.0" y="224" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="430 147 186 100">parser</text>
+  <rect x="674" y="90" width="390" height="214" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="869.0" y="131" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="686 98 366 198">Elaboration</text>
+  <text x="869.0" y="173" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="686 98 366 198">macro expansion</text>
+  <text x="869.0" y="208" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="686 98 366 198">unification, type classes</text>
+  <text x="869.0" y="243" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="686 98 366 198">coercions</text>
+  <text x="869.0" y="278" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="686 98 366 198">tactics</text>
+  <rect x="1120" y="139" width="130" height="116" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="1185.0" y="208" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" font-family="'Menlo', monospace" data-bound="1132 147 106 100">Expr</text>
+  <rect x="1310" y="139" width="266" height="116" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1443.0" y="174" font-size="32" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1322 147 242 100">Kernel</text>
+  <text x="1443.0" y="209" font-size="24" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1322 147 242 100">type checking</text>
+    <rect x="1310" y="412" width="266" height="116" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1443.0" y="447" font-size="32" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1322 420 242 100">Kernel</text>
+  <text x="1443.0" y="482" font-size="24" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1322 420 242 100">type checking</text>
+    <path d="M 268 470 H 310" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-blue)"/>
+  <path d="M 610 470 H 1120" fill="none" stroke="#0073A3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-blue)"/>
+  <path d="M 1250 470 H 1310" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-blue)"/>
+  <rect x="24" y="412" width="244" height="116" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="146.0" y="480" font-size="28" fill="#0073A3" font-weight="400" text-anchor="middle" font-family="'Menlo', monospace" data-bound="36 420 220 100">raw⟦…⟧ text</text>
+  <rect x="310" y="412" width="300" height="116" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="460.0" y="462" font-size="28" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="322 420 276 100">efficient</text>
+  <text x="460.0" y="498" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="322 420 276 100">parser</text>
+  <rect x="1120" y="412" width="130" height="116" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="1185.0" y="481" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" font-family="'Menlo', monospace" data-bound="1132 420 106 100">Expr</text>
+  <text x="865" y="426" font-size="26" fill="#0073A3" font-weight="400" text-anchor="middle">directly to <tspan font-family="'Menlo', monospace">Expr</tspan></text>
+  <text x="865" y="454" font-size="24" fill="#0073A3" font-weight="400" text-anchor="middle">no elaboration</text>
+  <path d="M 460 412 V 350 H 869 V 304" fill="none" stroke="#0891b2" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#leanraw-arrow-teal)" stroke-dasharray="8 7"/>
+  <text x="680" y="335" font-size="24" fill="#0891b2" font-weight="400" text-anchor="middle" font-family="'Menlo', monospace">Holes: ?h, ?(tac), ?[]</text>
+</svg>

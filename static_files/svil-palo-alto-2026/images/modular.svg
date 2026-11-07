@@ -1,0 +1,103 @@
+<svg viewBox="0 0 1600 668" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="modular-title modular-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <title id="modular-title">Modular checking: replace one monolithic export with parallel module checks</title>
+  <desc id="modular-desc">Today the whole development flows through one monolithic JSON export, comparator, and the checkers. CFSG has 208.3 GB of oleans; this is not the size of the JSON export. Axiom says single-threaded checking would require weeks or more. The proposed con-leche design reads and checks individual .olean modules in parallel, then composes the results into one global consistency proof. The tile grid is schematic, not a measured module count. Status: in progress.</desc>
+  <!-- Source: Slides.lean, con-leche as the Official Kernel and frontier build sizes; sources/con-leche.md, PR 13. -->
+  <defs>
+    <marker id="modular-arrow-blue" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#0073A3"/></marker>
+    <marker id="modular-arrow-muted" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#64748b"/></marker>
+    <marker id="modular-arrow-greenline" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#059669"/></marker>
+  </defs>
+  <text x="24" y="46" font-size="34" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="24 8 144 50">Today</text>
+  <text x="200" y="46" font-size="30" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="200 12 1376 46">One export of the whole development</text>
+  <!-- One continuous, thick export pipe. The artifact-size annotation belongs to the oleans. -->
+  <path d="M 24 86 H 1136 L 1200 150 L 1136 214 H 24 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="56" y="135" font-size="32" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="56 104 550 96">Whole development</text>
+  <text x="56" y="180" font-size="28" fill="#64748b" font-weight="400" text-anchor="start" data-bound="56 104 550 96">CFSG: 208.3 GB of oleans</text>
+  <text x="726" y="135" font-size="32" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="726 104 398 96">One JSON file</text>
+  <text x="726" y="180" font-size="28" fill="#64748b" font-weight="400" text-anchor="start" data-bound="726 104 398 96">via comparator</text>
+  <path d="M 1200 150 H 1240" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#modular-arrow-muted)"/>
+  <rect x="1240" y="86" width="336" height="128" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="1408" y="138" font-size="30" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="1260 104 296 92">Checkers</text>
+  <text x="1408" y="180" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="1260 104 296 92">whole export at once</text>
+  <text x="24" y="266" font-size="30" fill="#64748b" font-weight="400" text-anchor="start" data-bound="24 230 1552 48">Axiom: single-threaded checking “would require weeks or more”.</text>
+  <path d="M 24 300 H 1576" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="350" font-size="34" fill="#0073A3" font-weight="600" text-anchor="start" data-bound="24 312 144 50">Next</text>
+  <text x="200" y="350" font-size="30" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="200 316 810 46">Check modules in parallel</text>
+  <text x="1576" y="350" font-size="26" fill="#64748b" font-weight="400" text-anchor="end" data-bound="1150 320 426 42">In progress</text>
+  <text x="24" y="401" font-size="26" fill="#0f172a" font-weight="400" text-anchor="start" data-bound="24 370 488 40">Each tile: one .olean module</text>
+  <!-- A schematic 8 by 4 grid. Every module tile carries its own successful check; no count is claimed. -->
+  <rect x="24" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 36 448 L 45 457 L 61 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 96 448 L 105 457 L 121 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="144" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 156 448 L 165 457 L 181 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="204" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 216 448 L 225 457 L 241 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="264" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 276 448 L 285 457 L 301 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 336 448 L 345 457 L 361 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="384" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 396 448 L 405 457 L 421 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="444" y="424" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 456 448 L 465 457 L 481 439" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 36 508 L 45 517 L 61 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 96 508 L 105 517 L 121 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="144" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 156 508 L 165 517 L 181 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="204" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 216 508 L 225 517 L 241 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="264" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 276 508 L 285 517 L 301 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 336 508 L 345 517 L 361 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="384" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 396 508 L 405 517 L 421 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="444" y="484" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 456 508 L 465 517 L 481 499" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 36 568 L 45 577 L 61 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 96 568 L 105 577 L 121 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="144" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 156 568 L 165 577 L 181 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="204" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 216 568 L 225 577 L 241 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="264" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 276 568 L 285 577 L 301 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 336 568 L 345 577 L 361 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="384" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 396 568 L 405 577 L 421 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="444" y="544" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 456 568 L 465 577 L 481 559" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 36 628 L 45 637 L 61 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 96 628 L 105 637 L 121 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="144" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 156 628 L 165 637 L 181 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="204" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 216 628 L 225 637 L 241 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="264" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 276 628 L 285 637 L 301 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 336 628 L 345 637 L 361 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="384" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 396 628 L 405 637 L 421 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="444" y="604" width="48" height="48" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <path d="M 456 628 L 465 637 L 481 619" fill="none" stroke="#059669" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 512 424 H 532 V 652 H 512" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="650" y="475" font-size="28" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="540 440 220 54" font-family="'Menlo', monospace">con-leche</text>
+  <text x="650" y="511" font-size="24" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="540 480 220 42">parallel checks</text>
+  <path d="M 532 538 H 800" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#modular-arrow-greenline)"/>
+  <rect x="800" y="478" width="300" height="120" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="950" y="550" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="820 498 260 80">Composition</text>
+  <path d="M 1100 538 H 1190" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#modular-arrow-greenline)"/>
+  <rect x="1190" y="462" width="386" height="152" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1383" y="526" font-size="32" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1210 482 346 112">One global</text>
+  <text x="1383" y="571" font-size="32" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1210 482 346 112">consistency proof</text>
+</svg>

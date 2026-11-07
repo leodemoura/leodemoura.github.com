@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Scaling Lean for AI](/static/svil-palo-alto-2026/), SViL, Stanford
 - [Who Checks the Proof Checkers?](/static/frocon2026/), FROCON 2026, Santa Cruz
 - [Lean 4 for Program Verification in the Age of AI](/static/marktoberdorf2026/), Marktoberdorf Summer School (4 lectures)
 - [grind: An SMT-Inspired Tactic for Lean 4](/static/ijcar26/), IJCAR, Lisbon

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1600 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>lean-beam: AI agents talk to a Lean server that keeps module context and runs speculative branches</title>
+<rect x="20" y="110" width="300" height="200" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="3"/>
+<text x="170.0" y="154.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >AI agents</text>
+<text x="170.0" y="198.0" font-size="23" font-weight="400" fill="#0f172a" text-anchor="middle" >Claude, Codex, ...</text>
+<text x="170.0" y="232.0" font-size="23" font-weight="400" fill="#0f172a" text-anchor="middle" >many requests</text>
+<line x1="330" y1="210" x2="426" y2="210" stroke="#94a3b8" stroke-width="4"/>
+<polygon points="424,199 440,210 424,221" fill="#94a3b8"/>
+<rect x="450" y="110" width="330" height="200" rx="14" fill="#eff6ff" stroke="#0073A3" stroke-width="3"/>
+<text x="615.0" y="154.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >lean-beam</text>
+<text x="615.0" y="198.0" font-size="23" font-weight="400" fill="#0f172a" text-anchor="middle" >CLI and MCP server</text>
+<text x="615.0" y="232.0" font-size="23" font-weight="400" fill="#0f172a" text-anchor="middle" >one broker</text>
+<text x="615.0" y="266.0" font-size="23" font-weight="400" fill="#0f172a" text-anchor="middle" >per workspace</text>
+<line x1="790" y1="210" x2="886" y2="210" stroke="#94a3b8" stroke-width="4"/>
+<polygon points="884,199 900,210 884,221" fill="#94a3b8"/>
+<rect x="910" y="20" width="670" height="380" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="3"/>
+<text x="1245.0" y="62.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle" >Lean server + Beam plugin</text>
+<rect x="940" y="90" width="610" height="62" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+<text x="1245.0" y="130.0" font-size="24" font-weight="600" fill="#0073A3" text-anchor="middle" >module context kept across requests</text>
+<rect x="1100" y="190" width="290" height="56" rx="10" fill="#ecfdf5" stroke="#059669"/>
+<text x="1245.0" y="226.0" font-size="24" font-weight="600" fill="#0f172a" text-anchor="middle" >proof state</text>
+<line x1="1245" y1="246" x2="1040" y2="300" stroke="#059669" stroke-width="2.5"/>
+<rect x="950" y="300" width="180" height="50" rx="10" fill="#ffffff" stroke="#059669"/>
+<text x="1040.0" y="333.0" font-size="22" font-weight="500" fill="#0f172a" text-anchor="middle" >try tactic A</text>
+<line x1="1245" y1="246" x2="1240" y2="300" stroke="#059669" stroke-width="2.5"/>
+<rect x="1150" y="300" width="180" height="50" rx="10" fill="#ffffff" stroke="#059669"/>
+<text x="1240.0" y="333.0" font-size="22" font-weight="500" fill="#0f172a" text-anchor="middle" >try tactic B</text>
+<line x1="1245" y1="246" x2="1440" y2="300" stroke="#059669" stroke-width="2.5"/>
+<rect x="1350" y="300" width="180" height="50" rx="10" fill="#ffffff" stroke="#059669"/>
+<text x="1440.0" y="333.0" font-size="22" font-weight="500" fill="#0f172a" text-anchor="middle" >try tactic C</text>
+<text x="1245.0" y="385.0" font-size="26" font-weight="400" fill="#0f172a" text-anchor="middle" >speculative: the file is not changed</text>
+</svg>

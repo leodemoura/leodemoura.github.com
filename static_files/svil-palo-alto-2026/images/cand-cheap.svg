@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Kernel checking cost after the change, as a share of the cost before: one lia proof 32 s to 145 ms; lia certificates 38 to 46 percent cheaper; ring benchmark suite 175.1 G to 84.9 G instructions.</title>
+<text x="520.0" y="60.0" font-size="26" font-weight="700" fill="#64748b" text-anchor="start" >Before</text>
+<text x="640.0" y="60.0" font-size="26" font-weight="700" fill="#0073A3" text-anchor="start" >After</text>
+<text x="490.0" y="152.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="end" >One lia proof</text>
+<text x="490.0" y="190.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="end" >shared across grind case splits</text>
+<rect x="520" y="110" width="860" height="44" rx="6" fill="#e2e8f0"/>
+<text x="1396.0" y="142.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >32 s</text>
+<rect x="520" y="162" width="6.0" height="44" rx="6" fill="#0073A3"/>
+<text x="542.0" y="194.0" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" >145 ms (220×)</text>
+<text x="490.0" y="312.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="end" >lia certificates</text>
+<text x="490.0" y="350.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="end" >no match/recursion unfolding</text>
+<rect x="520" y="270" width="860" height="44" rx="6" fill="#e2e8f0"/>
+<text x="1396.0" y="302.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >before</text>
+<rect x="520" y="322" width="464.4" height="44" rx="6" fill="#0073A3"/>
+<rect x="984.4" y="322" width="68.8" height="44" fill="#a5d8e6"/>
+<text x="1069.2" y="354.0" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" >38–46% cheaper</text>
+<text x="490.0" y="472.0" font-size="32" font-weight="700" fill="#0f172a" text-anchor="end" >Ring benchmark suite</text>
+<text x="490.0" y="510.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="end" >kernel instructions, 40 files</text>
+<rect x="520" y="430" width="860" height="44" rx="6" fill="#e2e8f0"/>
+<text x="1396.0" y="462.0" font-size="28" font-weight="700" fill="#64748b" text-anchor="start" >175.1 G</text>
+<rect x="520" y="482" width="417.0" height="44" rx="6" fill="#0073A3"/>
+<text x="953.0" y="514.0" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" >84.9 G (−52%)</text>
+</svg>

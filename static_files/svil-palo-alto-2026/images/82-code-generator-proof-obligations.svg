@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="astra3-82-code-generator-proof-obligations-title astra3-82-code-generator-proof-obligations-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title id="astra3-82-code-generator-proof-obligations-title">A New Code Generator: semantics and a correctness obligation at every pass</title>
+<desc id="astra3-82-code-generator-proof-obligations-desc">Today: Lean programs pass through an optimizing compiler to executable code. Planned: each intermediate language has a semantics, and each compiler pass has an explicit obligation to preserve the specified behavior. The diagram is schematic and contains no private intermediate-language or backend names. Public design priorities are stack-allocated objects, recursive join points, uniqueness annotations and better support for array programs. Design now; implementation from early 2027.</desc>
+<rect x="0" y="0" width="1600" height="720" rx="0" fill="#ffffff"/>
+<text x="32" y="37" font-size="29" font-weight="700" fill="#0073A3" text-anchor="start" data-region="32,5,1536,43.5">Design · implementation from early 2027</text>
+<text x="32" y="128" font-size="23" font-weight="700" fill="#64748b" text-anchor="start" data-region="32,102,470,34.5">TODAY</text>
+<text x="590" y="128" font-size="23" font-weight="700" fill="#0073A3" text-anchor="start" data-region="590,102,560,34.5">PLANNED</text>
+<text x="1160" y="128" font-size="22" font-weight="600" fill="#15803d" text-anchor="start" data-region="1160,103,408,33.0">PROOF PER PASS</text>
+<rect x="32" y="150" width="470" height="83" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="52" y="183" font-size="29" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,151,430,43.5">Lean program</text>
+<text x="52" y="220" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,194,430,34.5">Source</text>
+<rect x="32" y="305" width="470" height="83" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="52" y="338" font-size="29" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,306,430,43.5">Optimizing compiler</text>
+<text x="52" y="375" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,349,430,34.5">Existing code generator</text>
+<rect x="32" y="460" width="470" height="83" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="52" y="493" font-size="29" font-weight="600" fill="#0f172a" text-anchor="start" data-region="52,461,430,43.5">Executable code</text>
+<text x="52" y="530" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" data-region="52,504,430,34.5">Program execution</text>
+<path d="M267,233 L267,298" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M267.00,298.00 L271.50,288.00 L262.50,288.00 Z" fill="#94a3b8"/>
+<path d="M267,388 L267,453" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M267.00,453.00 L271.50,443.00 L262.50,443.00 Z" fill="#94a3b8"/>
+<text x="295" y="276" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="295,251,207,33.0">Compilation</text>
+<text x="295" y="431" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" data-region="295,406,207,33.0">Code generation</text>
+<rect x="590" y="150" width="530" height="83" rx="5" fill="#eff6ff" stroke="#0073A3" stroke-width="1.5"/>
+<text x="610" y="183" font-size="29" font-weight="600" fill="#0073A3" text-anchor="start" data-region="610,151,490,43.5">Lean program</text>
+<text x="610" y="220" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="610,194,490,34.5">Semantics of the input</text>
+<rect x="590" y="305" width="530" height="83" rx="5" fill="#eff6ff" stroke="#0073A3" stroke-width="1.5"/>
+<text x="610" y="338" font-size="29" font-weight="600" fill="#0073A3" text-anchor="start" data-region="610,306,490,43.5">Intermediate program</text>
+<text x="610" y="375" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="610,349,490,34.5">Semantics of the intermediate language</text>
+<rect x="590" y="460" width="530" height="83" rx="5" fill="#eff6ff" stroke="#0073A3" stroke-width="1.5"/>
+<text x="610" y="493" font-size="29" font-weight="600" fill="#0073A3" text-anchor="start" data-region="610,461,490,43.5">Generated code</text>
+<text x="610" y="530" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="610,504,490,34.5">Semantics of the output</text>
+<path d="M855,233 L855,298" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M855.00,298.00 L859.50,288.00 L850.50,288.00 Z" fill="#0073A3"/>
+<text x="590" y="276" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="590,249,235,36.0">Compiler pass</text>
+<circle cx="855" cy="267" r="4" fill="#0073A3"/>
+<path d="M862,267 L1150,267" fill="none" stroke="#059669" stroke-width="2"/>
+<path d="M1150.00,267.00 L1140.00,262.50 L1140.00,271.50 Z" fill="#059669"/>
+<rect x="1156" y="228" width="412" height="93" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+<text x="1174" y="260" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="1174,233,376,36.0">Correctness theorem required</text>
+<text x="1174" y="300" font-size="23" font-weight="400" fill="#15803d" text-anchor="start" data-region="1174,274,376,34.5">Preserves specified behavior</text>
+<path d="M855,388 L855,453" fill="none" stroke="#0073A3" stroke-width="2"/>
+<path d="M855.00,453.00 L859.50,443.00 L850.50,443.00 Z" fill="#0073A3"/>
+<text x="590" y="431" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="590,404,235,36.0">Compiler pass</text>
+<circle cx="855" cy="422" r="4" fill="#0073A3"/>
+<path d="M862,422 L1150,422" fill="none" stroke="#059669" stroke-width="2"/>
+<path d="M1150.00,422.00 L1140.00,417.50 L1140.00,426.50 Z" fill="#059669"/>
+<rect x="1156" y="383" width="412" height="93" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+<text x="1174" y="415" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="1174,388,376,36.0">Correctness theorem required</text>
+<text x="1174" y="455" font-size="23" font-weight="400" fill="#15803d" text-anchor="start" data-region="1174,429,376,34.5">Preserves specified behavior</text>
+<text x="32" y="586" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" data-region="32,561,1536,33.0">DESIGN PRIORITIES</text>
+<rect x="32" y="607" width="360" height="93" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="212.0" y="641" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="52,611,320,40.5">Stack-allocated</text>
+<text x="212.0" y="680" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="52,650,320,40.5">objects</text>
+<rect x="424" y="607" width="360" height="93" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="604.0" y="641" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="444,611,320,40.5">Recursive</text>
+<text x="604.0" y="680" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="444,650,320,40.5">join points</text>
+<rect x="816" y="607" width="360" height="93" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="996.0" y="641" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="836,611,320,40.5">Uniqueness</text>
+<text x="996.0" y="680" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="836,650,320,40.5">annotations</text>
+<rect x="1208" y="607" width="360" height="93" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="1388.0" y="641" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="1228,611,320,40.5">Better support for</text>
+<text x="1388.0" y="680" font-size="27" font-weight="600" fill="#0073A3" text-anchor="middle" data-region="1228,650,320,40.5">array programs</text>
+</svg>

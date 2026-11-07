@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1600 720" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title>From a set-theoretic model to an x86 checker: proofs and remaining trust</title>
+<desc>Upward arrows are proved refinement or consistency implications. The con-ron Rust implementation and con-agua low-level language both connect to con-ron’s Lean twin. The right column names residual assumptions and execution components rather than claiming the entire system is verified.</desc>
+<rect x="0" y="0" width="1600" height="720" fill="#ffffff"/>
+<text x="32" y="43" font-size="34" font-weight="700" fill="#0f172a" text-anchor="start" data-region="32,9,1100,45.900000000000006">Proof connections from Lean to x86</text>
+<text x="1080" y="43" font-size="28" font-weight="600" fill="#0f172a" text-anchor="start" data-region="1080,15,488,37.800000000000004">Trusted</text>
+<path d="M1045,69 L1045,678" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<rect x="32" y="83" width="955" height="62" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="4"/>
+<text x="50" y="124" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="50,96,919,37.800000000000004">Accepted declarations have a model in set theory</text>
+<rect x="32" y="213" width="650" height="62" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="4"/>
+<text x="50" y="254" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="50,226,614,37.800000000000004">con-leche · pure Lean checker</text>
+<rect x="32" y="343" width="650" height="62" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="4"/>
+<text x="50" y="384" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="50,356,614,37.800000000000004">con-ron · Lean model</text>
+<rect x="32" y="473" width="650" height="62" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="4"/>
+<text x="50" y="514" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="50,486,614,37.800000000000004">con-agua · L program</text>
+<rect x="32" y="603" width="650" height="62" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="4"/>
+<text x="50" y="644" font-size="28" font-weight="600" fill="#15803d" text-anchor="start" data-region="50,616,614,37.800000000000004" font-family="'Menlo', monospace">checker.s · x86 assembly</text>
+<path d="M325,206 L325,151" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M325.00,151.00 L320.00,163.00 L330.00,163.00 Z" fill="#059669"/>
+<text x="348" y="188" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="348,164,650,32.400000000000006">Consistency proof</text>
+<path d="M325,336 L325,281" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M325.00,281.00 L320.00,293.00 L330.00,293.00 Z" fill="#059669"/>
+<text x="348" y="318" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="348,294,650,32.400000000000006">Simulation</text>
+<path d="M325,466 L325,411" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M325.00,411.00 L320.00,423.00 L330.00,423.00 Z" fill="#059669"/>
+<text x="348" y="448" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="348,424,650,32.400000000000006">Refinement</text>
+<path d="M325,596 L325,541" fill="none" stroke="#059669" stroke-width="3"/>
+<path d="M325.00,541.00 L320.00,553.00 L330.00,553.00 Z" fill="#059669"/>
+<text x="348" y="578" font-size="24" font-weight="600" fill="#15803d" text-anchor="start" data-region="348,554,650,32.400000000000006">Verified compiler · Kraken</text>
+<rect x="730" y="343" width="272" height="62" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" rx="4"/>
+<text x="746" y="384" font-size="28" font-weight="600" fill="#0073A3" text-anchor="start" data-region="746,356,240,37.800000000000004">con-ron · Rust</text>
+<path d="M730,372 L690,372" fill="none" stroke="#0073A3" stroke-width="3"/>
+<path d="M690.00,372.00 L702.00,377.00 L702.00,367.00 Z" fill="#0073A3"/>
+<text x="715" y="327" font-size="24" font-weight="600" fill="#0073A3" text-anchor="start" data-region="715,303,287,32.400000000000006">Aeneas model</text>
+<text x="1080" y="103" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="1080,79,488,32.400000000000006">Set-theoretic assumptions</text>
+<text x="1080" y="136" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="1080,112,488,32.400000000000006">Lean checks the verification proofs</text>
+<text x="1080" y="226" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,201,488,33.75">con-leche execution</text>
+<text x="1080" y="258" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,233,488,33.75">Lean compiler and runtime</text>
+<text x="1080" y="290" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,265,488,33.75">Including Nat arithmetic</text>
+<text x="1080" y="356" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,331,488,33.75">con-ron execution</text>
+<text x="1080" y="388" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,363,488,33.75">Rust compiler and runtime</text>
+<text x="1080" y="420" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,395,488,33.75">Aeneas translation; driver</text>
+<text x="1080" y="489" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,465,488,32.400000000000006">con-agua execution</text>
+<text x="1080" y="521" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,497,488,32.400000000000006">Kraken’s instruction semantics</text>
+<text x="1080" y="553" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,529,488,32.400000000000006">Assembly parser; assembler</text>
+<text x="1080" y="585" font-size="24" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1080,561,488,32.400000000000006">Linker / loader; C harness; OS</text>
+<text x="32" y="704" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" data-region="32,680,1515,32.400000000000006">Code and proofs: Claude; supervision: Joachim Breitner.</text>
+</svg>

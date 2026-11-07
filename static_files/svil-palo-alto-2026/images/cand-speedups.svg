@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1600 568" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Speedups since April, log scale: 3.4x to 464x</title>
+<text x="580.0" y="78.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >con-ron proofs (instructions)</text>
+<rect x="600" y="42" width="147.5" height="54" rx="5" fill="#0891b2"/>
+<text x="761.5" y="79.0" font-size="28" font-weight="700" fill="#0891b2" text-anchor="start" >3.4× instr.</text>
+<text x="580.0" y="156.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >Elaboration benchmark</text>
+<rect x="600" y="120" width="323.9" height="54" rx="5" fill="#0891b2"/>
+<text x="937.9" y="157.0" font-size="28" font-weight="700" fill="#0891b2" text-anchor="start" >14.7×</text>
+<text x="580.0" y="234.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >Kraken: 160 add instructions</text>
+<rect x="600" y="198" width="589.4" height="54" rx="5" fill="#0891b2"/>
+<text x="1203.4" y="235.0" font-size="28" font-weight="700" fill="#0891b2" text-anchor="start" >133×</text>
+<text x="580.0" y="312.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >VC generation: vcgen vs mvcgen</text>
+<rect x="600" y="276" width="642.1" height="54" rx="5" fill="#0891b2"/>
+<text x="1256.1" y="313.0" font-size="28" font-weight="700" fill="#0891b2" text-anchor="start" >206×</text>
+<text x="580.0" y="390.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >Kernel checking, one lia proof</text>
+<rect x="600" y="354" width="650.1" height="54" rx="5" fill="#0891b2"/>
+<text x="1264.1" y="391.0" font-size="28" font-weight="700" fill="#0891b2" text-anchor="start" >220×</text>
+<text x="580.0" y="468.0" font-size="27" font-weight="600" fill="#0f172a" text-anchor="end" >Kernel checking of vcgen proofs</text>
+<rect x="600" y="432" width="740.0" height="54" rx="5" fill="#0073A3"/>
+<text x="1354.0" y="469.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >464×</text>
+<text x="600.0" y="552.0" font-size="22" font-weight="400" fill="#64748b" text-anchor="start" >Log scale.</text>
+</svg>

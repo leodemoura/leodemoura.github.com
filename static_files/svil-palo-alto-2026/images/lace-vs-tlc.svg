@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 1600 790" role="img" aria-label="Lace versus TLC wall-clock speedup by benchmark" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <desc>Minimum and maximum TLC-to-Lace wall-clock time ratios across 1–14 worker threads, sorted by maximum speedup. Horizontal positions use a logarithmic scale. MultiPaxos, Paxos, and NOPaxos are highlighted in blue.</desc>
+  <rect width="1600" height="840" fill="#ffffff"/>
+  <!-- Logarithmic mapping: x = 330 + 700 * log10(speedup). -->
+  <g id="grid" stroke="#e2e8f0" stroke-width="1.5">
+    <line x1="540.721" y1="42" x2="540.721" y2="704"/>
+    <line x1="819.279" y1="42" x2="819.279" y2="704"/>
+    <line x1="1030.000" y1="42" x2="1030.000" y2="704"/>
+    <line x1="1240.721" y1="42" x2="1240.721" y2="704"/>
+  </g>
+  <line x1="330" y1="42" x2="330" y2="704" stroke="#64748b" stroke-width="2"/>
+  <text x="330" y="30" text-anchor="middle" font-size="22" fill="#64748b">TLC</text>
+  <g id="benchmarks" font-size="24">
+    <g data-benchmark="MultiPaxos" data-min="11.4" data-max="21.6" transform="translate(0 62)">
+      <text class="benchmark" x="64" y="8" fill="#0073A3" font-weight="600">MultiPaxos</text>
+      <line class="range" x1="1069.833" y1="0" x2="1264.118" y2="0" stroke="#0073A3" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="1069.833" cy="0" r="6" fill="#0073A3"/>
+      <circle cx="1264.118" cy="0" r="6" fill="#0073A3"/>
+      <text class="values" x="1330" y="8" fill="#0073A3" font-weight="700" style="font-variant-numeric: tabular-nums">11.4×–21.6×</text>
+    </g>
+    <g data-benchmark="PAStatic" data-min="7.6" data-max="18.9" transform="translate(0 94)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">PAStatic</text>
+      <line class="range" x1="946.570" y1="0" x2="1223.523" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="946.570" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="1223.523" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">7.6×–18.9×</text>
+    </g>
+    <g data-benchmark="Paxos" data-min="7.9" data-max="14.7" transform="translate(0 126)">
+      <text class="benchmark" x="64" y="8" fill="#0073A3" font-weight="600">Paxos</text>
+      <line class="range" x1="958.339" y1="0" x2="1147.122" y2="0" stroke="#0073A3" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="958.339" cy="0" r="6" fill="#0073A3"/>
+      <circle cx="1147.122" cy="0" r="6" fill="#0073A3"/>
+      <text class="values" x="1330" y="8" fill="#0073A3" font-weight="700" style="font-variant-numeric: tabular-nums">7.9×–14.7×</text>
+    </g>
+    <g data-benchmark="LeaseGuard" data-min="5.7" data-max="14.0" transform="translate(0 158)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">LeaseGuard</text>
+      <line class="range" x1="859.112" y1="0" x2="1132.290" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="859.112" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="1132.290" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">5.7×–14.0×</text>
+    </g>
+    <g data-benchmark="TicketSem" data-min="2.9" data-max="13.5" transform="translate(0 190)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">TicketSem</text>
+      <line class="range" x1="653.679" y1="0" x2="1121.234" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="653.679" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="1121.234" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">2.9×–13.5×</text>
+    </g>
+    <g data-benchmark="LeaderlessLog" data-min="3.9" data-max="11.8" transform="translate(0 222)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">LeaderlessLog</text>
+      <line class="range" x1="743.745" y1="0" x2="1080.317" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="743.745" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="1080.317" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">3.9×–11.8×</text>
+    </g>
+    <g data-benchmark="NOPaxos" data-min="5.6" data-max="10.7" transform="translate(0 254)">
+      <text class="benchmark" x="64" y="8" fill="#0073A3" font-weight="600">NOPaxos</text>
+      <line class="range" x1="853.732" y1="0" x2="1050.569" y2="0" stroke="#0073A3" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="853.732" cy="0" r="6" fill="#0073A3"/>
+      <circle cx="1050.569" cy="0" r="6" fill="#0073A3"/>
+      <text class="values" x="1330" y="8" fill="#0073A3" font-weight="700" style="font-variant-numeric: tabular-nums">5.6×–10.7×</text>
+    </g>
+    <g data-benchmark="2PC" data-min="3.1" data-max="10.2" transform="translate(0 286)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">2PC</text>
+      <line class="range" x1="673.953" y1="0" x2="1036.020" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="673.953" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="1036.020" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">3.1×–10.2×</text>
+    </g>
+    <g data-benchmark="bcastByz" data-min="2.4" data-max="9.0" transform="translate(0 318)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">bcastByz</text>
+      <line class="range" x1="596.148" y1="0" x2="997.970" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="596.148" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="997.970" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">2.4×–9.0×</text>
+    </g>
+    <g data-benchmark="Percolator" data-min="1.9" data-max="8.7" transform="translate(0 350)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">Percolator</text>
+      <line class="range" x1="525.128" y1="0" x2="987.663" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="525.128" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="987.663" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.9×–8.7×</text>
+    </g>
+    <g data-benchmark="Oswald" data-min="3.2" data-max="8.1" transform="translate(0 382)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">Oswald</text>
+      <line class="range" x1="683.605" y1="0" x2="965.940" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="683.605" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="965.940" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">3.2×–8.1×</text>
+    </g>
+    <g data-benchmark="TaskClaiming" data-min="2.3" data-max="7.5" transform="translate(0 414)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">TaskClaiming</text>
+      <line class="range" x1="583.209" y1="0" x2="942.543" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="583.209" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="942.543" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">2.3×–7.5×</text>
+    </g>
+    <g data-benchmark="Mutex" data-min="1.8" data-max="6.1" transform="translate(0 446)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">Mutex</text>
+      <line class="range" x1="508.691" y1="0" x2="879.731" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="508.691" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="879.731" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.8×–6.1×</text>
+    </g>
+    <g data-benchmark="ParCommits" data-min="1.8" data-max="6.1" transform="translate(0 478)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">ParCommits</text>
+      <line class="range" x1="508.691" y1="0" x2="879.731" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="508.691" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="879.731" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.8×–6.1×</text>
+    </g>
+    <g data-benchmark="German" data-min="1.6" data-max="5.9" transform="translate(0 510)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">German</text>
+      <line class="range" x1="472.884" y1="0" x2="869.596" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="472.884" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="869.596" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.6×–5.9×</text>
+    </g>
+    <g data-benchmark="SimpAllocator" data-min="3.7" data-max="5.6" transform="translate(0 542)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">SimpAllocator</text>
+      <line class="range" x1="727.741" y1="0" x2="853.732" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="727.741" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="853.732" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">3.7×–5.6×</text>
+    </g>
+    <g data-benchmark="EWD840" data-min="2.4" data-max="4.8" transform="translate(0 574)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">EWD840</text>
+      <line class="range" x1="596.148" y1="0" x2="806.869" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="596.148" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="806.869" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">2.4×–4.8×</text>
+    </g>
+    <g data-benchmark="FileLease" data-min="1.5" data-max="4.3" transform="translate(0 606)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">FileLease</text>
+      <line class="range" x1="453.264" y1="0" x2="773.428" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="453.264" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="773.428" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.5×–4.3×</text>
+    </g>
+    <g data-benchmark="Bakery" data-min="1.4" data-max="3.7" transform="translate(0 638)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">Bakery</text>
+      <line class="range" x1="432.290" y1="0" x2="727.741" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="432.290" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="727.741" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">1.4×–3.7×</text>
+    </g>
+    <g data-benchmark="KeyValueStore" data-min="2.2" data-max="3.7" transform="translate(0 670)">
+      <text class="benchmark" x="64" y="8" fill="#0f172a" font-weight="400">KeyValueStore</text>
+      <line class="range" x1="569.696" y1="0" x2="727.741" y2="0" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="569.696" cy="0" r="6" fill="#0891b2"/>
+      <circle cx="727.741" cy="0" r="6" fill="#0891b2"/>
+      <text class="values" x="1330" y="8" fill="#0f172a" font-weight="700" style="font-variant-numeric: tabular-nums">2.2×–3.7×</text>
+    </g>
+  </g>
+  <g id="axis">
+    <line x1="330" y1="704" x2="1288" y2="704" stroke="#e2e8f0" stroke-width="1.5"/>
+    <line x1="330.000" y1="704" x2="330.000" y2="712" stroke="#64748b" stroke-width="1.5"/>
+    <text x="330.000" y="743" text-anchor="middle" font-size="24" fill="#64748b">1×</text>
+    <line x1="540.721" y1="704" x2="540.721" y2="712" stroke="#64748b" stroke-width="1.5"/>
+    <text x="540.721" y="743" text-anchor="middle" font-size="24" fill="#64748b">2×</text>
+    <line x1="819.279" y1="704" x2="819.279" y2="712" stroke="#64748b" stroke-width="1.5"/>
+    <text x="819.279" y="743" text-anchor="middle" font-size="24" fill="#64748b">5×</text>
+    <line x1="1030.000" y1="704" x2="1030.000" y2="712" stroke="#64748b" stroke-width="1.5"/>
+    <text x="1030.000" y="743" text-anchor="middle" font-size="24" fill="#64748b">10×</text>
+    <line x1="1240.721" y1="704" x2="1240.721" y2="712" stroke="#64748b" stroke-width="1.5"/>
+    <text x="1240.721" y="743" text-anchor="middle" font-size="24" fill="#64748b">20×</text>
+    <text x="809" y="780" text-anchor="middle" font-size="22" fill="#64748b">Speedup over TLC (log scale)</text>
+  </g>
+  </svg>

@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1600 580" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <title>Comparator challenge validation in a sandbox</title>
+  <desc>Challenge.lean supplies the statement; Solution.lean may use any imports. The sandboxed lake comparator --paranoid accepts only when the statement matches, axioms are permitted, and the Lean kernel and every bundled checker accept.</desc>
+  <!-- Source: Slides.lean, slides 28 and 47; sources/zulip-general.md, checker workflow; sources/zulip-logs-b.md, Comparator Live -->
+  <defs>
+    <marker id="comparator-arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#64748b"/></marker>
+    <marker id="comparator-arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#0073A3"/></marker>
+    <marker id="comparator-arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#059669"/></marker>
+    <marker id="comparator-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#b91c1c"/></marker>
+    <marker id="comparator-arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#0891b2"/></marker>
+  </defs>
+  <rect x="390" y="24" width="1186" height="532" rx="12" fill="white" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="420" y="73" font-size="28" fill="#64748b" font-weight="600" text-anchor="start">Sandboxed</text>
+  <text x="820" y="73" font-size="32" fill="#0f172a" font-weight="600" text-anchor="start">Checks</text>
+  <rect x="24" y="151" width="300" height="112" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="174.0" y="198" font-size="28" fill="#0f172a" font-weight="600" text-anchor="middle" font-family="'Menlo', monospace" data-bound="36 159 276 96">Challenge.lean</text>
+  <text x="174.0" y="235" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="36 159 276 96">statement only</text>
+  <rect x="24" y="371" width="300" height="112" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="174.0" y="418" font-size="28" fill="#0f172a" font-weight="600" text-anchor="middle" font-family="'Menlo', monospace" data-bound="36 379 276 96">Solution.lean</text>
+  <text x="174.0" y="455" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="36 379 276 96">any imports</text>
+  <path d="M 324 207 H 358 V 315 H 420" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#comparator-arrow-muted)"/>
+  <path d="M 324 427 H 358 V 315" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="420" y="250" width="344" height="130" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="592.0" y="303" font-size="28" fill="#0f172a" font-weight="600" text-anchor="middle" font-family="'Menlo', monospace" data-bound="432 258 320 114">lake comparator</text>
+  <text x="592.0" y="346" font-size="28" fill="#0073A3" font-weight="400" text-anchor="middle" font-family="'Menlo', monospace" data-bound="432 258 320 114">--paranoid</text>
+  <path d="M 764 315 H 820" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#comparator-arrow-blue)"/>
+  <rect x="820" y="106" width="470" height="428" rx="12" fill="white" stroke="#94a3b8" stroke-width="2"/>
+  <text x="844" y="151" font-size="28" fill="#0f172a" font-weight="600" text-anchor="start" data-bound="836 122 438 42">Statement matches challenge</text>
+  <path d="M 844 174 H 1266" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="844" y="211" font-size="28" fill="#0f172a" font-weight="600" text-anchor="start">Only permitted axioms</text>
+  <path d="M 844 234 H 1266" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="844" y="274" font-size="28" fill="#0f172a" font-weight="600" text-anchor="start">Kernel and five bundled checkers</text>
+  <text x="864" y="316" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" data-bound="844 289 422 225">Lean kernel</text>
+  <text x="864" y="350" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" font-family="'Menlo', monospace" data-bound="844 289 422 225">lean4lean</text>
+  <text x="864" y="384" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" font-family="'Menlo', monospace" data-bound="844 289 422 225">nanoda</text>
+  <text x="864" y="418" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" font-family="'Menlo', monospace" data-bound="844 289 422 225">con-leche</text>
+  <text x="864" y="452" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" font-family="'Menlo', monospace" data-bound="844 289 422 225">con-ron</text>
+  <text x="864" y="486" font-size="24" fill="#0f172a" font-weight="400" text-anchor="start" font-family="'Menlo', monospace" data-bound="844 289 422 225">leanchecker-paranoid</text>
+  <path d="M 1290 315 H 1320 V 252 H 1352" fill="none" stroke="#059669" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#comparator-arrow-green)"/>
+  <path d="M 1320 315 V 432 H 1352" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#comparator-arrow-muted)"/>
+  <text x="1449" y="190" font-size="24" fill="#15803d" font-weight="400" text-anchor="middle">all pass</text>
+  <text x="1449" y="370" font-size="24" fill="#64748b" font-weight="400" text-anchor="middle">otherwise</text>
+  <rect x="1352" y="207" width="194" height="90" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1449.0" y="263" font-size="32" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1364 215 170 74">Accept</text>
+  <rect x="1352" y="387" width="194" height="90" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="1449.0" y="443" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="1364 395 170 74">Reject</text>
+</svg>

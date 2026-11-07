@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1800 556" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="symcrypt-title symcrypt-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+  <title id="symcrypt-title">SymCrypt: code and standards meet in proofs checked by Lean</title>
+  <desc id="symcrypt-desc">SymCrypt Rust code, 16.7K lines, is translated by Aeneas to a Lean model. NIST and IETF standards supply Lean specifications. Both feed proofs written by AI agents in a 237K-line Lean development. The Lean kernel checks the proofs of safety, panic-freedom, and functional correctness. Son Ho (Microsoft Research) and the SymCrypt team.</desc>
+  <!-- Source: Slides.lean, SymCrypt: Verified Rust Cryptography; sources/ai-software-verification.md, section 1. The 237K lines refer to the Lean development, not exclusively proof text. -->
+  <defs>
+    <marker id="symcrypt-arrow-blue" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#0073A3"/></marker>
+    <marker id="symcrypt-arrow-muted" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#64748b"/></marker>
+    <marker id="symcrypt-arrow-greenline" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#059669"/></marker>
+  </defs>
+  <text x="24" y="44" font-size="30" fill="#64748b" font-weight="600" text-anchor="start" data-bound="24 10 742 44">Code</text>
+  <text x="24" y="300" font-size="30" fill="#64748b" font-weight="600" text-anchor="start" data-bound="24 266 742 44">Specification</text>
+  <!-- Two aligned source lanes. The standards node spans the first two columns. -->
+  <rect x="24" y="76" width="230" height="140" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="139" y="132" font-size="34" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="44 94 190 104">Rust</text>
+  <text x="139" y="178" font-size="28" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="44 94 190 104">16.7K lines</text>
+  <path d="M 254 146 H 290" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-blue)"/>
+  <rect x="290" y="76" width="164" height="140" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="372" y="157" font-size="30" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="310 94 124 104">Aeneas</text>
+  <path d="M 454 146 H 490" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-blue)"/>
+  <rect x="490" y="76" width="276" height="140" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="628" y="157" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="510 94 236 104">Lean model</text>
+  <rect x="24" y="332" width="430" height="140" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="239" y="388" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="44 350 390 104">NIST / IETF</text>
+  <text x="239" y="434" font-size="28" fill="#0f172a" font-weight="400" text-anchor="middle" data-bound="44 350 390 104">standards</text>
+  <path d="M 454 402 H 490" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-muted)"/>
+  <rect x="490" y="332" width="276" height="140" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="628" y="388" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="510 350 236 104">Lean</text>
+  <text x="628" y="434" font-size="28" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="510 350 236 104">specifications</text>
+  <!-- Straight connectors converge on proof construction; checking and the result share the center line. -->
+  <path d="M 766 146 L 830 226" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-blue)"/>
+  <path d="M 766 402 L 830 322" fill="none" stroke="#0073A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-blue)"/>
+  <rect x="830" y="178" width="300" height="192" rx="12" fill="#eff6ff" stroke="#0073A3" stroke-width="2"/>
+  <text x="980" y="226" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="846 194 268 160">Proofs written</text>
+  <text x="980" y="268" font-size="32" fill="#0f172a" font-weight="600" text-anchor="middle" data-bound="846 194 268 160">by AI agents</text>
+  <text x="980" y="332" font-size="26" fill="#64748b" font-weight="400" text-anchor="middle" data-bound="846 194 268 160">237K lines of Lean</text>
+  <path d="M 850 290 H 1110" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 1130 274 H 1170" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-greenline)"/>
+  <rect x="1170" y="178" width="208" height="192" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1274" y="226" font-size="34" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1186 194 176 160">Lean</text>
+  <text x="1274" y="268" font-size="34" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1186 194 176 160">kernel</text>
+  <text x="1274" y="332" font-size="24" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1186 194 176 160">checks proofs</text>
+  <path d="M 1378 274 H 1418" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#symcrypt-arrow-greenline)"/>
+  <rect x="1418" y="178" width="358" height="192" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="1597" y="226" font-size="30" fill="#15803d" font-weight="600" text-anchor="middle" data-bound="1434 194 326 160">Verified properties</text>
+  <text x="1597" y="282" font-size="26" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1434 194 326 160">safety · panic-freedom</text>
+  <text x="1597" y="326" font-size="26" fill="#15803d" font-weight="400" text-anchor="middle" data-bound="1434 194 326 160">functional correctness</text>
+  <text x="24" y="530" font-size="28" fill="#64748b" font-weight="400" text-anchor="start" data-bound="24 496 1752 46">Son Ho (Microsoft Research) and the SymCrypt team</text>
+</svg>

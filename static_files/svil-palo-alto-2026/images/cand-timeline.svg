@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1600 660" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>AI writing Lean in 2026. Mathematics above the axis, software below. June to September, and a zoom on October 24 to November 6.</title>
+<line x1="70" y1="330" x2="860" y2="330" stroke="#94a3b8" stroke-width="4"/>
+<line x1="960" y1="330" x2="1530" y2="330" stroke="#94a3b8" stroke-width="4"/>
+<rect x="940" y="60" width="620" height="570" rx="14" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="1548.0" y="92.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="end" >Oct 24 – Nov 6, zoomed</text>
+<line x1="70.0" y1="320" x2="70.0" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="76.0" y="364.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" >Jun</text>
+<line x1="243.0" y1="320" x2="243.0" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="249.0" y="364.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" >Jul</text>
+<line x1="421.8" y1="320" x2="421.8" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="427.8" y="364.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" >Aug</text>
+<line x1="600.5" y1="320" x2="600.5" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="606.5" y="364.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" >Sep</text>
+<line x1="773.5" y1="320" x2="773.5" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="779.5" y="364.0" font-size="22" font-weight="600" fill="#64748b" text-anchor="start" >Oct</text>
+<line x1="1041.4" y1="320" x2="1041.4" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="1041.4" y="364.0" font-size="20" font-weight="600" fill="#64748b" text-anchor="middle" >Oct 26</text>
+<line x1="1285.7" y1="320" x2="1285.7" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="1285.7" y="364.0" font-size="20" font-weight="600" fill="#64748b" text-anchor="middle" >Nov 1</text>
+<line x1="1489.3" y1="320" x2="1489.3" y2="340" stroke="#94a3b8" stroke-width="3"/>
+<text x="1489.3" y="364.0" font-size="20" font-weight="600" fill="#64748b" text-anchor="middle" >Nov 6</text>
+<text x="70.0" y="40.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >Mathematics</text>
+<text x="70.0" y="646.0" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" >Software</text>
+<line x1="81.5" y1="330" x2="81.5" y2="238.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="81.5" cy="330" r="9" fill="#0073A3"/>
+<text x="91.5" y="232.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >Tau Ceti starts</text>
+<line x1="617.8" y1="330" x2="617.8" y2="176.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="617.8" cy="330" r="9" fill="#0073A3"/>
+<text x="607.8" y="144.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="end" >FLT</text>
+<text x="607.8" y="170.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="end" >Anthropic, 13M+ lines</text>
+<line x1="640.9" y1="330" x2="640.9" y2="238.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="640.9" cy="330" r="9" fill="#0073A3"/>
+<text x="650.9" y="206.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >Navier–Stokes</text>
+<text x="650.9" y="232.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="start" >OpenAI</text>
+<line x1="1041.4" y1="330" x2="1041.4" y2="238.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1041.4" cy="330" r="9" fill="#0073A3"/>
+<text x="1051.4" y="206.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >k-SAT</text>
+<text x="1051.4" y="232.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="start" >OpenAI</text>
+<line x1="1041.4" y1="330" x2="1041.4" y2="114.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1041.4" cy="330" r="9" fill="#0073A3"/>
+<text x="1051.4" y="82.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >CFSG</text>
+<text x="1051.4" y="108.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="start" >Axiom, 43.1M lines</text>
+<line x1="1407.9" y1="330" x2="1407.9" y2="176.0" stroke="#0073A3" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1407.9" cy="330" r="9" fill="#0073A3"/>
+<text x="1407.9" y="144.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="middle" >Stacks</text>
+<text x="1407.9" y="170.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="middle" >Axiom, 15.8M lines</text>
+<line x1="312.2" y1="330" x2="312.2" y2="422.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="312.2" cy="330" r="9" fill="#059669"/>
+<text x="302.2" y="444.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="end" >SymCrypt</text>
+<text x="302.2" y="470.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="end" >Microsoft</text>
+<line x1="375.6" y1="330" x2="375.6" y2="422.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="375.6" cy="330" r="9" fill="#059669"/>
+<text x="385.6" y="444.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >lean-zip</text>
+<line x1="836.9" y1="330" x2="836.9" y2="484.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="836.9" cy="330" r="9" fill="#059669"/>
+<text x="826.9" y="506.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="end" >xv6 Rocq → Lean</text>
+<text x="826.9" y="532.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="end" >MIT</text>
+<line x1="652.4" y1="330" x2="652.4" y2="422.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="652.4" cy="330" r="9" fill="#059669"/>
+<text x="642.4" y="444.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="end" >zlib inflate_table</text>
+<text x="642.4" y="470.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="end" >Certora</text>
+<line x1="1082.1" y1="330" x2="1082.1" y2="546.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1082.1" cy="330" r="9" fill="#059669"/>
+<text x="1092.1" y="568.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >Aristotle C / Verilog</text>
+<text x="1092.1" y="594.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="start" >Harmonic</text>
+<line x1="1163.6" y1="330" x2="1163.6" y2="484.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1163.6" cy="330" r="9" fill="#059669"/>
+<text x="1173.6" y="506.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="start" >&amp;Truth</text>
+<line x1="1326.4" y1="330" x2="1326.4" y2="422.0" stroke="#059669" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="1326.4" cy="330" r="9" fill="#059669"/>
+<text x="1326.4" y="444.0" font-size="26" font-weight="700" fill="#0f172a" text-anchor="middle" >Kiro</text>
+<text x="1326.4" y="470.0" font-size="21" font-weight="400" fill="#64748b" text-anchor="middle" >AWS</text>
+</svg>
