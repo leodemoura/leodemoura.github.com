@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1600 920" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Kernel next steps: verified bignums, verified kernel, #boost, certificate language</title>
+<defs><marker id="kt-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker></defs>
+<text x="0.0" y="34.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" >Today · official proof checking</text>
+<rect x="0" y="56" width="1600" height="130" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="30.0" y="130.0" font-size="30" font-weight="600" fill="#0f172a" text-anchor="start" >Lean proof terms</text>
+<line x1="300" y1="121" x2="376" y2="121" stroke="#64748b" stroke-width="3" marker-end="url(#kt-a)"/>
+<rect x="380" y="76" width="720" height="90" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="405.0" y="113.0" font-size="30" font-weight="700" fill="#0073A3" text-anchor="start" >C++ kernel</text>
+<text x="405.0" y="150.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" >type checking + reduction</text>
+<rect x="840" y="88" width="240" height="66" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<text x="960.0" y="118.0" font-size="26" font-weight="700" fill="#b91c1c" text-anchor="middle" >GMP</text>
+<text x="960.0" y="145.0" font-size="22" font-weight="400" fill="#0f172a" text-anchor="middle" >big Nat / Int</text>
+<text x="1140.0" y="113.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >Trusted: C++ kernel, GMP,</text>
+<text x="1140.0" y="147.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >compiler and runtime</text>
+<rect x="0" y="220" width="1600" height="160" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="30.0" y="270.0" font-size="31" font-weight="700" fill="#0f172a" text-anchor="start" >Verified bignums</text>
+<text x="30.0" y="312.0" font-size="26" font-weight="600" fill="#0073A3" text-anchor="start" >In progress</text>
+<text x="30.0" y="350.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >Sebastian Ullrich</text>
+<rect x="400" y="260" width="200" height="80" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<text x="500.0" y="309.0" font-size="26" font-weight="700" fill="#b91c1c" text-anchor="middle" >GMP</text>
+<line x1="600" y1="300" x2="656" y2="300" stroke="#64748b" stroke-width="3" marker-end="url(#kt-a)"/>
+<rect x="660" y="250" width="640" height="100" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="684.0" y="292.0" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" >Big-number arithmetic in Lean</text>
+<text x="684.0" y="330.0" font-size="24" font-weight="400" fill="#15803d" text-anchor="start" >proved correct against Nat / Int</text>
+<rect x="0" y="394" width="1600" height="160" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="30.0" y="444.0" font-size="31" font-weight="700" fill="#0f172a" text-anchor="start" >Verified kernel</text>
+<text x="30.0" y="486.0" font-size="26" font-weight="600" fill="#0073A3" text-anchor="start" >In progress</text>
+<text x="30.0" y="524.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >Joachim Breitner</text>
+<rect x="400" y="434" width="200" height="80" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<text x="500.0" y="483.0" font-size="26" font-weight="700" fill="#b91c1c" text-anchor="middle" >C++ kernel</text>
+<line x1="600" y1="474" x2="656" y2="474" stroke="#64748b" stroke-width="3" marker-end="url(#kt-a)"/>
+<rect x="660" y="424" width="640" height="100" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+<text x="684.0" y="466.0" font-size="28" font-weight="700" fill="#15803d" text-anchor="start" >con-leche as the official kernel</text>
+<text x="684.0" y="504.0" font-size="24" font-weight="400" fill="#15803d" text-anchor="start" >written in Lean, with a consistency proof</text>
+<rect x="0" y="568" width="1600" height="160" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+<text x="30.0" y="618.0" font-size="31" font-weight="700" fill="#0f172a" text-anchor="start"  font-family="Menlo, monospace">#boost</text>
+<text x="30.0" y="660.0" font-size="26" font-weight="600" fill="#0073A3" text-anchor="start" >Prototype · con-leche</text>
+<text x="30.0" y="698.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >Joachim Breitner</text>
+<text x="400.0" y="618.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >Selected functions run natively</text>
+<text x="400.0" y="656.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" >native evaluation ↔ kernel reduction</text>
+<text x="1180.0" y="620.0" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" >28 G → 0.24 G</text>
+<text x="1180.0" y="660.0" font-size="23" font-weight="600" fill="#0f172a" text-anchor="start" >official kernel → con-leche + #boost</text>
+<text x="1180.0" y="696.0" font-size="23" font-weight="400" fill="#64748b" text-anchor="start" >one grind proof</text>
+<rect x="0" y="742" width="1600" height="160" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+<text x="30.0" y="792.0" font-size="31" font-weight="700" fill="#0f172a" text-anchor="start" >Certificate language</text>
+<text x="30.0" y="834.0" font-size="26" font-weight="600" fill="#0073A3" text-anchor="start" >Design</text>
+<text x="30.0" y="872.0" font-size="25" font-weight="400" fill="#64748b" text-anchor="start" >Inside the kernel</text>
+<text x="400.0" y="792.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >Small imperative language</text>
+<text x="400.0" y="830.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" >executed by the kernel, for certificates</text>
+<text x="400.0" y="868.0" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" >such as bv_decide&#x27;s</text>
+</svg>

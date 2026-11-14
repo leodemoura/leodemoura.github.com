@@ -1,0 +1,13 @@
+<svg viewBox="0 0 1600 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>Stacks Project in Lean: 15.8M lines of Lean, 663,090 declarations, 62,975 Lean files; 15,279 of 16,249 formalizable tags</title>
+<text x="320.0" y="60.0" font-size="40" font-weight="700" fill="#0073A3" text-anchor="end" >15.8M</text>
+<text x="345.0" y="60.0" font-size="36" font-weight="400" fill="#0f172a" text-anchor="start" >lines of Lean</text>
+<text x="320.0" y="130.0" font-size="40" font-weight="700" fill="#0073A3" text-anchor="end" >663,090</text>
+<text x="345.0" y="130.0" font-size="36" font-weight="400" fill="#0f172a" text-anchor="start" >declarations</text>
+<text x="320.0" y="200.0" font-size="40" font-weight="700" fill="#0073A3" text-anchor="end" >62,975</text>
+<text x="345.0" y="200.0" font-size="36" font-weight="400" fill="#0f172a" text-anchor="start" >Lean files</text>
+<text x="20.0" y="302.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" >Stacks tags formalized</text>
+<rect x="20" y="320" width="1560" height="70" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+<rect x="20" y="320" width="1466.9" height="70" rx="10" fill="#059669"/>
+<text x="44.0" y="367.0" font-size="32" font-weight="700" fill="#ffffff" text-anchor="start" >15,279 of 16,249 formalizable tags (94%)</text>
+<text x="20.0" y="440.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" >Axiom, November 4, 2026 · the Stacks Project: ~7,500 pages, started by Johan de Jong in 2005</text>
+</svg>

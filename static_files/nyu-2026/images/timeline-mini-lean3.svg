@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1280 110" xmlns="http://www.w3.org/2000/svg" style="width:96%;height:auto;" role="img" font-family="Source Sans 3, sans-serif">
+<defs><linearGradient id="mini3grad-lean3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0891b2" stop-opacity="0.10"/><stop offset="100%" stop-color="#0891b2" stop-opacity="0.02"/></linearGradient><linearGradient id="mini4grad-lean3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dc2626" stop-opacity="0.10"/><stop offset="100%" stop-color="#dc2626" stop-opacity="0.02"/></linearGradient></defs>
+<path d="M 510 56 C 545 56 545 54 581 54 C 608 54 608 52 636 52 C 659 52 659 50 683 50 C 707 50 707 48 730 48 C 762 48 762 45 794 45 C 817 45 817 39 841 39 C 888 39 888 27 936 27 C 975 27 975 18 1014 18 C 1046 18 1046 14 1078 14 L 1078 56 L 510 56 Z" fill="url(#mini3grad-lean3)"/>
+<path d="M 510 56 C 545 56 545 54 581 54 C 608 54 608 52 636 52 C 659 52 659 50 683 50 C 707 50 707 48 730 48 C 762 48 762 45 794 45 C 817 45 817 39 841 39 C 888 39 888 27 936 27 C 975 27 975 18 1014 18 C 1046 18 1046 14 1078 14" fill="none" stroke="#0891b2" stroke-width="1.5" opacity="0.30"/>
+<path d="M 872 56 C 928 56 928 55 983 55 C 1003 55 1003 52 1023 52 C 1030 52 1030 43 1038 43 C 1042 43 1042 37 1046 37 C 1054 37 1054 25 1061 25 C 1069 25 1069 14 1078 14 L 1078 56 L 872 56 Z" fill="url(#mini4grad-lean3)"/>
+<path d="M 872 56 C 928 56 928 55 983 55 C 1003 55 1003 52 1023 52 C 1030 52 1030 43 1038 43 C 1042 43 1042 37 1046 37 C 1054 37 1054 25 1061 25 C 1069 25 1069 14 1078 14" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.30"/>
+<line x1="70" y1="58" x2="1190" y2="58" stroke="#cbd5e1" stroke-width="2.5"/>
+<circle cx="131" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="218" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="273" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="328" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="510" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="555" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="586" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="723" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="817" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="841" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="881" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="983" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="1078" cy="58" r="5" fill="#cbd5e1"/>
+<circle cx="462" cy="58" r="12" fill="#0073A3"/>
+<circle cx="462" cy="58" r="18" fill="none" stroke="#0073A3" stroke-width="2" opacity="0.35"/>
+<text x="462" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#0073A3">Lean 3.0 &amp; POPL · January 2017</text>
+<text x="70" y="94" font-size="14" fill="#94a3b8">2013</text>
+<text x="1190" y="94" font-size="14" fill="#94a3b8" text-anchor="end">2023</text>
+</svg>

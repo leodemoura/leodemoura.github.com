@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 12 1572 524" role="img" aria-labelledby="astra3-29-lean-fro-at-a-glance-title astra3-29-lean-fro-at-a-glance-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title id="astra3-29-lean-fro-at-a-glance-title">Lean FRO focus: Trust, Scalability, and Understanding</title>
+<desc id="astra3-29-lean-fro-at-a-glance-desc">Lean Focused Research Organization, a nonprofit launched in July 2023 by Leo de Moura and Sebastian Ullrich. Twenty people, open source. Its three focus areas are Trust, Scalability and Understanding. The seven funder names reproduce the slide, without amounts or rankings.</desc>
+<rect x="0" y="0" width="1600" height="720" rx="0" fill="#ffffff"/>
+<path d="M32,94 L32,440" fill="none" stroke="#0891b2" stroke-width="5"/>
+<rect x="60.0" y="24" width="1508" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="32.0" cy="100" r="10" fill="#0891b2"/>
+<path d="M42,100 L60,100" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="84.0" y="112" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,75,326,51.0">Trust</text>
+<text x="432.0" y="86" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,58,554,37.5">Check proofs with independent</text>
+<text x="432.0" y="129" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,101,554,37.5">and verified checkers.</text>
+<rect x="60.0" y="198" width="1508" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="32.0" cy="274" r="10" fill="#0891b2"/>
+<path d="M42,274 L60,274" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="84.0" y="286" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,249,326,51.0">Scalability</text>
+<text x="432.0" y="260" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,232,554,37.5">Build, import, store, and check</text>
+<text x="432.0" y="303" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,275,554,37.5">large Lean developments.</text>
+<rect x="60.0" y="372" width="1508" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="32.0" cy="448" r="10" fill="#0891b2"/>
+<path d="M42,448 L60,448" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="84.0" y="460" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,423,326,51.0">Understanding</text>
+<text x="432.0" y="434" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,406,554,37.5">Review statements and specifications;</text>
+<text x="432.0" y="477" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,449,554,37.5">inspect proof structure and dependencies</text>
+</svg>

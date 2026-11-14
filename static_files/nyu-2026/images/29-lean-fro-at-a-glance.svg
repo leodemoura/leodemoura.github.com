@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 16 1552 664" role="img" aria-labelledby="astra3-29-lean-fro-at-a-glance-title astra3-29-lean-fro-at-a-glance-desc" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif">
+<title id="astra3-29-lean-fro-at-a-glance-title">The Lean FRO: people, mission, focus, and funders</title>
+<desc id="astra3-29-lean-fro-at-a-glance-desc">Lean Focused Research Organization, a nonprofit launched in July 2023 by Leo de Moura and Sebastian Ullrich. Twenty people, open source. Its three focus areas are Trust, Scalability and Understanding. The seven funder names reproduce the slide, without amounts or rankings.</desc>
+<rect x="0" y="0" width="1600" height="720" rx="0" fill="#ffffff"/>
+<rect x="32" y="24" width="502" height="500" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="54" y="66" font-size="28" font-weight="700" fill="#0f172a" text-anchor="start" data-region="54,35,458,42.0">Focused Research Organization</text>
+<text x="54" y="113" font-size="29" font-weight="700" fill="#0073A3" text-anchor="start" data-region="54,81,458,43.5">Launched July 2023</text>
+<text x="54" y="156" font-size="26" font-weight="400" fill="#0f172a" text-anchor="start" data-region="54,127,458,39.0">Leo de Moura · Sebastian Ullrich</text>
+<path d="M54,184 L512,184" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="54" y="275" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start">20</text>
+<text x="102" y="275" font-size="34" font-weight="600" fill="#0f172a" text-anchor="start" data-region="201,238,300,51.0">people</text>
+<text x="54" y="328" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start" data-region="54,295,458,45.0">Nonprofit · Open source</text>
+<path d="M54,398 L512,398" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="54" y="437" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="54,411,458,34.5">Formal verification for mathematics,</text>
+<text x="54" y="473" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="54,447,458,34.5">software, hardware, and AI.</text>
+<text x="54" y="509" font-size="23" font-weight="400" fill="#0f172a" text-anchor="start" data-region="54,483,458,34.5">Long-term self-sustainability.</text>
+<path d="M590,94 L590,440" fill="none" stroke="#0891b2" stroke-width="5"/>
+<rect x="618" y="24" width="950" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="590" cy="100" r="10" fill="#0891b2"/>
+<path d="M600,100 L618,100" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="642" y="112" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,75,326,51.0">Trust</text>
+<text x="990" y="86" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,58,554,37.5">Check proofs with independent</text>
+<text x="990" y="129" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,101,554,37.5">and verified checkers.</text>
+<rect x="618" y="198" width="950" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="590" cy="274" r="10" fill="#0891b2"/>
+<path d="M600,274 L618,274" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="642" y="286" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,249,326,51.0">Scalability</text>
+<text x="990" y="260" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,232,554,37.5">Build, import, store, and check</text>
+<text x="990" y="303" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,275,554,37.5">large Lean developments.</text>
+<rect x="618" y="372" width="950" height="152" rx="5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<circle cx="590" cy="448" r="10" fill="#0891b2"/>
+<path d="M600,448 L618,448" fill="none" stroke="#0891b2" stroke-width="3"/>
+<text x="642" y="460" font-size="34" font-weight="700" fill="#0073A3" text-anchor="start" data-region="642,423,326,51.0">Understanding</text>
+<text x="990" y="434" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,406,554,37.5">Review statements and specifications;</text>
+<text x="990" y="477" font-size="25" font-weight="400" fill="#0f172a" text-anchor="start" data-region="990,449,554,37.5">inspect proof structure and dependencies</text>
+<text x="32" y="570" font-size="23" font-weight="600" fill="#64748b" text-anchor="start" data-region="32,544,1536,34.5">FUNDERS</text>
+<path d="M32,586 L1568,586" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<text x="32" y="620" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="32,590,500,40.5">Alex Gerko</text>
+<text x="420" y="620" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="32,629,500,40.5">Alfred P. Sloan Foundation</text>
+<text x="808" y="620" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="32,668,500,40.5">Amazon</text>
+<text x="1196" y="620" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="550,590,500,40.5">Beneficial AI Foundation</text>
+<text x="32" y="659" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="550,629,500,40.5">Harmonic</text>
+<text x="420" y="659" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1068,590,500,40.5">Richard Merkin Foundation</text>
+<text x="808" y="659" font-size="27" font-weight="400" fill="#0f172a" text-anchor="start" data-region="1068,629,500,40.5">Simons Foundation</text>
+</svg>

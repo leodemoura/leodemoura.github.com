@@ -5,6 +5,7 @@ open Verso Genre Blog
 
 # 2026
 
+- [Lean: Machine-Checked Mathematics, Software, and AI](/static/nyu-2026/), Mathematics in the Age of AI, NYU Courant
 - [Scaling Lean for AI](/static/svil-palo-alto-2026/), SViL, Stanford
 - [Who Checks the Proof Checkers?](/static/frocon2026/), FROCON 2026, Santa Cruz
 - [Lean 4 for Program Verification in the Age of AI](/static/marktoberdorf2026/), Marktoberdorf Summer School (4 lectures)

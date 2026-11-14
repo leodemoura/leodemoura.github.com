@@ -1,0 +1,281 @@
+/* Layout rules for "Scaling Lean for AI". Typography and code styling come from
+   custom.css (unchanged copy of the AIS / aws-june-2026 stylesheet). */
+
+/* ── Inline SVG figures ── */
+.reveal section svg[role="img"] {
+  display: block;
+  margin: 0.3em auto;
+  max-width: 100%;
+  max-height: 46vh;
+  height: auto;
+}
+.reveal section svg.fig-large { max-height: 62vh; width: 100% !important; }
+.reveal section svg.fig-medium { max-height: 40vh; }
+.reveal section svg.fig-small { max-height: 30vh; }
+.reveal .r-hstack > .r-vstack { flex: 1; }
+
+/* ── Header navigation strip ── */
+.slide-header::after { order: 1; }
+.slide-header .nav-strip {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-left: 0.6em;
+  font-size: 0.62em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.slide-header .nav-phase {
+  color: var(--text-muted);
+  margin-right: 0.3em;
+  font-weight: 600;
+}
+.slide-header .nav-item {
+  padding: 0.12em 0.6em;
+  border-radius: 1em;
+  border: 1.5px solid #cbd5e1;
+  color: var(--text-muted);
+}
+.slide-header .nav-item.active {
+  background: var(--lean-teal);
+  border-color: var(--lean-teal);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Footer with sources ── */
+.reveal .slides section .slide-footer {
+  position: absolute;
+  left: 3vw;
+  right: 3vw;
+  bottom: 2.6vh;
+  margin: 0;
+  font-size: 0.58em;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+.reveal .slides section .slide-footer p { margin: 0; }
+
+/* ── Credits under the title ── */
+.reveal .project-credit {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin: -0.2em 0 0.6em;
+}
+
+/* ── Principal result in large type ── */
+.reveal .big-result {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--lean-blue);
+  margin: 0.4em 0 0.5em;
+}
+.reveal .status {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: var(--lean-blue);
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 0.4em;
+  padding: 0.05em 0.5em;
+  margin: 0.2em 0 0.4em;
+}
+
+/* ── Tables ── */
+.reveal .slides section table {
+  margin: 0.5em auto;
+  font-size: 0.95em;
+  border-collapse: collapse;
+}
+.reveal .slides section table th,
+.reveal .slides section table td {
+  padding: 0.3em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+.reveal .slides section table th { font-weight: 600; }
+.reveal .slides section table td p,
+.reveal .slides section table th p { margin: 0; }
+
+/* ── Supplied full-slide figures ── */
+.reveal .slides section[data-state="full-figure"] { padding: 0; }
+.reveal section[data-state="full-figure"] > h2 { display: none; }
+.reveal section[data-state="full-figure"] > p {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reveal section[data-state="full-figure"] > p > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+.reveal section[data-state="full-figure"]:has(img[src*="formalization-scale"]) {
+  background: #101010;
+}
+
+/* ── Image sizes (by alt text) ── */
+.reveal section img[alt="Lean in the editor: proof state alongside the code"] {
+  max-height: 29vh; width: auto !important; max-width: 100%;
+}
+.reveal section img[alt="Stacks Project in Lean: project page"] {
+  max-height: 52vh; width: auto !important; max-width: 100%;
+}
+.reveal section img[alt="Anthropic: Formalizing Fermat's Last Theorem"] {
+  max-height: 48vh; width: auto !important;
+}
+.reveal section img[alt="Comparator Live rejecting a proof of False"] {
+  max-height: 34vh; width: auto !important;
+}
+.reveal section img[alt="FLT challenge statement"] {
+  max-height: 40vh; width: auto !important;
+}
+.reveal section img[alt="Verso Blueprint dependency graph"] {
+  max-height: 60vh; width: auto !important;
+}
+
+/* ── Plain (non-Lean) code excerpts ── */
+.reveal .slides section > pre {
+  width: 100%;
+  margin: 0.4em 0;
+  padding: 0.8em 1em;
+  box-sizing: border-box;
+  font-size: 0.68em;
+  line-height: 1.55;
+  box-shadow: none;
+  border: 1px solid var(--border-code);
+  border-radius: 6px;
+  background: var(--bg-code);
+}
+
+/* Larger base type for the projector: text slides fill the screen and read from the back. */
+.reveal { font-size: 3.9vh; }
+
+/* Charts that share the slide with a headline and a footer. */
+.reveal section svg.fig-chart { width: 100% !important; max-height: 50vh; }
+.reveal section svg.fig-bars { max-height: 42vh; }
+/* Keep numbers and units together in table cells; let the first column wrap. */
+.reveal .slides section table.nums td:not(:first-child),
+.reveal .slides section table.nums th:not(:first-child) { white-space: nowrap; }
+.reveal .r-hstack > .r-vstack table { font-size: 0.78em; margin: 0.3em 0; }
+
+/* Candidate figures fill the slide below the badge. */
+.reveal section:has(.status) svg.fig-chart { max-height: 66vh; width: 100% !important; }
+
+/* Animated lean-zip chart: keep within the slide. */
+.reveal section img.img-anim { max-height: 72vh; width: auto !important; max-width: 100% !important; display: block; margin: 0 auto; }
+
+/* Figure-only slides: fill the slide. */
+.reveal section:not(:has(p:not(:has(svg)))):not(:has(ul)):not(:has(table)) svg.fig-chart { max-height: 74vh; width: 100% !important; height: auto; }
+.reveal svg.fig-full { max-height: 76vh !important; width: 100% !important; height: auto; }
+.reveal section:has(.status) svg.fig-full { max-height: 64vh !important; }
+
+/* Hide the Verso info panel until a token is selected; code uses the full width. */
+.code-with-panel:not(:has(.info-panel:not(:empty))) > .panel-cell,
+.code-with-panel:not(:has(.info-panel:not(:empty))) > .panel-divider { display: none; }
+.code-with-panel:not(:has(.info-panel:not(:empty))) { display: block; }
+.code-with-panel:not(:has(.info-panel:not(:empty))) > code.hl.lean.block { width: 100%; max-width: 100%; }
+
+/* Inline code uses the same face as Lean blocks. */
+.reveal code { font-family: var(--verso-code-font-family); font-weight: 400; }
+/* Tables align with the body text. */
+.reveal .slides section > table, .reveal .slides section > .nums > table { margin-left: 0; }
+/* No warning squiggles on slides (e.g. the `sorry` in a challenge statement). */
+.reveal .hl.lean .has-info.warning .token, .reveal .hl.lean .has-info.warning .inter-text,
+.reveal .hl.lean .has-info.warning { text-decoration: none !important; }
+.command-output.information { font-size: 1em; }
+.reveal .r-hstack > .r-vstack table td, .reveal .r-hstack > .r-vstack table th { white-space: nowrap; }
+.reveal section img[alt="SymCrypt verification with Aeneas"] { max-height: 34vh; width: auto !important; }
+.reveal section svg.fig-small { max-height: 34vh; width: 100% !important; }
+/* Logo rows (More Software Verification). */
+.reveal .logo-rows table { width: 100%; }
+.reveal .logo-rows td:first-child { width: 14%; vertical-align: middle; }
+.reveal .logo-rows td:first-child img { max-height: 9vh; max-width: 100%; width: auto !important; margin: 0; }
+/* Aristotle: tinted columns. */
+.reveal .aristotle .r-vstack { padding: 0.5em 0.8em; border-radius: 10px; }
+.reveal .aristotle .r-vstack:nth-child(1) { background: #e0f2fe; }
+.reveal .aristotle .r-vstack:nth-child(2) { background: #dbeafe; }
+.reveal section img[alt="SymCrypt verification with Aeneas"] { max-height: 27vh !important; }
+.reveal section img[alt="Axiom logo"] { max-height: 7vh; width: auto !important; margin: 0 0 0.3em 0; display: block; }
+.reveal section img[alt="Harmonic logo"] { max-height: 6vh; width: auto !important; margin: 0 0 0.2em 0; display: block; }
+.reveal section svg.fig-full[aria-label^="Lace versus TLC"] { max-height: 70vh !important; }
+/* ── grind pipeline diagram (injected in Main.lean) ── */
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 0.8em 0;
+  font-size: 0.6em;
+}
+.pipeline .step {
+  background: #e0f2fe;
+  border: 1.5px solid #0284c7;
+  border-radius: 6px;
+  padding: 0.4em 0.9em;
+  color: #0c4a6e;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.pipeline .step.highlight {
+  background: #d1fae5;
+  border-color: #059669;
+  color: #064e3b;
+}
+.pipeline .arrow {
+  color: #0891b2;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* ── NYU deck: sizes for slides reused from the FLoC deck ── */
+.reveal section img[alt="Nature article on LTE"] { max-height: 17vh !important; width: auto !important; }
+.reveal section img[alt="Formal math in Lean"] { max-height: 40vh !important; width: auto !important; }
+.reveal section img[alt="Lean Verbose"] { max-height: 52vh; width: auto !important; max-width: 100%; }
+.reveal section img[alt="Auto-generalization in Mathlib"] { max-height: 24vh; width: auto !important; }
+.reveal section img[alt^="Scott Armstrong"] { height: 72vh; max-height: 72vh; width: auto !important; display: block; margin: 0 auto; border: 1px solid var(--border-code); }
+.reveal section img[alt="Startups using Lean"] { max-height: 24vh; width: auto !important; display: block; margin: 0 auto; }
+.reveal .logo-rows td:first-child img { max-height: 6vh; }
+.reveal .logo-rows img[alt="&Truth logo"] { background: #05070d; padding: 0.25em 0.4em; border-radius: 4px; }
+.reveal .logo-rows table { font-size: 0.88em; }
+.reveal section img[alt="Formal Conjectures website"] { max-height: 22vh; width: auto !important; }
+.reveal section img[alt="40 lines replaced by one grind call"] { max-height: 56vh !important; width: auto !important; }
+.reveal section img[alt="Signal verification status, November 10, 2026"] { max-height: 56vh; width: auto !important; max-width: 100%; display: block; margin: 0.3em auto; }
+.reveal section img[alt="SymM vs MetaM benchmark"], .reveal section img[alt="SymM with cache reuse"] { max-height: 36vh; width: auto !important; }
+.reveal section img[alt="Buckmaster and Alpöge announce three blow-up results"] { max-height: 52vh; }
+.reveal section img[alt="Nature article on LTE"] { max-height: 11vh !important; }
+.reveal section img[alt="Formal math in Lean"] { max-height: 34vh !important; }
+.reveal section svg.fig-small[aria-label^="VC pipeline"], .reveal section svg.fig-vc { max-height: 26vh !important; }
+.reveal section img[alt="Nature article on LTE"] { max-height: 19vh !important; }
+.reveal section img[alt="Signal verification status, November 10, 2026"] { max-height: 50vh; }
+.reveal section svg.fig-small[aria-label^="Kernel trust"], .reveal section svg.fig-kt { max-height: 42vh !important; }
+
+/* Slides copied verbatim from the FLoC deck that need a smaller type size to fit. */
+.reveal .slides section[data-state="dense"] { font-size: 0.88em; }
+.reveal .slides section[data-state="dense2"] { font-size: 0.8em; }
+.reveal .slides section[data-state="dense"] svg.fig-large { max-height: 54vh; }
+.reveal .slides section[data-state="dense"] img[alt="Nature article on LTE"] { max-height: 15vh !important; }
+.reveal section img[alt^="Mistral AI, Harmonic"] { width: 100% !important; max-height: 70vh; object-fit: contain; display: block; margin: 2vh auto 0; }
+.reveal section img[alt^="Mistral AI, Harmonic"] { width: auto !important; height: 72vh !important; max-height: 72vh !important; max-width: 100% !important; margin: 0 auto; }
+.reveal section img[alt^="&Atlas: map"] { max-height: 74vh; width: auto !important; max-width: 100%; display: block; margin: 0 auto; }
+.reveal section img[alt^="&Atlas: map"] { max-height: 60vh; }
+.reveal section img[alt="AlphaProof score on IMO 2024 problems"] { max-height: 58vh; width: auto !important; max-width: 100%; }
+.reveal section img[alt="OpenAI: On the Navier–Stokes Millennium Prize Problem"] { max-height: 52vh; }
+.reveal .slides section[data-state="tauceti"] svg.fig-chart { max-height: 40vh !important; }
+.reveal .slides section[data-state="tauceti"] > p { margin: 0.25em 0; }
+.reveal .slides section[data-state="tauceti"] svg.fig-chart { max-height: 34vh !important; }
+.reveal .slides section > pre, .reveal .slides section > pre code { font-family: var(--verso-code-font-family), ui-monospace, Menlo, monospace; }
+.reveal .slides section[data-state="tauceti"] > pre { padding: 0.5em 1em; margin: 0.2em 0; }
+/* On screens narrower than 16:9 (e.g. 16:10), scale type with the width so lines wrap as at 16:9. */
+.reveal { font-size: min(3.9vh, 2.194vw); }
+.reveal section img[alt="Lean Kernel Arena results"] { max-height: 66vh; width: auto !important; max-width: 100%; display: block; margin: 0 auto; }

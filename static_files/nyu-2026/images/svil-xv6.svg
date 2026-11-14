@@ -1,0 +1,15 @@
+<svg viewBox="0 0 1500 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"><title>xv6 proofs ported from Rocq to Lean by an agent: about half the lines of proof, about 5 times faster to check</title>
+<text x="306.0" y="108.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="end" >Lines of proof</text>
+<rect x="330" y="50" width="1000" height="58" fill="#cbd5e1" rx="4"/>
+<text x="346.0" y="89.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" >Rocq</text>
+<rect x="330" y="122" width="500" height="58" fill="#0073A3" rx="4"/>
+<text x="346.0" y="161.0" font-size="26" font-weight="600" fill="#ffffff" text-anchor="start" >Lean</text>
+<text x="850.0" y="161.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >about half the size</text>
+<text x="306.0" y="318.0" font-size="30" font-weight="700" fill="#0f172a" text-anchor="end" >Build and check time</text>
+<rect x="330" y="260" width="1000" height="58" fill="#cbd5e1" rx="4"/>
+<text x="346.0" y="299.0" font-size="26" font-weight="600" fill="#0f172a" text-anchor="start" >Rocq</text>
+<rect x="330" y="332" width="200" height="58" fill="#0073A3" rx="4"/>
+<text x="346.0" y="371.0" font-size="26" font-weight="600" fill="#ffffff" text-anchor="start" >Lean</text>
+<text x="550.0" y="371.0" font-size="28" font-weight="700" fill="#0073A3" text-anchor="start" >about 5× faster</text>
+<text x="330.0" y="458.0" font-size="24" font-weight="400" fill="#64748b" text-anchor="start" >Normalized, Rocq = 1.</text>
+</svg>
